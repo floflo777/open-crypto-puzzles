@@ -250,4 +250,6 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - First transfer to the second address, mempool.space, 2020-05-11: https://mempool.space/tx/2aa9a4a90be819d5122d70c993280785a0508f163521e7b38cebb4db0b071b13
 - Second transfer to the second address (public key source), mempool.space, 2024-04-24: https://mempool.space/tx/88cdb3cdca12b471551b1b26188508a14ca5fd8a415223ffb7c190381c9b9df3
 - bitcointalk topic 5532424, "Need help Puzzle GSMG.IO 5BTC": https://bitcointalk.org/index.php?topic=5532424.0
+- Reddit discussion, r/bitcoinpuzzles: https://www.reddit.com/r/bitcoinpuzzles/comments/bf7siz/gsmgio_5_btc_puzzle_challenge/
+- Reddit discussion, r/bitcoinpuzzles: https://www.reddit.com/r/bitcoinpuzzles/comments/dfwcqk/gsmgio_5_btc_puzzle/
 - Community-maintained stage documentation: https://github.com/puzzlehunt/gsmgio-5btc-puzzle

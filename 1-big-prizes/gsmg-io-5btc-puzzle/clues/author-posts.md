@@ -20,6 +20,14 @@ Community discussion thread, active since 2025-02-18, including several solvers'
 notes on the stage chain. Used here only to corroborate the public stage order, not
 quoted directly.
 
+## Reddit, r/bitcoinpuzzles
+
+https://www.reddit.com/r/bitcoinpuzzles/comments/bf7siz/gsmgio_5_btc_puzzle_challenge/
+
+https://www.reddit.com/r/bitcoinpuzzles/comments/dfwcqk/gsmgio_5_btc_puzzle/
+
+Two community discussion threads, also linked from the community repository below.
+
 ## Community repository
 
 https://github.com/puzzlehunt/gsmgio-5btc-puzzle
