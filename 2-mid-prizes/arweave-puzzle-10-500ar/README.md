@@ -117,12 +117,18 @@ Cumulative: on the order of 8,010,190 candidates tested to completion, 0 matches
 candidate sets (about 2,450,000 combined) were generated but not run to exhaustion and are
 not counted here as negatives.
 
+A bounded follow-up on 2026-09-04 UTC checked 448 full-passage strings and 80
+numeric-extraction strings from Genesis 28, all with complete witnesses: 0 exact
+matches. The oracle was also corrected to reject a valid wallet with a different
+address. Counts, scope and commands are in [analysis/tested.md](analysis/tested.md);
+updated next steps are in [analysis/leads.md](analysis/leads.md).
+
 ## Open leads, ranked
 
 1. **The exact wording of Bible Genesis chapter 28** (hours), the Jacob's Ladder / Bethel
    passage, transcribed as a long word-series the way solved sibling #7's 57-character
-   answer is built. This is the one corner of the genesis-as-scripture reading that has
-   not been enumerated yet. Confirmed by a candidate matching the escrow exactly; killed
+   answer is built. Two bounded KJV/WEB families (528 strings) are now negative; further
+   enumeration needs evidence fixing the source and operator order. Confirmed by a candidate matching the escrow exactly; killed
    by exhausting every reasonable transcription of the passage.
 2. **Non-public channels** (needs a person): the author's Telegram group, a later Discord,
    or a direct reply, none of which have produced a #10-specific hint in the public
