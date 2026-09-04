@@ -18,9 +18,9 @@ several puzzles in this author's series):
      pycryptodome's output exactly at the standard AES-256 parameters (Nk=8, Nr=14)
      before being trusted at this puzzle's Nk=32/Nr=38.
   3. PKCS7-unpad, then truncate at the first null byte (matches the page's own hex2a()).
-  4. Success iff the plaintext contains the literal substring "kty":"RSA".
-  5. On success, the wallet address is base64url(SHA-256(raw bytes of the JWK's
-     modulus "n")).
+  4. Require the literal substring "kty":"RSA" and parse the JSON wallet.
+  5. Derive base64url(SHA-256(raw bytes of the JWK's modulus "n")) and require
+     exact equality with the target address.
 
 Usage:
   python3 oracle.py --selftest        # reproduces the solved sibling Arweave #8
@@ -222,18 +222,20 @@ def decode_wallet(ciphertext_b64, passphrase):
     return plain.decode("latin-1", errors="replace")
 
 
-def check(candidate):
-    """Returns (ok, address_or_none)."""
-    if LOWERCASE_INPUT:
+def check(candidate, *, ciphertext_b64=None, target=None, lowercase=None):
+    """Return (exact_target_match, address_or_none); overrides support test fixtures."""
+    if lowercase is None:
+        lowercase = LOWERCASE_INPUT
+    if lowercase:
         candidate = candidate.lower()
-    out = decode_wallet(CIPHERTEXT_B64, candidate)
+    out = decode_wallet(CIPHERTEXT_B64 if ciphertext_b64 is None else ciphertext_b64, candidate)
     if GATE not in out:
         return False, None
     try:
         addr = jwk_to_address(json.loads(out)["n"])
     except Exception:
         return False, None
-    return True, addr
+    return addr == (ESCROW if target is None else target), addr
 
 
 # ---------------------------------------------------------------------- selftest / CLI
@@ -253,7 +255,13 @@ def selftest():
     if GATE in decode_wallet(PZL8_CIPHERTEXT_B64, PZL8_ANSWER.lower()):
         print("SELFTEST FAILED: lowercased answer incorrectly matched (gate is not case-sensitive)")
         return False
-    print("SELFTEST OK: solved sibling Arweave #8, answer %r -> %s" % (PZL8_ANSWER, addr))
+    for target, expected in ((PZL8_ADDRESS, True), (ESCROW, False)):
+        matched, derived = check(PZL8_ANSWER, ciphertext_b64=PZL8_CIPHERTEXT_B64,
+                                 target=target, lowercase=False)
+        if matched != expected or derived != PZL8_ADDRESS:
+            print("SELFTEST FAILED: exact-address positive/negative control")
+            return False
+    print("SELFTEST OK: solved sibling Arweave #8; exact-address controls passed")
     return True
 
 
@@ -271,7 +279,7 @@ def main():
                 continue
             ok, addr = check(cand)
             if ok:
-                print("MATCH %s <- %r" % (addr, cand))
+                print("MATCH %s" % addr)
                 found = True
         sys.exit(0 if found else 1)
     candidate = sys.argv[1]

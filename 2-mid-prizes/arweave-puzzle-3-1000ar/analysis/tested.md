@@ -1,10 +1,12 @@
 # Negatives ledger, Arweave Puzzle #3
 
-Every run used the certified oracle (SHA-512 x11513, AES-OpenSSL decrypt, `"kty":"RSA"`
-gate). None of these runs carries a planted witness inside its own candidate space, since
-the correct answer is unknown; the oracle itself is certified separately against the
-solved sibling Arweave #8 (see the README's "Certified against" section). Dated 2026-06-22
-unless noted otherwise.
+## Historical claims: uncertified
+
+The following rows were inherited from the 2026-06-22 notes. They lack per-run planted
+witnesses and exact candidate lists. A separate solved-sibling self-test does not certify
+these searches. Counts and labels are preserved as reported, not independently verified.
+For example, `36^4` is 1,679,616, and `8^8` enumerates tuples with repetition rather than
+permutations (`8!`). The historical total therefore remains approximate.
 
 | # | Configuration | Candidates | Result |
 |---|---|---|---|
@@ -25,18 +27,30 @@ unless noted otherwise.
 | B15 | Word-order permutations of a third 8-word set (grammar-filtered reading) | 8^8 = 16,777,216 | 0 match |
 | B16 | Word-order permutations of the same set, alternate tie-break | 8^8 = 16,777,216 | 0 match |
 
-Also refuted, not a candidate sweep: forensic steganalysis of all 8 rebus images and the
+Historical observation, not a candidate sweep: forensic steganalysis of all 8 rebus images and the
 page itself (exiftool, binwalk, `zsteg -a`) found no LSB payload, no appended bytes, no
-metadata payload, and no discrepancy in the alpha channel. This is a pure visual rebus.
+metadata payload, and no discrepancy in the alpha channel. This does not prove that every possible hiding method is absent.
 
-Also refuted: Norse mythology as a reading for slot 5 (checked against the Discord export's
+Previously deprioritized: Norse mythology as a reading for slot 5 (checked against the Discord export's
 683 messages from the author; every apparent reference is to a project codename, not
-mythology). Also refuted: `sha3`/Keccak as a reading for slot 3 (the drawn glyph and the
+mythology). Previously deprioritized: `sha3`/Keccak as a reading for slot 3 (the drawn glyph and the
 author's own hash-size discussion point to SHA-384, not SHA-3). Also refuted: Base58 as
 Arweave's own on-chain address encoding (Arweave addresses use base64url; a "Base58" OTC
 trading desk that was active in the author's Discord in early 2019 remains a candidate
 source for that slot's 4-character token).
 
-Cumulative: on the order of 330,000,000 candidates tested against the current best-guess
-readings, 0 matches. The oracle and mechanism are not in question; what remains unresolved
-is which of the 8 image readings are still wrong.
+Historical claimed total: on the order of 330,000,000 candidates. These rows do not
+prove that at least two readings are wrong. The 2026-09-05 audit also fixed the oracle
+to require exact target-address equality; see the regression tests and source review.
+
+
+## Witnessed runs, 2026-09-05
+
+| ID | Constraint | Unique candidates | Stream elements | Method and witness | Result | Runtime |
+|---|---|---|---|---|---|---|
+| H1 | ArweaveID first-image reading; pool sizes 1×4×1×2×4×2×3×2 | 384 | 387 | Exact-address Python oracle; original-page JS encrypted control; expected/observed positions [0,193,302,386] | Exhausted, no target match | 225.966 s |
+
+Measured rate 1.7498 stream elements/s; estimate 221.168 s; RNG seed 20260905.
+Parameters, command, hashes and coverage limits are in [REPRODUCE.md](../tools/REPRODUCE.md)
+and [source-review.md](source-review.md). Historical overlap cannot be measured because
+B1-B16 did not preserve their candidate lists.
