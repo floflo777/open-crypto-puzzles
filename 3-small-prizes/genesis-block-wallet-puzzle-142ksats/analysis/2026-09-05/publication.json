@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-05",
+  "note": "Recorded reports are unchanged. Published scripts replace workstation paths with PUZZLE_RUN_DIR, keep output private, and suppress match details in public summaries. The sixteen-bar public control checks the expected address without a scalar literal. Barcode reproduction also verifies the source image hash. These packaging edits do not change candidate spaces.",
+  "scripts": {
+    "check_direct_mnemonic.py": {
+      "executed_source_sha256": "81d7d30ff26e1073aaf0aa9ffde23186b792dca13a05829c196bf13969a087c8",
+      "published_source_sha256": "9c29725d2728e6991dc85b68180324850d40b61afddced389819e3c510cdee95"
+    },
+    "check_numeric_date.py": {
+      "executed_source_sha256": "d8196412b57b118f6575b2b8f8e64862f03404fce275cd55b68a78c93dc71b3a",
+      "published_source_sha256": "6a79ca75d166c5c1815fa2cd8c4961e7750dd213bf1b25b7cfee4eed8b275d4b"
+    },
+    "check_text_constructions.py": {
+      "executed_source_sha256": "abd576425ec09b4ba034b1bc9d6f9edec15dc43bf9ed7a6bfbbc2e281196feb1",
+      "published_source_sha256": "0cbed2382295acf8ce99b341ea8ffa874eb544b39c7de8ae3dbcd7b9bec244cb"
+    },
+    "check_zero_root.py": {
+      "executed_source_sha256": "785cc98c4e8c391bac59d827442c15c6544744d892456a90363db8300637cfe9",
+      "published_source_sha256": "8a7648d5f0471e93d42bf9356814b5e7f18ae65ce1e1ef107c6820f3183a9a14"
+    },
+    "check_hardening.py": {
+      "executed_source_sha256": "4a2929f359ddc053684d8bc853807df102ab646b7e580782e03b65474678d383",
+      "published_source_sha256": "a8b40a6749c873ffcbe99abfc156a4721af7afaca5dcbce44569ece64e75fa30"
+    }
+  }
+}

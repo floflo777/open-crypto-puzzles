@@ -48,3 +48,42 @@ same address-comparison harness, with 0 matches and 0 near-misses anywhere. This
 every direct, single-transform reading of the measured geometry and the metadata anomaly that I
 was able to enumerate. It does not rule out a reading that depends on information outside this
 image, such as the promised but never-delivered "$100" hint (see "Open leads, ranked").
+
+
+## Bounded extraction tests, 2026-09-05
+
+The exact standard Ethereum address verifier was calibrated with the public Ethereum
+eth-keys README vector (private bytes 01 repeated 32 times -> address
+0x1a642f0E3c3aF545E7AcBD38b07251B3990914F1). Synthetic carrier controls below test each
+specified decoder; they do not establish that it is the author's intended encoding.
+Recorded prize checks at blocks 0x18b51dc and 0x18b5222: 1 ETH, outgoing nonce zero.
+
+| Hypothesis | Space | Method | Result | Witness | Runtime | Date |
+|---|---|---|---|---|---|---|
+| Isolated ASCII hex64 in L/A/LA/AL bitstreams: eight raster orientations, eight single planes plus low 2/3/4 bits in both pixel-bit orders, both byte-bit orders, offsets 0..7 | 7168 streams | regex extraction, any extracted scalar compared by exact ETH address | 0 hex64 occurrences; exhausted for this scope | 24 independently encoded synthetic carriers recover the known scalar and expected address | 46.493 s; estimate 46.563 s | 2026-09-05 |
+| Raw 256-bit windows in the anomalous first image row, whole row or nonwhite-only; 14 bit selections, both raster directions, grayscale inversion, both byte-bit and scalar-byte orders | 626336 windows with variants, 79863 unique valid scalars; prior raw full-image endpoint keys excluded | exact ETH address compare; 79866 stream records including controls | 0 match; exhausted | raw synthetic first-row carrier recovers key at bit offsets 0/672/1344; actual comparison stream recovers controls at head/middle/tail | 1.515 s; estimate 1.478 s | 2026-09-05 |
+| Standard Code128/ITF in original image, six visible object crops, and three 9-row profiles per crop, three binarizers | 75 puzzle decoding jobs + 6 controls | zxing-cpp 2.3.0, full hex64 payloads eligible for exact ETH compare | 0 barcodes decoded | both barcode formats recover public key vector across all three binarizers before search; six controls recovered within run | 0.045 s; conservative estimate 0.553 s | 2026-09-05 |
+
+The ASCII scan does not cover spaced, encrypted, compressed, or raw binary payloads.
+The first-row test does not cover arbitrary positions across the full canvas. The barcode
+negative does not rule out a custom stroke-count code. No transaction was constructed or sent.
+
+| Further hypothesis | Space | Method | Result | Witness | Runtime | Date |
+|---|---|---|---|---|---|---|
+| One unconfirmed sixteen-number skyline transcription from the original Reddit discussion, forwards/backwards, six entropy encodings per direction | 60 raw candidates; 12 entropy inputs x 2 seed methods x 62 ETH paths = 1488 HD derivations; 1923 checks with controls | raw padding/SHA256/double-SHA256/Keccak; BIP39 empty-passphrase entropy or direct BIP32 seed; exact ETH address | 0 match; exhausted for this transcription | 3 raw-key controls, 3 public Hardhat account controls, all recovered in-stream | 0.276 s; estimate 0.293 s | 2026-09-05 |
+| Zlib or gzip payload in the same 7168 pixel bitstreams as the ASCII scan | 7168 streams; zlib headers 7801/785e/789c/78da or gzip magic, EOF and checksum required, max 1 MiB input/output per trial | exact 32-byte raw scalar or isolated ASCII hex64 from a valid decompressed payload | 0 valid archives, 0 candidates | 48 synthetic compressed-payload controls, all recover the public key/address vector | 14.514 s; 752.170 streams/s calibration; estimate 14.295 s including interleave margin | 2026-09-05 |
+
+The sixteen-number row is one community transcription, not an author-supplied key
+format. Its 62 paths are the union of m/44'/60'/0'/0/i, m/44'/60'/0'/i and
+m/44'/60'/i'/0/0 for i=0..20. The six entropy encodings are ASCII digits, one byte per
+height, packed hexadecimal left/right padded to 16 bytes, and decimal integer in
+16-byte big/little endian form. The negative does not exclude other segmentations.
+
+A separate stroke-group measurement produced 26 groups with a fixed threshold and
+changed with the threshold. It supplied no justified key sequence and is not counted
+as a witnessed key-search negative. The later NFT copy links back to the original
+puzzle post; it did not provide an earlier drawing source or an extra author hint.
+
+[Recorded reports and execution notes](../tools/REPRODUCE.md) preserve the scopes,
+controls and runtime measurements. Raw-key and HD negatives do not establish the
+absence of arbitrary image encodings, passphrases or other derivation paths.

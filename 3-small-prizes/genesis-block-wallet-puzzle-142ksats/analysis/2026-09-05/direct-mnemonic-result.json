@@ -1,0 +1,48 @@
+{
+  "status": "exhausted-no-match",
+  "family": "direct BIP39 sentence PBKDF2, six canonical text/case variants, empty passphrase, prior 214 paths, ordered compressed-key pairs",
+  "unique_keys": 1284,
+  "ordered_pairs": 1664100,
+  "control_hits": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      645
+    ],
+    [
+      0,
+      1289
+    ],
+    [
+      644,
+      1
+    ],
+    [
+      644,
+      645
+    ],
+    [
+      644,
+      1289
+    ],
+    [
+      1288,
+      1
+    ],
+    [
+      1288,
+      645
+    ],
+    [
+      1288,
+      1289
+    ]
+  ],
+  "matches": [],
+  "elapsed_seconds": 0.873363042017445,
+  "benchmark_hashes_per_second": 2624069.274490031,
+  "estimated_seconds": 0.6341677089768928
+}

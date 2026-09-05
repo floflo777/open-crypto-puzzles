@@ -1,0 +1,167 @@
+{
+  "status": "exhausted-no-match",
+  "family": "six canonical T/J raw BIP32 seeds, 16 hardening patterns over 48/0/account/script, 12 prior genesis accounts, script 0/1/2, suffix empty or 0/0 0/1 1/0, pairs within same hardening pattern; old-old pairs excluded",
+  "new_ordered_pairs": 11150784,
+  "stream_records": 11150787,
+  "groups": [
+    {
+      "mask": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "keys": 864,
+      "pairs": 699840
+    },
+    {
+      "mask": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "keys": 864,
+      "pairs": 746496
+    },
+    {
+      "mask": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "keys": 864,
+      "pairs": 746496
+    }
+  ],
+  "controls": [
+    0,
+    5575393,
+    11150786
+  ],
+  "elapsed_seconds": 8.624675625003874,
+  "rate": 2470432.015846317,
+  "estimate": 4.5136991945030225,
+  "matches": 0
+}

@@ -1,0 +1,5 @@
+bip-utils==2.12.2
+numpy==2.5.2
+Pillow==12.3.0
+pycryptodome==3.23.0
+zxing-cpp==2.3.0

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-05T00:12:55.768090+00:00",
+  "target": "XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+  "balance_winston": "400002481210000",
+  "outgoing_query": {
+    "query": "query { transactions(owners: [\"XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg\"], first: 1) { edges { node { id } } } }"
+  },
+  "outgoing": {
+    "data": {
+      "transactions": {
+        "edges": []
+      }
+    }
+  }
+}

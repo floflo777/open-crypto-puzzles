@@ -1,0 +1,21 @@
+{
+  "status": "exhausted-no-match",
+  "raw_windows_with_variants": 626336,
+  "unique_candidate_keys": 79863,
+  "stream_records": 79866,
+  "controls": [
+    0,
+    39932,
+    79865
+  ],
+  "carrier_witness_offsets": [
+    0,
+    672,
+    1344
+  ],
+  "elapsed_seconds": 1.515275957994163,
+  "rate": 54048.08817715118,
+  "estimate": 1.4776840901055839,
+  "matches": 0,
+  "scope": "first image row, all pixels or nonwhite pixels, forward/backward, original/inverted grayscale, 14 bit selections, both byte bit orders and private-scalar endian orders, every 256-bit window; raw full-image endpoints excluded"
+}

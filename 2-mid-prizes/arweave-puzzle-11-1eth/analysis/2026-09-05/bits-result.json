@@ -1,0 +1,68 @@
+{
+  "status": "exhausted-no-match",
+  "streams": 7168,
+  "hex64_occurrences": 0,
+  "unique_keys": 0,
+  "matches": 0,
+  "codec_witnesses": 24,
+  "elapsed_seconds": 46.49301420804113,
+  "measured_streams_per_second": 230.91190523567457,
+  "estimated_seconds": 46.56321201380342,
+  "planes": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      1,
+      0
+    ]
+  ],
+  "scope": "64 contiguous isolated ASCII hex characters; no raw 32-byte sliding window search"
+}

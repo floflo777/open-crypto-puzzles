@@ -1,0 +1,17 @@
+{
+  "family": "path",
+  "status": "exhausted-no-match",
+  "old_keys": 0,
+  "new_keys": 24,
+  "new_ordered_pairs": 576,
+  "stream_records": 579,
+  "controls": [
+    0,
+    289,
+    578
+  ],
+  "elapsed_seconds": 0.027273292012978345,
+  "rate": 2898340.731834583,
+  "estimate": 0.00019976947280229068,
+  "matches": 0
+}

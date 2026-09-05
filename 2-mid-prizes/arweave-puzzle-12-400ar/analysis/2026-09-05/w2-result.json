@@ -1,0 +1,32 @@
+{
+  "hypothesis": "W2: Blue + dated HUSD sender/recipient address + geometry + Alien",
+  "sources": [
+    "https://x.com/whale_alert/status/1239383378400546817",
+    "https://ethereum-rpc.publicnode.com"
+  ],
+  "target": "XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+  "unique_candidates": 108,
+  "stream_count": 111,
+  "candidate_length": 58,
+  "lowercase": false,
+  "measured_rate": 1.7811348871742974,
+  "estimated_seconds": 62.319816875911776,
+  "witness_positions_expected": [
+    0,
+    55,
+    77,
+    110
+  ],
+  "input_sha256": "7ea5cf2653b9975c2f88f55d580f828f7614a9700cf4080edfc9e9cb43f9cf90",
+  "runner_sha256": "b00a51556e1471437e60830c2d7f17f5abb08053256c0aeb1a453a7b56d5ddea",
+  "oracle_sha256": "ce427963c2fdec08f21e19c1bf764330e375fe76f59e89579d4d70274fddf27a",
+  "status": "exhausted-no-match",
+  "processed": 111,
+  "witness_positions_found": [
+    0,
+    55,
+    77,
+    110
+  ],
+  "runtime_seconds": 63.14393266703701
+}

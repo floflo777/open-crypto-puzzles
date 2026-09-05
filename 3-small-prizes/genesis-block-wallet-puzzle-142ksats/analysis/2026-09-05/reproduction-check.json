@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "report": "direct-mnemonic-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 0.9532087499974295
+    },
+    {
+      "report": "hardening-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 9.206672583008185
+    },
+    {
+      "report": "numeric-date-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 12.392714707995765
+    },
+    {
+      "report": "path-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 0.02925783395767212
+    },
+    {
+      "report": "prefix-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 2.530598999990616
+    },
+    {
+      "report": "zero-root-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 0.47064795799087733
+    }
+  ],
+  "note": "Portable published scripts rerun locally before submission; coverage and controls matched the original reports. These are reproductions, not additional search coverage."
+}
