@@ -54,3 +54,28 @@ Measured rate 1.7498 stream elements/s; estimate 221.168 s; RNG seed 20260905.
 Parameters, command, hashes and coverage limits are in [REPRODUCE.md](../tools/REPRODUCE.md)
 and [source-review.md](source-review.md). Historical overlap cannot be measured because
 B1-B16 did not preserve their candidate lists.
+
+### Further finite readings
+
+| ID | Constraint | Unique candidates | Stream elements | Method and witness | Result | Runtime |
+|---|---|---|---|---|---|---|
+| H2 | Literal unpadded count, optional short geographic abbreviation; slot sizes 4x2x1x1x2x2x2x1; lengths 29/30 | 64 | 67 | Same exact-address checker and original-page fixture; expected/observed [0,33,36,66] | Exhausted, no target match | 39.065 s |
+| H3 | Literal ribbon letters and HA+SH rebus, two readings per slot | 256 | 259 | Same checker and fixture; expected/observed [0,129,140,258] | Exhausted, no target match | 151.615 s |
+| H4 | Literal ribbon letters, year notation, contemporary geographic/mining/service readings; sizes 4x4x2x2x2x2x2x1 | 512 | 515 | Same checker and fixture; expected/observed [0,257,278,514] | Exhausted, no target match | 298.870 s |
+
+Rates were 1.7216, 1.7451 and 1.7206 stream elements/s; pre-run estimates were
+38.918, 148.418 and 299.321 seconds. H1-H4 contain 1,216 mutually disjoint candidates.
+Each stream also contains three planted copies of a candidate encrypted into a
+separate control ciphertext; the fourth control hit is its natural occurrence.
+These are finite reading tests, not exhaustive statements about the drawings.
+
+The original `proceed()` accepts empty input cells and concatenates them without
+padding. A 28-character synthetic answer with four empty cells passed the original
+form and Python checker; replacing empty cells with spaces failed. This establishes
+form behavior, not the intended length of the author's answer. The optional
+`--allow-short-slots` flag covers H2; four-character slots remain the default.
+
+Per-run reports: [H2](h2-result.json), [H3](h3-result.json), [H4](h4-result.json).
+The exact readings remain outside Git, as for H1. The reports preserve their input
+fingerprints, counts, rates and observed controls; a public checkout alone cannot
+reconstruct those exact private input files. No solution is claimed.

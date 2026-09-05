@@ -18,5 +18,17 @@ if(input.witness!==undefined){
  result.ciphertext=C.AES.encrypt(plain,h.toString(),{salt:C.enc.Hex.parse('0011223344556677')}).toString();
  result.roundtrip_ok=ctx.decodewallet(result.ciphertext,input.witness)===plain;
  if(!result.roundtrip_ok)throw Error('Fixture round trip failed');
+ if(input.cells!==undefined){
+  if(input.cells.length!==32 || input.cells.some(c=>typeof c!=='string'||c.length>1))throw Error('Invalid input cells');
+  const form=scripts.find(s=>s.includes('function proceed()'));
+  vm.runInContext(form,ctx,{timeout:10000});
+  let downloaded=false;
+  ctx.document.getElementsByClassName=()=>input.cells.map(value=>({value}));
+  ctx.msg=result.ciphertext;
+  ctx.download=(_name,data)=>{if(data!==plain)throw Error('Form plaintext mismatch');downloaded=true;};
+  ctx.proceed();
+  result.form_roundtrip_ok=downloaded;
+  if(!downloaded)throw Error('Original form round trip failed');
+ }
 }
 process.stdout.write(JSON.stringify(result));

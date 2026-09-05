@@ -53,12 +53,15 @@ def main():
     ap.add_argument('--log', type=Path, required=True)
     ap.add_argument('--private-output', type=Path, required=True)
     ap.add_argument('--plan', action='store_true')
+    ap.add_argument('--allow-short-slots', action='store_true',
+                    help='Allow 1-4 characters per slot; empty DOM cells contribute no padding')
     args = ap.parse_args()
     assert o.selftest()
     doc = json.loads(args.readings.read_text())
     slots = doc['slots']
     assert len(slots) == 8 and all(slot for slot in slots)
-    assert all(isinstance(s, str) and len(s) == 4 and s.isascii()
+    minimum = 1 if args.allow_short_slots else 4
+    assert all(isinstance(s, str) and minimum <= len(s) <= 4 and s.isascii()
                for slot in slots for s in slot)
     count = 1
     for slot in slots:
@@ -76,6 +79,8 @@ def main():
     stream = [witness] + candidates[:midpoint] + [witness] + candidates[midpoint:] + [witness]
     expected = [i for i, c in enumerate(stream) if c == witness]
     report = dict(hypothesis=doc['hypothesis'], sources=doc['sources'],
+                  allow_short_slots=args.allow_short_slots,
+                  candidate_lengths=sorted(set(map(len, candidates))),
                   slot_counts=[len(s) for s in slots], unique_candidates=len(candidates),
                   stream_count=len(stream), rng_seed=20260905, target=o.ESCROW,
                   witness_positions_expected=expected, measured_candidates_per_second=rate,

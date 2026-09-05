@@ -1,4 +1,4 @@
-# Reproduce the #3 oracle audit and H1 search
+# Reproduce the #3 oracle audit and finite reading searches
 
 Run from the repository root with Python 3.13.3 and Node v25.9.0. The new checker,
 fixture helper and search runner use standard libraries only; the workspace's
@@ -18,8 +18,8 @@ inside a Node VM with no network facilities, not the page's analytics scripts.
 ARWEAVE3_SOURCE=../run-2026-09-05/all-puzzles-review/ar3-page.txt .venv/bin/python 2-mid-prizes/arweave-puzzle-3-1000ar/tools/test_oracle.py
 ```
 
-Both tests passed with `ARWEAVE3_SOURCE` present. Without that environment variable,
-the original-page test is skipped; such a run is not the full audit.
+All three tests passed with `ARWEAVE3_SOURCE` present. Without that environment variable,
+the two original-page tests are skipped; such a run is not the full audit.
 
 ## H1 exact local invocation
 
@@ -55,3 +55,15 @@ No seed, candidate string, wallet key or decrypted JSON is included in that repo
   inspect `tweet.replying_to_status` and follow the referenced original tweet.
 
 No transcripts, workbook copies or sourced wordlists are shipped in the repository.
+
+## H2-H4
+
+Use the same command with `h2`, `h3` or `h4` in place of `h1` in all file names.
+Add `--allow-short-slots` for H2 only; it permits one through four ASCII characters
+per reading. Candidate lengths and slot sizes are recorded in each report.
+The default still requires exactly four characters in every slot.
+
+The reports retain the SHA256 of the exact local inputs and executed runner.
+Only local source-note labels were omitted from the published H3/H4 `sources`
+arrays; numerical results and input fingerprints are unchanged. No full candidate
+strings or decrypted wallet material are published.
