@@ -1,6 +1,6 @@
 # Negatives ledger, Arweave Puzzle Weave #12
 
-Every candidate sweep used the certified oracle (SHA-512 x11513, AES-OpenSSL decrypt,
+The historical candidate sweeps below used the separately calibrated oracle (SHA-512 x11513, AES-OpenSSL decrypt,
 `"kty":"RSA"` gate, exact 58-character length filter). None of these runs carries a
 planted witness inside its own candidate space, since the correct answer is unknown; the
 oracle itself is certified separately against the solved sibling Arweave #8 (see the
@@ -248,3 +248,33 @@ hatching still has no demonstrated role in the answer, under the directional rea
 Cumulative: 3,014,356 assembled 58-character candidates tested against the escrow, 0
 matches. 3 of the 4 sub-answers have a strong-to-certain reading; the gap is piece 2's
 exact 18-character string.
+
+
+## Dated transfer-address readings, 2026-09-05
+
+These three runs use the exact-address checker from PR #20, supplied with #12's
+ciphertext and escrow address and with lowercase=False. The original-page fixture
+and solved #8 vector pass before generation. These checks are separate from the
+historical RSA-substring gate described above.
+
+| ID | Construction | Unique candidates / stream records | Witness positions expected and found | Result | Rate and runtime |
+|---|---|---|---|---|---|
+| W1 | A four-character color word in three cases, two public USDT transfer addresses in three case forms including 0x, geometry digits, a five-letter reading in three cases, two block orders | 108 / 111 | [0,55,77,110] | Exhausted, no exact target match | 1.7696 records/s; estimate 62.726 s; actual 63.700 s |
+| W2 | Same construction with sender/recipient from the dated HUSD emissions | 108 / 111 | [0,55,77,110] | Exhausted, no exact target match | 1.7811 records/s; estimate 62.320 s; actual 63.144 s |
+| Q1 | Six proposed RGB/base64 sequences, the same USDT addresses without 0x in three cases, geometry digits, the five-letter reading in three cases, two block orders | 216 / 219 | [0,109,152,218] | Exhausted, no exact target match | 1.7791 records/s; estimate 123.096 s; actual 126.339 s |
+
+All 432 candidate strings are distinct and exactly 58 characters. The expected
+control is a candidate encrypted into a separate ciphertext by the original
+JavaScript; it is recovered at its natural position plus head/middle/tail inserts.
+The exact input lists remain private and are fingerprinted in the
+[reports](../tools/REPRODUCE.md). These results exclude only those lists.
+
+The USDT transaction receipt and block confirm 2020-03-16 12:03:36 UTC, block 9682464.
+The HUSD receipts confirm 2020-03-16 02:49:29 UTC, block 0x93b482. These are public
+operations matching the drawn date; no evidence establishes that either is intended.
+The RGB/base64 reading also remains a hypothesis. No target match was obtained.
+
+Primary posts: [USDT](https://x.com/whale_alert/status/1239522831525961729),
+[HUSD emission one](https://x.com/whale_alert/status/1239383378400546817),
+[HUSD emission two](https://x.com/whale_alert/status/1239383375674314753).
+Recorded funding on 2026-09-05 00:12:55 UTC: 400.00248121 AR, no outgoing transactions.

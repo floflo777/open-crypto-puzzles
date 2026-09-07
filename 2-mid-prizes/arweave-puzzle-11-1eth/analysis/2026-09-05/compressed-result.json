@@ -1,0 +1,70 @@
+{
+  "status": "exhausted-no-match",
+  "streams": 7168,
+  "decompressed_key_occurrences": 0,
+  "valid_archives": 0,
+  "saved_private_payloads": 0,
+  "unique_keys": 0,
+  "matches": 0,
+  "codec_witnesses": 48,
+  "elapsed_seconds": 14.514114082965534,
+  "measured_streams_per_second": 752.1699405603924,
+  "estimated_seconds": 14.294641968794167,
+  "planes": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      2,
+      1,
+      0
+    ]
+  ],
+  "scope": "zlib headers 7801/785e/789c/78da and gzip magic in 7168 pixel bitstreams, checksum/EOF required, at most 1MiB compressed/decompressed per stream; isolated hex64 or exactly32 raw bytes in decompressed payload"
+}

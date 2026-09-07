@@ -1,0 +1,48 @@
+{
+  "status": "exhausted-no-match",
+  "family": "zero 16/32 bytes as BIP32 seed or BIP39 entropy with empty passphrase, prior 214 paths, ordered compressed-key pairs",
+  "unique_keys": 856,
+  "ordered_pairs": 743044,
+  "control_hits": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      431
+    ],
+    [
+      0,
+      861
+    ],
+    [
+      430,
+      1
+    ],
+    [
+      430,
+      431
+    ],
+    [
+      430,
+      861
+    ],
+    [
+      860,
+      1
+    ],
+    [
+      860,
+      431
+    ],
+    [
+      860,
+      861
+    ]
+  ],
+  "matches": [],
+  "elapsed_seconds": 0.43425420799758285,
+  "benchmark_hashes_per_second": 2831892.1124627097,
+  "estimated_seconds": 0.26238428954619447
+}

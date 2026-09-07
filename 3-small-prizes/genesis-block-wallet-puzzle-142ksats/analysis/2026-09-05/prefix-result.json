@@ -1,0 +1,17 @@
+{
+  "family": "prefix",
+  "status": "exhausted-no-match",
+  "old_keys": 1284,
+  "new_keys": 642,
+  "new_ordered_pairs": 2060820,
+  "stream_records": 2060823,
+  "controls": [
+    0,
+    1030411,
+    2060822
+  ],
+  "elapsed_seconds": 2.3659567079739645,
+  "rate": 2477623.9411249766,
+  "estimate": 0.8317739289620659,
+  "matches": 0
+}

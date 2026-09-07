@@ -1,0 +1,48 @@
+{
+  "status": "exhausted-no-match",
+  "family": "newspaper date as integer YYYYMMDD DDMMYYYY MMDDYYYY, BE/LE zero padded 16/32 bytes, BIP32 seed or BIP39 entropy with empty passphrase, prior 214 paths, ordered compressed-key pairs",
+  "unique_keys": 5136,
+  "ordered_pairs": 26440164,
+  "control_hits": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2571
+    ],
+    [
+      0,
+      5141
+    ],
+    [
+      2570,
+      1
+    ],
+    [
+      2570,
+      2571
+    ],
+    [
+      2570,
+      5141
+    ],
+    [
+      5140,
+      1
+    ],
+    [
+      5140,
+      2571
+    ],
+    [
+      5140,
+      5141
+    ]
+  ],
+  "matches": [],
+  "elapsed_seconds": 11.547697584028356,
+  "benchmark_hashes_per_second": 2721458.7155133467,
+  "estimated_seconds": 9.715438213073393
+}

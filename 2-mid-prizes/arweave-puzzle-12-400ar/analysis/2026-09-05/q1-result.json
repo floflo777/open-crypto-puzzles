@@ -1,0 +1,32 @@
+{
+  "hypothesis": "Q1: RGB top-bit base64 + bare dated transfer address + geometry + Alien",
+  "sources": [
+    "https://x.com/whale_alert/status/1239522831525961729",
+    "https://ethereum-rpc.publicnode.com"
+  ],
+  "target": "XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+  "unique_candidates": 216,
+  "stream_count": 219,
+  "candidate_length": 58,
+  "lowercase": false,
+  "measured_rate": 1.7790988358500632,
+  "estimated_seconds": 123.0960279367282,
+  "witness_positions_expected": [
+    0,
+    109,
+    152,
+    218
+  ],
+  "input_sha256": "cabaa07c10d520a2ef339996c2bc5140c1c0d16f86a0d72b376772d5de27eaa6",
+  "runner_sha256": "209851d4ae3c7fc439ef4ced5582b5ba8933e5a07ae20318bb268045e2c81c12",
+  "oracle_sha256": "ce427963c2fdec08f21e19c1bf764330e375fe76f59e89579d4d70274fddf27a",
+  "status": "exhausted-no-match",
+  "processed": 219,
+  "witness_positions_found": [
+    0,
+    109,
+    152,
+    218
+  ],
+  "runtime_seconds": 126.33872649999103
+}

@@ -1,0 +1,20 @@
+{
+  "status": "exhausted-no-match",
+  "jobs": 81,
+  "puzzle_jobs": 75,
+  "controls": [
+    0,
+    1,
+    39,
+    40,
+    79,
+    80
+  ],
+  "decoded": [],
+  "matches": 0,
+  "elapsed_seconds": 0.04493729199748486,
+  "rate": 146.54251236483188,
+  "estimate": 0.5527406258624978,
+  "library": "zxing-cpp==2.3.0",
+  "scope": "Code128 and ITF decoding of original, six object regions and three 9-row profiles per region, three binarizers; no custom stroke-count cipher"
+}

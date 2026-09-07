@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "report": "barcode-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 0.04499504197156057
+    },
+    {
+      "report": "bits-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 47.203159041993786
+    },
+    {
+      "report": "compressed-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 13.659831333963666
+    },
+    {
+      "report": "sixteen-bars-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 0.28796258399961516
+    },
+    {
+      "report": "top-row-result.json",
+      "coverage_and_controls_identical": true,
+      "status": "exhausted-no-match",
+      "elapsed_seconds": 1.5793949580402113
+    }
+  ],
+  "note": "Portable published scripts rerun locally before submission; coverage and controls matched the original reports. These are reproductions, not additional search coverage."
+}
