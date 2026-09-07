@@ -50,7 +50,7 @@ was able to enumerate. It does not rule out a reading that depends on informatio
 image, such as the promised but never-delivered "$100" hint (see "Open leads, ranked").
 
 
-## Bounded extraction tests, 2026-09-05
+## Bounded extraction tests, 2026-09-05 (contributed by @BorisLoveDev, PR #21)
 
 The exact standard Ethereum address verifier was calibrated with the public Ethereum
 eth-keys README vector (private bytes 01 repeated 32 times -> address

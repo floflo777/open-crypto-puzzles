@@ -35,7 +35,10 @@
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["multisig", "raw-private-key"],
+  "puzzle_type": [
+    "multisig",
+    "raw-private-key"
+  ],
   "target_format": "P2WSH v0; witness script OP_2 <keyA> <keyB> OP_2 OP_CHECKMULTISIG; both keys derived from one genesis-block field (reported: the coinbase text) without hashing; the author's derivation rule names the BIP48 levels m/48'/0'/account'/script_type'",
   "derivation": {
     "summary": "derive two secp256k1 keys from one field of the genesis block (author's hints: the coinbase text readable in The Times, no hash, keys independent, a BIP48-shaped path with a genesis value as account), build the 2-of-2 witness script in either key order, sha256 it, and compare with the published 32-byte witness program",
@@ -45,23 +48,77 @@
   },
   "difficulty_left": "insight",
   "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; two passes on 2026-08-29 exhausted the mechanical readings of the two 2026-08-28 hints (raw keys, BIP32 seeds, BIP39 entropy, hashed roots, raw extended keys and zero-chain-code roots from the coinbase text along 214 paths including every BIP48 path with a genesis integer as account): 611,008 keys, 5.7e11 ordered pairs in total, 0 match with witnesses; what remains is the exact meaning of 'root' and 'genesis_data' in the author's derivation rule, which a paid on-chain question would settle",
-  "tested_total": { "candidates": 573972226280, "families": 7, "certified": true },
+  "tested_total": {
+    "candidates": 573972226280,
+    "families": 7,
+    "certified": true
+  },
   "leads": [
-    { "rank": 1, "title": "ask the author one precise question on chain about 'root' and 'genesis_data' (about 5,000 to 10,000 sats)", "cost": "needs-a-person", "status": "open" },
-    { "rank": 2, "title": "watch the escrow for new OP_RETURN hints or a spend before any work", "cost": "minutes", "status": "open" },
-    { "rank": 3, "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths", "cost": "minutes", "status": "killed" },
-    { "rank": 4, "title": "pass 1: literal readings of the 2026-08-28 hints, families A to D", "cost": "minutes", "status": "killed" }
+    {
+      "rank": 1,
+      "title": "ask the author one precise question on chain about 'root' and 'genesis_data' (about 5,000 to 10,000 sats)",
+      "cost": "needs-a-person",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "watch the escrow for new OP_RETURN hints or a spend before any work",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths",
+      "cost": "minutes",
+      "status": "killed"
+    },
+    {
+      "rank": 4,
+      "title": "pass 1: literal readings of the 2026-08-28 hints, families A to D",
+      "cost": "minutes",
+      "status": "killed"
+    }
   ],
   "solutions": [],
   "artifacts": [],
   "sources": [
-    { "title": "Announcement transaction, block 963629", "url": "https://mempool.space/tx/b691de3657880d9a1eabd2783b1a9fa8c5313ced338495bf10e85727012d7a77", "date": "2026-08-22", "archived": null },
-    { "title": "Escrow address and full on-chain dialogue", "url": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj", "date": "2026-08-29", "archived": null },
-    { "title": "Galaxy Research, first public report (X)", "url": "https://x.com/glxyresearch/status/2091349771952742566", "date": "2026-08-23", "archived": null },
-    { "title": "crypto.news, Bitcoin puzzle hides wallet key in Genesis Block data", "url": "https://crypto.news/bitcoin-puzzle-hides-wallet-key-in-genesis-block-data/", "date": "2026-08-23", "archived": null },
-    { "title": "U.Today, Satoshi's Code Reopened", "url": "https://u.today/satoshis-code-reopened-someone-just-deciphered-bitcoin-puzzle-into-genesis-block-data", "date": "2026-08-23", "archived": null },
-    { "title": "Blockmedia (Korean)", "url": "https://www.blockmedia.co.kr/archives/1131026", "date": "2026-08-23", "archived": null }
+    {
+      "title": "Announcement transaction, block 963629",
+      "url": "https://mempool.space/tx/b691de3657880d9a1eabd2783b1a9fa8c5313ced338495bf10e85727012d7a77",
+      "date": "2026-08-22",
+      "archived": null
+    },
+    {
+      "title": "Escrow address and full on-chain dialogue",
+      "url": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
+      "date": "2026-08-29",
+      "archived": null
+    },
+    {
+      "title": "Galaxy Research, first public report (X)",
+      "url": "https://x.com/glxyresearch/status/2091349771952742566",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "crypto.news, Bitcoin puzzle hides wallet key in Genesis Block data",
+      "url": "https://crypto.news/bitcoin-puzzle-hides-wallet-key-in-genesis-block-data/",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "U.Today, Satoshi's Code Reopened",
+      "url": "https://u.today/satoshis-code-reopened-someone-just-deciphered-bitcoin-puzzle-into-genesis-block-data",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "Blockmedia (Korean)",
+      "url": "https://www.blockmedia.co.kr/archives/1131026",
+      "date": "2026-08-23",
+      "archived": null
+    }
   ],
   "third_party_material": "none: the genesis block and the author's OP_RETURN messages are public chain data; press articles are linked, not reproduced",
-  "last_updated": "2026-08-29"
+  "last_updated": "2026-09-07"
 }

@@ -250,7 +250,7 @@ matches. 3 of the 4 sub-answers have a strong-to-certain reading; the gap is pie
 exact 18-character string.
 
 
-## Dated transfer-address readings, 2026-09-05
+## Dated transfer-address readings, 2026-09-05 (contributed by @BorisLoveDev, PR #21)
 
 These three runs use the exact-address checker from PR #20, supplied with #12's
 ciphertext and escrow address and with lowercase=False. The original-page fixture

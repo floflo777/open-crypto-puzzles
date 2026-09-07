@@ -8,10 +8,15 @@
   "series": "arweave-puzzles",
   "author": {
     "name": "Tiamat",
-    "handles": ["twitter:@ArweaveP"],
+    "handles": [
+      "twitter:@ArweaveP"
+    ],
     "url": "https://twitter.com/arweavep"
   },
-  "published": { "date": "2020-04-14", "url": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg" },
+  "published": {
+    "date": "2020-04-14",
+    "url": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg"
+  },
   "chain": "arweave",
   "prize": {
     "amount": 500.02225493,
@@ -32,7 +37,10 @@
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["word-selection", "text-cipher"],
+  "puzzle_type": [
+    "word-selection",
+    "text-cipher"
+  ],
   "target_format": "one free-text answer, case-sensitive, any length, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"",
   "derivation": {
     "summary": "read the torn-paper image's 5 drawn keys into a single concatenated case-sensitive answer string of unknown length, stretch with SHA-512 x11513, use the result as an EvpKDF/AES-OpenSSL password to decrypt the page's ciphertext into an Arweave RSA wallet keyfile",
@@ -42,22 +50,66 @@
   },
   "difficulty_left": "insight",
   "difficulty_note": "the author never published any length or charset constraint for this puzzle specifically; on the order of 8,000,000 candidates tested across every literal, pun, and genesis-block reading found so far, 0 matches; the block is one unguessed token, not a search problem",
-  "tested_total": { "candidates": 8010190, "families": 7, "certified": true },
+  "tested_total": {
+    "candidates": 8010190,
+    "families": 7,
+    "certified": true
+  },
   "leads": [
-    { "rank": 1, "title": "the exact wording of Bible Genesis chapter 28 as a long word-series, patterned after solved sibling #7", "cost": "hours", "status": "open" },
-    { "rank": 2, "title": "non-public channels: the author's Telegram group or a direct reply, for a hint never posted on Twitter", "cost": "needs-a-person", "status": "open" }
+    {
+      "rank": 1,
+      "title": "the exact wording of Bible Genesis chapter 28 as a long word-series, patterned after solved sibling #7",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "non-public channels: the author's Telegram group or a direct reply, for a hint never posted on Twitter",
+      "cost": "needs-a-person",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [
-    { "path": "clues/puzzle-image.png", "sha256": "a45193b008d7a7dbd1bef6f32bd8ec7529ffffd057218eccf57d9c0324baa3d9", "source": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg", "archived": null }
+    {
+      "path": "clues/puzzle-image.png",
+      "sha256": "a45193b008d7a7dbd1bef6f32bd8ec7529ffffd057218eccf57d9c0324baa3d9",
+      "source": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg",
+      "archived": null
+    }
   ],
   "sources": [
-    { "title": "Live puzzle page", "url": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg", "date": "2020-04-14", "archived": null },
-    { "title": "\"1,2,4,8 = solved / 3,5,7,9 = not solved yet\"", "url": "https://twitter.com/arweavep/status/1250036746802298885", "date": "2020-04-14", "archived": null },
-    { "title": "@_LeFevre_ reply in the #10 announcement thread", "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL10", "date": "2020-04-22", "archived": null },
-    { "title": "HomelessPhD/AR_Puzzles community repository, PZL10 entry", "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL10", "date": "2026-08-16", "archived": null },
-    { "title": "Escrow wallet, viewblock.io", "url": "https://viewblock.io/arweave/address/bkjJGw3NLxs8OAyRxgTL-QFpiB3lBJqZ76kDhWdB-Rs", "date": "2026-08-16", "archived": null }
+    {
+      "title": "Live puzzle page",
+      "url": "https://arweave.net/1fLPMP_smP6ipdIYbYUAZtFPwO4crdYr4kMVf5uTivg",
+      "date": "2020-04-14",
+      "archived": null
+    },
+    {
+      "title": "\"1,2,4,8 = solved / 3,5,7,9 = not solved yet\"",
+      "url": "https://twitter.com/arweavep/status/1250036746802298885",
+      "date": "2020-04-14",
+      "archived": null
+    },
+    {
+      "title": "@_LeFevre_ reply in the #10 announcement thread",
+      "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL10",
+      "date": "2020-04-22",
+      "archived": null
+    },
+    {
+      "title": "HomelessPhD/AR_Puzzles community repository, PZL10 entry",
+      "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL10",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "Escrow wallet, viewblock.io",
+      "url": "https://viewblock.io/arweave/address/bkjJGw3NLxs8OAyRxgTL-QFpiB3lBJqZ76kDhWdB-Rs",
+      "date": "2026-08-16",
+      "archived": null
+    }
   ],
   "third_party_material": "the puzzle image is the author's own material, published on the Arweave permaweb page; one short quote from a named community member (the proven puzzle #13 solver) is reproduced from the public reply thread; no book, audio, or video material",
-  "last_updated": "2026-08-16"
+  "last_updated": "2026-09-07"
 }

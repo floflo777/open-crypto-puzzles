@@ -51,8 +51,8 @@
   "difficulty_left": "insight",
   "difficulty_note": "Exact-address oracle and original-page controls pass. Historical searches lack per-run witnesses and do not prove the number of wrong image readings. Dated ecosystem sources and visual interpretation remain unresolved.",
   "tested_total": {
-    "candidates": 384,
-    "families": 1,
+    "candidates": 1216,
+    "families": 4,
     "certified": true
   },
   "leads": [
@@ -183,5 +183,5 @@
     }
   ],
   "third_party_material": "the 8 rebus images and their composite are the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material; no third-party community images shipped",
-  "last_updated": "2026-09-05"
+  "last_updated": "2026-09-07"
 }

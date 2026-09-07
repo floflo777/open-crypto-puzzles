@@ -8,7 +8,9 @@
   "series": "arweave-puzzles",
   "author": {
     "name": "Tiamat",
-    "handles": ["twitter:@arweavep"],
+    "handles": [
+      "twitter:@arweavep"
+    ],
     "url": "https://twitter.com/arweavep"
   },
   "published": {
@@ -35,7 +37,11 @@
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["image-stego", "pixel-code", "raw-private-key"],
+  "puzzle_type": [
+    "image-stego",
+    "pixel-code",
+    "raw-private-key"
+  ],
   "target_format": "raw 32-byte / 64-hex secp256k1 private key, standard ETH address derivation, no mnemonic, no keystore",
   "derivation": {
     "summary": "extract a 256-bit value from the pixel content of the published PNG (channel, order, and quantization not yet determined) and compare its ETH address to the escrow address",
@@ -45,21 +51,60 @@
   },
   "difficulty_left": "insight",
   "difficulty_note": "the target format (raw private key, not a mnemonic) and the decoy (the address printed in the file's tEXt chunk) are both confirmed; close to 1,000 direct encodings of the measured geometry and the metadata anomaly have been tested, all negative; the exact pixel-level encoding is not yet known and no certified oracle exists to test one against, so the missing piece is either an unrecovered insight into the encoding or the never-delivered author hint",
-  "tested_total": { "candidates": 1000, "families": 4, "certified": false },
+  "tested_total": {
+    "candidates": 1000,
+    "families": 4,
+    "certified": false
+  },
   "leads": [
-    { "rank": 1, "title": "systematic LSB scan of the continuous grayscale and alpha channels", "cost": "hours", "status": "open" },
-    { "rank": 2, "title": "join the community Telegram group and search first-hand for the promised hint", "cost": "needs-a-person", "status": "open" },
-    { "rank": 3, "title": "puzzle #9's real solving method, if it ever surfaces", "cost": "needs-new-information", "status": "open" }
+    {
+      "rank": 1,
+      "title": "systematic LSB scan of the continuous grayscale and alpha channels",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "join the community Telegram group and search first-hand for the promised hint",
+      "cost": "needs-a-person",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "puzzle #9's real solving method, if it ever surfaces",
+      "cost": "needs-new-information",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [
-    { "path": "clues/arweave-puzzle-11.png", "sha256": "c6ba4b50fd75181a325f28b620438f740120925a07a23b889dda597546db87e1", "source": "https://viewblock.io/arweave/tx/CzITHnEIlkQw9SbaX5futCzFrKk1qe_NwvWnIBmP2fY", "archived": null }
+    {
+      "path": "clues/arweave-puzzle-11.png",
+      "sha256": "c6ba4b50fd75181a325f28b620438f740120925a07a23b889dda597546db87e1",
+      "source": "https://viewblock.io/arweave/tx/CzITHnEIlkQw9SbaX5futCzFrKk1qe_NwvWnIBmP2fY",
+      "archived": null
+    }
   ],
   "sources": [
-    { "title": "Tiamat, original announcement", "url": "https://twitter.com/arweavep/status/1252961944807641090", "date": "2020-04-22", "archived": null },
-    { "title": "Tiamat, the $100 hint reply", "url": "https://twitter.com/arweavep/status/1429846914028158977", "date": "2021-08-23", "archived": null },
-    { "title": "HomelessPhD, AR_Puzzles community repository, PZL11", "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL11", "date": "2026-08-16", "archived": null }
+    {
+      "title": "Tiamat, original announcement",
+      "url": "https://twitter.com/arweavep/status/1252961944807641090",
+      "date": "2020-04-22",
+      "archived": null
+    },
+    {
+      "title": "Tiamat, the $100 hint reply",
+      "url": "https://twitter.com/arweavep/status/1429846914028158977",
+      "date": "2021-08-23",
+      "archived": null
+    },
+    {
+      "title": "HomelessPhD, AR_Puzzles community repository, PZL11",
+      "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL11",
+      "date": "2026-08-16",
+      "archived": null
+    }
   ],
   "third_party_material": "the puzzle image in clues/ is the author's own published puzzle material, stored on Arweave; the author's quotes in clues/author-posts.md are reproduced from a community repository that itself mirrors the author's Twitter replies; no other third-party material is included",
-  "last_updated": "2026-08-16"
+  "last_updated": "2026-09-07"
 }

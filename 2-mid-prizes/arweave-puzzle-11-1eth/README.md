@@ -124,6 +124,13 @@ Full ledger in [analysis/tested.md](analysis/tested.md). Summary:
 Cumulative: on the order of 1,000 candidates tested across geometry and metadata families,
 0 matches, 0 near-misses under the `ff21` address-prefix check.
 
+Added 2026-09-05 by @BorisLoveDev (PR #21), all with synthetic-carrier witnesses and an
+exact-address compare: isolated ASCII hex and zlib/gzip payloads in 7,168 pixel
+bitstreams, 79,863 raw 256-bit windows in the anomalous first row, Code128/ITF barcodes
+on 75 crops, and one community sixteen-number skyline transcription through 1,488 HD
+derivations. 0 match. I replayed the four non-barcode scans locally with identical
+counts. Details in [analysis/tested.md](analysis/tested.md).
+
 ## Open leads, ranked
 
 1. **A systematic LSB scan of the continuous grayscale and alpha channels** (hours). Every
@@ -160,3 +167,5 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - Puzzle image, Arweave transaction CzITHnEIlkQw9SbaX5futCzFrKk1qe_NwvWnIBmP2fY: https://viewblock.io/arweave/tx/CzITHnEIlkQw9SbaX5futCzFrKk1qe_NwvWnIBmP2fY
 - HomelessPhD, "AR_Puzzles" community repository, PZL11 entry, checked 2026-08-16: https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL11
 - Escrow address, Etherscan: https://etherscan.io/address/0xFF2142E98E09b5344994F9bEB9C56C95506B9F17
+
+Credits: @BorisLoveDev (PR #21): the 2026-09-05 bounded extraction tests and their scripts.

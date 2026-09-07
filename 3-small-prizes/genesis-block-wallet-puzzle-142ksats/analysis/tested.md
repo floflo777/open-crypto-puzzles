@@ -83,7 +83,7 @@ or T, and any witness script other than `OP_2 <A> <B> OP_2 OP_CHECKMULTISIG` wit
 (uncompressed keys were only tried for family A and D).
 
 
-## Additional bounded constructions, 2026-09-05
+## Additional bounded constructions, 2026-09-05 (contributed by @BorisLoveDev, PR #21)
 
 Recorded escrow check on 2026-09-05: 142,779 sats, 18 funded outputs, none spent; no pending transactions. No newer message at the escrow or the last author change address. All tests below passed the existing oracle self-test before generation and compared the exact 32-byte target witness program. Candidate material stayed local; no transactions were constructed or sent.
 

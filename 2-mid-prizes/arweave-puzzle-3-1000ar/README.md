@@ -8,8 +8,13 @@ client-side decryptor. The prize wallet remains funded with 1000.165838006237 AR
 I reproduced the decryptor and now require the recovered wallet address to equal the
 published escrow. The earlier oracle accepted any parseable RSA wallet; a known-good
 sibling wallet now also serves as a wrong-target regression test. Historical search rows
-lack planted witnesses, so they do not prove how many image readings are wrong.
-The puzzle remains unsolved. See [source review](analysis/source-review.md).
+lack planted witnesses, so they are recorded as uncertified; taken at face value they
+would mean at least 2 of the 8 readings are wrong, but that lower bound is not certified.
+An earlier version of this page said the author thought #3 had been brute-forced by a
+silent solver; that remark (2020-06-14 and 2021-09-03) sits in the reply chain of the
+#9 announcement and concerns #9, not #3. The puzzle remains unsolved. See
+[source review](analysis/source-review.md). Oracle fix, source review and the four
+witnessed reading tests below were contributed by @BorisLoveDev (PR #20).
 
 ## At a glance
 
@@ -63,6 +68,7 @@ That observation does not exclude every possible steganographic mechanism.
 
 ```
 python3 tools/oracle.py --selftest       # reproduces the solved sibling Arweave #8
+python3 tools/oracle.py wevemd12a384cashe4d5rootpullbase   # my 2026-06 best-guess reading, NO MATCH
 python3 tools/oracle.py --stdin          # one candidate per line
 ```
 
@@ -89,8 +95,11 @@ JavaScript decryptor running under Node, on both matching and non-matching passp
    `arweave.net/wallet/<address>/balance` on 2026-09-04 UTC.
 2. The decrypt mechanism is reproduced byte-for-byte from the live page's own script.
 3. Historical forensic tools reported no hidden payload; that is a limited observation.
-4. Historical free-slot sweeps were not witnessed and cannot establish a lower bound on
-   the number of wrong readings.
+4. The 2026-06-22 free-slot sweeps (each of the 8 slots opened over `[a-z0-9]^4` with the
+   other 7 at their best guess, 8 x 1,679,616 candidates, 0 match) carry no planted
+   witness, so they are uncertified. If they were exhaustive, at least 2 of the 8 readings
+   are wrong; until someone replays them with witnesses that is a working assumption,
+   not an established lower bound.
 5. Solved siblings provide examples of names, notation and counts. They do not establish
    a universal grammar. Contemporary ecosystem references remain viable for #3.
 
@@ -106,7 +115,12 @@ Full ledger in [analysis/tested.md](analysis/tested.md). Summary:
 | Top-8 and top-10 consolidated readings, all 8 slots | 133,400,000 | certified oracle | 0 match | uncertified | 2026-06-22 |
 | Word-order permutation sweeps, 3 different 8-word sets | 67,108,864 | certified oracle | 0 match | uncertified | 2026-06-22 |
 | Forensic inspection of images and page | full file | exiftool, binwalk, zsteg -a | no payload reported by those tools | historical report | 2026-06-22 |
-| H1: ArweaveID first-image reading with bounded alternatives | 384 unique, 387 stream elements | exact-address oracle | no match | original-page fixture at all four expected positions | 2026-09-05 |
+| H1: ArweaveID first-image reading with bounded alternatives (@BorisLoveDev) | 384 unique, 387 stream elements | exact-address oracle | no match | original-page fixture at all four expected positions | 2026-09-05 |
+| H2 to H4: short unpadded, literal ribbon letters, contemporary readings (@BorisLoveDev) | 832 unique, disjoint from H1 | exact-address oracle | no match | original-page fixture at all expected positions | 2026-09-05 |
+
+The H1 to H4 slot pools (the actual readings) were kept out of git by the contributor,
+so those 1,216 negatives cannot be reproduced or extended from a public checkout yet;
+only the pool sizes are recorded.
 
 Historical claim: on the order of 330,000,000 candidates, without per-run witnesses or
 reproducible candidate lists. I do not count that as certified coverage.
@@ -143,3 +157,8 @@ reproducible candidate lists. I do not count that as certified coverage.
 - "The list of unsolved Arweave puzzles ordered by difficulty probably looks like: 3, 9, 8, 5, 7", Twitter, 2020-03-04: https://twitter.com/arweavep/status/1235199397371277315
 - HomelessPhD/AR_Puzzles community repository, PZL3 entry: https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL3
 - Escrow wallet, viewblock.io: https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0
+- Community Spotlight: Meeting Tiamat, Medium, 2019-10-10: https://arweave.medium.com/community-spotlight-meeting-tiamat-e484655b25e0
+- Arweave Newsletter May 2019 (ArweaveID), Medium, 2019-05-27: https://arweave.medium.com/arweave-newsletter-may-9de22fa3700e
+
+Credits: @BorisLoveDev (PR #20): exact-address oracle check and regression tests, the #9
+reply-chain correction, the Tiamat interview, and the four witnessed reading tests.

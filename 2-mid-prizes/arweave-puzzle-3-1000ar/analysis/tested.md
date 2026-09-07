@@ -44,7 +44,7 @@ prove that at least two readings are wrong. The 2026-09-05 audit also fixed the 
 to require exact target-address equality; see the regression tests and source review.
 
 
-## Witnessed runs, 2026-09-05
+## Witnessed runs, 2026-09-05 (contributed by @BorisLoveDev, PR #20)
 
 | ID | Constraint | Unique candidates | Stream elements | Method and witness | Result | Runtime |
 |---|---|---|---|---|---|---|

@@ -42,7 +42,7 @@ larger than every known authentic source of the image.
 Cumulative: on the order of 8,010,190 candidates tested to completion across every
 literal, pun, notation, and genesis-block reading found so far, 0 matches.
 
-## Bounded Genesis 28 follow-up, 2026-09-04 UTC
+## Bounded Genesis 28 follow-up, 2026-09-04 UTC (contributed by @BorisLoveDev, PR #19)
 
 I checked the README's explicitly untested full-passage lead in two finite forms.
 Neither produced an exact escrow match. This is not a rejection of every scripture
