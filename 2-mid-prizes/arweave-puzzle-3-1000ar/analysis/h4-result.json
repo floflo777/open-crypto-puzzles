@@ -1,0 +1,50 @@
+{
+  "hypothesis": "H4: literal ribbon letters and ANNO year with contemporary geographic, mining and service readings",
+  "sources": [
+    "public original composite clues/puzzle-composite.png",
+    "https://arweave.medium.com/arweave-network-launch-report-b7e7ffac0f75",
+    "https://www.unitedstateszipcodes.org/21863/",
+    "https://arweave.medium.com/arc-ar-cash-f1647c3f456f",
+    "https://arweave.medium.com/building-silo-a-truly-private-internet-556c860222ca"
+  ],
+  "allow_short_slots": false,
+  "candidate_lengths": [
+    32
+  ],
+  "slot_counts": [
+    4,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+  ],
+  "unique_candidates": 512,
+  "stream_count": 515,
+  "rng_seed": 20260905,
+  "target": "wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
+  "witness_positions_expected": [
+    0,
+    257,
+    278,
+    514
+  ],
+  "measured_candidates_per_second": 1.7205626127899891,
+  "estimated_seconds": 299.32069671379094,
+  "python": "3.13.3",
+  "status": "exhausted-no-match",
+  "input_sha256": "a723367892ad23d6641e2d144a185d0f0ce3b456484be6f32c8fc90d274a4979",
+  "page_sha256": "e22da5925990914204fb9b3c5b18e7ac510fc260be568ddbb256762f3c7181bc",
+  "oracle_sha256": "ce427963c2fdec08f21e19c1bf764330e375fe76f59e89579d4d70274fddf27a",
+  "runner_sha256": "9469becd0ade7a7cd4866d5e1a907a3013f9ff4842aff8eb487ef337a171e3b8",
+  "processed": 515,
+  "witness_positions_found": [
+    0,
+    257,
+    278,
+    514
+  ],
+  "runtime_seconds": 298.8704177500331
+}

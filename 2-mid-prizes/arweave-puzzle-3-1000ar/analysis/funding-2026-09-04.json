@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-04T23:15:06.955257+00:00",
+  "address": "wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
+  "balance_winston": 1000165838006237,
+  "owner_transactions": {
+    "data": {
+      "transactions": {
+        "edges": []
+      }
+    }
+  },
+  "balance_url": "https://arweave.net/wallet/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0/balance",
+  "graphql_url": "https://arweave.net/graphql",
+  "graphql_query": "query { transactions(owners: [\"wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0\"], first: 1) { edges { node { id } } } }"
+}

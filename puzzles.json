@@ -1655,7 +1655,7 @@
           "label": "main",
           "explorer": "https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
           "expected": "1000.165838006237 AR",
-          "verified_on": "2026-08-16",
+          "verified_on": "2026-09-04",
           "verified_state": "funded-unspent"
         }
       ],
@@ -1663,18 +1663,18 @@
         "word-selection",
         "text-cipher"
       ],
-      "target_format": "8 four-character answers, one per rebus image, concatenated in image order and lowercased, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"",
+      "target_format": "8 four-character answers, one per rebus image, concatenated in image order and lowercased, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"; derive base64url(SHA256(decoded JWK n)) and require exact escrow-address equality",
       "derivation": {
         "summary": "read 8 hand-drawn rebus images into 8 four-character tokens, concatenate in DOM order, lowercase, stretch with SHA-512 x11513, use the result as an EvpKDF/AES-OpenSSL password to decrypt the page's ciphertext into an Arweave RSA wallet keyfile",
         "oracle": "tools/oracle.py",
         "oracle_certified": true,
-        "certified_against": "solved sibling Arweave Puzzle Weave #8 (answer RasputinWilhelmAlekhine), reproduced byte-for-byte against the puzzle's own decrypt routine"
+        "certified_against": "Real solved sibling #8, positive and wrong-target controls; original #3 JavaScript encrypt/decrypt fixture with lowercase and whitespace checks, 2026-09-05"
       },
       "difficulty_left": "insight",
-      "difficulty_note": "mechanism and oracle are fully certified; a diagnostic sweep proves at least 2 of the 8 rebus readings are still wrong, and the author has said one image needs luck to read; the next step is a sharper visual reading, not more search",
+      "difficulty_note": "Exact-address oracle and original-page controls pass. Historical searches lack per-run witnesses and do not prove the number of wrong image readings. Dated ecosystem sources and visual interpretation remain unresolved.",
       "tested_total": {
-        "candidates": 330000000,
-        "families": 6,
+        "candidates": 384,
+        "families": 1,
         "certified": true
       },
       "leads": [
@@ -1790,10 +1790,22 @@
           "url": "https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
           "date": "2026-08-16",
           "archived": null
+        },
+        {
+          "title": "Community Spotlight: Meeting Tiamat",
+          "url": "https://arweave.medium.com/community-spotlight-meeting-tiamat-e484655b25e0",
+          "date": "2019-10-10",
+          "archived": null
+        },
+        {
+          "title": "Arweave Newsletter: May",
+          "url": "https://arweave.medium.com/arweave-newsletter-may-9de22fa3700e",
+          "date": "2019-05-27",
+          "archived": null
         }
       ],
       "third_party_material": "the 8 rebus images and their composite are the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material; no third-party community images shipped",
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-09-05",
       "folder": "2-mid-prizes/arweave-puzzle-3-1000ar"
     },
     {

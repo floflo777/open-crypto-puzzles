@@ -8,10 +8,15 @@
   "series": "arweave-puzzles",
   "author": {
     "name": "Tiamat",
-    "handles": ["twitter:@ArweaveP"],
+    "handles": [
+      "twitter:@ArweaveP"
+    ],
     "url": "https://twitter.com/arweavep"
   },
-  "published": { "date": "2019-05-27", "url": "https://twitter.com/arweavep/status/1132936723162378240" },
+  "published": {
+    "date": "2019-05-27",
+    "url": "https://twitter.com/arweavep/status/1132936723162378240"
+  },
   "chain": "arweave",
   "prize": {
     "amount": 1000.165838006237,
@@ -28,46 +33,155 @@
       "label": "main",
       "explorer": "https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
       "expected": "1000.165838006237 AR",
-      "verified_on": "2026-08-16",
+      "verified_on": "2026-09-04",
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["word-selection", "text-cipher"],
-  "target_format": "8 four-character answers, one per rebus image, concatenated in image order and lowercased, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"",
+  "puzzle_type": [
+    "word-selection",
+    "text-cipher"
+  ],
+  "target_format": "8 four-character answers, one per rebus image, concatenated in image order and lowercased, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"; derive base64url(SHA256(decoded JWK n)) and require exact escrow-address equality",
   "derivation": {
     "summary": "read 8 hand-drawn rebus images into 8 four-character tokens, concatenate in DOM order, lowercase, stretch with SHA-512 x11513, use the result as an EvpKDF/AES-OpenSSL password to decrypt the page's ciphertext into an Arweave RSA wallet keyfile",
     "oracle": "tools/oracle.py",
     "oracle_certified": true,
-    "certified_against": "solved sibling Arweave Puzzle Weave #8 (answer RasputinWilhelmAlekhine), reproduced byte-for-byte against the puzzle's own decrypt routine"
+    "certified_against": "Real solved sibling #8, positive and wrong-target controls; original #3 JavaScript encrypt/decrypt fixture with lowercase and whitespace checks, 2026-09-05"
   },
   "difficulty_left": "insight",
-  "difficulty_note": "mechanism and oracle are fully certified; a diagnostic sweep proves at least 2 of the 8 rebus readings are still wrong, and the author has said one image needs luck to read; the next step is a sharper visual reading, not more search",
-  "tested_total": { "candidates": 330000000, "families": 6, "certified": true },
+  "difficulty_note": "Exact-address oracle and original-page controls pass. Historical searches lack per-run witnesses and do not prove the number of wrong image readings. Dated ecosystem sources and visual interpretation remain unresolved.",
+  "tested_total": {
+    "candidates": 384,
+    "families": 1,
+    "certified": true
+  },
   "leads": [
-    { "rank": 1, "title": "sharper visual/OSINT reading of slots 1 and 7, plus the slot 5 and slot 8 arbitration", "cost": "hours", "status": "open" },
-    { "rank": 2, "title": "bounded 2-slot sweeps on the most-suspect pairs once a reading is fixed", "cost": "minutes", "status": "open" }
+    {
+      "rank": 1,
+      "title": "sharper visual/OSINT reading of slots 1 and 7, plus the slot 5 and slot 8 arbitration",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "bounded 2-slot sweeps on the most-suspect pairs once a reading is fixed",
+      "cost": "minutes",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [
-    { "path": "clues/slot-1.png", "sha256": "e9170643219ed25cd844ce989212387f9a7e210adef6365e019d7dc910a20058", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-2.png", "sha256": "22111bd95e8641f1da8eec5ab88d1cf19b6ce38b2377f33cb18a29092f8ff4cf", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-3.png", "sha256": "7e61bafc1233e27d2234fc95d568b2edbd87f76ebe851c93ae732fc8d80a1bea", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-4.png", "sha256": "6f3079ffeee00490ec16b9e07e80127cc633fe66f6b3b043ed80594a0888fa15", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-5.png", "sha256": "a6c9095b4cfd9588858ca7cbccaabcf331e65dbbcd4bcc42cb099dfacfd95728", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-6.png", "sha256": "9def747b31e0b86499954d37374153e39383fa9f77d608487da7be0bffa6bace", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-7.png", "sha256": "f03c6812dd33bf72522a3ebc9a34d0b4d175bc7437b302ad3d3a224b72997ea7", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/slot-8.png", "sha256": "0c6f5ffe74acd2128a160dc0f727ee4d1febf54cb21ee27bc19bd6cac3b4bed6", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null },
-    { "path": "clues/puzzle-composite.png", "sha256": "57523cc2598d5c717d0f289e49075cf1e9b4522ca5dd36e46769d9fe8625340b", "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "archived": null }
+    {
+      "path": "clues/slot-1.png",
+      "sha256": "e9170643219ed25cd844ce989212387f9a7e210adef6365e019d7dc910a20058",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-2.png",
+      "sha256": "22111bd95e8641f1da8eec5ab88d1cf19b6ce38b2377f33cb18a29092f8ff4cf",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-3.png",
+      "sha256": "7e61bafc1233e27d2234fc95d568b2edbd87f76ebe851c93ae732fc8d80a1bea",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-4.png",
+      "sha256": "6f3079ffeee00490ec16b9e07e80127cc633fe66f6b3b043ed80594a0888fa15",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-5.png",
+      "sha256": "a6c9095b4cfd9588858ca7cbccaabcf331e65dbbcd4bcc42cb099dfacfd95728",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-6.png",
+      "sha256": "9def747b31e0b86499954d37374153e39383fa9f77d608487da7be0bffa6bace",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-7.png",
+      "sha256": "f03c6812dd33bf72522a3ebc9a34d0b4d175bc7437b302ad3d3a224b72997ea7",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/slot-8.png",
+      "sha256": "0c6f5ffe74acd2128a160dc0f727ee4d1febf54cb21ee27bc19bd6cac3b4bed6",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    },
+    {
+      "path": "clues/puzzle-composite.png",
+      "sha256": "57523cc2598d5c717d0f289e49075cf1e9b4522ca5dd36e46769d9fe8625340b",
+      "source": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "archived": null
+    }
   ],
   "sources": [
-    { "title": "Puzzle Weave 3 announcement", "url": "https://twitter.com/arweavep/status/1132936723162378240", "date": "2019-05-27", "archived": null },
-    { "title": "Live puzzle page", "url": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw", "date": "2019-05-27", "archived": null },
-    { "title": "\"With N.1.7.0.0 release, third pic became obsolete\"", "url": "https://twitter.com/arweavep/status/1177235139035836417", "date": "2019-09-26", "archived": null },
-    { "title": "\"Did anybody count the dots?\"", "url": "https://twitter.com/arweavep/status/1152887601529073665", "date": "2019-07-21", "archived": null },
-    { "title": "\"The list of unsolved Arweave puzzles ordered by difficulty probably looks like: 3, 9, 8, 5, 7\"", "url": "https://twitter.com/arweavep/status/1235199397371277315", "date": "2020-03-04", "archived": null },
-    { "title": "HomelessPhD/AR_Puzzles community repository, PZL3 entry", "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL3", "date": "2026-08-16", "archived": null },
-    { "title": "Escrow wallet, viewblock.io", "url": "https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0", "date": "2026-08-16", "archived": null }
+    {
+      "title": "Puzzle Weave 3 announcement",
+      "url": "https://twitter.com/arweavep/status/1132936723162378240",
+      "date": "2019-05-27",
+      "archived": null
+    },
+    {
+      "title": "Live puzzle page",
+      "url": "https://kszeqgxezf5quhzld4nhpasyilhxphclq2peqi5mrn7utxmqhwga.arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+      "date": "2019-05-27",
+      "archived": null
+    },
+    {
+      "title": "\"With N.1.7.0.0 release, third pic became obsolete\"",
+      "url": "https://twitter.com/arweavep/status/1177235139035836417",
+      "date": "2019-09-26",
+      "archived": null
+    },
+    {
+      "title": "\"Did anybody count the dots?\"",
+      "url": "https://twitter.com/arweavep/status/1152887601529073665",
+      "date": "2019-07-21",
+      "archived": null
+    },
+    {
+      "title": "\"The list of unsolved Arweave puzzles ordered by difficulty probably looks like: 3, 9, 8, 5, 7\"",
+      "url": "https://twitter.com/arweavep/status/1235199397371277315",
+      "date": "2020-03-04",
+      "archived": null
+    },
+    {
+      "title": "HomelessPhD/AR_Puzzles community repository, PZL3 entry",
+      "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL3",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "Escrow wallet, viewblock.io",
+      "url": "https://viewblock.io/arweave/address/wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "Community Spotlight: Meeting Tiamat",
+      "url": "https://arweave.medium.com/community-spotlight-meeting-tiamat-e484655b25e0",
+      "date": "2019-10-10",
+      "archived": null
+    },
+    {
+      "title": "Arweave Newsletter: May",
+      "url": "https://arweave.medium.com/arweave-newsletter-may-9de22fa3700e",
+      "date": "2019-05-27",
+      "archived": null
+    }
   ],
   "third_party_material": "the 8 rebus images and their composite are the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material; no third-party community images shipped",
-  "last_updated": "2026-08-16"
+  "last_updated": "2026-09-05"
 }

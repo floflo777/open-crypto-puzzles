@@ -1,0 +1,49 @@
+{
+  "hypothesis": "H2: literal unpadded dot count and optional short geographic abbreviation; original form skips empty cells",
+  "sources": [
+    "https://arweave.net/VLJIGuTJewofKx8ad4JYQs93nEuGnkgjrIt_Sd2QPYw",
+    "https://twitter.com/ArweaveP/status/1152887601529073665",
+    "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL3"
+  ],
+  "allow_short_slots": true,
+  "candidate_lengths": [
+    29,
+    30
+  ],
+  "slot_counts": [
+    4,
+    2,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1
+  ],
+  "unique_candidates": 64,
+  "stream_count": 67,
+  "rng_seed": 20260905,
+  "target": "wHP6OPG5GMF5dedo_CD8AAy6x8La-gfI5b5pk65Tx_0",
+  "witness_positions_expected": [
+    0,
+    33,
+    36,
+    66
+  ],
+  "measured_candidates_per_second": 1.721555638163109,
+  "estimated_seconds": 38.91828908387106,
+  "python": "3.13.3",
+  "status": "exhausted-no-match",
+  "input_sha256": "4444e37862c21360d74f15075dea3a58b2fca58b3e2f37f2b4b95942b4070a12",
+  "page_sha256": "e22da5925990914204fb9b3c5b18e7ac510fc260be568ddbb256762f3c7181bc",
+  "oracle_sha256": "ce427963c2fdec08f21e19c1bf764330e375fe76f59e89579d4d70274fddf27a",
+  "runner_sha256": "9469becd0ade7a7cd4866d5e1a907a3013f9ff4842aff8eb487ef337a171e3b8",
+  "processed": 67,
+  "witness_positions_found": [
+    0,
+    33,
+    36,
+    66
+  ],
+  "runtime_seconds": 39.06462904199725
+}

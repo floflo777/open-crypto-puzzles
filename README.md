@@ -91,7 +91,7 @@ grouped by prize, is in the tables below.
 | [Trithemius: Wealth in Poetry](2-mid-prizes/wealth-in-poetry-0-03btc/) | 3,124,630 sats | 1,969 | bitcoin | bip39-seed, text-cipher, brainwallet | insight | 2026-08-16 | open |
 | [Arweave Puzzle #11](2-mid-prizes/arweave-puzzle-11-1eth/) | 1 ETH | 1,880 | ethereum | image-stego, pixel-code, raw-private-key | insight | 2026-08-16 | open |
 | [Bountiful: the Fe compiler bug bounty](2-mid-prizes/fe-lang-bountiful-compiler-bounty-1eth/) | 1 ETH | 1,880 | ethereum | smart-contract, timelock | insight | 2026-08-17 | open |
-| [Arweave Puzzle #3](2-mid-prizes/arweave-puzzle-3-1000ar/) | 1,000.165838006237 AR | 1,810 | arweave | word-selection, text-cipher | insight | 2026-08-16 | open |
+| [Arweave Puzzle #3](2-mid-prizes/arweave-puzzle-3-1000ar/) | 1,000.165838006237 AR | 1,810 | arweave | word-selection, text-cipher | insight | 2026-09-04 | open |
 | [LogicBeach: Powerful Moss](2-mid-prizes/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | 1,034 | base | image-stego, bip39-seed, word-selection, smart-contract | insight | 2026-08-16 | open |
 | [Arweave Puzzle #10](2-mid-prizes/arweave-puzzle-10-500ar/) | 500.02225493 AR | 905 | arweave | word-selection, text-cipher | insight | 2026-08-16 | open |
 | [Arweave Puzzle Weave #12](2-mid-prizes/arweave-puzzle-12-400ar/) | 400.00248121 AR | 724 | arweave | word-selection, geometry, text-cipher | insight | 2026-08-16 | open |
