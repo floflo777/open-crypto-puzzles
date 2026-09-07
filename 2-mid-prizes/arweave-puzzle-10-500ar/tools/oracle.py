@@ -222,18 +222,22 @@ def decode_wallet(ciphertext_b64, passphrase):
     return plain.decode("latin-1", errors="replace")
 
 
-def check(candidate):
-    """Returns (ok, address_or_none)."""
+def check(candidate, *, ciphertext_b64=None, target=None):
+    """Return success only for an exact target address; overrides support witnesses."""
+    if ciphertext_b64 is None:
+        ciphertext_b64 = CIPHERTEXT_B64
+    if target is None:
+        target = ESCROW
     if LOWERCASE_INPUT:
         candidate = candidate.lower()
-    out = decode_wallet(CIPHERTEXT_B64, candidate)
+    out = decode_wallet(ciphertext_b64, candidate)
     if GATE not in out:
         return False, None
     try:
         addr = jwk_to_address(json.loads(out)["n"])
     except Exception:
         return False, None
-    return True, addr
+    return addr == target, addr
 
 
 # ---------------------------------------------------------------------- selftest / CLI
@@ -253,7 +257,15 @@ def selftest():
     if GATE in decode_wallet(PZL8_CIPHERTEXT_B64, PZL8_ANSWER.lower()):
         print("SELFTEST FAILED: lowercased answer incorrectly matched (gate is not case-sensitive)")
         return False
-    print("SELFTEST OK: solved sibling Arweave #8, answer %r -> %s" % (PZL8_ANSWER, addr))
+    if check(PZL8_ANSWER, ciphertext_b64=PZL8_CIPHERTEXT_B64,
+             target=PZL8_ADDRESS) != (True, PZL8_ADDRESS):
+        print("SELFTEST FAILED: exact-address positive control")
+        return False
+    if check(PZL8_ANSWER, ciphertext_b64=PZL8_CIPHERTEXT_B64,
+             target=ESCROW) != (False, PZL8_ADDRESS):
+        print("SELFTEST FAILED: a different wallet was accepted as the escrow")
+        return False
+    print("SELFTEST OK: solved sibling Arweave #8 -> %s; wrong-target rejected" % addr)
     return True
 
 
@@ -271,7 +283,7 @@ def main():
                 continue
             ok, addr = check(cand)
             if ok:
-                print("MATCH %s <- %r" % (addr, cand))
+                print("MATCH %s" % addr)
                 found = True
         sys.exit(0 if found else 1)
     candidate = sys.argv[1]

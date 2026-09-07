@@ -1,0 +1,68 @@
+[
+  {
+    "hypothesis": "H1",
+    "unique_candidates": 448,
+    "stream_count": 451,
+    "rng_seed": 20260905,
+    "witness_positions_expected": [
+      0,
+      225,
+      302,
+      450
+    ],
+    "measured_candidates_per_second": 1.7297504662992707,
+    "estimated_seconds": 260.7312492679339,
+    "target": "bkjJGw3NLxs8OAyRxgTL-QFpiB3lBJqZ76kDhWdB-Rs",
+    "source_sha256": {
+      "genesis28-kjv.json": "903a4a6b413653c54f311a7931c39c1b922c47ce61c2d1c16f0d3e5a62fd1675",
+      "genesis28-web.json": "e7bd5d7a6336c95e8d03399e090ba19785d7feb8039940e3a4d6a430c9b980ea",
+      "puzzle10.html": "1c4ba58dc8b65326cc87e7734a52e1c7fa82de61bc51f3db8617fb3a8379517c"
+    },
+    "oracle_sha256": "666629bd1c8fcf19856179d69004f083a9aa8b4a0d6eb9da578f446c0cc3b149",
+    "python": "3.13.3",
+    "node": "v25.9.0",
+    "status": "exhausted-no-match",
+    "processed": 451,
+    "witness_positions_found": [
+      0,
+      225,
+      302,
+      450
+    ],
+    "matches": [],
+    "runtime_seconds": 268.10876454098616
+  },
+  {
+    "hypothesis": "H2",
+    "unique_candidates": 80,
+    "stream_count": 83,
+    "rng_seed": 20260905,
+    "witness_positions_expected": [
+      0,
+      41,
+      77,
+      82
+    ],
+    "measured_candidates_per_second": 1.6871113320203417,
+    "estimated_seconds": 49.19651621366696,
+    "target": "bkjJGw3NLxs8OAyRxgTL-QFpiB3lBJqZ76kDhWdB-Rs",
+    "source_sha256": {
+      "genesis28-kjv.json": "903a4a6b413653c54f311a7931c39c1b922c47ce61c2d1c16f0d3e5a62fd1675",
+      "genesis28-web.json": "e7bd5d7a6336c95e8d03399e090ba19785d7feb8039940e3a4d6a430c9b980ea",
+      "puzzle10.html": "1c4ba58dc8b65326cc87e7734a52e1c7fa82de61bc51f3db8617fb3a8379517c"
+    },
+    "oracle_sha256": "666629bd1c8fcf19856179d69004f083a9aa8b4a0d6eb9da578f446c0cc3b149",
+    "python": "3.13.3",
+    "node": "v25.9.0",
+    "status": "exhausted-no-match",
+    "processed": 83,
+    "witness_positions_found": [
+      0,
+      41,
+      77,
+      82
+    ],
+    "matches": [],
+    "runtime_seconds": 49.45380658301292
+  }
+]
