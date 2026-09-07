@@ -253,3 +253,5 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - Hint 4 video: https://www.youtube.com/watch?v=03wXiMczCXk
 - Hint 5 video: https://www.youtube.com/watch?v=ZjBJKooVmuE
 - #GuntisVitolins, YouTube channel: https://www.youtube.com/channel/UCkYCnjVcFJDN6Cp_uP0pv_A
+
+Credits: @cjmcdaniel (issue #18): on-screen and spoken word channels of the challenge video read, 219 new dictionary words.
