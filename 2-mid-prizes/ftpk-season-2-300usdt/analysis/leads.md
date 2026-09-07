@@ -54,7 +54,7 @@ Game 2's four thumbnails neighbour several list words. I am not taking
 discriminator is a real mechanic and is recorded under Game 2; it still hits
 two pictures, so it is not a fourth working reading yet.
 
-## 1. Read the twelve game pages (done for text; Game 12 is 404)
+## 1. Read the twelve game pages (done for text; Game 12 is live at the no-spaces hash)
 
 The derivation is certified and the page-naming scheme is already broken. On
 2026-08-27 I fetched every listed hashed URL, the four Game 10 text pages, both
@@ -62,8 +62,8 @@ The derivation is certified and the page-naming scheme is already broken. On
 `check.html`, and the Season 4 hint page. Source HTML (F12) is in the notes
 below. What remains of this lead is visual work the HTML does not settle:
 Photopea on `/image1.psd`, Game 2's two yellow thumbnails, Game 3's grids,
-Game 5's 13-digit step, Game 8, Game 10's four-city cluster, and recovering
-Game 12's Drive file now that the hashed page is gone.
+Game 5's stage-2 block, Game 8, Game 10's four-city cluster, and Game 12's audio
+(the Drive link is on the live page, see the Game 12 note below).
 
 What would confirm it: a 12-word MATCH on `tools/oracle.py`.
 What would kill it: an on-chain sweep, or the author taking the season down.
@@ -205,10 +205,39 @@ that appears when selected. F12 maps here.
 Instruction: find the 13-digit number, then visit
 `/?????????????.html`. Thirteen rows of 25 digits (325 digits, factors
 1, 5, 13, 25, 65, 325), then a lone `Z`. Tetris and "optional hint bad vibes"
-and knight map here. N4 wrote `Z = 2 ?`. Five 13-digit readings of this grid
+and knight map here. N4 wrote `Z = 2 ?`. Five matrix readings of this grid
 (both main diagonals of the 13x25 layout, both of the 25x13 layout, and column
-0 of 13x25) all return Vercel 404 (`analysis/tested.md`). A July 2026 note
-said one diagonal then returned 200; that helper page is not there now.
+0 of 13x25) all return Vercel 404 (`analysis/tested.md`). The reading that works is
+the visual diagonal of the block as rendered in monospace (25 characters are about
+240 px wide and 13 lines about 478 px tall, so the corner-to-corner line crosses row
+i at column 2i): `5509589357423`. That page returned 200 on 2026-07-26 and
+@CyberCalculus reported it live again on 2026-09-07 (issue #23); the 2026-08-27
+"not there now" note was wrong because that batch never probed this number. The
+stage-2 page repeats the "find the 13-digit number below" wording, carries a hidden
+`simplicity must be rewarded C`, and shows this 12x12 block:
+
+```
+123456789013
+453219876540
+950110148630
+084002017891
+370123456789
+002345678912
+606015100003
+072345678907
+060123456781
+303005007292
+046000001126
+978030456783
+```
+
+Its visual diagonal is only 12 digits (`150025176223`). That string, its reverse,
+the anti-diagonal and reverse, all 12 columns, the row sums (`4048777668667`),
+column sums (`5482599826360`), their sum, and 13-digit wrap variants all 404 on
+2026-07-26. Rows 0, 4, 5, 7, 8 and 11 hold ascending `123456789` runs at varying
+offsets and row 1 a descending run, which reads as camouflage; rows 2, 3, 6, 9 and
+10 are zero-heavy. Zero/non-zero bitmaps draw no glyph. Hidden letters collected so
+far across chain pages: E (Game 4), I (Game 6 hub), T (Game 12), C (Game 5 stage 2).
 
 ### Game 6
 
@@ -304,7 +333,18 @@ Cost: insight; the page is transcribed.
 
 ## 3. Game 12 as notes-to-digits, not song identification
 
-Already ranked in the README. The X posts add two facts. On 2025-05-27 the
+Already ranked in the README. The page itself is live, not gone: the 11 known
+preimages spell "the last game has for url this sentence that is hashed", and the
+hosted name is the sha256 of that sentence with the spaces removed,
+`913170fd2a64507ceb9cedcd29961f63c03888a2207d4bd8f5e55729c5d67a39.html` (200 on
+2026-07-26 and 2026-09-07 through a real browser; 38 other spellings 404, including
+the spaced sentence and the tail `this sentence that is hashed` that @deviceio121
+proposed in issue #17, whose content description of the page is otherwise right).
+The page shows `C1094` bottom right, a black-on-black `simplicity must be rewarded T`,
+and a Google Drive link (`drive.google.com/file/d/1WlYvf9JMGlbhJIe3Xnah6ZOHDb0M1IUO`)
+to `FTPK.wav`: 43.636 s, 48 kHz, 24-bit stereo PCM, RIFF `fmt` and `data` only, no
+LIST/INFO/ID3, L and R genuinely different (correlation 0.974), all 24 bits used, about
+89 BPM, key near D minor, flat RMS across the whole track. The audio is not shipped here. The X posts add two facts. On 2025-05-27 the
 author posted "Screenshot of game 12" showing the Google Drive placeholder
 "Click here to view the file", then replied to themselves "F12 of course". On
 2025-06-03 they said someone had found an email address on that Drive link, that

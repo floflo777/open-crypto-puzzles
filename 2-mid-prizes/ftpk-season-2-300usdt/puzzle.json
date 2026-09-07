@@ -8,10 +8,15 @@
   "series": "ftpk",
   "author": {
     "name": "FTPKgame",
-    "handles": ["x:@FTPKgame"],
+    "handles": [
+      "x:@FTPKgame"
+    ],
     "url": "https://x.com/FTPKgame"
   },
-  "published": { "date": "2025-05-19", "url": "https://x.com/FTPKgame/status/1924450289311961483" },
+  "published": {
+    "date": "2025-05-19",
+    "url": "https://x.com/FTPKgame/status/1924450289311961483"
+  },
   "chain": "ethereum",
   "prize": {
     "amount": 305.930218,
@@ -32,7 +37,10 @@
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["bip39-seed", "word-selection"],
+  "puzzle_type": [
+    "bip39-seed",
+    "word-selection"
+  ],
   "target_format": "12 English BIP39 words, BIP44 Ethereum m/44'/60'/0'/0/0, no passphrase, order recoverable offline once the word set is known",
   "derivation": {
     "summary": "solve each of 12 mini-games (ciphers, grids, an audio track) to get one BIP39 word each, then derive the standard BIP44 first Ethereum address and compare it to the escrow",
@@ -41,27 +49,97 @@
     "certified_against": "the author's own published worked example, mnemonic 'claim cycle staff clump domain judge boy session razor tiny shoulder coconut' deriving to 0x50D7e097e61121140c19871F06eA6FeB6d14105b"
   },
   "difficulty_left": "insight",
-    "difficulty_note": "the derivation is fully certified and the page-naming scheme is broken; live pages for games 1-11 plus extras were fetched on 2026-08-27; the hashed Game 12 URL now 404s; working readings for games 9, 11, and 7 (can, airport, nice) are not a MATCH; extra 50-letter paths are not the concatenation oracle; 0 of the 12 words are confirmed via the oracle yet",
+  "difficulty_note": "the derivation is fully certified and the page-naming scheme is broken; live pages for games 1-11 plus extras were fetched on 2026-08-27; the Game 12 page is live at the no-spaces hash and links the audio; Game 5 stage 1 is settled (visual diagonal 5509589357423) and stage 2 is a 12x12 block; working readings for games 9, 11, and 7 (can, airport, nice) are not a MATCH; extra 50-letter paths are not the concatenation oracle; 0 of the 12 words are confirmed via the oracle yet",
   "leads": [
-    { "rank": 1, "title": "apply the remaining live-page mechanics (Photopea on the Game 1 PSD, Game 2 two yellow thumbnails, Game 3 SW 1881 grids, Game 5 13-digit URL, Game 8 A9759, Game 10 four-city cluster); games 9/11/7 have working readings can/airport/nice", "cost": "hours", "status": "open" },
-    { "rank": 2, "title": "recover the Game 12 Drive file; the hashed page is 404 and the tweet screenshot has no Drive id; notes-to-digits once the audio is in hand", "cost": "hours", "status": "open" },
-    { "rank": 3, "title": "author 8-of-12 offer on new.html is not a substitute for the 12-word on-chain oracle; use it only after eight oracle-grade words", "cost": "hours", "status": "open" }
+    {
+      "rank": 1,
+      "title": "apply the remaining live-page mechanics (Photopea on the Game 1 PSD, Game 2 two yellow thumbnails, Game 3 SW 1881 grids, Game 5 stage-2 12x12 block, Game 8 A9759, Game 10 four-city cluster); games 9/11/7 have working readings can/airport/nice",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "Game 12 audio as notes-to-digits; the page is live at the no-spaces hash and links FTPK.wav (43.6 s, no metadata, no spectrogram image)",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "author 8-of-12 offer on new.html is not a substitute for the 12-word on-chain oracle; use it only after eight oracle-grade words",
+      "cost": "hours",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [],
   "sources": [
-    { "title": "\"Here we go for a new game, 300 USDT to win\"", "url": "https://x.com/FTPKgame/status/1924450289311961483", "date": "2025-05-19", "archived": null },
-    { "title": "FTPK hub page", "url": "https://findtheprivatekeys.vercel.app/", "date": "2026-08-27", "archived": null },
-    { "title": "Season 2 puzzle site", "url": "https://findtheprivatekeys2.vercel.app/", "date": "2026-08-27", "archived": null },
-    { "title": "Season 4 hidden page cross-referencing Season 2 clues, including the Game 7 admission", "url": "https://findtheprivatekeys4.vercel.app/servicecricketgloomattendsupremejumpannualeagerpulpprojectdiseaseround.html", "date": "2026-08-27", "archived": null },
-    { "title": "Author, Attack Challenge Mode post", "url": "https://x.com/FTPKgame/status/1930610344247906356", "date": "2025-06-05", "archived": null },
-    { "title": "Author, last Season 2 clue (black knight)", "url": "https://x.com/FTPKgame/status/1934183762079666297", "date": "2025-06-15", "archived": null },
-    { "title": "Author, naming N4Khjir and thedragon8383", "url": "https://x.com/FTPKgame/status/1931006963740979489", "date": "2025-06-06", "archived": null },
-    { "title": "N4Khjir, Game 7 title Zero-based indexing", "url": "https://x.com/N4Khjir/status/1927621189503005053", "date": "2025-05-28", "archived": null },
-    { "title": "N4Khjir, Game 11 Braille / +33 / French poem", "url": "https://x.com/N4Khjir/status/1927623047076282678", "date": "2025-05-28", "archived": null },
-    { "title": "Author, image2.jpg is a development error", "url": "https://x.com/FTPKgame/status/1931024956046909798", "date": "2025-06-06", "archived": null },
-    { "title": "Escrow wallet, etherscan.io", "url": "https://etherscan.io/address/0xb5fe4f1b6cb2bbe6a327f8c68f370da7df18b2dc", "date": "2026-08-27", "archived": null }
+    {
+      "title": "\"Here we go for a new game, 300 USDT to win\"",
+      "url": "https://x.com/FTPKgame/status/1924450289311961483",
+      "date": "2025-05-19",
+      "archived": null
+    },
+    {
+      "title": "FTPK hub page",
+      "url": "https://findtheprivatekeys.vercel.app/",
+      "date": "2026-08-27",
+      "archived": null
+    },
+    {
+      "title": "Season 2 puzzle site",
+      "url": "https://findtheprivatekeys2.vercel.app/",
+      "date": "2026-08-27",
+      "archived": null
+    },
+    {
+      "title": "Season 4 hidden page cross-referencing Season 2 clues, including the Game 7 admission",
+      "url": "https://findtheprivatekeys4.vercel.app/servicecricketgloomattendsupremejumpannualeagerpulpprojectdiseaseround.html",
+      "date": "2026-08-27",
+      "archived": null
+    },
+    {
+      "title": "Author, Attack Challenge Mode post",
+      "url": "https://x.com/FTPKgame/status/1930610344247906356",
+      "date": "2025-06-05",
+      "archived": null
+    },
+    {
+      "title": "Author, last Season 2 clue (black knight)",
+      "url": "https://x.com/FTPKgame/status/1934183762079666297",
+      "date": "2025-06-15",
+      "archived": null
+    },
+    {
+      "title": "Author, naming N4Khjir and thedragon8383",
+      "url": "https://x.com/FTPKgame/status/1931006963740979489",
+      "date": "2025-06-06",
+      "archived": null
+    },
+    {
+      "title": "N4Khjir, Game 7 title Zero-based indexing",
+      "url": "https://x.com/N4Khjir/status/1927621189503005053",
+      "date": "2025-05-28",
+      "archived": null
+    },
+    {
+      "title": "N4Khjir, Game 11 Braille / +33 / French poem",
+      "url": "https://x.com/N4Khjir/status/1927623047076282678",
+      "date": "2025-05-28",
+      "archived": null
+    },
+    {
+      "title": "Author, image2.jpg is a development error",
+      "url": "https://x.com/FTPKgame/status/1931024956046909798",
+      "date": "2025-06-06",
+      "archived": null
+    },
+    {
+      "title": "Escrow wallet, etherscan.io",
+      "url": "https://etherscan.io/address/0xb5fe4f1b6cb2bbe6a327f8c68f370da7df18b2dc",
+      "date": "2026-08-27",
+      "archived": null
+    }
   ],
   "third_party_material": "no images, audio, or video shipped; the Game 12 audio track is a real music recording of undetermined origin and is not reproduced here; only short quoted author text and the site's own rule text are included",
-  "last_updated": "2026-08-27"
+  "last_updated": "2026-09-07"
 }
