@@ -590,7 +590,7 @@
         }
       ],
       "third_party_material": "the collage image in clues/ is the author's own published puzzle material, posted once on Reddit; no other author material exists; community forum discussion is cited by URL and date only, never reproduced",
-      "last_updated": "2026-09-03",
+      "last_updated": "2026-09-07",
       "folder": "1-big-prizes/blm-brave-new-world-0-2btc"
     },
     {
@@ -830,18 +830,24 @@
       "leads": [
         {
           "rank": 1,
+          "title": "on-screen and spoken video words (issue #18): sweep RO1 with atom/link/basic/token/dash as free video words, then the 219-word extension",
+          "cost": "minutes to hours on one rented GPU",
+          "status": "open"
+        },
+        {
+          "rank": 2,
           "title": "extend the word pool with connecting words",
           "cost": "hours on one rented GPU",
           "status": "open"
         },
         {
-          "rank": 2,
+          "rank": 3,
           "title": "extend to substrings of longer words",
           "cost": "about a day on one rented GPU",
           "status": "open"
         },
         {
-          "rank": 3,
+          "rank": 4,
           "title": "re-read the video and post metadata once more",
           "cost": "about an hour",
           "status": "open"
@@ -876,7 +882,7 @@
         }
       ],
       "third_party_material": "no video or audio files are included; the challenge and hint videos are linked by URL only. The 5 planted sentences and 5 hints are the author's own published text, quoted short and verbatim with dates and links",
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-09-07",
       "folder": "1-big-prizes/guntis-vitolins-metamask-8-6eth"
     },
     {
@@ -1383,7 +1389,7 @@
         }
       ],
       "third_party_material": "the puzzle image is the author's own material, published on the Arweave permaweb page; one short quote from a named community member (the proven puzzle #13 solver) is reproduced from the public reply thread; no book, audio, or video material",
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-09-07",
       "folder": "2-mid-prizes/arweave-puzzle-10-500ar"
     },
     {
@@ -1494,7 +1500,7 @@
         }
       ],
       "third_party_material": "the puzzle image in clues/ is the author's own published puzzle material, stored on Arweave; the author's quotes in clues/author-posts.md are reproduced from a community repository that itself mirrors the author's Twitter replies; no other third-party material is included",
-      "last_updated": "2026-08-16",
+      "last_updated": "2026-09-07",
       "folder": "2-mid-prizes/arweave-puzzle-11-1eth"
     },
     {
@@ -1617,7 +1623,7 @@
         }
       ],
       "third_party_material": "the jigsaw image is the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material",
-      "last_updated": "2026-08-19",
+      "last_updated": "2026-09-07",
       "folder": "2-mid-prizes/arweave-puzzle-12-400ar"
     },
     {
@@ -1673,8 +1679,8 @@
       "difficulty_left": "insight",
       "difficulty_note": "Exact-address oracle and original-page controls pass. Historical searches lack per-run witnesses and do not prove the number of wrong image readings. Dated ecosystem sources and visual interpretation remain unresolved.",
       "tested_total": {
-        "candidates": 384,
-        "families": 1,
+        "candidates": 1216,
+        "families": 4,
         "certified": true
       },
       "leads": [
@@ -1805,7 +1811,7 @@
         }
       ],
       "third_party_material": "the 8 rebus images and their composite are the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material; no third-party community images shipped",
-      "last_updated": "2026-09-05",
+      "last_updated": "2026-09-07",
       "folder": "2-mid-prizes/arweave-puzzle-3-1000ar"
     },
     {
@@ -2192,17 +2198,17 @@
         "certified_against": "the author's own published worked example, mnemonic 'claim cycle staff clump domain judge boy session razor tiny shoulder coconut' deriving to 0x50D7e097e61121140c19871F06eA6FeB6d14105b"
       },
       "difficulty_left": "insight",
-      "difficulty_note": "the derivation is fully certified and the page-naming scheme is broken; live pages for games 1-11 plus extras were fetched on 2026-08-27; the hashed Game 12 URL now 404s; working readings for games 9, 11, and 7 (can, airport, nice) are not a MATCH; extra 50-letter paths are not the concatenation oracle; 0 of the 12 words are confirmed via the oracle yet",
+      "difficulty_note": "the derivation is fully certified and the page-naming scheme is broken; live pages for games 1-11 plus extras were fetched on 2026-08-27; the Game 12 page is live at the no-spaces hash and links the audio; Game 5 stage 1 is settled (visual diagonal 5509589357423) and stage 2 is a 12x12 block; working readings for games 9, 11, and 7 (can, airport, nice) are not a MATCH; extra 50-letter paths are not the concatenation oracle; 0 of the 12 words are confirmed via the oracle yet",
       "leads": [
         {
           "rank": 1,
-          "title": "apply the remaining live-page mechanics (Photopea on the Game 1 PSD, Game 2 two yellow thumbnails, Game 3 SW 1881 grids, Game 5 13-digit URL, Game 8 A9759, Game 10 four-city cluster); games 9/11/7 have working readings can/airport/nice",
+          "title": "apply the remaining live-page mechanics (Photopea on the Game 1 PSD, Game 2 two yellow thumbnails, Game 3 SW 1881 grids, Game 5 stage-2 12x12 block, Game 8 A9759, Game 10 four-city cluster); games 9/11/7 have working readings can/airport/nice",
           "cost": "hours",
           "status": "open"
         },
         {
           "rank": 2,
-          "title": "recover the Game 12 Drive file; the hashed page is 404 and the tweet screenshot has no Drive id; notes-to-digits once the audio is in hand",
+          "title": "Game 12 audio as notes-to-digits; the page is live at the no-spaces hash and links FTPK.wav (43.6 s, no metadata, no spectrogram image)",
           "cost": "hours",
           "status": "open"
         },
@@ -2284,7 +2290,7 @@
         }
       ],
       "third_party_material": "no images, audio, or video shipped; the Game 12 audio track is a real music recording of undetermined origin and is not reproduced here; only short quoted author text and the site's own rule text are included",
-      "last_updated": "2026-08-27",
+      "last_updated": "2026-09-07",
       "folder": "2-mid-prizes/ftpk-season-2-300usdt"
     },
     {
@@ -4330,7 +4336,7 @@
         }
       ],
       "third_party_material": "none: the genesis block and the author's OP_RETURN messages are public chain data; press articles are linked, not reproduced",
-      "last_updated": "2026-08-29",
+      "last_updated": "2026-09-07",
       "folder": "3-small-prizes/genesis-block-wallet-puzzle-142ksats"
     },
     {

@@ -8,7 +8,9 @@
   "series": null,
   "author": {
     "name": "u/stsh_n",
-    "handles": ["reddit:u/stsh_n"],
+    "handles": [
+      "reddit:u/stsh_n"
+    ],
     "url": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/"
   },
   "published": {
@@ -35,7 +37,12 @@
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["image-stego", "word-selection", "bip39-seed", "text-cipher"],
+  "puzzle_type": [
+    "image-stego",
+    "word-selection",
+    "bip39-seed",
+    "text-cipher"
+  ],
   "target_format": "BIP39 12 words at 4 candidate paths, or old-Electrum v1 12 words at 5 address indexes and 2 change values; both compressed and uncompressed P2PKH checked",
   "derivation": {
     "summary": "read 12 candidate words off the published collage, try them as a BIP39 mnemonic under 4 paths and both compressions, then as an old-Electrum v1 mnemonic under 5 indexes and 2 change values, and compare the derived P2PKH address to the escrow",
@@ -45,22 +52,66 @@
   },
   "difficulty_left": "insight",
   "difficulty_note": "the derivation, both candidate formats, and every path are fully mapped and oracle-certified; about 479 million derivations have been tested across anchor-based and anchor-free families (including 7.2 billion GPU sequences over a 13-word pool with no fixed positions), all negative; the 4 word-position anchors that framed nearly all of that work trace to 2 Reddit accounts with zero posts about this puzzle and are retracted here, so what remains open is the 12-word input, not compute or path coverage",
-  "tested_total": { "candidates": 479054867, "families": 14, "certified": true },
+  "tested_total": {
+    "candidates": 479054867,
+    "families": 14,
+    "certified": true
+  },
   "leads": [
-    { "rank": 1, "title": "log the 3 already-launched btcrecover runs", "cost": "minutes", "status": "open" },
-    { "rank": 2, "title": "re-derive the word inventory from the image itself", "cost": "hours", "status": "open" },
-    { "rank": 3, "title": "cross the rune transcription against the Russian-prose cipher key", "cost": "minutes", "status": "open" },
-    { "rank": 4, "title": "settle BIP39 versus old-Electrum from a source", "cost": "needs-new-information", "status": "open" }
+    {
+      "rank": 1,
+      "title": "log the 3 already-launched btcrecover runs",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "re-derive the word inventory from the image itself",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "cross the rune transcription against the Russian-prose cipher key",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 4,
+      "title": "settle BIP39 versus old-Electrum from a source",
+      "cost": "needs-new-information",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [
-    { "path": "clues/welcome-to-the-brave-new-world.png", "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782", "source": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/", "archived": "https://web.archive.org/web/20210613000000/https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/" }
+    {
+      "path": "clues/welcome-to-the-brave-new-world.png",
+      "sha256": "d0b04378f75d63997b8034ec2ef1bdd108178e4546de78237bd35abf4189a782",
+      "source": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/",
+      "archived": "https://web.archive.org/web/20210613000000/https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/"
+    }
   ],
   "sources": [
-    { "title": "u/stsh_n, Bitcoin puzzle (2000$)", "url": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/", "date": "2020-10-08", "archived": null },
-    { "title": "Is this puzzle still valid?, r/bitcoinpuzzles", "url": "https://www.reddit.com/r/bitcoinpuzzles/comments/jrr7mo/is_this_puzzle_still_valid_is_this_image_correct/", "date": "2026-08-16", "archived": null },
-    { "title": "BitcoinTalk topic 5404767", "url": "https://bitcointalk.org/index.php?topic=5404767.0", "date": "2026-08-16", "archived": null }
+    {
+      "title": "u/stsh_n, Bitcoin puzzle (2000$)",
+      "url": "https://www.reddit.com/user/stsh_n/comments/j79zvj/bitcoin_puzzle_2000/",
+      "date": "2020-10-08",
+      "archived": null
+    },
+    {
+      "title": "Is this puzzle still valid?, r/bitcoinpuzzles",
+      "url": "https://www.reddit.com/r/bitcoinpuzzles/comments/jrr7mo/is_this_puzzle_still_valid_is_this_image_correct/",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "BitcoinTalk topic 5404767",
+      "url": "https://bitcointalk.org/index.php?topic=5404767.0",
+      "date": "2026-08-16",
+      "archived": null
+    }
   ],
   "third_party_material": "the collage image in clues/ is the author's own published puzzle material, posted once on Reddit; no other author material exists; community forum discussion is cited by URL and date only, never reproduced",
-  "last_updated": "2026-09-03"
+  "last_updated": "2026-09-07"
 }

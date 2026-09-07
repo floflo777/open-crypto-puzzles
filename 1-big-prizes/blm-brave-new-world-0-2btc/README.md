@@ -173,3 +173,5 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - "Is this puzzle still valid?", r/bitcoinpuzzles, thread jrr7mo, checked 2026-08-16: https://www.reddit.com/r/bitcoinpuzzles/comments/jrr7mo/is_this_puzzle_still_valid_is_this_image_correct/
 - BitcoinTalk topic 5404767 (community discussion, not author material), checked 2026-08-16: https://bitcointalk.org/index.php?topic=5404767.0
 - Escrow address, mempool.space: https://mempool.space/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ
+
+Credits: @NoobSilence (issue #12): four positional sweeps on the 13-word and 19-word pools, recorded in `analysis/tested.md` as contributed.

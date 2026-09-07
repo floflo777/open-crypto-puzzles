@@ -58,6 +58,20 @@ lead (see "Open leads, ranked" in the README).
 | Spatial and clockwise reading orders of the same word set | 896 candidates | old-Electrum v1 | 0 match | yes | 2026-08-02 |
 | Dial- and number-indexed word blocks | 590 candidates | old-Electrum v1 | 0 match | yes | 2026-08-02 |
 
+## Contributed positional sweeps (@NoobSilence, issue #12, 2026-09-04)
+
+Reported in issue #12 after the anchor-free runs above; recorded as contributed. The
+counts are consistent with four free positions drawn from the whole pool with
+repetition (13^4 = 28,561 orderings, about 1 in 16 checksum-valid; 19^4 = 130,321). No
+witness protocol was described, so the rows are uncertified.
+
+| Hypothesis | Space | Method | Result | Witness | Date |
+|---|---|---|---|---|---|
+| Base `moon tower X black subject X first X this X order receive`, positions 3, 6, 8, 10 free over the 13-word pool | 28,561 orderings, 1,752 checksum-valid | BIP39 `m/44'/0'/0'/0/0` | 0 match | uncertified | 2026-09-04 |
+| Same base and pool, old-Electrum legacy path | 28,561 | old-Electrum v1 | 0 match | uncertified | 2026-09-04 |
+| Same base, positions free over a 19-word pool that adds drawn objects (`camera mask liberty eye pyramid vote police` and similar) | 130,321 orderings, 8,148 checksum-valid | BIP39 `m/44'/0'/0'/0/0` | 0 match | uncertified | 2026-09-04 |
+| Counting-read base `tower camera X black mask X first X this X order world`, positions 3, 6, 8, 10 free over the 13-word pool | 28,561 orderings, 1,763 checksum-valid | BIP39 `m/44'/0'/0'/0/0` | 0 match | uncertified | 2026-09-04 |
+
 The 13-word pool sweep is the largest test of the space that does not depend on the 4
 refuted anchor positions: no position is fixed and every 12-of-13 choice is covered. Its
 words, though, are still the community pool (7 of the 13 are words the retracted anchor
