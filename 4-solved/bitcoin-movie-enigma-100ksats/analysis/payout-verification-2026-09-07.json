@@ -1,0 +1,29 @@
+{
+  "verified_at_utc": "2026-09-08T01:31:48.972912+00:00",
+  "payout_txid": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+  "status": {
+    "confirmed": true,
+    "block_height": 965998,
+    "block_hash": "0000000000000000000177648a99281d6e9ec3cc4780fb773ea279c05593d7f3",
+    "block_time": 1788831176
+  },
+  "escrow": "bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+  "previous_txid": "b8058e6f373096445e4c5072f163e9e24727a3f622e0135150a88d25e4fdb2a3",
+  "previous_vout": 4,
+  "input_sats": 100000,
+  "destination": "35h2x1Rqq3HmV1NX4KQAGZoz8Vmf42ktQT",
+  "payout_sats": 99766,
+  "fee_sats": 234,
+  "weight": 441,
+  "virtual_size": 111,
+  "witness_public_key_matches_solution": true,
+  "independent_explorers_agree": true,
+  "sources": [
+    "https://mempool.space/api/tx/bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+    "https://blockstream.info/api/tx/bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+    "https://mempool.space/api/tx/b8058e6f373096445e4c5072f163e9e24727a3f622e0135150a88d25e4fdb2a3/outspend/4"
+  ],
+  "note": "User signed and broadcast. Actual payment differs from the earlier unsigned draft: 99,766 sats delivered and 234 sats fee.",
+  "confirmation_verified_at_utc": "2026-09-08T01:34:40.688984+00:00",
+  "payout_date_utc": "2026-09-08"
+}

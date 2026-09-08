@@ -1,3 +1,8 @@
+# Solved and paid out
+
+The exact solution and confirmed payout are now recorded in the README.
+The earlier leads below are preserved as historical community research.
+
 # Open leads, full notes
 
 Ranked summary is in the README. This file has the reasoning behind the ranking.

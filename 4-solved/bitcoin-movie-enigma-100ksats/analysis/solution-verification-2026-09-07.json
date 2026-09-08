@@ -1,0 +1,51 @@
+{
+  "verified_at_utc": "2026-09-08T01:07:13.003500+00:00",
+  "target": "bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+  "matching_path": "m/84'/0'/0'/0/0",
+  "seed_derivation": "PBKDF2-HMAC-SHA512, 2048 rounds, empty passphrase, mnemonic salt; BIP32/BIP84",
+  "bip39_word_count": 24,
+  "bip39_checksum_valid": false,
+  "checksum_encoded_byte": 47,
+  "checksum_expected_byte": 119,
+  "independent_derivation": "Manual HMAC BIP32, ecdsa secp256k1, HASH160 and Bech32 agrees with bip_utils",
+  "proof_of_key_control": {
+    "scheme": "ECDSA-secp256k1 with SHA256 and DER signature; offline challenge, not a transaction",
+    "message": "Bitcoin Movie Enigma: local solution verified; payout pending; 2026-09-07; bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+    "compressed_public_key": "022c17f7486b4107b42a243a62e4d0919af3e8ee858a272319bffb0536486b9405",
+    "signature_der": "3044022012ff20edceeab1cd8e11c4581719dd82828e38efab0420191cb8ee3067c494ee022014c90c3b3076ed2c77813379b7e53d51bbad2d555cb1a3ab908e2011216f18af",
+    "verified": true
+  },
+  "funding": {
+    "confirmed_unspent_sats": 100000,
+    "pending_spends": 0,
+    "utxo": {
+      "txid": "b8058e6f373096445e4c5072f163e9e24727a3f622e0135150a88d25e4fdb2a3",
+      "vout": 4,
+      "status": {
+        "confirmed": true,
+        "block_height": 730990,
+        "block_hash": "00000000000000000000047eda4630eeb94326cf5c408d3a7f91f16e02543664",
+        "block_time": 1649434524
+      },
+      "value": 100000
+    },
+    "source": "https://mempool.space/api/address/bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6"
+  },
+  "payout_status": "confirmed in block 965998; escrow swept",
+  "secrets": "Mnemonic and private key omitted. Private recovery data stays outside version control.",
+  "claim_draft": {
+    "recipient": "35h2x1Rqq3HmV1NX4KQAGZoz8Vmf42ktQT",
+    "recipient_sats": 99889,
+    "fee_sats": 111,
+    "status": "historical unsigned draft; superseded by user transaction"
+  },
+  "payout_transaction": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+  "actual_payout_sats": 99766,
+  "actual_fee_sats": 234,
+  "confirmation": {
+    "confirmed": true,
+    "block_height": 965998,
+    "block_hash": "0000000000000000000177648a99281d6e9ec3cc4780fb773ea279c05593d7f3",
+    "block_time": 1788831176
+  }
+}

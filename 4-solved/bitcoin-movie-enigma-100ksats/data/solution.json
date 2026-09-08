@@ -1,0 +1,150 @@
+{
+  "solver": "rabbidbird",
+  "intruders": [
+    1,
+    3,
+    8,
+    12,
+    14,
+    19,
+    21,
+    26,
+    32,
+    34
+  ],
+  "group_rules": [
+    "Director group: 1,2,9,17,25,33,34; remove the two not directed by Kubrick",
+    "Year group: 3..8; remove Aliens and Goonies, the two not released in 1979",
+    "Cast group: 10..16; remove Life of Pi and Iron Mask, the two without Jean Reno",
+    "Runtime group: 18..24; remove Gravity and Solaris, the two shorter than two hours",
+    "Sequel group: 26..32; remove Sharknado and Raiders, the two not second installments"
+  ],
+  "mapping": [
+    {
+      "panel": 2,
+      "title": "Paths of Glory",
+      "word": "path"
+    },
+    {
+      "panel": 4,
+      "title": "Mad Max",
+      "word": "mad"
+    },
+    {
+      "panel": 5,
+      "title": "Alien",
+      "word": "alien"
+    },
+    {
+      "panel": 6,
+      "title": "Apocalypse Now",
+      "word": "apology"
+    },
+    {
+      "panel": 7,
+      "title": "Escape from Alcatraz",
+      "word": "escape"
+    },
+    {
+      "panel": 9,
+      "title": "Spartacus",
+      "word": "spare"
+    },
+    {
+      "panel": 10,
+      "title": "Mission: Impossible",
+      "word": "miss"
+    },
+    {
+      "panel": 11,
+      "title": "Godzilla",
+      "word": "goddess"
+    },
+    {
+      "panel": 13,
+      "title": "Leon: The Professional",
+      "word": "leopard"
+    },
+    {
+      "panel": 15,
+      "title": "The Crimson Rivers",
+      "word": "crime"
+    },
+    {
+      "panel": 16,
+      "title": "The Visitors",
+      "word": "visit"
+    },
+    {
+      "panel": 17,
+      "title": "A Clockwork Orange",
+      "word": "clock"
+    },
+    {
+      "panel": 18,
+      "title": "Star Wars: A New Hope",
+      "word": "start"
+    },
+    {
+      "panel": 20,
+      "title": "First Man",
+      "word": "first"
+    },
+    {
+      "panel": 22,
+      "title": "Blade Runner 2049",
+      "word": "blade"
+    },
+    {
+      "panel": 23,
+      "title": "Guardians of the Galaxy",
+      "word": "guard"
+    },
+    {
+      "panel": 24,
+      "title": "Close Encounters of the Third Kind",
+      "word": "close"
+    },
+    {
+      "panel": 25,
+      "title": "Barry Lyndon",
+      "word": "barrel"
+    },
+    {
+      "panel": 27,
+      "title": "Terminator 2: Judgment Day",
+      "word": "term"
+    },
+    {
+      "panel": 28,
+      "title": "Scream 2",
+      "word": "screen"
+    },
+    {
+      "panel": 29,
+      "title": "The Matrix Reloaded",
+      "word": "matrix"
+    },
+    {
+      "panel": 30,
+      "title": "Toy Story 2",
+      "word": "toy"
+    },
+    {
+      "panel": 31,
+      "title": "Ghostbusters II",
+      "word": "ghost"
+    },
+    {
+      "panel": 33,
+      "title": "The Shining",
+      "word": "shine"
+    }
+  ],
+  "phrase": "path mad alien apology escape spare miss goddess leopard crime visit clock start first blade guard close barrel term screen matrix toy ghost shine",
+  "address": "bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+  "path": "m/84'/0'/0'/0/0",
+  "bip39_checksum_valid": false,
+  "payout_txid": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+  "confirmed_block": 965998
+}
