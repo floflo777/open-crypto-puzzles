@@ -51,9 +51,9 @@ and two Arweave key-stretch engines. They ship as CUDA source plus Python host d
 self-tests; build them with `engines/build.sh` (nvcc), then point one at a puzzle's target.
 See [engines/README.md](engines/README.md).
 
-## Start here: twelve to look at first
+## Start here: eleven to look at first
 
-If you do not know where to begin, these twelve are the clearest to pick up. The full list,
+If you do not know where to begin, these eleven are the clearest to pick up. The full list,
 grouped by prize, is in the tables below.
 
 | Puzzle | Prize | Why it is a good place to start |
@@ -69,7 +69,6 @@ grouped by prize, is in the tables below.
 | [Arweave Puzzle #11](2-mid-prizes/arweave-puzzle-11-1eth/) | 1 ETH | A single grayscale sketch that encodes a raw 64-hex private key. |
 | [LogicBeach: Powerful Moss](2-mid-prizes/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | A 12-word seed spread across the 12 tracks of an album. The artist's two earlier hunts really paid out. |
 | [Smith, Lyle & Moore Hunt #2](2-mid-prizes/smith-lyle-moore-hunt-2-0-032btc/) | 0.032 BTC | A tree of password-locked web pages; each page you open hands you a fragment of the seed. |
-| [Bitcoin Movie Enigma](3-small-prizes/bitcoin-movie-enigma-100ksats/) | 100,000 sats | Thirty-four film stills become 24 words. Small prize, quick to check once you name the films. |
 
 <!-- generated:start -->
 ## Big prizes (>= $10,000)
