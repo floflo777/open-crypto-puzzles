@@ -4,8 +4,8 @@ oracle.py -- candidate checker for Exitonly "Bitcoin Challenge 14".
 
 A candidate is a 12-word BIP39 English mnemonic (space-separated). 7 of the 12
 words are published by the author in clear: dad, butter, wink, follow, trophy,
-mixed, erosion. This checker does not assume their positions; it validates any
-full 12-word candidate as BIP39 checksum-correct, derives it to a Bitcoin address
+mixed, erosion. This checker does not assume their positions; it takes any
+full 12-word candidate (checksum valid or not), derives it to a Bitcoin address
 under BIP84 (m/84'/0'/0'/0/0, no passphrase), and compares it to the escrow
 address. BIP49 and BIP44 first addresses are also checked as a fallback, since
 the video never states the derivation path.
@@ -38,8 +38,19 @@ PATHS = (
 )
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def derive_addresses(mnemonic):
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     addrs = []
     for cls, coin, name in PATHS:
         try:
@@ -55,8 +66,6 @@ def derive_addresses(mnemonic):
 
 
 def check(mnemonic):
-    if not Bip39MnemonicValidator().IsValid(mnemonic):
-        return None
     for name, addr in derive_addresses(mnemonic):
         if addr == TARGET:
             return name, addr

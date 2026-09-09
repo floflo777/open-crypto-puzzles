@@ -19,8 +19,8 @@ Input:
     line on stdin.
 
 Output:
-    "MATCH <path> <address>" for a hit, "NO MATCH" otherwise (including for a
-    mnemonic that fails the BIP39 checksum). Exit 0 on a match, 1 otherwise.
+    "MATCH <path> <address>" for a hit, "NO MATCH" otherwise. A mnemonic that fails
+    the BIP39 checksum is still derived and compared. Exit 0 on a match, 1 otherwise.
 
 Dependencies:
     stdlib, bip_utils.
@@ -49,6 +49,17 @@ from bip_utils import (
 TARGET_ADDRESS = "0x635739254bde27d28301f25ad57c3cac3c3468f3"
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def _eth_addresses(seed: bytes, n_accounts: int = 3, n_index: int = 3):
     """Yield (path label, EIP-55 address) for the MetaMask-default family of paths."""
     ctx = Bip44.FromSeed(seed, Bip44Coins.ETHEREUM)
@@ -61,7 +72,7 @@ def _eth_addresses(seed: bytes, n_accounts: int = 3, n_index: int = 3):
 
 def derive_eth_default(mnemonic: str) -> str:
     """The single canonical address: MetaMask default m/44'/60'/0'/0/0 (EIP-55)."""
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     a = (Bip44.FromSeed(seed, Bip44Coins.ETHEREUM)
          .Purpose().Coin().Account(0).Change(Bip44Changes.CHAIN_EXT).AddressIndex(0))
     return a.PublicKey().ToAddress()
@@ -74,9 +85,7 @@ def check(mnemonic: str, target: str | None = None):
         return None
     mnemonic = " ".join(words)
     target = (target or TARGET_ADDRESS).lower()
-    if not Bip39MnemonicValidator().IsValid(mnemonic):
-        return None
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     for label, addr in _eth_addresses(seed):
         if addr.lower() == target:
             return label, addr
@@ -104,9 +113,9 @@ def selftest() -> bool:
     ok = ok and clean
 
     bad = check("abandon " * 12)
-    rejected = bad is None
-    print(f"invalid BIP39 checksum -> rejected: {'OK' if rejected else 'FAIL'}")
-    ok = ok and rejected
+    derived_no_match = bad is None and _eth_addresses(bip39_seed("abandon " * 12))
+    print(f"invalid BIP39 checksum -> still derived, no match, no gate: {'OK' if derived_no_match else 'FAIL'}")
+    ok = ok and bool(derived_no_match)
 
     # Independent confirmation the wordlist/seed path matches the artist's prior
     # solved puzzle ("Bifurcations", BTC BIP84), a different coin but the same
@@ -114,7 +123,7 @@ def selftest() -> bool:
     from bip_utils import Bip84, Bip84Coins
     bifurcations_mnemonic = "love sound electric bomb quantum radio silver mountain tree west solve sad"
     bifurcations_expected = "bc1qj7467e7r5pdfpypm03wyvguupdrld0ul2gcutg"
-    seed = Bip39SeedGenerator(bifurcations_mnemonic).Generate()
+    seed = bip39_seed(bifurcations_mnemonic)
     btc_addr = (Bip84.FromSeed(seed, Bip84Coins.BITCOIN)
                 .Purpose().Coin().Account(0).Change(Bip44Changes.CHAIN_EXT)
                 .AddressIndex(0).PublicKey().ToAddress())

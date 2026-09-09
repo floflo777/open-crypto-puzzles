@@ -22,8 +22,8 @@ Input:
     A 12-word, space-separated candidate mnemonic, and an optional passphrase.
 
 Output:
-    "MATCH <path> <address>" on a hit, "NO MATCH" otherwise (including when the
-    mnemonic fails the BIP39 checksum). Exit 0 on any match, 1 if none.
+    "MATCH <path> <address>" on a hit, "NO MATCH" otherwise. A mnemonic that fails
+    the BIP39 checksum is still derived and compared. Exit 0 on any match, 1 if none.
 
 Dependencies:
     stdlib, bip_utils.
@@ -61,14 +61,23 @@ SELFTEST_VECTOR = " ".join(["abandon"] * 11 + ["about"])
 SELFTEST_EXPECTED_ADDRESS = "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu"
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def check(mnemonic: str, passphrase: str = "") -> tuple[str, str] | None:
     """Return (scheme, address) for the scheme that reproduces the target, or None."""
     words = mnemonic.split()
     if len(words) != 12:
         return None
-    if not Bip39MnemonicValidator().IsValid(mnemonic):
-        return None
-    seed = Bip39SeedGenerator(mnemonic).Generate(passphrase)
+    seed = bip39_seed(mnemonic, passphrase)
     for name, cls, coin in _SCHEMES:
         ctx = cls.FromSeed(seed, coin)
         addr = (
@@ -92,7 +101,7 @@ def selftest() -> bool:
     print(f"  {'OK' if not_target else 'FAIL'}  test vector does not match the puzzle target")
     ok = ok and not_target
 
-    seed = Bip39SeedGenerator(SELFTEST_VECTOR).Generate("")
+    seed = bip39_seed(SELFTEST_VECTOR, "")
     addr = (
         Bip84.FromSeed(seed, Bip84Coins.BITCOIN).Purpose().Coin().Account(0)
         .Change(Bip44Changes.CHAIN_EXT).AddressIndex(0).PublicKey().ToAddress()

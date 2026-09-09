@@ -26,8 +26,8 @@ Input:
 
 Output:
     "MATCH <path>" naming which derivation (BIP84/BIP44/BIP49/BIP86) reproduces the
-    published xpub, "NO MATCH" otherwise (including when the mnemonic fails the
-    BIP39 checksum, since a checksum failure can never derive a seed worth comparing).
+    published xpub, "NO MATCH" otherwise. A mnemonic that fails the BIP39 checksum
+    is still derived and compared; the checksum is not a gate.
     Exit 0 on any match, 1 if none.
 
 Dependencies:
@@ -86,13 +86,24 @@ SELFTEST_EXPECTED_CHAINCODE_HEX = (
 )
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def check(mnemonic: str) -> str | None:
     """Return the derivation name (e.g. "BIP84") that reproduces the published xpub,
     or None."""
     words = mnemonic.split()
-    if len(words) != 24 or not Bip39MnemonicValidator().IsValid(mnemonic):
+    if len(words) != 24:
         return None
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     for name, cls, coin in _PURPOSES:
         acc = cls.FromSeed(seed, coin).Purpose().Coin().Account(0).Bip32Object()
         key = (acc.PublicKey().RawCompressed().ToBytes(), acc.ChainCode().ToBytes())
@@ -116,7 +127,7 @@ def selftest() -> bool:
         ok = ok and match
 
     print("-> public BIP39 test vector (24 words, all-zero entropy) derives a known account key")
-    seed = Bip39SeedGenerator(SELFTEST_VECTOR).Generate()
+    seed = bip39_seed(SELFTEST_VECTOR)
     acc = Bip84.FromSeed(seed, Bip84Coins.BITCOIN).Purpose().Coin().Account(0).Bip32Object()
     got_pub = acc.PublicKey().RawCompressed().ToBytes().hex()
     got_cc = acc.ChainCode().ToBytes().hex()

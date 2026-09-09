@@ -20,9 +20,9 @@ Input:
     line on stdin.
 
 Output:
-    "MATCH <address>" for a hit, "NO MATCH" otherwise (including for a mnemonic that
-    fails the BIP39 checksum, since a checksum failure can never derive an address to
-    compare). Exit 0 on any match, 1 if none.
+    "MATCH <address>" for a hit, "NO MATCH" otherwise. A mnemonic that fails the BIP39
+    checksum is still derived and compared; the checksum is not a gate. Exit 0 on any
+    match, 1 if none.
 
 Dependencies:
     stdlib, bip_utils.
@@ -50,16 +50,25 @@ SELFTEST_VECTOR = ("abandon " * 11 + "about").strip()
 SELFTEST_EXPECTED_ADDRESS = "bc1qcr8te4kr609gcawutmrza0j4xv80jy8z306fyu"
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def derive_address(mnemonic: str) -> str | None:
     """Return the BIP84 m/84'/0'/0'/0/0 address for a 12-word mnemonic, or None if
-    the mnemonic is not a valid BIP39 12-word phrase (wrong word count, a word not
-    in the wordlist, or a bad checksum)."""
+    the word count is not 12. A bad checksum is NOT a rejection: the seed is derived
+    by direct PBKDF2 (see bip39_seed)."""
     words = mnemonic.split()
     if len(words) != 12:
         return None
-    if not Bip39MnemonicValidator().IsValid(mnemonic):
-        return None
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     acc = (
         Bip84.FromSeed(seed, Bip84Coins.BITCOIN)
         .Purpose()
@@ -86,9 +95,9 @@ def selftest() -> bool:
     ok = ok and found
 
     bad = derive_address(SELFTEST_VECTOR.replace("about", "zoo"))
-    rejected = bad is None
-    print(f"bad checksum (last word swapped) -> rejected: {'OK' if rejected else 'FAIL'}")
-    ok = ok and rejected
+    derived = bad is not None and bad != SELFTEST_EXPECTED_ADDRESS
+    print(f"bad checksum (last word swapped) -> still derived, different address, no gate: {'OK' if derived else 'FAIL'}")
+    ok = ok and derived
 
     wrong_len = derive_address("abandon " * 10 + "about")
     rejected_len = wrong_len is None

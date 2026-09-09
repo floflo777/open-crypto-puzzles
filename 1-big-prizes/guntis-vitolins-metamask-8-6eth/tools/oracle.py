@@ -16,7 +16,7 @@ Input:
     A 12-word BIP39 English mnemonic, space separated.
 
 Output:
-    "MATCH <address>" on a hit, "NO MATCH" otherwise, or "INVALID CHECKSUM" /
+    "MATCH <address>" on a hit, "NO MATCH" otherwise (a wrong checksum is reported but not a gate), or
     "INVALID WORD" if the candidate is not a well-formed BIP39 mnemonic.
     Exit 0 on any match, 1 otherwise.
 
@@ -45,10 +45,21 @@ VECTOR_MNEMONIC = " ".join(["abandon"] * 11 + ["about"])
 VECTOR_ADDRESS = "0x9858effd232b4033e47d90003d41ec34ecaeda94"
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def derive_address(mnemonic: str) -> str:
     """12-word BIP39 mnemonic (no passphrase) -> MetaMask default Ethereum
     address (BIP44 m/44'/60'/0'/0/0), lowercase, with 0x prefix."""
-    seed = Bip39SeedGenerator(mnemonic).Generate()
+    seed = bip39_seed(mnemonic)
     account = (
         Bip44.FromSeed(seed, Bip44Coins.ETHEREUM)
         .Purpose()
@@ -66,12 +77,11 @@ def attempt(candidate: str) -> tuple[str, dict]:
     words = candidate.strip().split()
     if len(words) != 12:
         return "INVALID WORD", {"reason": f"expected 12 words, got {len(words)}"}
-    if not Bip39MnemonicValidator().IsValid(candidate):
-        return "INVALID CHECKSUM", {}
+    checksum_ok = Bip39MnemonicValidator().IsValid(candidate)
     address = derive_address(candidate)
     if address == TARGET_ADDRESS:
-        return "MATCH", {"address": address}
-    return "NO MATCH", {}
+        return "MATCH", {"address": address, "checksum_valid": checksum_ok}
+    return "NO MATCH", {"checksum_valid": checksum_ok}
 
 
 def selftest() -> bool:
@@ -87,6 +97,10 @@ def selftest() -> bool:
     part2 = not valid_neighbor
     print(f"a 1-word-different neighbor (abandon x12) fails the checksum, as expected: {'OK' if part2 else 'FAIL'}")
     ok = ok and part2
+
+    part2b = derive_address(neighbor).startswith("0x")
+    print(f"an invalid-checksum phrase still derives an address (no checksum gate): {'OK' if part2b else 'FAIL'}")
+    ok = ok and part2b
 
     part3 = TARGET_ADDRESS == TARGET_ADDRESS.lower()
     print(f"target address is stored lowercase for exact comparison: {'OK' if part3 else 'FAIL'}")

@@ -12,7 +12,7 @@ Usage:
 Input: 12 space-separated English BIP39 words, in the order to derive with.
 Expected output: "SELFTEST OK" (exit 0) or "SELFTEST FAILED" (exit 1) for --selftest;
 "MATCH <address>" or "NO MATCH" per candidate otherwise. A checksum-invalid candidate is
-reported as NO MATCH (mnemonics with a wrong BIP39 checksum cannot derive any seed).
+still derived (PBKDF2 does not need a valid checksum); the checksum state is only reported.
 
 Requires: mnemonic, bip_utils (both pure-Python, no network).
 """
@@ -31,8 +31,19 @@ MNEMO = Mnemonic("english")
 VALIDATOR = Bip39MnemonicValidator()
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def derive_eth(mnemonic, passphrase=""):
-    seed = Bip39SeedGenerator(mnemonic).Generate(passphrase)
+    seed = bip39_seed(mnemonic, passphrase)
     acc = (Bip44.FromSeed(seed, Bip44Coins.ETHEREUM)
            .Purpose().Coin().Account(0)
            .Change(Bip44Changes.CHAIN_EXT).AddressIndex(0))
@@ -44,12 +55,11 @@ def check(candidate):
     words = candidate.split()
     if len(words) != 12:
         return False, None, "need exactly 12 words, got %d" % len(words)
-    if not VALIDATOR.IsValid(" ".join(words)):
-        return False, None, "invalid BIP39 checksum"
+    checksum_ok = VALIDATOR.IsValid(" ".join(words))
     addr = derive_eth(" ".join(words))
     if addr.lower() == ESCROW:
-        return True, addr, "match"
-    return False, None, "no match"
+        return True, addr, "match" + ("" if checksum_ok else " (invalid BIP39 checksum)")
+    return False, None, "no match" + ("" if checksum_ok else " (invalid BIP39 checksum)")
 
 
 def selftest():

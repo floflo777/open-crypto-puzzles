@@ -75,6 +75,17 @@ ACCOUNT_PATHS = [
 ]
 
 
+def bip39_seed(mnemonic, passphrase=""):
+    """BIP39 seed by direct PBKDF2, with NO checksum validation. A phrase an author built
+    from a rule can fail the checksum and still be the funded key (Bitcoin Movie Enigma,
+    solved 2026-09-07, was exactly that), so this oracle derives every candidate and reports
+    the checksum only as information."""
+    import hashlib, unicodedata
+    m = unicodedata.normalize("NFKD", " ".join(mnemonic.split()))
+    p = unicodedata.normalize("NFKD", passphrase or "")
+    return hashlib.pbkdf2_hmac("sha512", m.encode("utf-8"), ("mnemonic" + p).encode("utf-8"), 2048)
+
+
 def _p2wpkh(node) -> str:
     return P2WPKHAddr.EncodeKey(node.PublicKey().KeyObject(), hrp="bc")
 
@@ -89,12 +100,7 @@ def verify_xpub_to_escrow() -> bool:
 def check_candidate(mnemonic: str, passphrase: str = ""):
     """Return (matched: bool, detail: str) for one mnemonic + passphrase pair."""
     mnemonic = " ".join(mnemonic.split())
-    try:
-        Bip39MnemonicValidator().Validate(mnemonic)
-    except Exception as exc:
-        return False, f"invalid BIP39 mnemonic (checksum): {exc}"
-
-    seed = Bip39SeedGenerator(mnemonic).Generate(passphrase)
+    seed = bip39_seed(mnemonic, passphrase)
     master = Bip32Slip10Secp256k1.FromSeed(seed)
 
     for path in ACCOUNT_PATHS:
