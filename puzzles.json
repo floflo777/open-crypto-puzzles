@@ -4362,7 +4362,7 @@
         "certified_against": "Public BIP84 vector plus independently calculated valid/invalid 24-word regression addresses; actual target independently reproduced with manual BIP32, secp256k1 and Bech32."
       },
       "difficulty_left": "none",
-      "difficulty_note": "Solved and paid out; transaction confirmed in block 965998.",
+      "difficulty_note": "solved by a reader (rabbidbird) after publication, not by me; the winning 24-word phrase fails the BIP39 checksum, so every checksum-filtered sweep, mine included, had discarded it",
       "tested_total": {
         "candidates": 69234511,
         "families": 20,
@@ -4427,7 +4427,7 @@
         }
       ],
       "third_party_material": "the 34 movie panels are individual frames from third-party films, not original material by the author; I do not reproduce them here and link to the author's still-live site instead",
-      "last_updated": "2026-09-07",
+      "last_updated": "2026-09-09",
       "solver": "rabbidbird",
       "payout": {
         "txid": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
