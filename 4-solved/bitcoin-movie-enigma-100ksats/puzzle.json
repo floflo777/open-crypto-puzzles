@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "slug": "bitcoin-movie-enigma-100ksats",
+  "title": "Bitcoin Movie Enigma",
+  "tier": "solved",
+  "status": "solved",
+  "dead_end_reason": null,
+  "series": null,
+  "author": {
+    "name": "klems",
+    "handles": [
+      "nostr:npub10q5dpm5p05a0g3vtgcl76wv0pc4t820f5fj8qmpfaa4umv6404xqvwzvp0",
+      "x:@cryptop1r4t3"
+    ],
+    "url": "https://bitcoinmovieenigma.com"
+  },
+  "published": {
+    "date": "2024-01-03",
+    "url": "https://bitcoinmovieenigma.com/rules"
+  },
+  "chain": "bitcoin",
+  "prize": {
+    "amount": 100000,
+    "asset": "sats",
+    "usd_estimate": 63,
+    "usd_snapshot": "2026-08-16",
+    "note": "single P2WPKH escrow, one funding transaction"
+  },
+  "addresses": [
+    {
+      "address": "bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+      "chain": "bitcoin",
+      "role": "escrow",
+      "label": "main",
+      "explorer": "https://mempool.space/address/bc1q94ecsn0qk8lap2gefrycnms3ruepy889z969a6",
+      "expected": "100000 sats prize, now swept by confirmed payout",
+      "verified_on": "2026-09-07",
+      "verified_state": "swept"
+    }
+  ],
+  "puzzle_type": [
+    "bip39-seed",
+    "text-cipher",
+    "word-selection"
+  ],
+  "target_format": "24 English BIP39-listed words with invalid checksum; PBKDF2 mnemonic salt, empty passphrase, BIP84 m/84'/0'/0'/0/0",
+  "derivation": {
+    "summary": "Recovered phrase derives the funded native SegWit address at BIP84 account 0, receiving index 0. It fails the BIP39 checksum, so the oracle derives 24 English word-list entries without enforcing that checksum.",
+    "oracle": "tools/oracle.py",
+    "oracle_certified": true,
+    "certified_against": "Public BIP84 vector plus independently calculated valid/invalid 24-word regression addresses; actual target independently reproduced with manual BIP32, secp256k1 and Bech32."
+  },
+  "difficulty_left": "none",
+  "difficulty_note": "Solved and paid out; transaction confirmed in block 965998.",
+  "tested_total": {
+    "candidates": 69234511,
+    "families": 20,
+    "certified": false
+  },
+  "leads": [],
+  "solutions": [
+    {
+      "lot": "main",
+      "date": "2026-09-07",
+      "answer": "path mad alien apology escape spare miss goddess leopard crime visit clock start first blade guard close barrel term screen matrix toy ghost shine",
+      "key_material_disclosed": true,
+      "payout_txid": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+      "payout_amount": "99766 sats",
+      "payout_to": "35h2x1Rqq3HmV1NX4KQAGZoz8Vmf42ktQT",
+      "explorer": "https://mempool.space/tx/bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4"
+    }
+  ],
+  "artifacts": [],
+  "sources": [
+    {
+      "title": "Bitcoin Movie Enigma, rules page",
+      "url": "https://bitcoinmovieenigma.com/rules",
+      "date": "2024-01-03",
+      "archived": null
+    },
+    {
+      "title": "Bitcoin Movie Enigma, about page",
+      "url": "https://bitcoinmovieenigma.com/about",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "Bitcoin Movie Enigma, wallet page",
+      "url": "https://bitcoinmovieenigma.com/wallet",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "klems, Nostr launch note with the rules",
+      "url": "https://njump.me/48fbbff9845680b463784d5ddfdc5907a953b3f4df9e0e49a97d6eb123d52145",
+      "date": "2024-01-03",
+      "archived": null
+    },
+    {
+      "title": "klems, X account @cryptop1r4t3, first launch of the same 34 stills",
+      "url": "https://x.com/cryptop1r4t3",
+      "date": "2022-04-08",
+      "archived": null
+    },
+    {
+      "title": "deviceio121, issue #9: MGM's official The Man in the Iron Mask clip, 2:18 frame is panel 14",
+      "url": "https://www.youtube.com/watch?v=3PcEZNC7IPw",
+      "date": "2026-08-29",
+      "archived": null
+    },
+    {
+      "title": "Confirmed payout transaction",
+      "url": "https://mempool.space/tx/bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+      "date": "2026-09-07",
+      "archived": null
+    }
+  ],
+  "third_party_material": "the 34 movie panels are individual frames from third-party films, not original material by the author; I do not reproduce them here and link to the author's still-live site instead",
+  "last_updated": "2026-09-07",
+  "solver": "rabbidbird",
+  "payout": {
+    "txid": "bd3b088164ae32458b97b917af8fab14056461c5e954499f7bd4cf3a67d6c5f4",
+    "destination": "35h2x1Rqq3HmV1NX4KQAGZoz8Vmf42ktQT",
+    "payout_sats": 99766,
+    "fee_sats": 234,
+    "confirmed": true,
+    "block_height": 965998,
+    "verification": "analysis/payout-verification-2026-09-07.json"
+  }
+}

@@ -207,3 +207,15 @@ title). The frame shows the same masked group as the panel: the woman in the gol
 and red-and-gold turban at left, the man in the long wig holding a gold bearded mask
 on a stick at centre. Panel 14 is The Man in the Iron Mask, and the Kubrick plus Reno
 split stands at exactly 10.
+
+
+## Confirmed solve, 2026-09-07
+
+The title-opening-prefix reading and five thematic film groups yield an exact
+escrow-address match at m/84'/0'/0'/0/0. The 24-word phrase fails the BIP39
+checksum (encoded 47, expected 119); checksum-filtered negatives therefore
+do not cover this answer. The oracle now derives without that assumption and
+its self-test reproduces the actual solution. Independent manual BIP32 and
+Bech32 calculations agree. The payout of 99,766 sats (234 sats fee) confirmed
+in block 965998. See the README and
+[payout verification](payout-verification-2026-09-07.json).

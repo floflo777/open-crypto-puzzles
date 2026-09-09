@@ -58,6 +58,13 @@ lever available on these puzzles: permuting 12 known words is not 12! = 479,001,
 candidates but roughly 479,001,600 / 16 = 29.9 million once the checksum filter is applied
 first.
 
+Use this filter only when the puzzle requires a checksum-valid mnemonic. PBKDF2
+can derive a seed from an invalid-checksum phrase, and some wallet import paths
+accept one. Bitcoin Movie Enigma was solved with exactly such a 24-word phrase;
+its old checksum filter rejected the real answer. A public valid-mnemonic test
+vector alone does not detect that mistake. For a puzzle built from an extracted
+word sequence, retain an unfiltered derivation path and test it explicitly.
+
 Other filters, in rough order of value: compare derived hashes as raw bytes rather than as
 encoded strings; check length and character set before deriving anything; only lock a
 candidate word or position to a specific value when it is proven by a structural constraint,
