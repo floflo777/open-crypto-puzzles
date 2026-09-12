@@ -32,7 +32,7 @@ from datetime import date
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-PRICE_SNAPSHOT = {"date": "2026-08-16", "BTC": 63000, "ETH": 1880, "AR": 1.81}
+PRICE_SNAPSHOT = {"date": "2026-08-16", "BTC": 63000, "ETH": 1880, "AR": 1.81, "LTC": 54}
 
 TIERS = [
     ("1-big-prizes", "big"),
@@ -194,7 +194,7 @@ def build_table(puzzles, tier, header, row_fn, empty_note, tier_relative=False):
 
 def build_totals_block(puzzles):
     funded = [p for p in puzzles if p.get("status") in ("open", "watch")]
-    btc = eth = ar = usdt = usdc = 0.0
+    btc = eth = ar = ltc = usdt = usdc = 0.0
     usd = 0.0
     for p in funded:
         pr = p.get("prize", {})
@@ -204,6 +204,7 @@ def build_totals_block(puzzles):
         elif a == "sats": btc += amt / 1e8
         elif a == "ETH": eth += amt
         elif a == "AR": ar += amt
+        elif a == "LTC": ltc += amt
         elif a == "USDT": usdt += amt
         elif a == "USDC": usdc += amt
         u = pr.get("usd_estimate")
@@ -223,6 +224,7 @@ def build_totals_block(puzzles):
         f"| Bitcoin | {btc:,.2f} BTC | {usd_for(btc, p['BTC'])} |",
         f"| Ethereum | {eth:,.2f} ETH | {usd_for(eth, p['ETH'])} |",
         f"| Arweave | {ar:,.0f} AR | {usd_for(ar, p['AR'])} |",
+        f"| Litecoin | {ltc:,.2f} LTC | {usd_for(ltc, p['LTC'])} |",
         f"| Stablecoins | {usdt:,.0f} USDT + {usdc:,.0f} USDC | {rnd(usdt + usdc)} |",
         f"| **Total** | **across {len(funded)} funded puzzles** | **{rnd(usd)}** |",
     ]

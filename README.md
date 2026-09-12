@@ -16,8 +16,9 @@ on-chain right now.
 | Bitcoin | 5.96 BTC | $376,000 |
 | Ethereum | 13.21 ETH | $25,000 |
 | Arweave | 1,900 AR | $3,400 |
+| Litecoin | 3.03 LTC | $200 |
 | Stablecoins | 306 USDT + 0 USDC | $300 |
-| **Total** | **across 30 funded puzzles** | **$404,000** |
+| **Total** | **across 31 funded puzzles** | **$404,000** |
 
 Checked 2026-08-16 at BTC $63,000, ETH $1,880, AR $1.81. Prices and balances move; verify each escrow yourself.
 <!-- totals:end -->
@@ -51,9 +52,9 @@ and two Arweave key-stretch engines. They ship as CUDA source plus Python host d
 self-tests; build them with `engines/build.sh` (nvcc), then point one at a puzzle's target.
 See [engines/README.md](engines/README.md).
 
-## Start here: ten to look at first
+## Start here: eleven to look at first
 
-If you do not know where to begin, these ten are the clearest to pick up. The full list,
+If you do not know where to begin, these eleven are the clearest to pick up. The full list,
 grouped by prize, is in the tables below.
 
 | Puzzle | Prize | Why it is a good place to start |
@@ -68,6 +69,7 @@ grouped by prize, is in the tables below.
 | [Arweave Puzzle #11](2-mid-prizes/arweave-puzzle-11-1eth/) | 1 ETH | A single grayscale sketch that encodes a raw 64-hex private key. |
 | [LogicBeach: Powerful Moss](2-mid-prizes/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | A 12-word seed spread across the 12 tracks of an album. The artist's two earlier hunts really paid out. |
 | [Smith, Lyle & Moore Hunt #2](2-mid-prizes/smith-lyle-moore-hunt-2-0-032btc/) | 0.032 BTC | A tree of password-locked web pages; each page you open hands you a fragment of the seed. |
+| [Path to Greatness: Treasure Hunt](2-mid-prizes/path-to-greatness-treasure-hunt-3ltc/) | 3.03 LTC | The author drew his own encryption on one of the clue images: four independent two-answer locks, each with an exact test, so a guess is settled in microseconds. |
 
 <!-- generated:start -->
 ## Big prizes (>= $10,000)
@@ -103,6 +105,7 @@ grouped by prize, is in the tables below.
 | [FTPK Season 2: Never-Ending](2-mid-prizes/ftpk-season-2-300usdt/) | 305.930218 USDT | 306 | ethereum | bip39-seed, word-selection | insight | 2026-08-27 | open |
 | [Andy Bauch: New Money, COG](2-mid-prizes/andy-bauch-new-money-cog-428ksats/) | 428,206 sats | 270 | bitcoin | pixel-code, physical-object | external-info | 2026-08-16 | open |
 | [Zden Level HALV](2-mid-prizes/zden-haluska-halv-312ksats/) | 312,500 sats | 197 | bitcoin | geometry, raw-private-key | external-info | 2026-08-16 | open |
+| [Path to Greatness: Treasure Hunt](2-mid-prizes/path-to-greatness-treasure-hunt-3ltc/) | 3.02608794 LTC | 163 | litecoin | raw-private-key, image-stego, audio, text-cipher | insight | 2026-09-12 | open |
 | [Pindar Van Arman: cryptoArtGAN Act 1 Puzzle](2-mid-prizes/pindar-van-arman-cryptoartgan-nft/) | 1 NFT |  | ethereum | bip39-seed, word-selection | insight | 2026-08-16 | open |
 
 ## Small prizes (< $100)

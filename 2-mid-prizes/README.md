@@ -29,5 +29,6 @@ its actual state does (solved, swept, funded).
 | [FTPK Season 2: Never-Ending](ftpk-season-2-300usdt/) | 305.930218 USDT | 306 | ethereum | bip39-seed, word-selection | insight | 2026-08-27 | open |
 | [Andy Bauch: New Money, COG](andy-bauch-new-money-cog-428ksats/) | 428,206 sats | 270 | bitcoin | pixel-code, physical-object | external-info | 2026-08-16 | open |
 | [Zden Level HALV](zden-haluska-halv-312ksats/) | 312,500 sats | 197 | bitcoin | geometry, raw-private-key | external-info | 2026-08-16 | open |
+| [Path to Greatness: Treasure Hunt](path-to-greatness-treasure-hunt-3ltc/) | 3.02608794 LTC | 163 | litecoin | raw-private-key, image-stego, audio, text-cipher | insight | 2026-09-12 | open |
 | [Pindar Van Arman: cryptoArtGAN Act 1 Puzzle](pindar-van-arman-cryptoartgan-nft/) | 1 NFT |  | ethereum | bip39-seed, word-selection | insight | 2026-08-16 | open |
 <!-- generated:end -->
