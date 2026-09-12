@@ -92,6 +92,27 @@ def check_bitcoin(address):
     return "partially-spent", f"funded={funded} spent={spent}"
 
 
+def check_litecoin(address):
+    """litecoinspace.org exposes the same address API as mempool.space."""
+    try:
+        resp = http_get(f"https://litecoinspace.org/api/address/{address}")
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as exc:
+        return "ERROR", f"network error: {exc}"
+
+    stats = data.get("chain_stats", {})
+    funded = stats.get("funded_txo_sum", 0)
+    spent = stats.get("spent_txo_sum", 0)
+    if funded == 0:
+        return "unfunded", f"funded={funded} spent={spent}"
+    if spent == 0:
+        return "funded-unspent", f"funded={funded} spent={spent}"
+    if spent >= funded:
+        return "swept", f"funded={funded} spent={spent}"
+    return "partially-spent", f"funded={funded} spent={spent}"
+
+
 def _eth_rpc(url, method, params):
     resp = http_post(url, {"jsonrpc": "2.0", "method": method, "params": params, "id": 1})
     resp.raise_for_status()
@@ -179,6 +200,8 @@ def check_address(entry):
         return check_base(address)
     if chain == "arweave":
         return check_arweave(address)
+    if chain == "litecoin":
+        return check_litecoin(address)
     if chain == "solana":
         return "SKIPPED", "Solana is not queried automatically; check https://solscan.io/account/<address> by hand."
     return "ERROR", f"unknown chain: {chain}"

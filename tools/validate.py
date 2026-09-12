@@ -108,6 +108,7 @@ EXPLORER_HOST_BY_CHAIN = {
     "ethereum": "etherscan.io",
     "base": "basescan.org",
     "arweave": "viewblock.io",
+    "litecoin": "litecoinspace.org",
     "solana": "solscan.io",
 }
 

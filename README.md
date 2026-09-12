@@ -16,6 +16,7 @@ on-chain right now.
 | Bitcoin | 5.96 BTC | $376,000 |
 | Ethereum | 13.21 ETH | $25,000 |
 | Arweave | 1,900 AR | $3,400 |
+| Litecoin | 0.00 LTC | $0 |
 | Stablecoins | 306 USDT + 0 USDC | $300 |
 | **Total** | **across 30 funded puzzles** | **$404,000** |
 

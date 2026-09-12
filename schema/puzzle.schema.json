@@ -134,6 +134,7 @@
         "bitcoin",
         "ethereum",
         "base",
+        "litecoin",
         "arweave",
         "solana",
         "none"
@@ -161,6 +162,7 @@
             "BTC",
             "sats",
             "ETH",
+            "LTC",
             "AR",
             "USDT",
             "USDC",
@@ -207,6 +209,7 @@
               "bitcoin",
               "ethereum",
               "base",
+              "litecoin",
               "arweave",
               "solana",
               "none"
@@ -256,13 +259,20 @@
                   "const": "zero-balance-contract"
                 }
               },
-              "required": ["verified_state"]
+              "required": [
+                "verified_state"
+              ]
             },
             "then": {
-              "required": ["expected"],
+              "required": [
+                "expected"
+              ],
               "properties": {
                 "chain": {
-                  "enum": ["ethereum", "base"]
+                  "enum": [
+                    "ethereum",
+                    "base"
+                  ]
                 },
                 "role": {
                   "const": "contract"
