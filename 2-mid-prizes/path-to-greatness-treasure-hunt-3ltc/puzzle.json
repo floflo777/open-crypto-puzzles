@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "slug": "path-to-greatness-treasure-hunt-3ltc",
+  "title": "Path to Greatness: Treasure Hunt",
+  "tier": "mid",
+  "status": "open",
+  "dead_end_reason": null,
+  "series": null,
+  "author": {
+    "name": "Justin Patterson",
+    "handles": ["jpatt94", "jpatt194"],
+    "url": "https://p2gtreasure.com/"
+  },
+  "published": {
+    "date": "2021-07-25",
+    "url": "https://reddit.com/r/ARG/comments/orgh1k/i_made_a_treasure_hunt_with_a_crypto_prize/"
+  },
+  "chain": "litecoin",
+  "prize": {
+    "amount": 3.02608794,
+    "asset": "LTC",
+    "usd_estimate": 163,
+    "usd_snapshot": "2026-08-16",
+    "note": "302,608,794 litoshis. The pot is topped up by the public: the site invites donations straight into the prize address, which is why there are 8 incoming transactions. LTC was $54.17 when I read the price on 2026-09-12; the repository snapshot price of $54 is used here."
+  },
+  "addresses": [
+    {
+      "address": "LUtL7qnm3gzxKjHcfVLSjydqhhinTVmTmS",
+      "chain": "litecoin",
+      "role": "escrow",
+      "label": "prize",
+      "explorer": "https://litecoinspace.org/address/LUtL7qnm3gzxKjHcfVLSjydqhhinTVmTmS",
+      "expected": "302,608,794 litoshis received over 8 transactions, 0 spent",
+      "verified_on": "2026-09-12",
+      "verified_state": "funded-unspent"
+    }
+  ],
+  "puzzle_type": ["raw-private-key", "image-stego", "audio", "text-cipher"],
+  "target_format": "Litecoin WIF, version byte 0xB0 so the string starts with T (compressed) or 6 (uncompressed), encrypted with AES-256-CBC under a 32-byte super_key and the IV goodluck_havefun; the address is P2PKH version 0x30",
+  "derivation": {
+    "summary": "The author published the whole scheme on his own clue image computer_screen.jpg. The 8 clue answers concatenate to 128 ASCII characters, which are four AES-256 keys. The 32-byte super_key is cut into four 8-byte segments, each encrypted separately in AES-256-CBC under its own 16-character IV (an album track title), with the key being two clue answers concatenated. Each segment ciphertext is one block holding 8 useful bytes, so its plaintext must end with a PKCS7 padding of eight 0x08 bytes: that is an exact per-segment oracle with a false positive rate of 2^-64, and it needs nothing from the other six answers. The super_key then decrypts the 64-byte WIF blob, and the WIF gives the address through secp256k1, hash160 and base58check 0x30.",
+    "oracle": "tools/oracle.py",
+    "oracle_certified": true,
+    "certified_against": "the canonical secp256k1 and hash160 vectors for private key 1 (1BgGZ9tcN4rm9KBzDn7KprQz87SZ26SAMH and 1EHNa6Q4Jz2uvNExL497mE43ikXhwF6kZm), eight keys cross-checked between coincurve and the pure Python ecdsa package, the Litecoin version bytes and WIF encoder cross-checked against a third library, synthetic witnesses on both AES layers with 1,024 neighbouring keys rejected, three control negatives, and the author's own arithmetic (8 answer lengths summing to 128, four 16-character IVs, four 16-byte ciphertexts, a 64-byte WIF blob, base64 canonicity of the 22nd character)"
+  },
+  "difficulty_left": "insight",
+  "difficulty_note": "No compute step is missing. The four segments are independent and each has a perfect test, so one reading of one clue is settled in microseconds. What is missing is two of the eight readings: the writing convention for the 16 characters of clue 6 and what clue 1 asks to be written twice (segment 1), and the string the author drew out of the hidden image of clue 7 (segment 3).",
+  "tested_total": {
+    "candidates": 5690021893966,
+    "families": 37,
+    "certified": true
+  },
+  "leads": [
+    {
+      "rank": 1,
+      "title": "Segment 1: the 16th character of beach, and how imagine is written",
+      "cost": "minutes per convention, 0.2 s per run against all 10^8 repeated 8-digit blocks",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "Segment 1: imagine may not be a date, but the word the song replaced",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "Segment 3: the string the author drew out of the Titanic montage, as a description rather than a quotation",
+      "cost": "minutes per family, the left half is fully enumerable",
+      "status": "open"
+    },
+    {
+      "rank": 4,
+      "title": "Segment 4: the pairing rule between the 17 digits of clue 8 and the 13 album tracks",
+      "cost": "hours, the rule has to be found before it can be tested",
+      "status": "open"
+    },
+    {
+      "rank": 5,
+      "title": "Segment 2: identify the six pictograms of clue 5",
+      "cost": "needs a person who recognises the drawings",
+      "status": "open"
+    }
+  ],
+  "solutions": [],
+  "artifacts": [
+    {
+      "path": "clues/computer_screen.jpg",
+      "sha256": "f14bdfc2a1bf532cdb7a2da6b30034bdd6d96478b37f664658d5678fb2d800f2",
+      "source": "https://p2gtreasure.com/Clues/computer_screen.jpg",
+      "archived": "https://web.archive.org/web/20220420084754/http://p2gtreasure.com/Clues/computer_screen.jpg"
+    },
+    {
+      "path": "clues/clue1_imagine.jpg",
+      "sha256": "787861023f2d1ee6cc6d4ab21f9344f13b275cc6d0c2a03ea02a38c42724db5c",
+      "source": "https://p2gtreasure.com/Clues/clue1_imagine.jpg",
+      "archived": "https://web.archive.org/web/20220406031947/http://p2gtreasure.com/Clues/clue1_imagine.jpg"
+    },
+    {
+      "path": "clues/clue2_scramble.jpg",
+      "sha256": "c6e07d7a53faafa17f2d57ee0971462da80494d79d0fcf3ebb39b9630dc92e5e",
+      "source": "https://p2gtreasure.com/Clues/clue2_scramble.jpg",
+      "archived": "https://web.archive.org/web/20220309153614/http://p2gtreasure.com/Clues/clue2_scramble.jpg"
+    },
+    {
+      "path": "clues/clue3_wasd.jpg",
+      "sha256": "15c5fae68f242e2dc23f51100fac2ca574528c5284e737bda3cd59707a6e678b",
+      "source": "https://p2gtreasure.com/Clues/clue3_wasd.jpg",
+      "archived": "https://web.archive.org/web/20220403042134/http://p2gtreasure.com/Clues/clue3_wasd.jpg"
+    },
+    {
+      "path": "clues/clue4_chess.jpg",
+      "sha256": "6603d1c29220e64b744d34704ec57f90560a6490d152fdb0ce8cc03a6da6a359",
+      "source": "https://p2gtreasure.com/Clues/clue4_chess.jpg",
+      "archived": "https://web.archive.org/web/20220309152900/http://p2gtreasure.com/Clues/clue4_chess.jpg"
+    },
+    {
+      "path": "clues/clue5_wonders.jpg",
+      "sha256": "d348d9b36dc010e32c1b3689698c0d88793e031faf581214369fd229a793e119",
+      "source": "https://p2gtreasure.com/Clues/clue5_wonders.jpg",
+      "archived": "https://web.archive.org/web/20220502024511/http://p2gtreasure.com/Clues/clue5_wonders.jpg"
+    },
+    {
+      "path": "clues/00111111.jpg",
+      "sha256": "91dfcca1727e3361c3d090a9ff4d90d97667dba0b7cf53263a9316510542e744",
+      "source": "https://p2gtreasure.com/Clues/00111111.jpg",
+      "archived": "https://web.archive.org/web/20220318211629/http://p2gtreasure.com/Clues/00111111.jpg"
+    },
+    {
+      "path": "clues/qr1.jpg",
+      "sha256": "d5b6bd00e6c84f7d2c7b60de168db885fdf5e2e0d2ce964a62dd887460a162f4",
+      "source": "https://p2gtreasure.com/Clues/qr1.jpg",
+      "archived": "https://web.archive.org/web/20220417012026/http://p2gtreasure.com/Clues/qr1.jpg"
+    },
+    {
+      "path": "clues/qr2.jpg",
+      "sha256": "120d72fde754740493e42627bbb561d5e7176429a9e221f24eef268346c1c2e9",
+      "source": "https://p2gtreasure.com/Clues/qr2.jpg",
+      "archived": "https://web.archive.org/web/20220131185620/http://p2gtreasure.com/Clues/qr2.jpg"
+    },
+    {
+      "path": "clues/treasure_chest.png",
+      "sha256": "4c4e609812cffaba0e20a7849b9ec68d36e0373f530056e9ff1c3438be3eee4f",
+      "source": "https://p2gtreasure.com/treasure_chest.png",
+      "archived": "https://web.archive.org/web/20220309153049/http://p2gtreasure.com/treasure_chest.png"
+    },
+    {
+      "path": "clues/Beach.png",
+      "sha256": "8be6f026b78ac1bab8e8d7fbcd8b791445edfe5da4cc947e40b737554fce0683",
+      "source": "https://drive.google.com/file/d/1Z6hDNcfWfVwNkJJ1l4DvZm-MbuQD8Y6N/view (reached from the QR code clues/qr1.jpg through tinyurl.com/y6c6o3uj)",
+      "archived": null
+    },
+    {
+      "path": "clues/Ship.png",
+      "sha256": "585ed4ce7492d8a2aa1436fa5593c173ce1842edcdc0abaa7aef0b3676c4f8cc",
+      "source": "https://drive.google.com/file/d/1jzxIFQGmTnR3EB42bd-DPEJfe655XbhG/view (reached from the QR code clues/qr2.jpg through tinyurl.com/y28knqz3)",
+      "archived": null
+    }
+  ],
+  "sources": [
+    {
+      "title": "I made a treasure hunt with a crypto prize, r/ARG announcement",
+      "url": "https://reddit.com/r/ARG/comments/orgh1k/i_made_a_treasure_hunt_with_a_crypto_prize/",
+      "date": "2021-07-25",
+      "archived": null
+    },
+    {
+      "title": "p2gtreasure.com, clues, rules and donation address",
+      "url": "https://p2gtreasure.com/",
+      "date": "2026-09-09",
+      "archived": "https://web.archive.org/web/20211220074516/http://p2gtreasure.com/"
+    },
+    {
+      "title": "p2gtreasure.com/old/, the original site and its seven rules",
+      "url": "https://p2gtreasure.com/old/index.html",
+      "date": "2026-09-09",
+      "archived": "https://web.archive.org/web/20220323235950/http://p2gtreasure.com/old/index.html"
+    },
+    {
+      "title": "Escrow on litecoinspace, funded and unspent",
+      "url": "https://litecoinspace.org/address/LUtL7qnm3gzxKjHcfVLSjydqhhinTVmTmS",
+      "date": "2026-09-12",
+      "archived": null
+    },
+    {
+      "title": "P2G Treasure Hunt gameplay demo, Unity Windows build of 2021-02-04",
+      "url": "https://drive.google.com/file/d/15B7i1EU7OUpc1SXYmSccRLDku4199cSB/view",
+      "date": "2021-02-04",
+      "archived": null
+    },
+    {
+      "title": "Path to Greatness demo trailer, YouTube",
+      "url": "https://www.youtube.com/watch?v=T98D6Otefgs",
+      "date": "2021-02-05",
+      "archived": null
+    },
+    {
+      "title": "Seconds of Dream, Path to Greatness Soundtrack, YouTube, the monophonic opening used by clue 6",
+      "url": "https://www.youtube.com/watch?v=EojQgdZeTyM",
+      "date": "2019-03-18",
+      "archived": null
+    },
+    {
+      "title": "Seconds of Dream, album by Justin Patterson, 13 tracks, the source of the four IVs",
+      "url": "https://open.spotify.com/album/1pGpPWw8Dl0Uq7n77s4koK",
+      "date": "2021-01-07",
+      "archived": null
+    },
+    {
+      "title": "Seconds of Dream tracklist with durations, iTunes",
+      "url": "https://music.apple.com/us/album/seconds-of-dream/1548289299",
+      "date": "2021-01-07",
+      "archived": null
+    }
+  ],
+  "third_party_material": "Only the author's own published puzzle files are shipped here: the nine clue images served by p2gtreasure.com, the site banner, and the two lossless carriers Beach.png and Ship.png that his QR codes point at. Not shipped, and not to be added: the game demo p2g_demo.zip (134 MB, Google Drive, the author's own but far over the repository size limits), the album audio embedded in it or published on Spotify and iTunes, any frame or transcript of the 1997 film Titanic that the clue 7 montage is built from, and the audio of the author's YouTube video EojQgdZeTyM. All four are linked by URL instead. The clue poems are quoted in short excerpts only, in clues/author-posts.md.",
+  "last_updated": "2026-09-12"
+}
