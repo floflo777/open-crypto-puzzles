@@ -27,7 +27,16 @@ as hardened BIP32 indexes.
 - **What would confirm it**: any answer, checked against the oracle in seconds.
 - **What would kill it**: the author stops answering (last answer 2026-08-28 23:50 UTC), or a
   spend of the escrow by someone else.
-- **Status**: open
+- **Status**: done, by a reader. On 2026-09-10 a player sent the 78-byte question above
+  with 10,000 sats and got, within the hour: "root = the master key derived from the BIP39
+  seed; genesis_data = some data from the genesis block used as the BIP48 account number."
+  On 2026-09-11 the same player sent the second draft, "BIP39 entropy: genesis bytes/puzzle
+  text/img/other? words 12/24? passphrase Y/N?", and got: "BIP39: 12 words; Passphrase: Y;
+  Entropy: The data needed to solve it is publicly available in the genesis block." The
+  model is now: 12-word mnemonic, 128-bit entropy taken from genesis data, a non-empty
+  passphrase the author has not described, BIP48 with a genesis value as account, two keys
+  derived independently from the same field. The next question to buy is about the
+  passphrase (README, lead 2); the next computation is pass 3 (README, lead 1).
 
 ## 2. Watch the channel
 
@@ -35,7 +44,7 @@ as hardened BIP32 indexes.
 - **What it is**: before any work, re-read the escrow's transactions on an explorer. A new
   OP_RETURN spending the author's latest change output is a new constraint; a spend of the
   escrow ends the puzzle. The author's current change address is
-  `bc1qktf2wdszlsg4fes6mlzjxkcnhp63wnhct6gkgh` (17,200 sats, unspent on 2026-08-29); it
+  `bc1qw720l9e6g4a675vfraghzm93gvyw8s2fjgtdxy` (unspent on 2026-09-12); it
   changes with every message, so follow the chain of inputs from the last author
   transaction rather than this fixed address.
 - **Why it ranks here**: zero cost, and every hint so far reduced the space more than any

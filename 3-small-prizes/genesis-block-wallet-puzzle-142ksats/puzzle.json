@@ -17,11 +17,11 @@
   },
   "chain": "bitcoin",
   "prize": {
-    "amount": 142779,
+    "amount": 168779,
     "asset": "sats",
-    "usd_estimate": 90,
+    "usd_estimate": 106,
     "usd_snapshot": "2026-08-16",
-    "note": "18 P2WSH outputs to one witness script; the jackpot grows because the author relays every paid question into the escrow (125,779 sats on 2026-08-24, 142,779 sats on 2026-08-29)"
+    "note": "24 P2WSH outputs to one witness script; the jackpot grows because the author relays every paid question into the escrow (125,779 sats on 2026-08-24, 142,779 on 2026-08-29, 168,779 on 2026-09-12)"
   },
   "addresses": [
     {
@@ -30,8 +30,8 @@
       "role": "escrow",
       "label": "main (P2WSH, witness program 4dae67a9872f1402109f9670276afc2c0758f895aafddcd089795771b7964833)",
       "explorer": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
-      "expected": "142779 sats in 18 outputs, growing",
-      "verified_on": "2026-08-29",
+      "expected": "168779 sats in 24 outputs, growing",
+      "verified_on": "2026-09-12",
       "verified_state": "funded-unspent"
     }
   ],
@@ -47,7 +47,7 @@
     "certified_against": "the BIP-173 P2WSH test vector, and a real 2-of-2 P2WSH spent in block 963629 (tx 47ded3504e855ce418e46eeca4694b55a623d1e23a8e3c83292abbcf9cee9f7a, input 0) whose revealed keys rebuild the script and hash to the spent address; private key 1 to the generator point; negative control against the escrow"
   },
   "difficulty_left": "insight",
-  "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; two passes on 2026-08-29 exhausted the mechanical readings of the two 2026-08-28 hints (raw keys, BIP32 seeds, BIP39 entropy, hashed roots, raw extended keys and zero-chain-code roots from the coinbase text along 214 paths including every BIP48 path with a genesis integer as account): 611,008 keys, 5.7e11 ordered pairs in total, 0 match with witnesses; what remains is the exact meaning of 'root' and 'genesis_data' in the author's derivation rule, which a paid on-chain question would settle",
+  "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; passes 1 and 2 (2026-08-29) exhausted the mechanical readings of the August hints (611,008 keys, 5.7e11 ordered pairs, 0 match with witnesses); the author's answers of 2026-09-10 and 2026-09-11, bought by a reader with the questions drafted here, name the root: a 12-word BIP39 mnemonic with entropy taken from the genesis block, a passphrase, and a genesis value as the BIP48 account; the passphrase is the one thing not described",
   "tested_total": {
     "candidates": 573972226280,
     "families": 7,
@@ -56,24 +56,30 @@
   "leads": [
     {
       "rank": 1,
-      "title": "ask the author one precise question on chain about 'root' and 'genesis_data' (about 5,000 to 10,000 sats)",
-      "cost": "needs-a-person",
+      "title": "pass 3: 16-byte genesis windows as 12-word entropy, a short passphrase list, genesis integers as BIP48 account, script type 2', keys paired",
+      "cost": "minutes on one rented GPU",
       "status": "open"
     },
     {
       "rank": 2,
+      "title": "ask the author about the passphrase's nature on chain (the two September questions drafted here were sent by a reader and answered within the hour)",
+      "cost": "needs-a-person",
+      "status": "open"
+    },
+    {
+      "rank": 3,
       "title": "watch the escrow for new OP_RETURN hints or a spend before any work",
       "cost": "minutes",
       "status": "open"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths",
       "cost": "minutes",
       "status": "killed"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "title": "pass 1: literal readings of the 2026-08-28 hints, families A to D",
       "cost": "minutes",
       "status": "killed"
@@ -120,5 +126,5 @@
     }
   ],
   "third_party_material": "none: the genesis block and the author's OP_RETURN messages are public chain data; press articles are linked, not reproduced",
-  "last_updated": "2026-09-07"
+  "last_updated": "2026-09-12"
 }

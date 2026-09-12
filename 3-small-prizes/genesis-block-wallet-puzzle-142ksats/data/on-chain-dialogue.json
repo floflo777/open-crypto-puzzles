@@ -1,12 +1,11 @@
 {
  "escrow": "bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
- "fetched_on": "2026-08-29",
+ "fetched_on": "2026-09-12",
  "chain_stats": {
-  "funded_txo_count": 18,
-  "funded_txo_sum": 142779,
-  "spent_txo_count": 0,
+  "funded_txo_sum": 168779,
   "spent_txo_sum": 0,
-  "tx_count": 18
+  "tx_count": 24,
+  "unspent_outputs": 24
  },
  "attribution_rule": "a transaction is the author's when one of its inputs spends a change output of a previous author transaction, starting from the announcement; relayed = the same text was first paid by a player directly to an author change address",
  "transactions": [
@@ -259,6 +258,88 @@
     "bc1qktf2wdszlsg4fes6mlzjxkcnhp63wnhct6gkgh"
    ],
    "op_return": "Derivation rule: root -> multisig -> mainnet -> genesis_data -> script_type"
+  },
+  {
+   "txid": "68e79190221d2b73089b523f7f5af2a11838339a788239f4eee30d6c1d4502e7",
+   "block": 965798,
+   "time_utc": "2026-09-06 15:51:27",
+   "from": "player 3",
+   "inputs": [
+    "bc1q3csgah6e0jkatpuxcscm7gvnjj7sm8qlk6krkf"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [],
+   "op_return": "give another hint"
+  },
+  {
+   "txid": "64385a0cc5c4c712d1d9d8628e1e00364310d9ba50536ccd23c71b49ae66b96b",
+   "block": 965824,
+   "time_utc": "2026-09-06 19:41:00",
+   "from": "author",
+   "inputs": [
+    "bc1qktf2wdszlsg4fes6mlzjxkcnhp63wnhct6gkgh"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [
+    "bc1q4y2adxg8ymavpt8ae0xsuz3q90wtz6qsucjlqg"
+   ],
+   "op_return": "I can't give hints without a question. Low-value transactions get bad hints; dust will be ignored."
+  },
+  {
+   "txid": "75daa8e824abba4fe1b1a4b12f923b50291fab98743edaa1f03ef8c50bb70552",
+   "block": 966402,
+   "time_utc": "2026-09-10 20:47:36",
+   "from": "player 4",
+   "inputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "op_return": "Root = Times text as BIP32 seed? BIP39? raw key? genesis_data = BIP48 account?"
+  },
+  {
+   "txid": "cb47c7a73c1aaa11bfe0edce41c2ef7c9c1fec1478efd15e40b226eb502dcc18",
+   "block": 966409,
+   "time_utc": "2026-09-10 21:33:46",
+   "from": "author",
+   "inputs": [
+    "bc1q4y2adxg8ymavpt8ae0xsuz3q90wtz6qsucjlqg"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qpzphpkmevjlsrl36gmrh2anqj2yr8eclv3en03"
+   ],
+   "op_return": "root = the master key derived from the BIP39 seed; genesis_data = some data from the genesis block used as the BIP48 account number."
+  },
+  {
+   "txid": "6497aef4be0d5be68644296d5fcdb709c66bb20db5972f4e53f90836e27862fe",
+   "block": 966565,
+   "time_utc": "2026-09-11 21:25:51",
+   "from": "player 4",
+   "inputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "op_return": "BIP39 entropy: genesis bytes/puzzle text/img/other? words 12/24? passphrase Y/N?"
+  },
+  {
+   "txid": "f8f04fc04e2c4f34dc2264f85ff7944c6aa822446bc4cc082e95a52aed5c2a4c",
+   "block": 966576,
+   "time_utc": "2026-09-11 23:26:17",
+   "from": "author",
+   "inputs": [
+    "bc1qpzphpkmevjlsrl36gmrh2anqj2yr8eclv3en03"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qw720l9e6g4a675vfraghzm93gvyw8s2fjgtdxy"
+   ],
+   "op_return": "BIP39: 12 words; Passphrase: Y; Entropy: The data needed to solve it is publicly available in the genesis block."
   }
  ]
 }

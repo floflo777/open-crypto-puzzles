@@ -49,9 +49,20 @@ The escrow had been funded with 20,000 sats 17 hours earlier
 | 2026-08-28 22:45:35 | 964,486 | `610fc4d2ca1a214d99248c8188fd2973f4c51fca319ccf9ab983ac3edf4b1821` | player 2 | 3,500 sats | Can you give any hint about derivation offset/rule? |
 | 2026-08-28 23:15:28 | 964,491 | `6e94cfcbc1350a138242f97310dfd0280371a0020380cb32b2512337470c1077` | author | 5,000 sats | Solve it to find out. Maybe both. (newline) If you can't check the Genesis block, you can also use The Times newspaper! |
 | 2026-08-28 23:50:52 | 964,496 | `8be479605bc8f2facd2036fd1b7f5cfa3a3f3920eeffee75e0004a2cff4d25d6` | author | 3,500 sats | `Derivation rule: root -> multisig -> mainnet -> genesis_data -> script_type` |
+| 2026-09-06 15:51:27 | 965,798 | `68e79190221d2b73089b523f7f5af2a11838339a788239f4eee30d6c1d4502e7` | player 3 | 1,000 sats | give another hint |
+| 2026-09-06 19:41:00 | 965,824 | `64385a0cc5c4c712d1d9d8628e1e00364310d9ba50536ccd23c71b49ae66b96b` | author | 1,000 sats | I can't give hints without a question. Low-value transactions get bad hints; dust will be ignored. |
+| 2026-09-10 20:47:36 | 966,402 | `75daa8e824abba4fe1b1a4b12f923b50291fab98743edaa1f03ef8c50bb70552` | player 4 | 10,000 sats | Root = Times text as BIP32 seed? BIP39? raw key? genesis_data = BIP48 account? |
+| 2026-09-10 21:33:46 | 966,409 | `cb47c7a73c1aaa11bfe0edce41c2ef7c9c1fec1478efd15e40b226eb502dcc18` | author | 2,000 sats | root = the master key derived from the BIP39 seed; genesis_data = some data from the genesis block used as the BIP48 account number. |
+| 2026-09-11 21:25:51 | 966,565 | `6497aef4be0d5be68644296d5fcdb709c66bb20db5972f4e53f90836e27862fe` | player 4 | 10,000 sats | BIP39 entropy: genesis bytes/puzzle text/img/other? words 12/24? passphrase Y/N? |
+| 2026-09-11 23:26:17 | 966,576 | `f8f04fc04e2c4f34dc2264f85ff7944c6aa822446bc4cc082e95a52aed5c2a4c` | author | 2,000 sats | BIP39: 12 words; Passphrase: Y; Entropy: The data needed to solve it is publicly available in the genesis block. |
 
 The three relayed questions were first paid by player 1 directly to the author's change
 address of the moment, off the escrow's history: 32,357 sats on 2026-08-23 16:20:06
 (`d271c37d8ce26247`), 6,465 sats on 2026-08-23 19:37:09 (`a2209eef7490846b`), 12,963 sats on
 2026-08-24 03:35:54 (`f6579e67ff234ddb`). Player 1 also paid its first question twice, once
 to the author (12,909 sats, `1b4bde84af7df419`, 14:34:56) and once to the escrow.
+
+
+Player 4's two questions (2026-09-10 and 2026-09-11, 10,000 sats each) are, word for word, the
+draft questions written in this folder's `analysis/leads.md` on 2026-08-29. I did not send them;
+a reader did, and the author answered both within the hour.
