@@ -30,13 +30,20 @@ COINGECKO = ("https://api.coingecko.com/api/v3/simple/price"
 GECKO_IDS = {"BTC": "bitcoin", "ETH": "ethereum", "LTC": "litecoin", "AR": "arweave",
              "SOL": "solana", "USDT": "tether", "USDC": "usd-coin"}
 
-SURFACE = "#0d1117"
-PANEL = "#161b22"
-INK = "#f0f6fc"
-MUTED = "#8b949e"
-GRID = "#30363d"
-CHAIN_COLOR = {"bitcoin": "#f7931a", "ethereum": "#8b9cf7", "base": "#3987e5", "arweave": "#199e70",
-               "litecoin": "#c9d1d9", "solana": "#d55181", "none": "#6e7681"}
+SURFACE = "#fcfcfb"      # light chart surface (validated reference palette, light mode)
+BORDER = "#e6e5e0"
+PANEL = "#f3f2ee"
+INK = "#0b0b0b"          # text-primary
+INK2 = "#52514e"         # text-secondary
+MUTED = "#8a8985"        # text-muted
+GRID = "#e6e5e0"
+# Categorical slots 2, 1, 3 of the validated light palette, all-pairs safe as a trio
+# (node validate_palette.js "#eb6834,#2a78d6,#1baf7a" --mode light --pairs all: PASS, aqua below 3:1
+# so every bar carries a direct label). Other chains fold into one neutral, as the method requires
+# past three series.
+CHAIN_COLOR = {"bitcoin": "#eb6834", "ethereum": "#2a78d6", "arweave": "#1baf7a"}
+OTHER = "#b3b1aa"
+OTHER_LABEL = "Base, Litecoin, Solana"
 
 SHORT = {
     "gsmg-io-5btc-puzzle": "GSMG.io",
@@ -124,56 +131,58 @@ def esc(s):
 
 def render(rows, others, total, n_funded, prices, when, source):
     W = 1000
-    top = 146
+    top = 150
     row_h = 34
     n = len(rows) + (1 if others else 0)
-    H = top + n * row_h + 78
+    H = top + n * row_h + 74
     label_w = 235
     bar_x = label_w + 16
-    bar_max = W - bar_x - 150
+    bar_max = W - bar_x - 160
     vmax = max(r[2] for r in rows) if rows else 1.0
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
            f'font-family="ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">',
-           f'<rect width="{W}" height="{H}" rx="12" fill="{SURFACE}"/>',
-           f'<text x="32" y="44" fill="{INK}" font-size="22" font-weight="700">Where the unsolved prize money sits</text>',
-           f'<text x="32" y="70" fill="{MUTED}" font-size="14">{esc(fmt_usd(total))} across {n_funded} funded puzzles, '
-           f'valued at {source} prices on {when}. Balances are the ones recorded in each folder.</text>']
-    # price strip
+           f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="12" fill="{SURFACE}" stroke="{BORDER}"/>',
+           f'<text x="32" y="46" fill="{INK}" font-size="21" font-weight="700">Where the unsolved prize money sits</text>',
+           f'<text x="32" y="70" fill="{INK2}" font-size="13">Valued at {source} prices on {when}. Balances are the ones recorded in each folder.</text>',
+           # hero total, top right
+           f'<text x="{W-32}" y="58" fill="{INK}" font-size="44" font-weight="700" text-anchor="end">{esc(fmt_usd(total))}</text>',
+           f'<text x="{W-32}" y="80" fill="{INK2}" font-size="13" text-anchor="end">locked in {n_funded} funded puzzles</text>']
     x = 32
     for sym in ("BTC", "ETH", "LTC", "AR", "SOL"):
         if sym in prices:
             label = f"{sym} ${prices[sym]:,.0f}" if prices[sym] >= 100 else f"{sym} ${prices[sym]:,.2f}"
-            out.append(f'<rect x="{x}" y="84" width="{len(label)*8+18}" height="22" rx="11" fill="{PANEL}" stroke="{GRID}"/>')
-            out.append(f'<text x="{x+9}" y="99" fill="{INK}" font-size="12" font-weight="600">{esc(label)}</text>')
-            x += len(label) * 8 + 28
-    # grid lines at 25 / 50 / 75 / 100 percent of vmax
+            wch = len(label) * 7.6 + 18
+            out.append(f'<rect x="{x}" y="88" width="{wch:.0f}" height="22" rx="11" fill="{PANEL}" stroke="{BORDER}"/>')
+            out.append(f'<text x="{x+9}" y="103" fill="{INK2}" font-size="12" font-weight="600">{esc(label)}</text>')
+            x += wch + 10
     for k in (0.25, 0.5, 0.75, 1.0):
         gx = bar_x + bar_max * k
-        out.append(f'<line x1="{gx:.0f}" y1="{top-8}" x2="{gx:.0f}" y2="{top + n*row_h}" stroke="{GRID}" stroke-width="1"/>')
-        out.append(f'<text x="{gx:.0f}" y="{top-14}" fill="{MUTED}" font-size="11" text-anchor="middle">{esc(fmt_usd(vmax*k))}</text>')
+        out.append(f'<line x1="{gx:.0f}" y1="{top-6}" x2="{gx:.0f}" y2="{top + n*row_h}" stroke="{GRID}" stroke-width="1"/>')
+        out.append(f'<text x="{gx:.0f}" y="{top-12}" fill="{MUTED}" font-size="11" text-anchor="middle">{esc(fmt_usd(vmax*k))}</text>')
     y = top
     for name, native, v, chain in rows:
         w = max(4, bar_max * v / vmax)
-        col = CHAIN_COLOR.get(chain, CHAIN_COLOR["none"])
+        col = CHAIN_COLOR.get(chain, OTHER)
         out.append(f'<text x="{label_w}" y="{y+22}" fill="{INK}" font-size="14" text-anchor="end">{esc(name)}</text>')
-        out.append(f'<rect x="{bar_x}" y="{y+6}" width="{w:.1f}" height="22" rx="6" fill="{col}" opacity="0.92"/>')
+        out.append(f'<rect x="{bar_x}" y="{y+6}" width="{w:.1f}" height="22" rx="4" fill="{col}"/>')
         out.append(f'<text x="{bar_x + w + 10:.1f}" y="{y+22}" fill="{INK}" font-size="13" font-weight="600">{esc(fmt_usd(v))}</text>')
-        out.append(f'<text x="{bar_x + w + 10 + len(fmt_usd(v))*8.5 + 6:.1f}" y="{y+22}" fill="{MUTED}" font-size="12">{esc(native)}</text>')
+        out.append(f'<text x="{bar_x + w + 10 + len(fmt_usd(v))*8.5 + 6:.1f}" y="{y+22}" fill="{INK2}" font-size="12">{esc(native)}</text>')
         y += row_h
     if others:
         cnt, v = others
         w = max(4, bar_max * v / vmax)
-        out.append(f'<text x="{label_w}" y="{y+22}" fill="{MUTED}" font-size="14" text-anchor="end">{cnt} smaller puzzles</text>')
-        out.append(f'<rect x="{bar_x}" y="{y+6}" width="{w:.1f}" height="22" rx="6" fill="{CHAIN_COLOR["none"]}" opacity="0.9"/>')
+        out.append(f'<text x="{label_w}" y="{y+22}" fill="{INK2}" font-size="14" text-anchor="end">{cnt} smaller puzzles</text>')
+        out.append(f'<rect x="{bar_x}" y="{y+6}" width="{w:.1f}" height="22" rx="4" fill="{OTHER}"/>')
         out.append(f'<text x="{bar_x + w + 10:.1f}" y="{y+22}" fill="{INK}" font-size="13" font-weight="600">{esc(fmt_usd(v))}</text>')
         y += row_h
-    # legend
     lx = 32
-    ly = H - 30
-    for chain, col in (("bitcoin", "Bitcoin"), ("ethereum", "Ethereum"), ("base", "Base"), ("arweave", "Arweave"), ("litecoin", "Litecoin")):
+    ly = H - 28
+    for chain, name in (("bitcoin", "Bitcoin"), ("ethereum", "Ethereum"), ("arweave", "Arweave")):
         out.append(f'<rect x="{lx}" y="{ly-11}" width="12" height="12" rx="3" fill="{CHAIN_COLOR[chain]}"/>')
-        out.append(f'<text x="{lx+18}" y="{ly}" fill="{MUTED}" font-size="12">{col}</text>')
-        lx += 18 + len(col) * 7.5 + 22
+        out.append(f'<text x="{lx+18}" y="{ly}" fill="{INK2}" font-size="12">{name}</text>')
+        lx += 18 + len(name) * 7.2 + 22
+    out.append(f'<rect x="{lx}" y="{ly-11}" width="12" height="12" rx="3" fill="{OTHER}"/>')
+    out.append(f'<text x="{lx+18}" y="{ly}" fill="{INK2}" font-size="12">{OTHER_LABEL}</text>')
     out.append(f'<text x="{W-32}" y="{ly}" fill="{MUTED}" font-size="12" text-anchor="end">tools/fig_prize_bars.py, refreshed daily</text>')
     out.append("</svg>")
     return "\n".join(out) + "\n"
