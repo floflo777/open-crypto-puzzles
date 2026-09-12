@@ -3,11 +3,11 @@
 <text x="32" y="44" fill="#f0f6fc" font-size="22" font-weight="700">Where the unsolved prize money sits</text>
 <text x="32" y="70" fill="#8b949e" font-size="14">$500k across 31 funded puzzles, valued at CoinGecko prices on 2026-09-12. Balances are the ones recorded in each folder.</text>
 <rect x="32" y="84" width="106" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<text x="41" y="99" fill="#f0f6fc" font-size="12" font-weight="600">BTC $77,380</text>
+<text x="41" y="99" fill="#f0f6fc" font-size="12" font-weight="600">BTC $77,379</text>
 <rect x="148" y="84" width="98" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<text x="157" y="99" fill="#f0f6fc" font-size="12" font-weight="600">ETH $2,534</text>
+<text x="157" y="99" fill="#f0f6fc" font-size="12" font-weight="600">ETH $2,533</text>
 <rect x="256" y="84" width="98" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
-<text x="265" y="99" fill="#f0f6fc" font-size="12" font-weight="600">LTC $54.06</text>
+<text x="265" y="99" fill="#f0f6fc" font-size="12" font-weight="600">LTC $54.05</text>
 <rect x="364" y="84" width="82" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
 <text x="373" y="99" fill="#f0f6fc" font-size="12" font-weight="600">AR $2.60</text>
 <rect x="456" y="84" width="82" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
@@ -41,9 +41,9 @@
 <text x="438.8" y="304" fill="#f0f6fc" font-size="13" font-weight="600">$46k</text>
 <text x="478.8" y="304" fill="#8b949e" font-size="12">0.5936 BTC</text>
 <text x="235" y="338" fill="#f0f6fc" font-size="14" text-anchor="end">Guntis Vitolins</text>
-<rect x="251" y="322" width="84.5" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
-<text x="345.5" y="338" fill="#f0f6fc" font-size="13" font-weight="600">$22k</text>
-<text x="385.5" y="338" fill="#8b949e" font-size="12">8.61 ETH</text>
+<rect x="251" y="322" width="84.4" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
+<text x="345.4" y="338" fill="#f0f6fc" font-size="13" font-weight="600">$22k</text>
+<text x="385.4" y="338" fill="#8b949e" font-size="12">8.61 ETH</text>
 <text x="235" y="372" fill="#f0f6fc" font-size="14" text-anchor="end">BLM collage</text>
 <rect x="251" y="356" width="60.2" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
 <text x="321.2" y="372" fill="#f0f6fc" font-size="13" font-weight="600">$16k</text>
