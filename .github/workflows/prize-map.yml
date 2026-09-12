@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: prize-map
+  cancel-in-progress: false
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -30,5 +34,6 @@ jobs:
           else
             git add assets/prize-map.svg
             git commit -m "assets: prize map refreshed at live prices"
+            git pull --rebase origin main
             git push
           fi
