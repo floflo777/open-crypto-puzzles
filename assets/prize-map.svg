@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="666" viewBox="0 0 1000 666" font-family="ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="666" rx="12" fill="#0d1117"/>
+<text x="32" y="44" fill="#f0f6fc" font-size="22" font-weight="700">Where the unsolved prize money sits</text>
+<text x="32" y="70" fill="#8b949e" font-size="14">$500k across 31 funded puzzles, valued at CoinGecko prices on 2026-09-12. Balances are the ones recorded in each folder.</text>
+<rect x="32" y="84" width="106" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
+<text x="41" y="99" fill="#f0f6fc" font-size="12" font-weight="600">BTC $77,380</text>
+<rect x="148" y="84" width="98" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
+<text x="157" y="99" fill="#f0f6fc" font-size="12" font-weight="600">ETH $2,534</text>
+<rect x="256" y="84" width="98" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
+<text x="265" y="99" fill="#f0f6fc" font-size="12" font-weight="600">LTC $54.06</text>
+<rect x="364" y="84" width="82" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
+<text x="373" y="99" fill="#f0f6fc" font-size="12" font-weight="600">AR $2.60</text>
+<rect x="456" y="84" width="82" height="22" rx="11" fill="#161b22" stroke="#30363d"/>
+<text x="465" y="99" fill="#f0f6fc" font-size="12" font-weight="600">SOL $102</text>
+<line x1="401" y1="138" x2="401" y2="588" stroke="#30363d" stroke-width="1"/>
+<text x="401" y="132" fill="#8b949e" font-size="11" text-anchor="middle">$39k</text>
+<line x1="550" y1="138" x2="550" y2="588" stroke="#30363d" stroke-width="1"/>
+<text x="550" y="132" fill="#8b949e" font-size="11" text-anchor="middle">$77k</text>
+<line x1="700" y1="138" x2="700" y2="588" stroke="#30363d" stroke-width="1"/>
+<text x="700" y="132" fill="#8b949e" font-size="11" text-anchor="middle">$116k</text>
+<line x1="850" y1="138" x2="850" y2="588" stroke="#30363d" stroke-width="1"/>
+<text x="850" y="132" fill="#8b949e" font-size="11" text-anchor="middle">$155k</text>
+<text x="235" y="168" fill="#f0f6fc" font-size="14" text-anchor="end">Ballet cards (Bobby Lee)</text>
+<rect x="251" y="152" width="599.0" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="860.0" y="168" fill="#f0f6fc" font-size="13" font-weight="600">$155k</text>
+<text x="908.5" y="168" fill="#8b949e" font-size="12">2.00 BTC</text>
+<text x="235" y="202" fill="#f0f6fc" font-size="14" text-anchor="end">GSMG.io</text>
+<rect x="251" y="186" width="376.3" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="637.3" y="202" fill="#f0f6fc" font-size="13" font-weight="600">$97k</text>
+<text x="677.3" y="202" fill="#8b949e" font-size="12">1.26 BTC</text>
+<text x="235" y="236" fill="#f0f6fc" font-size="14" text-anchor="end">Bitaps Shamir</text>
+<rect x="251" y="220" width="299.5" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="560.5" y="236" fill="#f0f6fc" font-size="13" font-weight="600">$77k</text>
+<text x="600.5" y="236" fill="#8b949e" font-size="12">1.00 BTC</text>
+<text x="235" y="270" fill="#f0f6fc" font-size="14" text-anchor="end">Aoi Nakamoto Quizchain</text>
+<rect x="251" y="254" width="232.7" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="493.7" y="270" fill="#f0f6fc" font-size="13" font-weight="600">$60k</text>
+<text x="533.7" y="270" fill="#8b949e" font-size="12">0.7770 BTC</text>
+<text x="235" y="304" fill="#f0f6fc" font-size="14" text-anchor="end">Peter Todd bounties</text>
+<rect x="251" y="288" width="177.8" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="438.8" y="304" fill="#f0f6fc" font-size="13" font-weight="600">$46k</text>
+<text x="478.8" y="304" fill="#8b949e" font-size="12">0.5936 BTC</text>
+<text x="235" y="338" fill="#f0f6fc" font-size="14" text-anchor="end">Guntis Vitolins</text>
+<rect x="251" y="322" width="84.5" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
+<text x="345.5" y="338" fill="#f0f6fc" font-size="13" font-weight="600">$22k</text>
+<text x="385.5" y="338" fill="#8b949e" font-size="12">8.61 ETH</text>
+<text x="235" y="372" fill="#f0f6fc" font-size="14" text-anchor="end">BLM collage</text>
+<rect x="251" y="356" width="60.2" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="321.2" y="372" fill="#f0f6fc" font-size="13" font-weight="600">$16k</text>
+<text x="361.2" y="372" fill="#8b949e" font-size="12">0.2011 BTC</text>
+<text x="235" y="406" fill="#f0f6fc" font-size="14" text-anchor="end">TeikhosBounty</text>
+<rect x="251" y="390" width="19.6" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
+<text x="280.6" y="406" fill="#f0f6fc" font-size="13" font-weight="600">$5.1k</text>
+<text x="329.1" y="406" fill="#8b949e" font-size="12">2.00 ETH</text>
+<text x="235" y="440" fill="#f0f6fc" font-size="14" text-anchor="end">Arweave #3</text>
+<rect x="251" y="424" width="10.1" height="22" rx="6" fill="#199e70" opacity="0.92"/>
+<text x="271.1" y="440" fill="#f0f6fc" font-size="13" font-weight="600">$2.6k</text>
+<text x="319.6" y="440" fill="#8b949e" font-size="12">1,000 AR</text>
+<text x="235" y="474" fill="#f0f6fc" font-size="14" text-anchor="end">Arweave #11</text>
+<rect x="251" y="458" width="9.8" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
+<text x="270.8" y="474" fill="#f0f6fc" font-size="13" font-weight="600">$2.5k</text>
+<text x="319.3" y="474" fill="#8b949e" font-size="12">1.00 ETH</text>
+<text x="235" y="508" fill="#f0f6fc" font-size="14" text-anchor="end">Fe compiler bounty</text>
+<rect x="251" y="492" width="9.8" height="22" rx="6" fill="#8b9cf7" opacity="0.92"/>
+<text x="270.8" y="508" fill="#f0f6fc" font-size="13" font-weight="600">$2.5k</text>
+<text x="319.3" y="508" fill="#8b949e" font-size="12">1.00 ETH</text>
+<text x="235" y="542" fill="#f0f6fc" font-size="14" text-anchor="end">Smith, Lyle &amp; Moore #2</text>
+<rect x="251" y="526" width="9.5" height="22" rx="6" fill="#f7931a" opacity="0.92"/>
+<text x="270.5" y="542" fill="#f0f6fc" font-size="13" font-weight="600">$2.5k</text>
+<text x="319.0" y="542" fill="#8b949e" font-size="12">0.0318 BTC</text>
+<text x="235" y="576" fill="#8b949e" font-size="14" text-anchor="end">18 smaller puzzles</text>
+<rect x="251" y="560" width="46.9" height="22" rx="6" fill="#6e7681" opacity="0.9"/>
+<text x="307.9" y="576" fill="#f0f6fc" font-size="13" font-weight="600">$12k</text>
+<rect x="32" y="625" width="12" height="12" rx="3" fill="#f7931a"/>
+<text x="50" y="636" fill="#8b949e" font-size="12">Bitcoin</text>
+<rect x="124.5" y="625" width="12" height="12" rx="3" fill="#8b9cf7"/>
+<text x="142.5" y="636" fill="#8b949e" font-size="12">Ethereum</text>
+<rect x="224.5" y="625" width="12" height="12" rx="3" fill="#3987e5"/>
+<text x="242.5" y="636" fill="#8b949e" font-size="12">Base</text>
+<rect x="294.5" y="625" width="12" height="12" rx="3" fill="#199e70"/>
+<text x="312.5" y="636" fill="#8b949e" font-size="12">Arweave</text>
+<rect x="387.0" y="625" width="12" height="12" rx="3" fill="#c9d1d9"/>
+<text x="405.0" y="636" fill="#8b949e" font-size="12">Litecoin</text>
+<text x="968" y="636" fill="#8b949e" font-size="12" text-anchor="end">tools/fig_prize_bars.py, refreshed daily</text>
+</svg>

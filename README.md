@@ -6,7 +6,9 @@ on-chain right now.
 
 ## Still unsolved, sitting on-chain
 
-![Donut chart of where the unsolved prize money sits, biggest prizes first](assets/prize-map.png)
+![Bar chart of where the unsolved prize money sits, biggest prizes first, valued at live prices](assets/prize-map.svg)
+
+*The chart is regenerated every day at live CoinGecko prices by a scheduled job; the balances are the ones recorded in each folder and re-checked with `tools/check_escrows.py`.*
 
 *The biggest unsolved prizes on-chain right now. Regenerated from the manifests by `tools/fig_readme_totals.py`.*
 
