@@ -9,10 +9,10 @@
   },
   "counts": {
     "big": 7,
-    "mid": 21,
+    "mid": 20,
     "small": 3,
     "solved": 6,
-    "dead-end": 11
+    "dead-end": 12
   },
   "puzzles": [
     {
@@ -2585,141 +2585,6 @@
     },
     {
       "schema_version": 1,
-      "slug": "keysa-crack-the-seed-369ksats",
-      "title": "Keysa: Crack the Seed Game",
-      "tier": "mid",
-      "status": "open",
-      "dead_end_reason": null,
-      "series": null,
-      "author": {
-        "name": "Keysa",
-        "handles": [
-          "x:@SimplestBTCBook",
-          "nostr:npub1dpna3xwwddnhhzg9ycpvlcz2ze0jdwm2rf3eqd2lf9leaewtq7tqhw0ef2"
-        ],
-        "url": "https://x.com/SimplestBTCBook"
-      },
-      "published": {
-        "date": "2023-06-26",
-        "url": "https://x.com/SimplestBTCBook/status/1673197111603519490"
-      },
-      "chain": "bitcoin",
-      "prize": {
-        "amount": 369369,
-        "asset": "sats",
-        "usd_estimate": 233,
-        "usd_snapshot": "2026-08-16",
-        "note": "the author never published the escrow address; I found it by matching the announced amount, 369,369 sats, as a near-unique fingerprint in a full blockchain balance dump, then corroborated it by script type (v0_p2wpkh, matching BIP84) and by funding time (2 minutes 28 seconds after the announcement post)"
-      },
-      "addresses": [
-        {
-          "address": "bc1qcv84707v4sglaj306qezkcrun4eejh77k8cyjr",
-          "chain": "bitcoin",
-          "role": "escrow",
-          "label": "main",
-          "explorer": "https://mempool.space/address/bc1qcv84707v4sglaj306qezkcrun4eejh77k8cyjr",
-          "expected": "369369 sats",
-          "verified_on": "2026-08-16",
-          "verified_state": "funded-unspent"
-        }
-      ],
-      "puzzle_type": [
-        "bip39-seed",
-        "word-selection"
-      ],
-      "target_format": "BIP39 12 words (English), BIP84 m/84'/0'/0'/0/0, no passphrase",
-      "derivation": {
-        "summary": "select 12 of the 70 printed words in some order, derive the BIP84 first receiving address, and compare it to the escrow address",
-        "oracle": "tools/oracle.py",
-        "oracle_certified": true,
-        "certified_against": "the public BIP39/BIP84 test vector (mnemonic 'abandon' repeated 11 times plus 'about'), since no solved sibling exists for this puzzle"
-      },
-      "difficulty_left": "insight",
-      "difficulty_note": "the derivation is fully understood and the mechanical and structural search space is thoroughly mapped (669,858 positional readings, 479,001,600 orderings of the 12 dotless tokens, 572,368 semantic selections, 105 intrinsic-property criteria, 36 acrostic selections, all negative). The author wrote on 2023-06-27 that all the words but two are in order and that the lock is which 12 words; under that order model every candidate set produced so far (2,084,778 distinct sets, 468 million sequences, 29.2 million checksum-valid derivations) is negative with witnesses. The selection rule is described by the author as short, memorable, and meant to be spoken aloud to a trusted person, which argues the missing piece is a fact only the author has stated, not more compute",
-      "tested_total": {
-        "candidates": 509479179,
-        "families": 6,
-        "certified": false
-      },
-      "leads": [
-        {
-          "rank": 1,
-          "title": "write to the author: are the two out-of-order words swapped or moved, and is the spoken cipher about positions or meaning",
-          "cost": "needs-a-person",
-          "status": "open"
-        },
-        {
-          "rank": 2,
-          "title": "a new selection family, replayed under reading order with two words out of place",
-          "cost": "minutes",
-          "status": "open"
-        },
-        {
-          "rank": 3,
-          "title": "the double-width gap after mad, and the 369-clock theme",
-          "cost": "needs-new-information",
-          "status": "open"
-        },
-        {
-          "rank": 4,
-          "title": "two tokens per row under the corrected order model (about 3.5 GPU-days, needs a row rule first)",
-          "cost": "days",
-          "status": "open"
-        }
-      ],
-      "solutions": [],
-      "artifacts": [
-        {
-          "path": "clues/L9rQ.jpg",
-          "sha256": "d52532f22281163dcc10c4256d70f5987a7dd59edb1efc3304fb81970fd51dd0",
-          "source": "https://i.nostr.build/L9rQ.jpg",
-          "archived": null
-        },
-        {
-          "path": "clues/qYkB.jpg",
-          "sha256": "f0eb1eab738be7bbc6088530e6f50b500f00cea368b26720af011ab9743ad4c7",
-          "source": "https://i.nostr.build/qYkB.jpg",
-          "archived": null
-        }
-      ],
-      "sources": [
-        {
-          "title": "Keysa, original announcement",
-          "url": "https://x.com/SimplestBTCBook/status/1673197111603519490",
-          "date": "2023-06-26",
-          "archived": null
-        },
-        {
-          "title": "Keysa on Nostr",
-          "url": "https://njump.me/npub1dpna3xwwddnhhzg9ycpvlcz2ze0jdwm2rf3eqd2lf9leaewtq7tqhw0ef2",
-          "date": "2026-08-16",
-          "archived": null
-        },
-        {
-          "title": "Keysa, reply: all the words but two, are in order",
-          "url": "https://x.com/SimplestBTCBook/status/1673685712498049025",
-          "date": "2023-06-27",
-          "archived": null
-        },
-        {
-          "title": "Keysa, reply: one still wouldn't know which of all those words are the 12",
-          "url": "https://x.com/SimplestBTCBook/status/1673683632546873344",
-          "date": "2023-06-27",
-          "archived": null
-        },
-        {
-          "title": "Keysa, reply: these are all BIP 39 words, because the anon set would decrease",
-          "url": "https://x.com/SimplestBTCBook/status/1673720563318112256",
-          "date": "2023-06-27",
-          "archived": null
-        }
-      ],
-      "third_party_material": "the two card images in clues/ are the author's own published puzzle material, posted on X and mirrored on nostr.build; her book and workshop materials are not included and are referenced by title only",
-      "last_updated": "2026-09-03",
-      "folder": "2-mid-prizes/keysa-crack-the-seed-369ksats"
-    },
-    {
-      "schema_version": 1,
       "slug": "logicbeach-powerful-moss-0-54eth",
       "title": "LogicBeach: Powerful Moss",
       "tier": "mid",
@@ -5001,6 +4866,123 @@
       "third_party_material": "the site's own hint text and fragment table, reproduced as published; no third-party copyrighted material",
       "last_updated": "2026-08-16",
       "folder": "archive/dead-ends/commander-u-puzzle-8-5btc"
+    },
+    {
+      "schema_version": 1,
+      "slug": "keysa-crack-the-seed-369ksats",
+      "title": "Keysa: Crack the Seed Game",
+      "tier": "dead-end",
+      "status": "dead-end",
+      "dead_end_reason": "swept-by-third-party",
+      "series": null,
+      "author": {
+        "name": "Keysa",
+        "handles": [
+          "x:@SimplestBTCBook",
+          "nostr:npub1dpna3xwwddnhhzg9ycpvlcz2ze0jdwm2rf3eqd2lf9leaewtq7tqhw0ef2"
+        ],
+        "url": "https://x.com/SimplestBTCBook"
+      },
+      "published": {
+        "date": "2023-06-26",
+        "url": "https://x.com/SimplestBTCBook/status/1673197111603519490"
+      },
+      "chain": "bitcoin",
+      "prize": {
+        "amount": 369369,
+        "asset": "sats",
+        "usd_estimate": 233,
+        "usd_snapshot": "2026-08-16",
+        "note": "the author never published the escrow address; I found it by matching the announced amount, 369,369 sats, as a near-unique fingerprint in a full blockchain balance dump, then corroborated it by script type (v0_p2wpkh, matching BIP84) and by funding time (2 minutes 28 seconds after the announcement post)"
+      },
+      "addresses": [
+        {
+          "address": "bc1qcv84707v4sglaj306qezkcrun4eejh77k8cyjr",
+          "chain": "bitcoin",
+          "role": "escrow",
+          "label": "main",
+          "explorer": "https://mempool.space/address/bc1qcv84707v4sglaj306qezkcrun4eejh77k8cyjr",
+          "expected": "0 sats (369,369 sats until 2026-09-08)",
+          "verified_on": "2026-09-12",
+          "verified_state": "swept"
+        }
+      ],
+      "puzzle_type": [
+        "bip39-seed",
+        "word-selection"
+      ],
+      "target_format": "BIP39 12 words (English), BIP84 m/84'/0'/0'/0/0, no passphrase",
+      "derivation": {
+        "summary": "select 12 of the 70 printed words in some order, derive the BIP84 first receiving address, and compare it to the escrow address",
+        "oracle": "tools/oracle.py",
+        "oracle_certified": true,
+        "certified_against": "the public BIP39/BIP84 test vector (mnemonic 'abandon' repeated 11 times plus 'about'), since no solved sibling exists for this puzzle"
+      },
+      "difficulty_left": "none",
+      "difficulty_note": "swept on 2026-09-08 (block 966,260, 369,150 sats to bc1q82gz5dnpxnqmvzrkusm8yc0nt4dcqp8gd3y59j); the author confirmed the crack on X on 2026-09-10 without naming the solver; neither the 12 words nor the selection rule has been published; the negatives ledger stays as a record of what the selection rule is not",
+      "tested_total": {
+        "candidates": 509479179,
+        "families": 6,
+        "certified": false
+      },
+      "leads": [
+        {
+          "rank": 1,
+          "title": "the solver posts the 12 words or the selection rule; credit goes to them",
+          "cost": "needs-a-person",
+          "status": "open"
+        }
+      ],
+      "solutions": [],
+      "artifacts": [
+        {
+          "path": "clues/L9rQ.jpg",
+          "sha256": "d52532f22281163dcc10c4256d70f5987a7dd59edb1efc3304fb81970fd51dd0",
+          "source": "https://i.nostr.build/L9rQ.jpg",
+          "archived": null
+        },
+        {
+          "path": "clues/qYkB.jpg",
+          "sha256": "f0eb1eab738be7bbc6088530e6f50b500f00cea368b26720af011ab9743ad4c7",
+          "source": "https://i.nostr.build/qYkB.jpg",
+          "archived": null
+        }
+      ],
+      "sources": [
+        {
+          "title": "Keysa, original announcement",
+          "url": "https://x.com/SimplestBTCBook/status/1673197111603519490",
+          "date": "2023-06-26",
+          "archived": null
+        },
+        {
+          "title": "Keysa on Nostr",
+          "url": "https://njump.me/npub1dpna3xwwddnhhzg9ycpvlcz2ze0jdwm2rf3eqd2lf9leaewtq7tqhw0ef2",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "Keysa, reply: all the words but two, are in order",
+          "url": "https://x.com/SimplestBTCBook/status/1673685712498049025",
+          "date": "2023-06-27",
+          "archived": null
+        },
+        {
+          "title": "Keysa, reply: one still wouldn't know which of all those words are the 12",
+          "url": "https://x.com/SimplestBTCBook/status/1673683632546873344",
+          "date": "2023-06-27",
+          "archived": null
+        },
+        {
+          "title": "Keysa, reply: these are all BIP 39 words, because the anon set would decrease",
+          "url": "https://x.com/SimplestBTCBook/status/1673720563318112256",
+          "date": "2023-06-27",
+          "archived": null
+        }
+      ],
+      "third_party_material": "the two card images in clues/ are the author's own published puzzle material, posted on X and mirrored on nostr.build; her book and workshop materials are not included and are referenced by title only",
+      "last_updated": "2026-09-12",
+      "folder": "archive/dead-ends/keysa-crack-the-seed-369ksats"
     },
     {
       "schema_version": 1,

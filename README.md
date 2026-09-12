@@ -17,7 +17,7 @@ on-chain right now.
 | Ethereum | 13.21 ETH | $25,000 |
 | Arweave | 1,900 AR | $3,400 |
 | Stablecoins | 306 USDT + 0 USDC | $300 |
-| **Total** | **across 31 funded puzzles** | **$404,000** |
+| **Total** | **across 30 funded puzzles** | **$404,000** |
 
 Checked 2026-08-16 at BTC $63,000, ETH $1,880, AR $1.81. Prices and balances move; verify each escrow yourself.
 <!-- totals:end -->
@@ -51,16 +51,15 @@ and two Arweave key-stretch engines. They ship as CUDA source plus Python host d
 self-tests; build them with `engines/build.sh` (nvcc), then point one at a puzzle's target.
 See [engines/README.md](engines/README.md).
 
-## Start here: eleven to look at first
+## Start here: ten to look at first
 
-If you do not know where to begin, these eleven are the clearest to pick up. The full list,
+If you do not know where to begin, these ten are the clearest to pick up. The full list,
 grouped by prize, is in the tables below.
 
 | Puzzle | Prize | Why it is a good place to start |
 |---|---|---|
 | [Keir Finlow-Bates: book treasure hunt](2-mid-prizes/keir-finlow-bates-blockchain-book-600ksats/) | 600,000 sats open, 4 lots solved | I solved 4 of its 12 lots; the write-ups show exactly how the author hides a key, which is the strongest lead for the 3 still open. |
 | [Corey Phillips: kitten passphrase](2-mid-prizes/corey-phillips-kitten-passphrase-1msats/) | 0.01 BTC | The seed is fixed and public; only one BIP39 passphrase is missing. A clean, bounded target to point a tool at. |
-| [Keysa: Crack the Seed](2-mid-prizes/keysa-crack-the-seed-369ksats/) | 369,369 sats | Seventy words are printed on a card; twelve of them are the seed. The whole puzzle is picking the right twelve in the right order. |
 | [GSMG.io puzzle](1-big-prizes/gsmg-io-5btc-puzzle/) | 1.25 BTC | A famous multi-stage hunt; every stage but the last is solved. The final gate is two sealed AES blobs. |
 | [Guntis Vitolins MetaMask seed](1-big-prizes/guntis-vitolins-metamask-8-6eth/) | 8.61 ETH | The largest prize here. A 12-word seed scattered across the author's own clues. |
 | [Ballet / Bobby Lee cards](1-big-prizes/ballet-bobby-lee-2btc-cards/) | 2 BTC | Two physical Ballet cards, 1 BTC each. Each needs one hidden half that was never photographed. |
@@ -103,7 +102,6 @@ grouped by prize, is in the tables below.
 | [Zden Cryptopuzzle LVL.5](2-mid-prizes/zden-haluska-lvl5-555ksats/) | 555,550 sats | 350 | bitcoin | geometry, raw-private-key | external-info | 2026-08-16 | open |
 | [FTPK Season 2: Never-Ending](2-mid-prizes/ftpk-season-2-300usdt/) | 305.930218 USDT | 306 | ethereum | bip39-seed, word-selection | insight | 2026-08-27 | open |
 | [Andy Bauch: New Money, COG](2-mid-prizes/andy-bauch-new-money-cog-428ksats/) | 428,206 sats | 270 | bitcoin | pixel-code, physical-object | external-info | 2026-08-16 | open |
-| [Keysa: Crack the Seed Game](2-mid-prizes/keysa-crack-the-seed-369ksats/) | 369,369 sats | 233 | bitcoin | bip39-seed, word-selection | insight | 2026-08-16 | open |
 | [Zden Level HALV](2-mid-prizes/zden-haluska-halv-312ksats/) | 312,500 sats | 197 | bitcoin | geometry, raw-private-key | external-info | 2026-08-16 | open |
 | [Pindar Van Arman: cryptoArtGAN Act 1 Puzzle](2-mid-prizes/pindar-van-arman-cryptoartgan-nft/) | 1 NFT |  | ethereum | bip39-seed, word-selection | insight | 2026-08-16 | open |
 
