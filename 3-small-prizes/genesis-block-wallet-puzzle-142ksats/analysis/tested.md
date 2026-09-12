@@ -106,3 +106,13 @@ These negatives cover only the stated constructions and paths. They do not estab
 [Scripts and per-run reports](../tools/REPRODUCE.md) preserve the six bounded
 constructions. The pair counts above are per-family coverage, not a claim that
 all families are mutually disjoint. No solution was obtained.
+
+## Pass 3, the September model (2026-09-12)
+
+After the author's answers of 2026-09-10 and 2026-09-11 (12 words, a passphrase, entropy from the genesis block, a genesis value as the BIP48 account), one bounded pass over that model.
+
+| Hypothesis | Space | Method | Result | Witness | Date |
+|---|---|---|---|---|---|
+| Pass 3, the September model (2026-09-12): 12-word BIP39 mnemonic whose entropy is a 16-byte window of genesis data (every window of the raw 285-byte block, of the merkle root and block hash in both byte orders, of the coinbase text, headline, scriptSig, header and coinbase public key, plus the header integers zero-padded and as decimal strings: 329 entropies), 53 passphrases (empty as control, the coinbase text, the headline, The Times, Satoshi, genesis, bitcoin, the header integers, the hashes in hex and a dozen short words from the author's messages), BIP48 `m/48'/0'/a'/s'` with a in {0, 1, 2, 3, 50, 2009, 285, bits, time, nonce} and s in {0', 1', 2'}, suffix empty, /0/0 or /0/1; every ordered pair | 1,569,330 keys, 2.463e12 ordered pairs | CPU BIP39/BIP32 generation (25 s on 22 cores), GPU pairing and SHA-256 (`engines/p2wsh_2of2_pairs.cu`, 4.18e9 pairs/s, 589 s), exact 32-byte compare | 0 match | yes: revealed 2-of-2 pair at head, middle and tail, 9 of 9 ordered combinations re-found, `exhausted=yes` | 2026-09-12 |
+
+Scope: only 12-word mnemonics, only the listed entropy windows, only the 53 listed passphrases, only the listed accounts and script types, compressed keys. Under that model the passphrase is not among the obvious readings of the block. Not covered: a passphrase outside the list (the one thing the author has not described), 24 words, other accounts, non-BIP48 paths.

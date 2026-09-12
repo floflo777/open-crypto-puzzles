@@ -191,25 +191,21 @@ windows, readings and derivation paths. Reproduce with `tools/candidates.py --wr
 | Pass 1, families A to D: literal readings of hints 7 and 8 (raw keys, BIP32 seeds, BIP39 entropy from the coinbase text and the other fields, 214 paths), every ordered pair | 447,916 keys, 200,634,118,084 ordered pairs | CPU key generation (`tools/candidates.py`), GPU pairing and SHA-256 (`engines/p2wsh_2of2_pairs.cu`), exact 32-byte compare, every hit re-derived on CPU | 0 match | yes: revealed 2-of-2 pair at head, middle and tail, 9 of 9 ordered combinations re-found, `exhausted=yes` | 2026-08-29 |
 | Pass 2, A to D plus E (hashed roots), F (raw 64-byte extended key from the text), G (raw key with zero chain code), same 214 paths, every ordered pair of the union | 611,008 keys, 373,338,108,196 ordered pairs | same pipeline, `tools/candidates.py --pass 2` | 0 match | yes: same witness protocol, 9 of 9 re-found, `exhausted=yes` | 2026-08-29 |
 | Six further constructions by @BorisLoveDev (PR #21): the texts directly as BIP39 sentences, the newspaper date as an integer seed, a date-prefix mnemonic, text bytes as derivation-path indices, zero roots, and 15 hardening patterns over m/48'/0'/account/script | about 42 million new ordered pairs across the six families (1,648,656 + 26,378,496 + 2,060,820 + 576 + 732,736 + 11,150,784) | CPU pairing on the same 2-of-2 program, exact 32-byte compare | 0 match | yes: revealed pair at head, middle and tail; I replayed all six locally with identical counts | 2026-09-05 |
+| Pass 3, the September model (2026-09-12): 12-word BIP39 mnemonic whose entropy is a 16-byte window of genesis data (every window of the raw 285-byte block, of the merkle root and block hash in both byte orders, of the coinbase text, headline, scriptSig, header and coinbase public key, plus the header integers zero-padded and as decimal strings: 329 entropies), 53 passphrases (empty as control, the coinbase text, the headline, The Times, Satoshi, genesis, bitcoin, the header integers, the hashes in hex and a dozen short words from the author's messages), BIP48 `m/48'/0'/a'/s'` with a in {0, 1, 2, 3, 50, 2009, 285, bits, time, nonce} and s in {0', 1', 2'}, suffix empty, /0/0 or /0/1; every ordered pair | 1,569,330 keys, 2.463e12 ordered pairs | CPU BIP39/BIP32 generation (25 s on 22 cores), GPU pairing and SHA-256 (`engines/p2wsh_2of2_pairs.cu`, 4.18e9 pairs/s, 589 s), exact 32-byte compare | 0 match | yes: revealed 2-of-2 pair at head, middle and tail, 9 of 9 ordered combinations re-found, `exhausted=yes` | 2026-09-12 |
 
 ## Open leads, ranked
 
-1. **Pass 3: the September model** (minutes on one GPU once the passphrase list is
-   fixed). Entropy = every 16-byte window of the genesis block and of each field (about
-   270 windows, plus field-aligned halves such as the two halves of the merkle root or of
-   the block hash), 12 words, passphrase from a short list built from the block itself and
-   the puzzle text (the coinbase text, the headline, "The Times", "Satoshi", "genesis",
-   the author's own sentences, the empty string as a control), account = each genesis
-   integer under 2^31 (nonce, time, bits, version, height, 2009, 50, 3) plus 0, script
-   type 2' (and 0', 1' as controls), change and index 0 (and 1). Keys paired across
-   windows, passphrases and accounts; the oracle checks both script orders. What confirms
-   it: an exact witness-program match. What kills it: exhaustion with witnesses, which then
-   says the passphrase is not in the list, the one thing the author has not described.
-2. **Ask the author for the passphrase's nature** (needs a person, 10,000 sats bought each
-   September answer within the hour). Draft, 79 bytes:
+1. **Ask the author for the passphrase's nature** (needs a person; 10,000 sats bought each
+   September answer within the hour). Pass 3 (below, 2026-09-12) says that under the
+   September model the passphrase is none of 53 obvious readings of the block, so it is the
+   one unknown left. Draft, 79 bytes:
    `Passphrase: from genesis text/Times headline/other? Same 16 genesis bytes both keys?`
    The two questions drafted here on 2026-08-29 were sent by a reader on 2026-09-10 and
    2026-09-11 and both were answered; that is the working channel.
+2. **Pass 3 wave 2** (about 15 minutes on one GPU): the same model with the coinbase text
+   without spaces, lowercased, the hashes as hex ASCII, and every substring of the coinbase
+   text (3 to 69 bytes) as passphrase. Cheap, but it only tests more guesses at the same
+   unknown; the question above tests it directly.
 3. **Watch the channel** (minutes). Re-read the escrow's transactions before any work:
    a new OP_RETURN from the author's change chain is a new constraint; a spend closes the
    puzzle. The author's current change address (unspent on 2026-09-12) is

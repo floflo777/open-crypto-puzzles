@@ -47,23 +47,23 @@
     "certified_against": "the BIP-173 P2WSH test vector, and a real 2-of-2 P2WSH spent in block 963629 (tx 47ded3504e855ce418e46eeca4694b55a623d1e23a8e3c83292abbcf9cee9f7a, input 0) whose revealed keys rebuild the script and hash to the spent address; private key 1 to the generator point; negative control against the escrow"
   },
   "difficulty_left": "insight",
-  "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; passes 1 and 2 (2026-08-29) exhausted the mechanical readings of the August hints (611,008 keys, 5.7e11 ordered pairs, 0 match with witnesses); the author's answers of 2026-09-10 and 2026-09-11, bought by a reader with the questions drafted here, name the root: a 12-word BIP39 mnemonic with entropy taken from the genesis block, a passphrase, and a genesis value as the BIP48 account; the passphrase is the one thing not described",
+  "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; passes 1 and 2 (2026-08-29) exhausted the mechanical readings of the August hints (611,008 keys, 5.7e11 ordered pairs, 0 match with witnesses); the author's answers of 2026-09-10 and 2026-09-11, bought by a reader with the questions drafted here, name the root: a 12-word BIP39 mnemonic with entropy taken from the genesis block, a passphrase, and a genesis value as the BIP48 account; pass 3 (2026-09-12, 1.57 million keys, 2.46e12 pairs, witnesses re-found) shows the passphrase is none of 53 obvious readings of the block; it is the one thing the author has not described",
   "tested_total": {
-    "candidates": 573972226280,
-    "families": 7,
+    "candidates": 573973795610,
+    "families": 8,
     "certified": true
   },
   "leads": [
     {
       "rank": 1,
-      "title": "pass 3: 16-byte genesis windows as 12-word entropy, a short passphrase list, genesis integers as BIP48 account, script type 2', keys paired",
-      "cost": "minutes on one rented GPU",
+      "title": "ask the author about the passphrase's nature on chain (79-byte draft in the README); pass 3 shows it is none of 53 obvious readings of the block",
+      "cost": "needs-a-person",
       "status": "open"
     },
     {
       "rank": 2,
-      "title": "ask the author about the passphrase's nature on chain (the two September questions drafted here were sent by a reader and answered within the hour)",
-      "cost": "needs-a-person",
+      "title": "pass 3 wave 2: text variants and every coinbase-text substring as passphrase",
+      "cost": "minutes on one rented GPU",
       "status": "open"
     },
     {
@@ -74,12 +74,18 @@
     },
     {
       "rank": 4,
-      "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths",
+      "title": "pass 3: 16-byte genesis windows as 12-word entropy, 53 passphrases, genesis integers as BIP48 account, script types 0/1/2, keys paired (2.46e12 pairs)",
       "cost": "minutes",
       "status": "killed"
     },
     {
       "rank": 5,
+      "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths",
+      "cost": "minutes",
+      "status": "killed"
+    },
+    {
+      "rank": 6,
       "title": "pass 1: literal readings of the 2026-08-28 hints, families A to D",
       "cost": "minutes",
       "status": "killed"
