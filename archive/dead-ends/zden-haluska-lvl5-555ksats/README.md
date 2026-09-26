@@ -1,15 +1,11 @@
-# Zden Cryptopuzzle LVL.5 (555,550 sats, [OPEN])
+# Zden Cryptopuzzle LVL.5 (555,550 sats, [DEAD END])
 
-Zden (Zdenek Haluska), author of a series of algorithmic crypto puzzles at
-crypto.haluska.sk, published LVL.5 in November 2018: a single image of 64 rectangles
-arranged in an 8x8 grid, with the private key to a funded Bitcoin address encoded in their
-shapes. He issued a hint the following month and a corrected version of the image in
-December 2021, after 3 years unsolved. I measured the rectangle geometry and certified it
-byte-perfect against the author's own published script; I read the hint's formula at the
-pixel level. I have tried over 545 million candidate keys built from more than 3,200 distinct
-readings of that formula, with zero matches. What is missing is not more computation: it is
-the exact meaning of 3 terms in the author's own hint that nothing published so far pins
-down.
+**Swept on 2026-09-22.** The escrow `1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7` was emptied in block 968,171 by
+[transaction e2544433](https://mempool.space/tx/e2544433184d0fe4157ca10a8e1ce753bb52a7b0bbcf833740d7448ed25e8e8e),
+551,745 sats to `bc1qw50q83k7psugw5z5548kwnxqqjxjxvx2pkvz0s`, a plain spend with no message,
+reported in [issue #34](https://github.com/floflo777/open-crypto-puzzles/issues/34) by deviceio121.
+Nobody has published the key or the reading of the hint as of 2026-09-26. The research below is
+kept as it stood; if the solver reads this, an issue with the derivation gets full credit here.
 
 ## At a glance
 
@@ -27,6 +23,25 @@ down.
 | Certified oracle | yes: `tools/oracle.py --selftest` (certified against a standard public vector, private key 1; the puzzle's own rectangle-to-key reading is not certified, see below) |
 | What remains | the exact meaning of 3 terms in the author's own published hint |
 | Series | Zden's crypto.haluska.sk puzzle series (LTC, Codex, Demobit, Janus, HALV and others) |
+
+## Why this is a dead end
+
+The prize is gone: the only escrow of this puzzle was swept by an unknown party on 2026-09-22,
+almost 8 years after publication, and no solution has been published. The geometry, the oracle
+and the 545 million negatives remain valid material for whoever wants to reconstruct the key
+from the public solution once it appears.
+
+
+Zden (Zdenek Haluska), author of a series of algorithmic crypto puzzles at
+crypto.haluska.sk, published LVL.5 in November 2018: a single image of 64 rectangles
+arranged in an 8x8 grid, with the private key to a funded Bitcoin address encoded in their
+shapes. He issued a hint the following month and a corrected version of the image in
+December 2021, after 3 years unsolved. I measured the rectangle geometry and certified it
+byte-perfect against the author's own published script; I read the hint's formula at the
+pixel level. I have tried over 545 million candidate keys built from more than 3,200 distinct
+readings of that formula, with zero matches. What is missing is not more computation: it is
+the exact meaning of 3 terms in the author's own hint that nothing published so far pins
+down.
 
 ## The puzzle as published
 

@@ -10,10 +10,10 @@
   },
   "counts": {
     "big": 7,
-    "mid": 21,
+    "mid": 20,
     "small": 3,
     "solved": 6,
-    "dead-end": 12
+    "dead-end": 13
   },
   "puzzles": [
     {
@@ -824,8 +824,8 @@
       "difficulty_left": "bounded-compute",
       "difficulty_note": "3 of 12 positions are confirmed (1, 5 with 2 candidates, and 12), plus 2 more confirmed list members with unknown positions; every sweep of the confirmed word pool (approximately 16.75 billion derivations across 6 metadata-era sweeps, all witnessed) has failed; the next 2 leads (connecting words, then substrings of longer words) are priced at hours and about a day respectively on one rented GPU and have not been run; a third lead (re-reading remaining metadata) is a human task, not a sweep",
       "tested_total": {
-        "candidates": 16755000000,
-        "families": 8,
+        "candidates": 21227190000,
+        "families": 9,
         "certified": true
       },
       "leads": [
@@ -833,7 +833,7 @@
           "rank": 1,
           "title": "on-screen and spoken video words (issue #18): sweep RO1 with atom/link/basic/token/dash as free video words, then the 219-word extension",
           "cost": "minutes to hours on one rented GPU",
-          "status": "open"
+          "status": "partially tested: coin words as one free slot negative (issue #18, 2026-09-26); 219-word extension open"
         },
         {
           "rank": 2,
@@ -845,7 +845,7 @@
           "rank": 3,
           "title": "extend to substrings of longer words",
           "cost": "about a day on one rented GPU",
-          "status": "open"
+          "status": "tested: negative on 7 paths (issue #18, 2026-09-26)"
         },
         {
           "rank": 4,
@@ -3841,128 +3841,6 @@
     },
     {
       "schema_version": 1,
-      "slug": "zden-haluska-lvl5-555ksats",
-      "title": "Zden Cryptopuzzle LVL.5",
-      "tier": "mid",
-      "status": "open",
-      "dead_end_reason": null,
-      "series": "Zden's crypto.haluska.sk puzzle series",
-      "author": {
-        "name": "Zden (Zdenek Haluska)",
-        "handles": [
-          "x:@Zd3N"
-        ],
-        "url": "https://crypto.haluska.sk/"
-      },
-      "published": {
-        "date": "2018-11-09",
-        "url": "https://twitter.com/Zd3N/status/1060955171591766018"
-      },
-      "chain": "bitcoin",
-      "prize": {
-        "amount": 555550,
-        "asset": "sats",
-        "usd_estimate": 350,
-        "usd_snapshot": "2026-08-16",
-        "note": ""
-      },
-      "addresses": [
-        {
-          "address": "1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7",
-          "chain": "bitcoin",
-          "role": "escrow",
-          "label": "main",
-          "explorer": "https://mempool.space/address/1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7",
-          "expected": "555550 sats",
-          "verified_on": "2026-08-16",
-          "verified_state": "funded-unspent"
-        }
-      ],
-      "puzzle_type": [
-        "geometry",
-        "raw-private-key"
-      ],
-      "target_format": "256-bit private key as direct hex (not WIF, not BIP39), P2PKH",
-      "derivation": {
-        "summary": "sum the areas of 2 'following' rectangles (of 64 in an 8x8 grid) under a formula read from a pixel-level hint, normalize to 1 byte, repeat for 32 byte pairs to build a 256-bit private key, derive P2PKH and compare to the escrow",
-        "oracle": "tools/oracle.py",
-        "oracle_certified": true,
-        "certified_against": "a standard public vector, private key 1 (the generator point); the puzzle's own rectangle-to-key reading is not itself certified"
-      },
-      "difficulty_left": "external-info",
-      "difficulty_note": "the rectangle geometry is certified byte-perfect and the hint formula is read at the pixel level; over 545 million candidate keys across 3,200-plus readings have produced zero matches; the blocker is the exact meaning of 3 undefined terms in the author's own hint, not computation",
-      "tested_total": {
-        "candidates": 545000000,
-        "families": 7,
-        "certified": false
-      },
-      "leads": [
-        {
-          "rank": 1,
-          "title": "a clarification from the author on 3 exact bindings (x, byte-range normalization, following)",
-          "cost": "needs a person",
-          "status": "open"
-        },
-        {
-          "rank": 2,
-          "title": "a higher-fidelity source for the mini-hint glyphs",
-          "cost": "needs new information",
-          "status": "open"
-        },
-        {
-          "rank": 3,
-          "title": "a wider author-error tolerance sweep (3-byte wildcard)",
-          "cost": "bounded, low priority",
-          "status": "open"
-        }
-      ],
-      "solutions": [],
-      "artifacts": [
-        {
-          "path": "clues/crypto5.png",
-          "sha256": "936c401fac266e245e40d5ae1705360746387be934ced4ee6c37fc30dfdd5d15",
-          "source": "https://crypto.haluska.sk/",
-          "archived": null
-        },
-        {
-          "path": "clues/crypto5fix.png",
-          "sha256": "5a62843597f0fd545e19a343b750c6cdfa8010ba2cb5b52d4ad29c7016e57cc6",
-          "source": "https://crypto.haluska.sk/crypto5fix.png",
-          "archived": null
-        }
-      ],
-      "sources": [
-        {
-          "title": "Zden, original announcement",
-          "url": "https://twitter.com/Zd3N/status/1060955171591766018",
-          "date": "2018-11-09",
-          "archived": null
-        },
-        {
-          "title": "Zden, Christmas hint bundle",
-          "url": "https://twitter.com/Zd3N/status/1077146640090316800",
-          "date": "2018-12-24",
-          "archived": null
-        },
-        {
-          "title": "Zden's puzzle site",
-          "url": "https://crypto.haluska.sk/",
-          "date": "2026-08-16",
-          "archived": null
-        },
-        {
-          "title": "Community documentation and the author's own measurement script",
-          "url": "https://github.com/HomelessPhD/Zden_LVL5",
-          "date": "2026-08-16",
-          "archived": null
-        }
-      ],
-      "third_party_material": "",
-      "last_updated": "2026-08-16",
-      "folder": "2-mid-prizes/zden-haluska-lvl5-555ksats"
-    },
-    {
-      "schema_version": 1,
       "slug": "crypto-puzzles-2018-puzzle-2-0-05eth",
       "title": "Crypto Puzzles 2018: Puzzle #2",
       "tier": "small",
@@ -5428,6 +5306,134 @@
       "third_party_material": "short verbatim quotes from the author's own press release and video descriptions; one news report cited for the date of the author's death, no further detail reproduced",
       "last_updated": "2026-08-16",
       "folder": "archive/dead-ends/onfo-forsyth-1btc"
+    },
+    {
+      "schema_version": 1,
+      "slug": "zden-haluska-lvl5-555ksats",
+      "title": "Zden Cryptopuzzle LVL.5",
+      "tier": "dead-end",
+      "status": "dead-end",
+      "dead_end_reason": "swept-by-third-party",
+      "series": "Zden's crypto.haluska.sk puzzle series",
+      "author": {
+        "name": "Zden (Zdenek Haluska)",
+        "handles": [
+          "x:@Zd3N"
+        ],
+        "url": "https://crypto.haluska.sk/"
+      },
+      "published": {
+        "date": "2018-11-09",
+        "url": "https://twitter.com/Zd3N/status/1060955171591766018"
+      },
+      "chain": "bitcoin",
+      "prize": {
+        "amount": 555550,
+        "asset": "sats",
+        "usd_estimate": 350,
+        "usd_snapshot": "2026-08-16",
+        "note": ""
+      },
+      "addresses": [
+        {
+          "address": "1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7",
+          "chain": "bitcoin",
+          "role": "escrow",
+          "label": "main",
+          "explorer": "https://mempool.space/address/1cryptoGeCRiTzVgxBQcKFFjSVydN1GW7",
+          "expected": "0 sats (555,550 sats until 2026-09-22)",
+          "verified_on": "2026-09-26",
+          "verified_state": "swept"
+        }
+      ],
+      "puzzle_type": [
+        "geometry",
+        "raw-private-key"
+      ],
+      "target_format": "256-bit private key as direct hex (not WIF, not BIP39), P2PKH",
+      "derivation": {
+        "summary": "sum the areas of 2 'following' rectangles (of 64 in an 8x8 grid) under a formula read from a pixel-level hint, normalize to 1 byte, repeat for 32 byte pairs to build a 256-bit private key, derive P2PKH and compare to the escrow",
+        "oracle": "tools/oracle.py",
+        "oracle_certified": true,
+        "certified_against": "a standard public vector, private key 1 (the generator point); the puzzle's own rectangle-to-key reading is not itself certified"
+      },
+      "difficulty_left": "external-info",
+      "difficulty_note": "the rectangle geometry is certified byte-perfect and the hint formula is read at the pixel level; over 545 million candidate keys across 3,200-plus readings have produced zero matches; the blocker is the exact meaning of 3 undefined terms in the author's own hint, not computation",
+      "tested_total": {
+        "candidates": 545000000,
+        "families": 7,
+        "certified": false
+      },
+      "leads": [
+        {
+          "rank": 1,
+          "title": "a clarification from the author on 3 exact bindings (x, byte-range normalization, following)",
+          "cost": "needs a person",
+          "status": "open"
+        },
+        {
+          "rank": 2,
+          "title": "a higher-fidelity source for the mini-hint glyphs",
+          "cost": "needs new information",
+          "status": "open"
+        },
+        {
+          "rank": 3,
+          "title": "a wider author-error tolerance sweep (3-byte wildcard)",
+          "cost": "bounded, low priority",
+          "status": "open"
+        }
+      ],
+      "solutions": [],
+      "artifacts": [
+        {
+          "path": "clues/crypto5.png",
+          "sha256": "936c401fac266e245e40d5ae1705360746387be934ced4ee6c37fc30dfdd5d15",
+          "source": "https://crypto.haluska.sk/",
+          "archived": null
+        },
+        {
+          "path": "clues/crypto5fix.png",
+          "sha256": "5a62843597f0fd545e19a343b750c6cdfa8010ba2cb5b52d4ad29c7016e57cc6",
+          "source": "https://crypto.haluska.sk/crypto5fix.png",
+          "archived": null
+        }
+      ],
+      "sources": [
+        {
+          "title": "Zden, original announcement",
+          "url": "https://twitter.com/Zd3N/status/1060955171591766018",
+          "date": "2018-11-09",
+          "archived": null
+        },
+        {
+          "title": "Zden, Christmas hint bundle",
+          "url": "https://twitter.com/Zd3N/status/1077146640090316800",
+          "date": "2018-12-24",
+          "archived": null
+        },
+        {
+          "title": "Zden's puzzle site",
+          "url": "https://crypto.haluska.sk/",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "Community documentation and the author's own measurement script",
+          "url": "https://github.com/HomelessPhD/Zden_LVL5",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "issue #34, sweep reported by deviceio121",
+          "url": "https://github.com/floflo777/open-crypto-puzzles/issues/34",
+          "date": "2026-09-23",
+          "archived": null
+        }
+      ],
+      "third_party_material": "",
+      "last_updated": "2026-08-16",
+      "folder": "archive/dead-ends/zden-haluska-lvl5-555ksats"
     },
     {
       "schema_version": 1,

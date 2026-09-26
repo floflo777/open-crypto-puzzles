@@ -53,8 +53,8 @@
   "difficulty_left": "bounded-compute",
   "difficulty_note": "3 of 12 positions are confirmed (1, 5 with 2 candidates, and 12), plus 2 more confirmed list members with unknown positions; every sweep of the confirmed word pool (approximately 16.75 billion derivations across 6 metadata-era sweeps, all witnessed) has failed; the next 2 leads (connecting words, then substrings of longer words) are priced at hours and about a day respectively on one rented GPU and have not been run; a third lead (re-reading remaining metadata) is a human task, not a sweep",
   "tested_total": {
-    "candidates": 16755000000,
-    "families": 8,
+    "candidates": 21227190000,
+    "families": 9,
     "certified": true
   },
   "leads": [
@@ -62,7 +62,7 @@
       "rank": 1,
       "title": "on-screen and spoken video words (issue #18): sweep RO1 with atom/link/basic/token/dash as free video words, then the 219-word extension",
       "cost": "minutes to hours on one rented GPU",
-      "status": "open"
+      "status": "partially tested: coin words as one free slot negative (issue #18, 2026-09-26); 219-word extension open"
     },
     {
       "rank": 2,
@@ -74,7 +74,7 @@
       "rank": 3,
       "title": "extend to substrings of longer words",
       "cost": "about a day on one rented GPU",
-      "status": "open"
+      "status": "tested: negative on 7 paths (issue #18, 2026-09-26)"
     },
     {
       "rank": 4,

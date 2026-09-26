@@ -106,6 +106,9 @@ Cost: hours on one rented GPU.
 
 ## 3. Re-check the already-enumerated survivors on other derivation paths
 
+**Tested negative on 2026-09-26** (issue #18, Bayols): RO1 on `/0/0` to `/0/4`, `1'/0/0`, `2'/0/0`,
+see `analysis/tested.md`. Kept below for the record.
+
 Cheap, decisive, and never run. Every sweep in this folder derives only
 `m/44'/60'/0'/0/0`, the MetaMask default first account. The escrow is stated to
 be a MetaMask wallet, so that is the correct first guess, but if the author

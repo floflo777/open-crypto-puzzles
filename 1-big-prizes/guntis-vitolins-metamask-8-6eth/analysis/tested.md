@@ -294,3 +294,30 @@ checksum slice) pre-run. Cost: about 11 dollars across three resumable
 segments (one segment interrupted by a local network loss and resumed from
 its volume checkpoint, repeating only one partial chunk). Result: 0 match
 across all 822,640 set-pairs -- 18,657,475,200 derivations.
+
+## RO1 on alternative paths and extra-word variants (issue #18, Bayols, 2026-09-26)
+
+Six sweeps contributed by Bayols in
+[issue #18](https://github.com/floflo777/open-crypto-puzzles/issues/18), all no match. Same
+anchors and pools as `data/reading-order-pool.json` (dutch at 1, fog at 5, parrot at 12). Every
+run passed a self-test first: the canonical `abandon ... about` vector, agreement with
+bip_utils, and a planted witness recovered through the real enumeration. The scripts
+(`tools/sweep_paths.py`, `tools/sweep_coins.py`, `tools/sweep_postword.py`) import the
+enumeration from `tools/sweep_reading_order.py` unchanged; their `--selftest` was re-run
+here on 2026-09-26 (all OK, witnesses recovered on every path and every extra word).
+
+| Hypothesis | Space | Method | Result | Witness | Date |
+| --- | --- | --- | --- | --- | --- |
+| RO1 on 7 paths: `/0/0` to `/0/4`, `1'/0/0`, `2'/0/0` (lead 3) | 167,688,000 arrangements, 10,484,919 checksum-valid, all 7 paths | `sweep_paths.py`, one PBKDF2 per candidate then 7 derivations | 0 match | yes, planted witness on each path | 2026-09-26 |
+| RO1 plus one free video-side slot from atom, link, basic, token, dash (lead 1) | 1,741,140,000 arrangements, 108,817,960 valid | `sweep_coins.py`, default path | 0 match | yes | 2026-09-26 |
+| RO1 plus one free video-side slot from build, ready | 696,456,000 arrangements, 43,524,282 valid | `sweep_coins.py`, default path | 0 match | yes | 2026-09-26 |
+| RO1 plus one free video-side slot from donor, stay, until, win | 1,392,912,000 arrangements, 87,064,878 valid | `sweep_coins.py`, default path | 0 match | yes | 2026-09-26 |
+| RO1 plus a free post-side floater "hard" | 125,766,000 arrangements, 7,863,418 valid | `sweep_postword.py`, default path | 0 match | yes | 2026-09-26 |
+| RO1 plus a free post-side floater "minimum" | 348,228,000 arrangements, 21,763,738 valid | `sweep_postword.py`, default path | 0 match | yes | 2026-09-26 |
+
+What this rules out: the RO1 space on the alternative derivation paths (lead 3), and the
+extra-word variants above at `m/44'/60'/0'/0/0`. What it does not rule out: anything outside
+the RO1 reading-order model, checksum-invalid phrases (only valid candidates were derived),
+and the other paths for the extra-word sweeps. Speed was about 1,000 derivations per second
+per core; the paths sweep took about 13 minutes on 22 workers. The connecting-words lead
+(about 1.36e10 derivations) needs a GPU PBKDF2 implementation.
