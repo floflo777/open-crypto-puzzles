@@ -2,18 +2,18 @@
 <rect x="0.5" y="0.5" width="999" height="665" rx="12" fill="#fcfcfb" stroke="#e6e5e0"/>
 <text x="32" y="46" fill="#0b0b0b" font-size="21" font-weight="700">Where the unsolved prize money sits</text>
 <text x="32" y="70" fill="#52514e" font-size="13">Valued at CoinGecko prices on 2026-09-26. Balances are the ones recorded in each folder.</text>
-<text x="968" y="58" fill="#0b0b0b" font-size="44" font-weight="700" text-anchor="end">$545k</text>
+<text x="968" y="58" fill="#0b0b0b" font-size="44" font-weight="700" text-anchor="end">$546k</text>
 <text x="968" y="80" fill="#52514e" font-size="13" text-anchor="end">locked in 30 funded puzzles</text>
 <rect x="32" y="88" width="102" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="41" y="103" fill="#52514e" font-size="12" font-weight="600">BTC $84,005</text>
+<text x="41" y="103" fill="#52514e" font-size="12" font-weight="600">BTC $84,165</text>
 <rect x="143.6" y="88" width="94" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="152.6" y="103" fill="#52514e" font-size="12" font-weight="600">ETH $2,682</text>
+<text x="152.6" y="103" fill="#52514e" font-size="12" font-weight="600">ETH $2,688</text>
 <rect x="247.6" y="88" width="94" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="256.6" y="103" fill="#52514e" font-size="12" font-weight="600">LTC $74.23</text>
+<text x="256.6" y="103" fill="#52514e" font-size="12" font-weight="600">LTC $73.26</text>
 <rect x="351.6" y="88" width="79" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="360.6" y="103" fill="#52514e" font-size="12" font-weight="600">AR $4.56</text>
+<text x="360.6" y="103" fill="#52514e" font-size="12" font-weight="600">AR $4.69</text>
 <rect x="440.40000000000003" y="88" width="79" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="449.40000000000003" y="103" fill="#52514e" font-size="12" font-weight="600">SOL $120</text>
+<text x="449.40000000000003" y="103" fill="#52514e" font-size="12" font-weight="600">SOL $121</text>
 <line x1="398" y1="144" x2="398" y2="592" stroke="#e6e5e0" stroke-width="1"/>
 <text x="398" y="138" fill="#8a8985" font-size="11" text-anchor="middle">$42k</text>
 <line x1="546" y1="144" x2="546" y2="592" stroke="#e6e5e0" stroke-width="1"/>
@@ -55,9 +55,9 @@
 <text x="279.8" y="410" fill="#0b0b0b" font-size="13" font-weight="600">$5.4k</text>
 <text x="328.3" y="410" fill="#52514e" font-size="12">2.00 ETH</text>
 <text x="235" y="444" fill="#0b0b0b" font-size="14" text-anchor="end">Arweave #3</text>
-<rect x="251" y="428" width="16.0" height="22" rx="4" fill="#1baf7a"/>
-<text x="277.0" y="444" fill="#0b0b0b" font-size="13" font-weight="600">$4.6k</text>
-<text x="325.5" y="444" fill="#52514e" font-size="12">1,000 AR</text>
+<rect x="251" y="428" width="16.4" height="22" rx="4" fill="#1baf7a"/>
+<text x="277.4" y="444" fill="#0b0b0b" font-size="13" font-weight="600">$4.7k</text>
+<text x="325.9" y="444" fill="#52514e" font-size="12">1,000 AR</text>
 <text x="235" y="478" fill="#0b0b0b" font-size="14" text-anchor="end">Arweave #11</text>
 <rect x="251" y="462" width="9.4" height="22" rx="4" fill="#2a78d6"/>
 <text x="270.4" y="478" fill="#0b0b0b" font-size="13" font-weight="600">$2.7k</text>
@@ -71,8 +71,8 @@
 <text x="270.4" y="546" fill="#0b0b0b" font-size="13" font-weight="600">$2.7k</text>
 <text x="318.9" y="546" fill="#52514e" font-size="12">0.0318 BTC</text>
 <text x="235" y="580" fill="#52514e" font-size="14" text-anchor="end">17 smaller puzzles</text>
-<rect x="251" y="564" width="49.9" height="22" rx="4" fill="#b3b1aa"/>
-<text x="310.9" y="580" fill="#0b0b0b" font-size="13" font-weight="600">$14k</text>
+<rect x="251" y="564" width="50.2" height="22" rx="4" fill="#b3b1aa"/>
+<text x="311.2" y="580" fill="#0b0b0b" font-size="13" font-weight="600">$14k</text>
 <rect x="32" y="627" width="12" height="12" rx="3" fill="#eb6834"/>
 <text x="50" y="638" fill="#52514e" font-size="12">Bitcoin</text>
 <rect x="122.4" y="627" width="12" height="12" rx="3" fill="#2a78d6"/>
