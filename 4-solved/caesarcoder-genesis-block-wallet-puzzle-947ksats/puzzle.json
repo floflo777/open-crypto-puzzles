@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "slug": "caesarcoder-genesis-block-wallet-puzzle-947ksats",
+  "title": "CaesarCoder: Genesis Block Wallet Puzzle",
+  "tier": "solved",
+  "status": "solved",
+  "dead_end_reason": null,
+  "series": null,
+  "author": {
+    "name": "CaesarCoder (anonymous until a PGP signed OP_RETURN on 2026-10-17)",
+    "handles": [
+      "github:caesrcd",
+      "pgp:E2A0BF0D72D74483064D4FF9304952407A6E5C38"
+    ],
+    "url": "https://github.com/caesrcd"
+  },
+  "published": {
+    "date": "2026-08-22",
+    "url": "https://mempool.space/tx/b691de3657880d9a1eabd2783b1a9fa8c5313ced338495bf10e85727012d7a77"
+  },
+  "chain": "bitcoin",
+  "prize": {
+    "amount": 947620,
+    "asset": "sats",
+    "usd_estimate": 597,
+    "usd_snapshot": "2026-08-16",
+    "note": "the jackpot started at 25,000 sats and grew because the author relayed every paid question into the escrow; 947,620 sats in 120 outputs when it was swept on 2026-10-17"
+  },
+  "addresses": [
+    {
+      "address": "bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
+      "chain": "bitcoin",
+      "role": "escrow",
+      "label": "main (P2WSH, witness program 4dae67a9872f1402109f9670276afc2c0758f895aafddcd089795771b7964833)",
+      "explorer": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
+      "expected": "0 sats (947,620 sats until 2026-10-17)",
+      "verified_on": "2026-10-17",
+      "verified_state": "swept"
+    }
+  ],
+  "puzzle_type": [
+    "multisig",
+    "bip39-seed"
+  ],
+  "target_format": "P2WSH 2-of-2 wsh(sortedmulti(2, A, B)); each key from its own 12-word BIP39 seed (entropy = first 128 bits of sha256 of a cut of the raw genesis block hex) plus a two-word name passphrase, path m/48'/0'/account'/2'/<0;1>/*, account = raw value of a header field; the seed step uses non-standard PBKDF2 settings",
+  "derivation": {
+    "summary": "cut -b N-M of the 570-character raw block hex, tr -d '\\n', sha256sum, first 32 hex digits as Ian Coleman Hex entropy, 12 words, two-word name passphrase, seed with the author's PBKDF2 settings (not standard BIP39, see README), BIP48 account key, 2-of-2 script compared with the witness program",
+    "oracle": "tools/oracle.py",
+    "oracle_certified": true,
+    "certified_against": "the BIP-173 P2WSH test vector, and a real 2-of-2 P2WSH spent in block 963629 (tx 47ded3504e855ce418e46eeca4694b55a623d1e23a8e3c83292abbcf9cee9f7a, input 0) whose revealed keys rebuild the script and hash to the spent address; private key 1 to the generator point; negative control against the escrow"
+  },
+  "difficulty_left": "none",
+  "difficulty_note": "swept on 2026-10-17; the public hints fix everything except the exact cut, the passphrase and the PBKDF2 settings; the author published test vectors computed with the real settings on 2026-10-16 and 17, two hours before the sweep",
+  "tested_total": {
+    "candidates": 657202449461,
+    "families": 37,
+    "certified": true
+  },
+  "leads": [
+    {
+      "rank": 1,
+      "title": "reproduce the author test vector e4caa034 (text 0, passphrase Test Example) to identify the PBKDF2 settings",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "ask the author or the solver for the write-up",
+      "cost": "needs-a-person",
+      "status": "open"
+    }
+  ],
+  "solutions": [
+    {
+      "lot": "main",
+      "date": "2026-10-17",
+      "answer": "unknown (swept without a published solution)",
+      "key_material_disclosed": false,
+      "payout_txid": "1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
+      "payout_amount": "935266 sats",
+      "payout_to": "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad",
+      "explorer": "https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b"
+    }
+  ],
+  "artifacts": [],
+  "sources": [
+    {
+      "title": "Announcement transaction, block 963629",
+      "url": "https://mempool.space/tx/b691de3657880d9a1eabd2783b1a9fa8c5313ced338495bf10e85727012d7a77",
+      "date": "2026-08-22",
+      "archived": null
+    },
+    {
+      "title": "Escrow address and full on-chain dialogue",
+      "url": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
+      "date": "2026-08-29",
+      "archived": null
+    },
+    {
+      "title": "Galaxy Research, first public report (X)",
+      "url": "https://x.com/glxyresearch/status/2091349771952742566",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "crypto.news, Bitcoin puzzle hides wallet key in Genesis Block data",
+      "url": "https://crypto.news/bitcoin-puzzle-hides-wallet-key-in-genesis-block-data/",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "U.Today, Satoshi's Code Reopened",
+      "url": "https://u.today/satoshis-code-reopened-someone-just-deciphered-bitcoin-puzzle-into-genesis-block-data",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "Blockmedia (Korean)",
+      "url": "https://www.blockmedia.co.kr/archives/1131026",
+      "date": "2026-08-23",
+      "archived": null
+    },
+    {
+      "title": "Sweep transaction",
+      "url": "https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
+      "date": "2026-10-17",
+      "archived": null
+    },
+    {
+      "title": "Author PGP signed message",
+      "url": "https://mempool.space/tx/473a314bcb3f5abc8dc4500e8d0ab80525ff65a846d55406c1e1e10fa8c8e46c",
+      "date": "2026-10-17",
+      "archived": null
+    },
+    {
+      "title": "CaesarCoder on GitHub",
+      "url": "https://github.com/caesrcd",
+      "date": "2026-10-18",
+      "archived": null
+    }
+  ],
+  "third_party_material": "none: the genesis block and the author's OP_RETURN messages are public chain data; press articles are linked, not reproduced",
+  "last_updated": "2026-10-18"
+}

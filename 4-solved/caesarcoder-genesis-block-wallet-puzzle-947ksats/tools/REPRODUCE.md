@@ -12,12 +12,12 @@ claim. Run the escrow checker again before new research. Output stays in that ex
 directory with restrictive permissions. These scripts have no network operations.
 
 ```sh
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_direct_mnemonic.py
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_numeric_date.py
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_text_constructions.py prefix
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_text_constructions.py path
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_zero_root.py
-python 3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/check_hardening.py
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_direct_mnemonic.py
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_numeric_date.py
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_text_constructions.py prefix
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_text_constructions.py path
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_zero_root.py
+python 4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/check_hardening.py
 ```
 
 The scripts run the existing oracle self-test, calibrate the exact SHA256 pair checker

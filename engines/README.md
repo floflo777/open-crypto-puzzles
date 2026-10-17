@@ -281,7 +281,7 @@ ordered pair, rebuilds the witness script, hashes it once with SHA-256 and compa
 bytes with up to 8 target programs. Ordered pairs mean both key orders are covered, so a
 BIP-67 sorted script needs no special case. Key derivation is not done here: the host
 generates and labels the candidates on the CPU (see
-`3-small-prizes/genesis-block-wallet-puzzle-142ksats/tools/candidates.py` for a complete
+`4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/tools/candidates.py` for a complete
 example with head, middle and tail witnesses), the GPU only pairs and hashes.
 
 ```

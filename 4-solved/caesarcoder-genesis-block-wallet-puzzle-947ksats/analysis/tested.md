@@ -116,3 +116,18 @@ After the author's answers of 2026-09-10 and 2026-09-11 (12 words, a passphrase,
 | Pass 3, the September model (2026-09-12): 12-word BIP39 mnemonic whose entropy is a 16-byte window of genesis data (every window of the raw 285-byte block, of the merkle root and block hash in both byte orders, of the coinbase text, headline, scriptSig, header and coinbase public key, plus the header integers zero-padded and as decimal strings: 329 entropies), 53 passphrases (empty as control, the coinbase text, the headline, The Times, Satoshi, genesis, bitcoin, the header integers, the hashes in hex and a dozen short words from the author's messages), BIP48 `m/48'/0'/a'/s'` with a in {0, 1, 2, 3, 50, 2009, 285, bits, time, nonce} and s in {0', 1', 2'}, suffix empty, /0/0 or /0/1; every ordered pair | 1,569,330 keys, 2.463e12 ordered pairs | CPU BIP39/BIP32 generation (25 s on 22 cores), GPU pairing and SHA-256 (`engines/p2wsh_2of2_pairs.cu`, 4.18e9 pairs/s, 589 s), exact 32-byte compare | 0 match | yes: revealed 2-of-2 pair at head, middle and tail, 9 of 9 ordered combinations re-found, `exhausted=yes` | 2026-09-12 |
 
 Scope: only 12-word mnemonics, only the listed entropy windows, only the 53 listed passphrases, only the listed accounts and script types, compressed keys. Under that model the passphrase is not among the obvious readings of the block. Not covered: a passphrase outside the list (the one thing the author has not described), 24 words, other accounts, non-BIP48 paths.
+
+## Seed fingerprint runs, 2026-09-24 to 2026-10-11
+
+After the author's encrypted answer of 2026-09-24 gave the two master fingerprints (`0852014c`,
+`040e2791`), every candidate seed was tested by its master fingerprint alone, with no account or
+path needed. 29 GPU runs, 83,228,653,851 seeds in total (sum of the per-run reports), each with
+three witnesses (head, middle, tail) re-found and every hit re-derived on CPU (all hits were 32-bit
+collisions). Families: windows and substrings of the raw block, of every bitcoin-cli output line
+(as is, uppercase, with and without a trailing newline, after `jq`, `cut`, `tr`), of explorer JSON
+and HTML renderings; names: Hal Finney and Satoshi Nakamoto in up to 911,840 spellings, 7.28
+million hashcat-rule variants, and 20 two-word names fitting the 2026-10-09 shape.
+
+Scope: all of these used the standard BIP39 seed step (PBKDF2-HMAC-SHA512, 2048 rounds, salt
+`"mnemonic" + passphrase`). The author's vectors of 2026-10-16 and 17 show the puzzle used other
+PBKDF2 settings, so these runs say nothing about the real wallet.
