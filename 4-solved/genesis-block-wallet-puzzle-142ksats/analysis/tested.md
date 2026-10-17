@@ -1,5 +1,13 @@
 # Tested (full negatives ledger)
 
+## Closed by the solve of 2026-10-17
+
+The escrow was swept on 2026-10-17 (block 971,803) by a reader (Schum-io) with the solution recorded
+in the README: one 12-word mnemonic, passphrase Satoshi Nakamoto, PBKDF2 at 181,505 and 200,913
+rounds instead of 2,048. Every row below was computed at the standard 2,048 rounds, so none of
+them could have reached the keys; the ledger stays as a record of what the construction is not.
+No further search is needed.
+
 The summary table in the folder's `README.md` shows the highlights; this file is the
 complete record. Add one row per hypothesis family tested, in the order tested. Never remove
 a row; if a hypothesis is retested with a different method, add a new row rather than editing
