@@ -1,3 +1,10 @@
+# Solved on 2026-10-17
+
+The puzzle is solved and swept (block 971,803); the solution is in the README. Lead 1 below was
+answered on chain by many players between 2026-09-14 and 2026-10-17 (the passphrase is a name, the
+entropy is a 128-bit digest of a cut of the raw block hex); the one setting no question reached was
+the PBKDF2 iteration count. The notes below are kept as history.
+
 # Leads (full notes)
 
 The "Open leads, ranked" section of the folder's `README.md` shows the ranked list; this file

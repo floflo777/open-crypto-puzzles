@@ -1,0 +1,1635 @@
+{
+ "escrow": "bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
+ "fetched_on": "2026-10-17",
+ "chain_stats": {
+  "funded_txo_sum": 946890,
+  "spent_txo_sum": 946540,
+  "tx_count": 119,
+  "unspent_outputs": 1
+ },
+ "attribution_rule": "a transaction is the author's when one of its inputs spends a change output of a previous author transaction, starting from the announcement; relayed = the same text was first paid by a player directly to an author change address",
+ "transactions": [
+  {
+   "txid": "e2aaa928a965ee02b9c9a76227383113a62f350701a18d7792372712ce501ac7",
+   "block": 963517,
+   "time_utc": "2026-08-22 02:45:22",
+   "from": "author",
+   "inputs": [
+    "bc1q7nn9hjr6lfx4cfngxvgwqpmnu26d9r3nuyhu24"
+   ],
+   "sats_to_escrow": 20000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": null
+  },
+  {
+   "txid": "b691de3657880d9a1eabd2783b1a9fa8c5313ced338495bf10e85727012d7a77",
+   "block": 963629,
+   "time_utc": "2026-08-22 19:45:38",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1qjvp2lzmv3l8u9j5h997m4j7728q3fnq9zsd2ah"
+   ],
+   "op_return": "I made a Bitcoin puzzle using information contained in the genesis block created by Satoshi to generate the wallet.\n\nThe entropy is extremely low. I didn't even need to back anything up. Everything I needed was already in the genesis block.\n\nGood luck!"
+  },
+  {
+   "txid": "248f690de194372564baa14e1bebf08154e2f2042ed205baa6157fdc0e3f22ea",
+   "block": 963659,
+   "time_utc": "2026-08-23 01:51:20",
+   "from": "author",
+   "inputs": [
+    "bc1qjvp2lzmv3l8u9j5h997m4j7728q3fnq9zsd2ah"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1qdate5pleyq3upcy8gkvrkqpccgfhrzxm25ju5r"
+   ],
+   "op_return": "If you have a question, you can include it with a transaction sent directly to this address, and I will reply with a hint.\n\nLarger payments receive better hints. Dust transactions will be ignored."
+  },
+  {
+   "txid": "3b2f8aef7bb8f56dc939b34465906fd8a7693b2c8718d541ea635f8780313db6",
+   "block": 963739,
+   "time_utc": "2026-08-23 14:41:38",
+   "from": "player",
+   "inputs": [
+    "bc1qpqpdehd73wc0gd43kct0em5t54pk0j0eneudsc"
+   ],
+   "sats_to_escrow": 12916,
+   "change_outputs": [
+    "bc1qxx5dr9ph4697r2l47e05u9jzhpg5jgg03h4glh"
+   ],
+   "op_return": "Is the witness script a hash lock, a multisig, or something else?"
+  },
+  {
+   "txid": "0fb7a2f175dd7f9b8826cf2923ce4fcb56e4c7bfe252903e6dad1f87f177dfe3",
+   "block": 963744,
+   "time_utc": "2026-08-23 15:43:56",
+   "from": "author",
+   "inputs": [
+    "bc1qdate5pleyq3upcy8gkvrkqpccgfhrzxm25ju5r",
+    "bc1qdate5pleyq3upcy8gkvrkqpccgfhrzxm25ju5r"
+   ],
+   "sats_to_escrow": 12916,
+   "change_outputs": [
+    "bc1qvf9zqhy99mysf9j7x6paswe6rh8wk2r0hn6vps"
+   ],
+   "op_return": "The witness script is a multisig."
+  },
+  {
+   "txid": "268093b9ae56a59d2bb1a6acde588d6763fe859947b098c235031493208d3e22",
+   "block": 963758,
+   "time_utc": "2026-08-23 18:19:26",
+   "from": "author (relayed question from a player)",
+   "inputs": [
+    "bc1qvf9zqhy99mysf9j7x6paswe6rh8wk2r0hn6vps",
+    "bc1qvf9zqhy99mysf9j7x6paswe6rh8wk2r0hn6vps"
+   ],
+   "sats_to_escrow": 16028,
+   "change_outputs": [
+    "bc1qgndacvdmu3juda8xjt6qljdvfse8elawn6lw6g"
+   ],
+   "op_return": "How many keys, what threshold, and how are the keys derived from genesis?"
+  },
+  {
+   "txid": "ef63243d374d8eabeac7e17e06cc4b1b672146dc61a8e5180eeac980cec07302",
+   "block": 963768,
+   "time_utc": "2026-08-23 21:08:58",
+   "from": "author",
+   "inputs": [
+    "bc1qgndacvdmu3juda8xjt6qljdvfse8elawn6lw6g"
+   ],
+   "sats_to_escrow": 16028,
+   "change_outputs": [
+    "bc1qef7nx9p0w6tedw72etw2ycsj2qqqsjkqnny29q"
+   ],
+   "op_return": "Two keys, both required. The rest is for you to derive."
+  },
+  {
+   "txid": "fe27df994d658e79bea7b4cfe2427341ce024c70c5af21b76186807eebe57072",
+   "block": 963823,
+   "time_utc": "2026-08-24 06:40:09",
+   "from": "author (relayed question from a player)",
+   "inputs": [
+    "bc1qef7nx9p0w6tedw72etw2ycsj2qqqsjkqnny29q"
+   ],
+   "sats_to_escrow": 6345,
+   "change_outputs": [],
+   "op_return": "Are both keys from the same genesis field, and is the function a hash?"
+  },
+  {
+   "txid": "82a076b02643372769ac676d260ef4d9854c6bf49370ed61875fc63b8241dcfc",
+   "block": 963829,
+   "time_utc": "2026-08-24 07:13:18",
+   "from": "author",
+   "inputs": [
+    "bc1qef7nx9p0w6tedw72etw2ycsj2qqqsjkqnny29q"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1q4mj82t2m3uxl96rw2gfjs4n0lsdex53kwt8tnw"
+   ],
+   "op_return": "Yes, both keys use the same Genesis field, and there is no hash."
+  },
+  {
+   "txid": "2f5bbc7c0d031f54c9b7c8bee73eb2607d04b19019d1deac7f773eafdd1b91f8",
+   "block": 963837,
+   "time_utc": "2026-08-24 08:58:20",
+   "from": "author (relayed question from a player)",
+   "inputs": [
+    "bc1qef7nx9p0w6tedw72etw2ycsj2qqqsjkqnny29q"
+   ],
+   "sats_to_escrow": 12843,
+   "change_outputs": [],
+   "op_return": "Is the second key derived from the first, or both from genesis independently?"
+  },
+  {
+   "txid": "ff884832e937f972c92c012ba235ff45b549cd1702dfd02691056da6bc1ff913",
+   "block": 963868,
+   "time_utc": "2026-08-24 14:32:47",
+   "from": "author",
+   "inputs": [
+    "bc1q4mj82t2m3uxl96rw2gfjs4n0lsdex53kwt8tnw"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1q2umg8v9jejggz8qejwgperaj4hdvajunmgf9xx"
+   ],
+   "op_return": "Both keys are derived independently from Genesis."
+  },
+  {
+   "txid": "69d19cc41b8a5f1e711d46069e301bb4d29223bfcf1128eb6a9236e0d3e9b96c",
+   "block": 963888,
+   "time_utc": "2026-08-24 18:01:41",
+   "from": "player",
+   "inputs": [
+    "bc1qxx5dr9ph4697r2l47e05u9jzhpg5jgg03h4glh"
+   ],
+   "sats_to_escrow": 12703,
+   "change_outputs": [
+    "bc1qjwe9tjrdvds8fxa57a3gxl7d3gjjtc40jngw2c"
+   ],
+   "op_return": "Which genesis field, hash, merkle, nonce, time, headline, or pubkey?"
+  },
+  {
+   "txid": "eb609dfede7f61d3bf9fe79ae48e546c358ebd09c05b3cd64a22433cb784ea86",
+   "block": 963910,
+   "time_utc": "2026-08-24 21:35:20",
+   "from": "author",
+   "inputs": [
+    "bc1q2umg8v9jejggz8qejwgperaj4hdvajunmgf9xx"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qkpj9g76fpw7txrqp7eq5spzg0p7qzj833gzv04"
+   ],
+   "op_return": "The Genesis Block is public. Which part of it matters is for you to discover."
+  },
+  {
+   "txid": "51b9f9521ca5bfae851b0f55dc3b151914b95f77eef156078a422396cd30cef2",
+   "block": 964465,
+   "time_utc": "2026-08-28 17:38:24",
+   "from": "player",
+   "inputs": [
+    "bc1q6k5zldpx4yfcxr26x9m9uf3tq8wkfu8twuw5lk"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qr9mvqcd2lvlsz6h2q5kkqkk6d2wnfuk02exmml"
+   ],
+   "op_return": "Prize Address?Genesis field 32 bytes or smaller?"
+  },
+  {
+   "txid": "84fc5defe22590a02bbe0025831be110ed6f9e0bc53c3c835a4e42479b0bf050",
+   "block": 964477,
+   "time_utc": "2026-08-28 20:15:31",
+   "from": "player",
+   "inputs": [
+    "bc1qr9mvqcd2lvlsz6h2q5kkqkk6d2wnfuk02exmml"
+   ],
+   "sats_to_escrow": 3000,
+   "change_outputs": [
+    "bc1q8rhczxpptf3c425pg02t4vjctkrusnrsq46ech"
+   ],
+   "op_return": "Give a hint at your will!"
+  },
+  {
+   "txid": "610fc4d2ca1a214d99248c8188fd2973f4c51fca319ccf9ab983ac3edf4b1821",
+   "block": 964486,
+   "time_utc": "2026-08-28 22:45:35",
+   "from": "player",
+   "inputs": [
+    "bc1q8rhczxpptf3c425pg02t4vjctkrusnrsq46ech"
+   ],
+   "sats_to_escrow": 3500,
+   "change_outputs": [
+    "bc1qkgjp40ktd9r0df2may28qucul24ug6wdktlesm"
+   ],
+   "op_return": "Can you give any hint about derivation offset/rule?"
+  },
+  {
+   "txid": "6e94cfcbc1350a138242f97310dfd0280371a0020380cb32b2512337470c1077",
+   "block": 964491,
+   "time_utc": "2026-08-28 23:15:28",
+   "from": "author",
+   "inputs": [
+    "bc1qkpj9g76fpw7txrqp7eq5spzg0p7qzj833gzv04"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1qh62f95gkgckuuld457p4acv7vgudrd9aaywx4s"
+   ],
+   "op_return": "Solve it to find out. Maybe both.\nIf you can't check the Genesis block, you can also use The Times newspaper!"
+  },
+  {
+   "txid": "8be479605bc8f2facd2036fd1b7f5cfa3a3f3920eeffee75e0004a2cff4d25d6",
+   "block": 964496,
+   "time_utc": "2026-08-28 23:50:52",
+   "from": "author",
+   "inputs": [
+    "bc1qh62f95gkgckuuld457p4acv7vgudrd9aaywx4s"
+   ],
+   "sats_to_escrow": 3500,
+   "change_outputs": [
+    "bc1qktf2wdszlsg4fes6mlzjxkcnhp63wnhct6gkgh"
+   ],
+   "op_return": "Derivation rule: root -> multisig -> mainnet -> genesis_data -> script_type"
+  },
+  {
+   "txid": "68e79190221d2b73089b523f7f5af2a11838339a788239f4eee30d6c1d4502e7",
+   "block": 965798,
+   "time_utc": "2026-09-06 15:51:27",
+   "from": "player 3",
+   "inputs": [
+    "bc1q3csgah6e0jkatpuxcscm7gvnjj7sm8qlk6krkf"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [],
+   "op_return": "give another hint"
+  },
+  {
+   "txid": "64385a0cc5c4c712d1d9d8628e1e00364310d9ba50536ccd23c71b49ae66b96b",
+   "block": 965824,
+   "time_utc": "2026-09-06 19:41:00",
+   "from": "author",
+   "inputs": [
+    "bc1qktf2wdszlsg4fes6mlzjxkcnhp63wnhct6gkgh"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [
+    "bc1q4y2adxg8ymavpt8ae0xsuz3q90wtz6qsucjlqg"
+   ],
+   "op_return": "I can't give hints without a question. Low-value transactions get bad hints; dust will be ignored."
+  },
+  {
+   "txid": "75daa8e824abba4fe1b1a4b12f923b50291fab98743edaa1f03ef8c50bb70552",
+   "block": 966402,
+   "time_utc": "2026-09-10 20:47:36",
+   "from": "player 4",
+   "inputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "op_return": "Root = Times text as BIP32 seed? BIP39? raw key? genesis_data = BIP48 account?"
+  },
+  {
+   "txid": "cb47c7a73c1aaa11bfe0edce41c2ef7c9c1fec1478efd15e40b226eb502dcc18",
+   "block": 966409,
+   "time_utc": "2026-09-10 21:33:46",
+   "from": "author",
+   "inputs": [
+    "bc1q4y2adxg8ymavpt8ae0xsuz3q90wtz6qsucjlqg"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qpzphpkmevjlsrl36gmrh2anqj2yr8eclv3en03"
+   ],
+   "op_return": "root = the master key derived from the BIP39 seed; genesis_data = some data from the genesis block used as the BIP48 account number."
+  },
+  {
+   "txid": "6497aef4be0d5be68644296d5fcdb709c66bb20db5972f4e53f90836e27862fe",
+   "block": 966565,
+   "time_utc": "2026-09-11 21:25:51",
+   "from": "player 4",
+   "inputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "op_return": "BIP39 entropy: genesis bytes/puzzle text/img/other? words 12/24? passphrase Y/N?"
+  },
+  {
+   "txid": "f8f04fc04e2c4f34dc2264f85ff7944c6aa822446bc4cc082e95a52aed5c2a4c",
+   "block": 966576,
+   "time_utc": "2026-09-11 23:26:17",
+   "from": "author",
+   "inputs": [
+    "bc1qpzphpkmevjlsrl36gmrh2anqj2yr8eclv3en03"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qw720l9e6g4a675vfraghzm93gvyw8s2fjgtdxy"
+   ],
+   "op_return": "BIP39: 12 words; Passphrase: Y; Entropy: The data needed to solve it is publicly available in the genesis block."
+  },
+  {
+   "txid": "e43647274f672f9b4eb42fff1d15f2afcaa8bfd4650823403a18a76774999169",
+   "block": 966966,
+   "time_utc": "2026-09-14 13:01:13",
+   "from": "player 4",
+   "inputs": [
+    "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1pnzv687ungueh599ucydnzv3q0env7z4nfk3uf2g5ncc7xeq9l9cqgq4257"
+   ],
+   "op_return": "Passphrase: genesis data or your own word? How long? What built the wallet?"
+  },
+  {
+   "txid": "a137a898ab56180d6e9ebac602377a120511acdec0b4ebe4e806536652d3b32d",
+   "block": 966989,
+   "time_utc": "2026-09-14 16:15:52",
+   "from": "author",
+   "inputs": [
+    "bc1qw720l9e6g4a675vfraghzm93gvyw8s2fjgtdxy"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qv7ezkqngwaeutstj8prd9wjk7w26j44sxxljry"
+   ],
+   "op_return": "Passphrase: Who received the first transaction? That's all I've got to say. What built the wallet are the tools that support BIPs 32, 39, and 48."
+  },
+  {
+   "txid": "65f313fc58ec9bdb62166013bd0ca4f64e8e09739ed576090dfec6b0d24368fb",
+   "block": 967045,
+   "time_utc": "2026-09-15 00:56:36",
+   "from": "player 5",
+   "inputs": [
+    "bc1qqkd6sv7vxgfr3f3f8z6uzvlcxmqlspz8m9gle4"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1p5akucnl7tasjp7cw0qej6q389hsed54uwham9ucepr4x3lygyz9q0kuvla",
+    "bc1qeuvwf08kyed68vmqndd6ywmdaq33rmm250gyzu"
+   ],
+   "op_return": null
+  },
+  {
+   "txid": "af08a3d048ac44c5888767890532c68b5004e44a2025daf0cbbbb8281a6ee9d9",
+   "block": 967051,
+   "time_utc": "2026-09-15 01:30:16",
+   "from": "player 6",
+   "inputs": [
+    "bc1qcw0yf68uxk0pj3p3fuepvsujevfy0uzwaul4vq"
+   ],
+   "sats_to_escrow": 4500,
+   "change_outputs": [],
+   "op_return": "Passphrase sha256 first 8 hex? Entropy: raw 16B slice of Times or sha256?"
+  },
+  {
+   "txid": "a3878ff0c813a726c755e5b1220b69dc3528989fea1095041a8edadefc269fc4",
+   "block": 967064,
+   "time_utc": "2026-09-15 03:19:01",
+   "from": "author",
+   "inputs": [
+    "bc1qv7ezkqngwaeutstj8prd9wjk7w26j44sxxljry"
+   ],
+   "sats_to_escrow": 2000,
+   "change_outputs": [
+    "bc1qqenp579zef3fpetekf424w9hk6eadlz0lpmtja"
+   ],
+   "op_return": "No, the passphrase is a name. The entropy isn't the raw 16 bytes."
+  },
+  {
+   "txid": "b073a2ef7a9a51e8431d48315bfe9f1804a34f5169cae4678af9d92a03860a7b",
+   "block": 967106,
+   "time_utc": "2026-09-15 09:34:13",
+   "from": "player 4",
+   "inputs": [
+    "bc1pnzv687ungueh599ucydnzv3q0env7z4nfk3uf2g5ncc7xeq9l9cqgq4257"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1p2qmsulrdynlkted5qzfzztlmcuqzs973drsqnh37xdtac5eu5zjqafs9zk"
+   ],
+   "op_return": "Do both cosigners use the same 12 words and the same passphrase?"
+  },
+  {
+   "txid": "fafdcd55a566ccebe3944b3a4cb3d4d04ced285a4b9aa3da0ccd2279eee57dad",
+   "block": 967135,
+   "time_utc": "2026-09-15 14:31:15",
+   "from": "player 4",
+   "inputs": [
+    "bc1p2qmsulrdynlkted5qzfzztlmcuqzs973drsqnh37xdtac5eu5zjqafs9zk"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1pmvhmmqz8vdtxq5qun7tkag0r6mymewnenwh6wzv9g98th0ngk6tqv0h5uw"
+   ],
+   "op_return": "Were the 12 words generated from entropy, or chosen directly as words?"
+  },
+  {
+   "txid": "96861335409aa5dd85cc03734191832dfb5e5ff1476d4005ccdb69c286217fcf",
+   "block": 967140,
+   "time_utc": "2026-09-15 15:22:43",
+   "from": "author",
+   "inputs": [
+    "bc1qqenp579zef3fpetekf424w9hk6eadlz0lpmtja"
+   ],
+   "sats_to_escrow": 1784,
+   "change_outputs": [
+    "bc1q6suweqz66uwhnpedulfwkmvn8lu06elyftzytq"
+   ],
+   "op_return": "Perhaps... but figuring that out is part of the puzzle. The 12 words were generated from entropy."
+  },
+  {
+   "txid": "de3c7aba7b3b8d3650c339041579158125546ff9d3bcfeef02fefe489a73e4d0",
+   "block": 967260,
+   "time_utc": "2026-09-16 09:02:11",
+   "from": "player 4",
+   "inputs": [
+    "bc1pmvhmmqz8vdtxq5qun7tkag0r6mymewnenwh6wzv9g98th0ngk6tqv0h5uw"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1p76mp8ua2vpf5qgwg2vfc8hdn2mkm2y20m48mddlf4nn9vgpnxfjqtfds6d"
+   ],
+   "op_return": "Is the 128-bit entropy a zero-padded number, a digest, or neither?"
+  },
+  {
+   "txid": "e38caf86a0d304a4d8a10e023e75626387dbce287847d46076a48bf60be82ca2",
+   "block": 967281,
+   "time_utc": "2026-09-16 12:40:51",
+   "from": "author",
+   "inputs": [
+    "bc1q6suweqz66uwhnpedulfwkmvn8lu06elyftzytq"
+   ],
+   "sats_to_escrow": 1848,
+   "change_outputs": [
+    "bc1q5eg4w0ewlhvm92kv694v5slldy62kjjpzzyewm"
+   ],
+   "op_return": "It's a 128-bit digest."
+  },
+  {
+   "txid": "530490fd94eb76e368a0eff96db87cb1bb74ac1027aa97765a34508d877c4de4",
+   "block": 967379,
+   "time_utc": "2026-09-17 07:34:19",
+   "from": "player 4",
+   "inputs": [
+    "bc1p76mp8ua2vpf5qgwg2vfc8hdn2mkm2y20m48mddlf4nn9vgpnxfjqtfds6d"
+   ],
+   "sats_to_escrow": 4000,
+   "change_outputs": [
+    "bc1pa7zy5aaahr0z32ve4t3d0zza5t0n2q0atcvymm3pe7uxqdj5gtvqkxj4rx"
+   ],
+   "op_return": "Passphrase fmt: first/full/middle name? spaced/joined? lower/UPPER/Capitalized?"
+  },
+  {
+   "txid": "ec08d0014b545776344e84214c82d556e25f11eb91f5764fc2b5b3b18faf4c99",
+   "block": 967383,
+   "time_utc": "2026-09-17 08:02:14",
+   "from": "author",
+   "inputs": [
+    "bc1q5eg4w0ewlhvm92kv694v5slldy62kjjpzzyewm"
+   ],
+   "sats_to_escrow": 1813,
+   "change_outputs": [
+    "bc1qnsk37lnc9unj4d4jjq5j3nh5u88dvfltv9r7xr"
+   ],
+   "op_return": "Passphrase: You'll have to discover the fmt through brute force. The key question greatly narrows the search space."
+  },
+  {
+   "txid": "a347081cb74dd40f1a7cbe4a5dcb6f8f8a79d526cd07141c80a85e6ab6eec26e",
+   "block": 967396,
+   "time_utc": "2026-09-17 10:44:14",
+   "from": "player 4",
+   "inputs": [
+    "bc1pa7zy5aaahr0z32ve4t3d0zza5t0n2q0atcvymm3pe7uxqdj5gtvqkxj4rx"
+   ],
+   "sats_to_escrow": 3000,
+   "change_outputs": [
+    "bc1prp6jmy2u5qy28u6z9jzfevpr4lv4sv2dzuvkzsv38apa8nznd70q0snce5"
+   ],
+   "op_return": "Digest input: typed text, raw block bytes, a file, or something else?"
+  },
+  {
+   "txid": "ed010443963e3601b35266a52108bd1b8dfa58e9e258a041098c05a474513fab",
+   "block": 967477,
+   "time_utc": "2026-09-17 23:22:28",
+   "from": "author",
+   "inputs": [
+    "bc1qnsk37lnc9unj4d4jjq5j3nh5u88dvfltv9r7xr"
+   ],
+   "sats_to_escrow": 1777,
+   "change_outputs": [],
+   "op_return": "The genesis block data can be viewed in binary, hex, decimal, or ASCII. If you figure out which part is being used as the entropy, just try all four forms.\n\nWant a valuable hint? Send 50k sats and I'll reveal the public keys for this address."
+  },
+  {
+   "txid": "679cfe1e07b15d7cdd2e0200809e37329366dd4b88d7be01f52570e87e935649",
+   "block": 967558,
+   "time_utc": "2026-09-18 13:33:23",
+   "from": "player 7",
+   "inputs": [
+    "bc1q84cnnuteuee3eslz0mpu3dge3jkhlpu4wv6dxh"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1q7pxqz8ze7pakdsdg7686jp77743jrm9rthptam"
+   ],
+   "op_return": "Is the hashed part a header field, the coinbase text, or the whole block?"
+  },
+  {
+   "txid": "d78593ab6288e2c9792f8c5ad8d020893d1b1dd9631eb5b1ffa5765f13029cd7",
+   "block": 967740,
+   "time_utc": "2026-09-19 20:13:07",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 965,
+   "change_outputs": [],
+   "op_return": "Somewhere in the genesis block. The hints reveal the puzzle's shape, not the path to its solution. Brute force will be necessary to uncover it."
+  },
+  {
+   "txid": "0499b89a88b5ff98569fecf404afae878ea78b2442e7b698a4ee24409f9c0661",
+   "block": 968172,
+   "time_utc": "2026-09-22 18:45:08",
+   "from": "player 4",
+   "inputs": [
+    "bc1qkjsfj0u2f2eenwums3cr3px20jv0udet6yxwmx"
+   ],
+   "sats_to_escrow": 9000,
+   "change_outputs": [],
+   "op_return": "Which block part + which hash gives the 128-bit entropy? One line."
+  },
+  {
+   "txid": "ac8c1244d4c7042102741236d580ed5ca9e3827a3412a0005b4a8581774c7036",
+   "block": 968323,
+   "time_utc": "2026-09-23 21:31:42",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 3000,
+   "change_outputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Can I pay 50k for the pubkeys encrypted to this tx's input pubkey (Electrum)?"
+  },
+  {
+   "txid": "ae906bdebdf7cd2e9b2490a727d5d91eaa203c2ae68f8461ea62e07ffe3b9b1c",
+   "block": 968343,
+   "time_utc": "2026-09-24 02:51:06",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 448,
+   "change_outputs": [],
+   "op_return": "First 128 bits of SHA-256 hash of the genesis block's entropy.\n\nEncrypted pubkey: 50k sats output + 1k input.\n"
+  },
+  {
+   "txid": "040cca803909ca782fe3ba4d197740afc4ff3b353af1c5cbe06de52cfbb99792",
+   "block": 968351,
+   "time_utc": "2026-09-24 04:33:39",
+   "from": "player 4",
+   "inputs": [
+    "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad"
+   ],
+   "sats_to_escrow": 50000,
+   "change_outputs": [
+    "bc1quxmfukqw5x9k6f2yzj43tcy4z8q6np87veh56v",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "50k+1k: please send the 2 pubkeys Electrum-encrypted to this tx's input pubkey"
+  },
+  {
+   "txid": "5ee1f8e2e5c7eaf571b6bbac6dc89263206d4db2c44ce71df94bb6d10924b81c",
+   "block": 968357,
+   "time_utc": "2026-09-24 04:59:42",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 777,
+   "change_outputs": [],
+   "op_return": "QklFMQLXk4PoJBD8+XWI5H23h6N7YKwFMrp1rgqZ5lLaIq5rIxducdHgp02Jy4zUOt8Fpyvf5dCFBO23CfBEUwuDJP8sSVtVcN7Yz+TFrEQ+JjZrqGgttS32a66Irreq7TKitwC4RWctXEv87xn39bPE0qrdFET6VT3zxzmm7tXFYkJLXYDgCKk1Spi1DNQCbML3/8nGWLKUYaXerRBeShdQDcpoqDw/qM15+plACSCZ6Ip8Pgp9dOL4TaNK/H0iwRt19U1eZolj2XDQsRylj8jTTcHW3PK/LA0XKVR55YpcoanKnw=="
+  },
+  {
+   "txid": "e0f06c05c392ba186aca39eb10f5b1b7cf14c24c6a7a30e839b5ff40255a4797",
+   "block": 968379,
+   "time_utc": "2026-09-24 09:36:20",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 50000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "50k+1k: please send the 2 pubkeys Electrum-encrypted to this tx's input pubkey"
+  },
+  {
+   "txid": "b767eb9fd162854b875e69253fe2b26464136cf2548ad0d009c69317adac1271",
+   "block": 968411,
+   "time_utc": "2026-09-24 15:07:14",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 777,
+   "change_outputs": [],
+   "op_return": "QklFMQNRHjQ1l0DYt++arP+U1vtqskJ3HRAB6rbZXZ3R4Yv2Cgqp/9v8/fnntGq2DhJ1oZS8Urlv365lQ4o5fUTG1rQbyVobdqHj19sINgAAzGPz46rVA59iIGkWDcCnpvliska67WumBnKVdf2J+m9ZqdY0Y66psTm/O9Lpo7AQzWYScRvcF2s8wBocSqlkFJJrFP8fyhL1s5b6zYg041rIf3bEQYVCxSB+SdnLPF811Vv07aayxFFXKZua1yOBHp/KF1iYtn5liLezwvGf1qFc5G7LPgwhHxSlILDXN5MYAg5bcA=="
+  },
+  {
+   "txid": "5a5b5404ff410f7487b7e04c38cb0f77d3b7506304a6cf92ea23c5c1aafa89ef",
+   "block": 968424,
+   "time_utc": "2026-09-24 16:37:50",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 20000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Encrypted Q to bc1qyas2 key: QklFMQPpMZCj3Z0vpzPNPtHtfuRm7mQH243aNHcFt4mp0zfgwzrnhXlwu5BNO0wUlSgD33/EpAc3QRHYjSU94RwQnHUgapzxQIFfF2qtI8caJuq0pEmQm5PlSEDK+qOmjSIjcpNvAGWtp6nRd816LYeixRfmC1yPe5KSsGlRVyzWJ0v6Fo55eQYrEytd+qoO2BIplr2dB91WHcOXUpEZO6zTwVuGOxrzBH8f6K5zYZbw5eg+ZHIgygebgP3w8lkXvNn2pfFBjv/3+LHBJwviQ4TPl/xLIAoi3dpMzeTFp7BGkoLUbbKK8razBgXGnCot5dDAg6B8VDGr4W013y3AV9WTYxuhYbQIBmKS10vVwoG5eVwd5cJrFCHYXmGzTGB35pbahSRAhraDXRTKopuGLa4IsyQMleD1X+x6u8lG17Dl7w0NgdAFjHjcwfRvC0Bxvrrisk8PMOelO6bHOBz968awCe7/"
+  },
+  {
+   "txid": "acda5891499731f5cf33afbf8a50a1a76a5e459c681ecc0253f606f68288ff66",
+   "block": 968435,
+   "time_utc": "2026-09-24 18:30:04",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Depends. I'm going through batches of unlikely hypotheses with [an LLM] and writing brute-force scripts with it. Though some of the alpha is mine. I'm 0xflorent. Doubted the paid-hint process at first, but I was wrong, I love it."
+  },
+  {
+   "txid": "b94ae65f3f683f927f210619631991094f4c5c36a444dfc616f90f5fa0f3f571",
+   "block": 968440,
+   "time_utc": "2026-09-24 18:50:37",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 830,
+   "change_outputs": [],
+   "op_return": "I'm curious: Are you using an LLM and brute-force attempts?\n               \nEncrypted Q to bc1qax0h key: QklFMQLsJWXx0QFNcix2rW5D7aEu/HLUTIgzh7NXpqrr8LKotKfSc1C+ajk2nK5eoZJbs4l7vw7EsscevG4Q6Ft/H70FCEPgyM40++TOC6b7rBcnDaNvYCv7KQbHF6Z3xK3Z8AQkZH+3/ZnLymSCbwENOum9zr++SOeJOLHom9lqoqa49WK8Wh2BL5jijo9qDi1ddu/WMWq3ME/d7XYvz0pNpHcskbnn3pDX1XeU3n0hbW8oRg=="
+  },
+  {
+   "txid": "11856ad1037f2b3e04cddbd3ae1c0669fe66bb1f83d56e3f9f17a36be1153ad5",
+   "block": 968461,
+   "time_utc": "2026-09-24 22:54:51",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 30000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Encrypted Q to bc1qyas2 key: QklFMQI9DjhBYqs4Z5Vd239cijPZishiBGE5Wo9LhB2z9K7RohIX5ctonXf35jRmoj/kw2Faxej/d8NrBO0z4S45ENKs4BbuTTHLNq6no8d3BUOa831LOSfaoF7usiYn6iwJMgV99QHXDZvjTPeemYK9yV7iayoSOy58fVvnQSz7npJYIqgdCYgVgBUd1tX0UFCqUx1rWXVCi+E6qfFNXCB+GS+WDXkf8UOb4LHNA3+M2sWDvvTL2B97AB0eybHiLPdFzSSfQYvGPnerZWyGbzkAwdJsM3Aj25EmHpmmT61oKAAKUi51Y3oJF3t1GGuq4oDpIG14Yv3dOvxXBr8+oAZM/SZYyqqkPWigwjarENJgo9jdAMDZZo2Z4cqHuZKTH+1N1+BvgqECu7qrkxiGpjIKk285UgUQauy6MhDhpKuWSRB10Q=="
+  },
+  {
+   "txid": "39a8b5c4435df8ac703e58493102b5dba4904745c4442702d82e8c34206641ed",
+   "block": 968466,
+   "time_utc": "2026-09-24 23:26:26",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 433,
+   "change_outputs": [],
+   "op_return": "Encrypted Q to bc1qax0h key: QklFMQOCijbVXZjGxyKbKSA5XZOeVJ0WdFDsrAbCWB1Vo+G8FNhmWqji9DYyZpihY0xBv266WCtJDaQA7HzWVDTjUTmOHSb/sZgFawMNJJQeNDbXSuf0aUJvMAbfdiY2JtgUdzgdzsovFvhLaGfw5D9Np7sYDgJEZ3CWqOn22yK6ou0H7vM2AQbDdAgd/helrcocoIbxzo/nyb0b89T8wPyfO5YfLkAOdPezc11mRQjUb/yxtk2ea9QI5haI25/AZmNdsLSurzGRqpl2RZ1qppyt/ciibeFg4g0udOrmJ+BYyJT5bXpx9glxCvXxu7lwgq4I6EKI54BPmTzPxR57LNlfkOPpdPfYUqnrv3ntSvibdEqySvtllDXQ1aeUh5sP55bxv4kuE0aeTh3wjSscB1csg6ADMTR6mVzZcwlVgl5TGRhGJXlpnn09jOYA8WAPd2FRhNcTbxVNT5R4JIgO1bB6ofb6a4amsv244a8IgdJu6TsDqAhrd+6pJlCGcULjcGCpff+sPU8/LIrvDAYhWcbAYK0sZMHemK4P90nnjR9HMjMFocH0BnxkaICCeTZPmF/r8Rzj4Ndq/dZxau0d047d3gWGYZivoGd5YimQZ/lQokunC9jTJKZGiKdj8+yj5TxcjEEr6l+p08F2uRlH4/FhL9cxHd07Cq4rK/qBWOi8C9ItQHTu7tppgcFkWQV07rbA4d/TJuli33b0hNLEFrR/t/fw5I1DSgy+uLYILMhBRLITGm3kiRhKMG7YjJ+M92zV1dGDh/tjMiPXVO/kYNSkSlqgVQ6GJsowJOQGOhdKH72MHFp9qJFc9hD5jdaK0EDAPd78yXwXZpo/x0JDHf/56uku7vSS10vmuK1Ri53T9UZy9z7OYV9sQXHSchFOf2WGmE++P6WEzMJO5znXKvkvTluWz5a5vHacgfEMT67wXCn7pbIboZUsFwvjBOSbIOhJWDc="
+  },
+  {
+   "txid": "8f3c64e4f66ad662a20cddea3cb3d2ce73632f29a06494890d117a50ab122da6",
+   "block": 968479,
+   "time_utc": "2026-09-25 01:37:22",
+   "from": "player 4",
+   "inputs": [
+    "bc1quxmfukqw5x9k6f2yzj43tcy4z8q6np87veh56v"
+   ],
+   "sats_to_escrow": 330,
+   "change_outputs": [
+    "bc1plyz7wfhxwf5qj254v98f7t3d95z9w2qvlcycd7h0zgj9kt9tkrpsgjggh2"
+   ],
+   "op_return": "Only the keys may go encrypted; the rest should be public. Why not swap emails?"
+  },
+  {
+   "txid": "7bcd93d02f9e9e9e27f136fb25e76f5a2eeb3724dd3053c7d7373a8dbd2c40ca",
+   "block": 968519,
+   "time_utc": "2026-09-25 07:14:16",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Fair enough, I understand. I might ask another one today for 30k, feel free to decline if it gives too much away. I've seen someone complaining about encrypted conversations and they are right, I benefited from public hints too and will from now on ask everything publicly. For transparency, my last question asked for the master fingerprint of one seed without the passphrase. Author declined as it would have been too easy to solve afterwards. Also, my previous encrypted question asked for the key origins (master fingerprints and derivation paths) of both cosigners. I'll keep that one private as it's strongly related to the 50k public keys question. The author is free to confirm or publish any of his replies."
+  },
+  {
+   "txid": "c5f4c7ca2959b3c166f4941bcaf9debb2174017b49909a05d0a7e8a584e0e4a6",
+   "block": 968561,
+   "time_utc": "2026-09-25 15:14:12",
+   "from": "player 8",
+   "inputs": [
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qax0hsnwnxl7393awtc3hsy0ftm6tg4tyk2nfja"
+   ],
+   "op_return": "Two quick shape questions. 1) Is the hashed input a contiguous piece of the genesis block exactly as a standard tool shows it (explorer, bitcoin-cli), or did you combine or edit parts yourself? 2) Did you get it by copy-pasting a tool's output, or by typing it yourself? Here's 10k. Let me know if my declined 30k plus this is enough, or if you'd like me to top up."
+  },
+  {
+   "txid": "b1343918e8357ce355f1d7a1d71e41f79d0b17f58fa1201b294f7f8007fbc44c",
+   "block": 968601,
+   "time_utc": "2026-09-25 23:37:19",
+   "from": "player 4",
+   "inputs": [
+    "bc1plyz7wfhxwf5qj254v98f7t3d95z9w2qvlcycd7h0zgj9kt9tkrpsgjggh2"
+   ],
+   "sats_to_escrow": 20000,
+   "change_outputs": [
+    "bc1qddkdernu3n0lvra8f5g4k7g9u3wp4fad63mzzu",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "0xflorent agreed publicly: please publish the derivation paths you sent him, or just the two BIP48 account numbers. I paid the 50k+1k for the pubkeys too."
+  },
+  {
+   "txid": "e3ab67c0ad72980678f6da4e0751d765cd73c1457656232ac878cfcfec8ae882",
+   "block": 968601,
+   "time_utc": "2026-09-25 23:37:19",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 844,
+   "change_outputs": [],
+   "op_return": "It's a contiguous piece of the genesis block, exactly as a standard tool shows it. I got it by copy-pasting the tool's output."
+  },
+  {
+   "txid": "65491a02b537f727094cf9c5ea49a5b44140301929355dff132a3ef97fbcae9b",
+   "block": 968603,
+   "time_utc": "2026-09-25 23:44:49",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 644,
+   "change_outputs": [],
+   "op_return": "Decrypted message: Offer 20k+1k (paid in this tx) for both key origins [fingerprint/48h/0h/acct'/2h], or at least both master fingerprints. Reply encrypted to this tx's input pubkey. Also: I'm really enjoying your puzzle, thank you. Let me know if encrypting ruins the game for you and I'll conform.\n\nEncrypted Q to bc1qdu8m key: QklFMQMughI6NqjAa2c0LxyAq/1TOKvBBIolubSgOkDfLOxCZXtorX+AjjAHAiwOzcDPOXJzaiPrSMJCbgDqucS+VsIuPMeXeB+8WRD9v5dK/42HRKSSmSp3m09cHPYx4NV5s7dyru34+WJetYhAej5kELPlBzCxyjVke25JL7CpDqdM2CWhB7G/lZLZqEPy2WD1KgOd5GEIE3gl4x/x4s00+UjIb0HfLzk7dcjWQtVmuv1FeA=="
+  },
+  {
+   "txid": "88fc7fd69dc89b2d716814d2a1ccdc8bdf419f158c7028b37c1cb83230cda4da",
+   "block": 968713,
+   "time_utc": "2026-09-26 16:52:17",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 500,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "Decrypted message: Offer 30k+1k (paid in this tx): the master fingerprint of one cosigner's 12-word seed with an empty passphrase (not <fingerprint>/<fingerprint>, which include it). Your choice of cosigner; both if you're willing. Reply encrypted to this tx's input pubkey. Thanks!\n\nReason for decline: The genesis block is only 2.5E-32 of the 2^128 possibilities. Revealing the seed's master fingerprint without the passphrase is basically giving away the entropy. All the secret pieces have to be cracked at the same time."
+  },
+  {
+   "txid": "5216126176a1e4917f32f0a0aedc403cb23591919eb56520d43f0132a0c2aa5c",
+   "block": 968745,
+   "time_utc": "2026-09-26 21:29:22",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 50000,
+   "change_outputs": [
+    "bc1qtkrk7njjk29fl25xtxxlqxy3map5w6u0ehtzk8",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "50k+1k: please send the 2 pubkeys Electrum-encrypted to this tx's input pubkey"
+  },
+  {
+   "txid": "0774617b6bf04ba6723a1ddf1f77d4103a829117d972f4a98032420aa6159102",
+   "block": 968748,
+   "time_utc": "2026-09-26 22:17:53",
+   "from": "player 10",
+   "inputs": [
+    "bc1qlahumkum32pf0jq6r5xtecukjcnrzv626vqjyy"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1q09nggtqxjmdedzngxwwwra4vu3h3t2g2ygpcds"
+   ],
+   "op_return": "10k: Y/N only. 1) Digest input = ONLY genesis coinbase Times/ASCII text (not whole block/header)? 2) Exactly tool copy-paste ASCII (bitcoin-cli/explorer)?"
+  },
+  {
+   "txid": "f055ffaafd001b95fae78ee9b2746efb2e76be7ce57b2cfb3657a6278770dfbb",
+   "block": 968748,
+   "time_utc": "2026-09-26 22:17:53",
+   "from": "player 10",
+   "inputs": [
+    "bc1qlahumkum32pf0jq6r5xtecukjcnrzv626vqjyy"
+   ],
+   "sats_to_escrow": 30000,
+   "change_outputs": [
+    "bc1qq0cksrqfkedgrm8jxve5pm4m4r3juyw877yluj",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "30k+1k: both BIP48 account numbers (m/48'/0'/acct'/2') for both cosigners, or both full key origins. Electrum-encrypt to this tx's input pubkey."
+  },
+  {
+   "txid": "e9a17ac9c9ccc8129075b1f2bfe81a3511ede9c227692fda080deef5f10f05db",
+   "block": 968754,
+   "time_utc": "2026-09-26 23:36:22",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 810,
+   "change_outputs": [],
+   "op_return": "Encrypted Q to bc1qrzqq key: QklFMQNUDtZPeDTM6qjliSuO8dGBhxH4nwS1SAlO5pH2DhGE4SvZm892ivC9tI1BXw1vgw+P9MNc37ItpCyv6gvzMu4Q3g7UWCfvPlZ3ZLgOKl0xxMesHSC/OxILVq4+m4R3tX5M5e+N1ehmsQSMUDb7pDFcNQ0PE2cmL2R/f0u1FVWDq24VqQm6lGVYTp+dfcABYiz9UG091tnlZT0Ff6MeDo/ZeJ5Jzx5kerBIxXHxyhxB6dqt/xUAoR7FvERX0EPBA5M8LuIm3GuGBClhXoKVuy7/LGpclNBAqqqPmhCjmSqhyw=="
+  },
+  {
+   "txid": "f1ad8d19a70c657b8438bb6fabe43dd3ab3d2df494960016dab838e897857634",
+   "block": 968754,
+   "time_utc": "2026-09-26 23:36:22",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 836,
+   "change_outputs": [],
+   "op_return": "Encrypted Q to bc1qlahu key: QklFMQJisdZ7brEwFI/FJyaJ/h1MNMW3Rff84xOlfMkC51g/QcKmCt9BWeeys3xFvDBc6FPr3Zfpzdi1spv3hxA2pWOg60mZq1usl38C/eBSd9jvba0hhgy+MM04w1Hzwp0erws1Qq0Vth2eky0rJ/8yxJGI7n3FfD5D6pqGL3bbwWdUFoOIuJECAPHo8z8fQJ8oQq5zz04oM2YIZSZHCDW1qiXuMvm/ZccVaIICuViBgLUDLg=="
+  },
+  {
+   "txid": "68171cd7aa964213998ac8960940fc20df9a25d5ed6c06ca6de4e16442cf6886",
+   "block": 968759,
+   "time_utc": "2026-09-27 00:19:30",
+   "from": "player 10",
+   "inputs": [
+    "bc1q09nggtqxjmdedzngxwwwra4vu3h3t2g2ygpcds",
+    "bc1qq0cksrqfkedgrm8jxve5pm4m4r3juyw877yluj"
+   ],
+   "sats_to_escrow": 20000,
+   "change_outputs": [
+    "bc1q72e7yrhc94sjyu26lmna4stsu03kpw36a9wrhm",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "20k+1k, structure only: 1) App that made the 12 words: iancoleman.io Entropy box, Sparrow, other? 2) Entropy Type + Event Count it showed (else char count hashed)? 3) Pasted from bitcoin-cli/explorer/hex editor?"
+  },
+  {
+   "txid": "457fc560caded5b020ba8d1c3543ceec0269880e1ff88bdbda14008de4079023",
+   "block": 968768,
+   "time_utc": "2026-09-27 01:39:37",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 928,
+   "change_outputs": [],
+   "op_return": "1) N;\n2) N."
+  },
+  {
+   "txid": "dcd7d3990e9bc4407f2146fa77fff583c26b66c12eef7e0e0832fbbed062df51",
+   "block": 968768,
+   "time_utc": "2026-09-27 01:39:37",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 800,
+   "change_outputs": [],
+   "op_return": "1) Apps/Tools used to generate the 12 words: bitcoin-cli, cut, jq, tr, sha256sum, iancoleman/bip39, OogaBoogaX/entropylab;\n2) Genesis block is extremely small. This will have to be uncovered via brute-force;\n3) Pasted from bitcoin-cli and also from an explorer."
+  },
+  {
+   "txid": "67c1b1e4b8c3a220ffbe46fadb484685db7471ee74b3883146ed5b8df3ecb196",
+   "block": 968885,
+   "time_utc": "2026-09-27 20:18:46",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 50000,
+   "change_outputs": [
+    "bc1q748w8hyhp2rrm3532t68s26500ts36sz386deg",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "50k+1k: please send first8hex(sha256(passphrase UTF-8 noNL))+first8hex(sha256(12 words lowercase single-spaces)) Electrum-encrypted to this tx's input pubkey"
+  },
+  {
+   "txid": "d2758a2b6e2d01cb2ab5007f6340b88aa6d3b0ee31009c4c4df71be775e7ae3d",
+   "block": 968906,
+   "time_utc": "2026-09-28 00:10:09",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 762,
+   "change_outputs": [],
+   "op_return": "Declined for the same reason as before.\n\nThe puzzle wallet was built using secret components that are extremely weak on their own. Those components won't be disclosed or reduced to a searchable checksum. Revealing any one of them independently would turn part of the puzzle into an oracle for solving the others. So you'll have to recover the actual secret pieces and test them together. I won't provide any derived value that isolates any individual secret."
+  },
+  {
+   "txid": "4c6ef4099a2a4263e28bae8abf17246c6b26315e2b3a9da1e5b5e646d3cb7e8c",
+   "block": 968981,
+   "time_utc": "2026-09-28 10:32:39",
+   "from": "player 4",
+   "inputs": [
+    "bc1qddkdernu3n0lvra8f5g4k7g9u3wp4fad63mzzu"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qqt7342rndw8x40yxxqp53ghxlcq3gfyzxsar7u"
+   ],
+   "op_return": "Shape only, one letter each. 1) jq/cut/tr changed: a) the text before sha256sum b) only sha256sum's output (e.g. cut -c1-32). 2) Words: a) Coleman \"12 words\" on that text b) first 32 hex as raw entropy"
+  },
+  {
+   "txid": "9da63c9f600f8a91b9ef90327f71422e66da22c8900f9df1491b4e78b06f56a1",
+   "block": 968996,
+   "time_utc": "2026-09-28 12:36:48",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 947,
+   "change_outputs": [],
+   "op_return": "1) a;\n2) b."
+  },
+  {
+   "txid": "33736aa78237fe96f94edcf48f14fb3841ff0bf42bedc3688cb5803ee42315a3",
+   "block": 969350,
+   "time_utc": "2026-09-30 21:13:21",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 15000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1q4l3u79dtvtva38899g0e9cyzydhhjeu7psqrt7"
+   ],
+   "op_return": "15k Y/N only: 1) Two different pastes for the two 12-word seeds (one cli, one explorer)? 2) Same passphrase both cosigners? 3) sha256sum input = UTF-8 text of paste (not hex-decoded binary)? 4) Ian Entropy Type = Hex (first 32 hex chars of sha256sum)?"
+  },
+  {
+   "txid": "faf44a9e7d572e65f0dfa96c4f32e7393e3fab600da3cdfdd5c758c9fe493218",
+   "block": 969350,
+   "time_utc": "2026-09-30 21:13:21",
+   "from": "player 9",
+   "inputs": [
+    "bc1q4l3u79dtvtva38899g0e9cyzydhhjeu7psqrt7",
+    "bc1q748w8hyhp2rrm3532t68s26500ts36sz386deg"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qauqpmkpnc7qgz9lnsrfu9xtnr7acjrj6g5nrxu",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "10k Y/N+choice: 1) Hashed form = binary, hex, or decimal (pick one)? 2) Complete tool field value vs substring/cut? 3) Trailing newline on sha256sum input?"
+  },
+  {
+   "txid": "1f0f0af2aef408c25c3c813476a130cae171af2190498754c695f8d8e7b43bc2",
+   "block": 969361,
+   "time_utc": "2026-09-30 23:11:40",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 918,
+   "change_outputs": [],
+   "op_return": "1) N; 2) Y; 3) Y; 4) Y"
+  },
+  {
+   "txid": "3678a0e393de3e664f5470580d7a504b981809d35f029f4bc592b8126a133446",
+   "block": 969361,
+   "time_utc": "2026-09-30 23:11:40",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 933,
+   "change_outputs": [],
+   "op_return": "1) hex; 2) substring/cut; 3) N"
+  },
+  {
+   "txid": "734da7fc7a60f741074688d55344b70a1dbc5dc42a47e67a6353c5f2de49e770",
+   "block": 969383,
+   "time_utc": "2026-10-01 02:26:39",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1q8z9dkwudvpuyzy7ged5rvt5j6y6lns8gnqs573",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "10k Y/N+pick, shape only (no values): 1) Is FP 0852014c the cosigner whose iancoleman Entropy Type = Hex? 2) Is that cosigner's hashed hex copied from bitcoin-cli (vs explorer)? 3) Is the hex cut <=32 chars? 4) <=16?"
+  },
+  {
+   "txid": "759663153ca23f956b1f2b354550f9df547481df5b121a2a229e77d255685cef",
+   "block": 969383,
+   "time_utc": "2026-10-01 02:26:39",
+   "from": "player 9",
+   "inputs": [
+    "bc1q8z9dkwudvpuyzy7ged5rvt5j6y6lns8gnqs573",
+    "bc1qauqpmkpnc7qgz9lnsrfu9xtnr7acjrj6g5nrxu"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "10k Y/N+pick shape only: 1) Hex cut from getblock 0 raw hex (not a JSON text field)? 2) Source = header 80B / coinbase tx hex / other (pick)? 3) Cut length multiple of 2? 4) Same cut length both cosigners?"
+  },
+  {
+   "txid": "41a68f4a564a4fc52a25dd52c3169aaa549dcbd9310e945a06114ea934752cda",
+   "block": 969390,
+   "time_utc": "2026-10-01 03:43:21",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 936,
+   "change_outputs": [],
+   "op_return": "1) N; 2) genesis block; 3) Y; 4) Y"
+  },
+  {
+   "txid": "b050d6450f7d12eef41fae3179791c572499b653ee24665ae25adb9fe46dfd49",
+   "block": 969390,
+   "time_utc": "2026-10-01 03:43:21",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 929,
+   "change_outputs": [],
+   "op_return": "1) Y; 2) N (bitcoin-cli/explorer); 3) Y; 4) N"
+  },
+  {
+   "txid": "d98ac606deeb8f2d9efdb11abafaabc505d8fccc7a026f0e876bda68f47429a4",
+   "block": 969576,
+   "time_utc": "2026-10-02 10:39:41",
+   "from": "player 4",
+   "inputs": [
+    "bc1qqt7342rndw8x40yxxqp53ghxlcq3gfyzxsar7u"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qwew03mk22envgujdmt70g9anz3zmfm6fd6s6pf",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "Shape only, no secret values requested. For cosigner 0852014c (the one you confirmed used Coleman Hex): 1) Before sha256sum, did any command delete, translate or squeeze hex digits, beyond letter-case conversion and whitespace removal? Y/N; if Y, which operation? 2) Procedure = one SHA-256 of the UTF-8 hex text, first 32 hex digits of the digest as raw entropy, standard English BIP39, 12 words? Y/N; if N, which step differs? 3) Your hint 'first transaction' = a) genesis coinbase b) the 10 BTC payment in block 170 c) other: which block/tx? 4) Does the passphrase contain any character other than ASCII letters A-Z/a-z or a space (any digit, punctuation, accent, non-Latin letter)? Y/N"
+  },
+  {
+   "txid": "719623a4f2c94413b3f954e0864685aa5b7e6aead664b4f5b9efd868b7dcd7c7",
+   "block": 969650,
+   "time_utc": "2026-10-03 00:20:10",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 874,
+   "change_outputs": [],
+   "op_return": "1) Y; cut -b N-M: it deleted everything outside the selected range. \n2) Y. \n3) Key question of the passphrase: Who received the first transaction? That's all I've got to say. \n4) N."
+  },
+  {
+   "txid": "8c1e0c1b1e70d70c00142310a89240f2669f349e62673bcc3b92f0ca9d7dc29c",
+   "block": 969708,
+   "time_utc": "2026-10-03 09:31:40",
+   "from": "player 4",
+   "inputs": [
+    "bc1qwew03mk22envgujdmt70g9anz3zmfm6fd6s6pf"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qm7e0ndtmyfuwvmz578a8tfzrk67mj5h4zfyncf",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "1) Is 0852014c the fingerprint of the depth-0 BIP32 master public key derived from the 12-word mnemonic with the BIP39 passphrase applied? Y/N. If N, which node does it identify (no account number needed)?\n2) Are both escrow public keys at the complete path m/48h/0h/Xh/2h/c/i (any X), with either c=0 and i=0..9, or c=1 and i=0..4? Y/N. If N: a larger index, or a different path?\n3) How many space characters does the passphrase contain, counting any leading or trailing space: 0, 1, 2, or 3+?"
+  },
+  {
+   "txid": "d2ae17e2e91a18c78bcc9d9b99c153c5d6ff55dea217f925d438745c29e11042",
+   "block": 969766,
+   "time_utc": "2026-10-03 21:35:56",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 942,
+   "change_outputs": [],
+   "op_return": "1) Y; 2) Y; 3) ¬_¬"
+  },
+  {
+   "txid": "44444289a6d96b35e0ae50a4f8b7b99acedb1e2fabcad23ae3b20258d4e43ed8",
+   "block": 969987,
+   "time_utc": "2026-10-05 09:14:09",
+   "from": "player 4",
+   "inputs": [
+    "bc1qm7e0ndtmyfuwvmz578a8tfzrk67mj5h4zfyncf"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qnkml9j7fa3krd03nzm0hvjup7pfhf09frk89eg"
+   ],
+   "op_return": "Shape only, for 0852014c:\n1) Is the exact text you hashed 18-32 hex digits, nothing else (no line break, CR, space, quote), that appear uninterrupted, in either letter case, inside one of: the raw block hex (it holds the header, coinbase tx, scriptSig, Times text, pubkey), block hash, merkle root, chainwork, nextblockhash, target, address hash160 - whatever tool or field you copied it from? Y/N\n2) If N, pick: a) it has a non-hex character; b) hex digits from 2+ places joined (e.g. cut over several lines); c) hex of a value not listed; d) listed, but length/case/ending differ from item 1.\n3) Is the passphrase exactly two words with one blank between them, each word a name of the recipient (given name or surname)? Y/N\nP.S. My memory's not that great either: youtube.com/shorts/e_8s8fn93Ww"
+  },
+  {
+   "txid": "221021e681efd10dad0d0988a9e27b937ef1ad1c1f90133f04866746874f4e3b",
+   "block": 970056,
+   "time_utc": "2026-10-05 17:24:32",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 955,
+   "change_outputs": [],
+   "op_return": "1) N; 2) d; 3) Y."
+  },
+  {
+   "txid": "10edb8315de15c0aae216198e5128c0a0a28712edde8767d2ca74d0b3d1480af",
+   "block": 970185,
+   "time_utc": "2026-10-06 14:37:38",
+   "from": "player 4",
+   "inputs": [
+    "bc1qnkml9j7fa3krd03nzm0hvjup7pfhf09frk89eg"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1q6tywskucs9sv48mw9p2hu266rkjsez97sjjaef",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "We tested 1.8M distinct passphrases of the form \"name name\", 2.7e11 (text, passphrase) roots in all, against both master fingerprints: 0. To tell a wrong name from a wrong algorithm, please run YOUR exact steps on this already-cut text: 000000000019d6689c08 (20 lowercase hex). sha256sum -> first 32 hex -> Coleman Entropy box, Hex, raw -> 12 words; BIP39 passphrase: Test Example; same wallet software as the puzzle. 1) First of the 12 words? 2) Master fingerprint (8 hex)?"
+  },
+  {
+   "txid": "8f9e8dd494fd0f51f2ff192d13c57241a2f2b24702ed405e24316943f64fdb80",
+   "block": 970185,
+   "time_utc": "2026-10-06 14:37:38",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qry7vxtsvmkmymfz7dp5jeejflyg0l379stz9p9",
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "10k+1k, shape only for 0852014c (letters/Y-N/pick; no paste, no cut indices, no PP spelling). Reply like: 1) b; 2) Y; 3) a; 4) c.\n\n1) Your on-chain \"d\" (listed; length/case/ending vs clean 18-32 hex): which differences apply to the hashed text? Pick all that apply: a) length not in 18-32 b) letter case differs from the tool's usual form c) extra or missing char at one end  -  if c: LF, CR, space, quote, comma, or other?\n2) Does your cut -b N-M start at byte 1 of the line/string you cut? Y/N\n3) That line/string came from: a) bitcoin-cli piped to jq -r b) bitcoin-cli without jq c) explorer page or API\n4) Which listed place: a) raw block hex b) block hash c) merkle root d) chainwork e) nextblockhash f) target g) address hash160"
+  },
+  {
+   "txid": "05ab6e90b0aea14b7a24d0a41d54c4aa3eb17239cc033d1c70f15c0259f1aa01",
+   "block": 970190,
+   "time_utc": "2026-10-06 15:22:05",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 939,
+   "change_outputs": [],
+   "op_return": "1) host; 2) b7f4182b"
+  },
+  {
+   "txid": "3e53ba380eabacce422e278a0916627e42408f4dc11e192c61039647f694b1e1",
+   "block": 970198,
+   "time_utc": "2026-10-06 16:14:20",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 938,
+   "change_outputs": [],
+   "op_return": "1) a; 2) N; 3) c; 4) a."
+  },
+  {
+   "txid": "e6fd1907568e6afadddc6946837be741b88876d9fcb5fb39e703ba21c4de0270",
+   "block": 970358,
+   "time_utc": "2026-10-07 16:03:58",
+   "from": "player 9",
+   "inputs": [
+    "bc1qrzqqfr2gteydcswnnet3yc2j2nzsnvsg6ksl8x"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qtmtxpecduhevequthasjqhdpmz52l54mxmm8az"
+   ],
+   "op_return": "10k+1k, shape only for 0852014c (letters/Y-N/pick; no paste, no cut indices, no PP spelling). Reply like: 1) b; 2) Y; 3) a; 4) c.\n\n1) The explorer that supplied the raw-block hex you cut: a) blockchain.info / blockchain.com b) mempool.space c) blockstream.info d) btcscan.org e) other\n2) That raw-block hex view was: a) compact API or raw endpoint (one continuous hex string) b) browser HTML page you copied c) a downloaded file d) other\n3) Before cut -b, was that hex one continuous unbroken run with no newline inside the hex digits? Y/N\n4) Reconciling Ask A (cut <=32, not <=16) with Ask E (hashed length not in 18-32), pick one: a) Ask A = cut -b range width; Ask E = resulting hashed text length (they differ if the line ends before the range end) b) both mean hashed text length; use Ask E (length not in 18-32) c) both mean hashed text length; use Ask A (still even 18-32) d) other"
+  },
+  {
+   "txid": "b94390c4f3da104ad344fe29b40b04e37efb578b3589bb84189d5f102ff33ada",
+   "block": 970376,
+   "time_utc": "2026-10-07 18:27:04",
+   "from": "player 10",
+   "inputs": [
+    "bc1q72e7yrhc94sjyu26lmna4stsu03kpw36a9wrhm",
+    "bc1qry7vxtsvmkmymfz7dp5jeejflyg0l379stz9p9",
+    "bc1qtmtxpecduhevequthasjqhdpmz52l54mxmm8az"
+   ],
+   "sats_to_escrow": 9000,
+   "change_outputs": [],
+   "op_return": "9k no tip, shape only for 0852014c (letters/Y-N/pick; no paste, no cut indices, no PP spelling). Reply like: 1) Y; 2) a; 3) b; 4) N.\n\n1) Is the continuous hex you cut the usual lowercase genesis raw-block hex of length 570 (same bytes as mempool.space /api/block/.../raw)? Y/N\n2) If N: which? a) header hex length 160 b) coinbase/raw tx hex c) block hash d) merkle root e) other mempool continuous hex field f) not pure hex-only / not continuous after all. If Y to 1): reply \"-\"\n3) After cut -b, the hashed text length was: a) even, 2-16 b) even, 34-64 c) even, 66 or more d) odd\n4) Did your cut -b range extend past the end of the string (hashed text shorter than the range width)? Y/N"
+  },
+  {
+   "txid": "9750cd4ab471da045914e964c7c9100bc6d975426a6e07c22a3194c69fe67e52",
+   "block": 970385,
+   "time_utc": "2026-10-07 20:03:29",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 881,
+   "change_outputs": [],
+   "op_return": "1) b; 2) b; 3) Y; 4) d.\n\n1) Y; 2) -; 3) c; 4) N."
+  },
+  {
+   "txid": "9cd66237c00c5c3f3236e623d6ab258e8f2933a6662b28d63a98b8277d7a78c4",
+   "block": 970545,
+   "time_utc": "2026-10-08 23:41:06",
+   "from": "player 11",
+   "inputs": [
+    "bc1qs8xgfdj95tfxu2akjsx2nuqepg8drcgm03j3sn"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1plfjhtgv0mljjzhkfqm36h40zyxszwxpg446dgk5wsr7zu5zwepaq7jj8w4"
+   ],
+   "op_return": "10k escrow, no tip. Previous ask was sent to the wrong address (tip tx 4a197e9b...). Please answer THIS ask on escrow. Shape only for FP 040e2791 (B) + PP shape. No paste, no cut indices, no PP spelling. Reply like: 1) Y; 2) Y; 3) c; 4) N; 5) Y; 6) N.\n\n1) For 040e2791: is the continuous hex you cut the usual lowercase genesis raw-block hex of length 570 (same bytes as mempool.space /api/block/.../raw)? Y/N\n2) Ian Coleman Entropy Type for 040e2791 = Hex (first 32 hex digits of sha256sum as raw entropy)? Y/N; if N: a) Binary b) Base 10 c) Dice d) other\n3) After cut -b, the hashed text length was: a) even, 2-16 b) even, 34-64 c) even, 66 or more d) odd\n4) Did your cut -b range extend past the end of the string (hashed text shorter than the range width)? Y/N\n5) Ignoring case and spelling: is the word before the space shorter (fewer letters) than the word after? Y/N\n6) Ignoring case and spelling: is either of the two words exactly 3 letters long? Y/N"
+  },
+  {
+   "txid": "9d789e14f440e38e131848948ca86af1451969f57450f39d8840ca7920df0135",
+   "block": 970551,
+   "time_utc": "2026-10-09 00:18:21",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "1) Y; 2) Y; 3) c; 4) N; 5) Y; 6) N."
+  },
+  {
+   "txid": "d1bd1dccbe5f7b31a9f7ffe171f0a73df996db5cf4943be615c689d349a69f4e",
+   "block": 970801,
+   "time_utc": "2026-10-10 17:56:15",
+   "from": "player 4",
+   "inputs": [
+    "bc1q6tywskucs9sv48mw9p2hu266rkjsez97sjjaef"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1pmeu7s7anydh3f583y0jfqs38ma4gqrkqag6kt4j6sumeygmm9d4sxjugac"
+   ],
+   "op_return": "Two short items, reply like: 1) b; 2) Y. 1) Your 09-26 \"2.5E-32 of the 2^128 possibilities\" looks like 2^23/2^128. What does your 2^23 count? a) cut -b ranges only; b) cut -b ranges x passphrase forms; c) cut -b ranges x something else about the text (case, ending, source, edits); d) a rough guess, not a count. 2) Is the passphrase a form of Hal Finney's name? Y/N"
+  },
+  {
+   "txid": "c41a5e9c9ccc9e16d52cf25789217dfc057a5b2e8801794854db1c136485a419",
+   "block": 970820,
+   "time_utc": "2026-10-10 20:12:20",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 1000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "1) b; 2) Declined: no confirmation of candidates."
+  },
+  {
+   "txid": "7bd0b87bf1e69ae6e36df004e8c2d9a7abb6cbda7eeb6ccd92bca5f47786e359",
+   "block": 971153,
+   "time_utc": "2026-10-12 23:20:04",
+   "from": "player 12",
+   "inputs": [
+    "bc1q7x7yn4rxk9w9cv8ftkq5md6rfuatllh0qmjf0q"
+   ],
+   "sats_to_escrow": 50000,
+   "change_outputs": [
+    "bc1qpcmrg9gqur0tm7wkrc8elxeuvmt0pjksp9nyx2"
+   ],
+   "op_return": "50k+1k: please send the 2 pubkeys Electrum-encrypted to this tx's input pubkey"
+  },
+  {
+   "txid": "5d8490b39fb3aa21f4b00c0608af23d9a4fe1b78984722afd56934c784d76d73",
+   "block": 971158,
+   "time_utc": "2026-10-13 00:00:33",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 823,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "Encrypted Q to bc1q7x7y key: QklFMQPYU2ctQXlfumfVoUPuabswSg51zLhKujRlDsHbTmPgjMDhX2UWPcKe4hk821HP7nkkaCsUDhIPoaucgS6VqBnL63AfnH+sVvcHHkkqNz3OuJwDjAc3sufr/Oj1N3NucILboQq8xdYha8xWU+cOvnjM1xgVaA+O9h+S2H43nQ+z7Gc3E7QRLCnY+lAFn0TRunV7gFUhcNcZt9iXHTeeER7N7iRkrhfyTwZCFHriG7xzk3wYJZsDV034UXCck86oP8RLhY2ooqaw+CDzVmOkck3F6zj3vZBBWvlzEY/yMpEFvg=="
+  },
+  {
+   "txid": "5a5919bb8ffa82ba67bd81d72809985213371754397360e1ab68467bd6daac50",
+   "block": 971276,
+   "time_utc": "2026-10-13 16:51:20",
+   "from": "player 12",
+   "inputs": [
+    "bc1qpcmrg9gqur0tm7wkrc8elxeuvmt0pjksp9nyx2"
+   ],
+   "sats_to_escrow": 30000,
+   "change_outputs": [
+    "bc1qq26rxxkzca687p63r3mq7m6x06sm674hcut680"
+   ],
+   "op_return": "30k+1k: both BIP48 account numbers (m/48'/0'/acct'/2') for both cosigners, or both full key origins. Electrum-encrypt to this tx's input pubkey (also love the puzzle <3)"
+  },
+  {
+   "txid": "44834b212b60b5df2703cd1aaff654c1d85e966b9b15870e82c83846f6480a74",
+   "block": 971283,
+   "time_utc": "2026-10-13 18:33:23",
+   "from": "player 13",
+   "inputs": [
+    "bc1qsesev5cz3fza0y88cl354vj6pfd6hfr9yll999"
+   ],
+   "sats_to_escrow": 30000,
+   "change_outputs": [
+    "bc1qdpaj288eeqwvdefvfp46nr82h2hv40huwvd8wc"
+   ],
+   "op_return": "30k: both BIP48 account indices (or full key origins). Encrypt to input pubkey."
+  },
+  {
+   "txid": "e067545b8eb57268555b3d4e8881f6df765fdd7a4bdf92d9d1cb7f5446e74a98",
+   "block": 971287,
+   "time_utc": "2026-10-13 19:05:02",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 500,
+   "change_outputs": [],
+   "op_return": "Encrypted Q to bc1qpcmr key: QklFMQIxTJpM6tSoOmrj5UCq+vZbRUzu4Z1OyaOi8R5NzstWpPK6CfN3aXNPsPRYwfMLRTCaFrFv8fspT+Q/NQ8okm47rvTzuSUd62G6wLeYDf36qVO76ohj+zU873AbzUI8fSizqrqolocD4NBL9RBweQmVmmy9BlDMY3SBudpcFJlN0ijRP+zpIxFN+4Wo8AZMxonzBGh+W++K+huChuVH3Y5P+qQOoz/6Hu3k7kfeLj82aw=="
+  },
+  {
+   "txid": "6f9fe0aa1f929006de61fd29c67648260b0d5c4feba3416b45362e10fda46363",
+   "block": 971315,
+   "time_utc": "2026-10-13 22:50:33",
+   "from": "player 13",
+   "inputs": [
+    "bc1qdpaj288eeqwvdefvfp46nr82h2hv40huwvd8wc"
+   ],
+   "sats_to_escrow": 5000,
+   "change_outputs": [
+    "bc1qrkj22rarrtnk708gg4hpdfv3h6lazft7fsht4x"
+   ],
+   "op_return": "5k: What exact tr command did you use? Include options and operands, or NONE."
+  },
+  {
+   "txid": "d416a2765ab1a61dfed4d8acb6becb52b8e890db4de6eca9452468c4fa6ca915",
+   "block": 971322,
+   "time_utc": "2026-10-14 00:08:03",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 440,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "tr -d '\\n'"
+  },
+  {
+   "txid": "b50873ca31a944c0fbf781ebabe6ce6160569b4ff97a52c1b41b6aed8ad1df59",
+   "block": 971616,
+   "time_utc": "2026-10-15 19:17:38",
+   "from": "player 12",
+   "inputs": [
+    "bc1qq26rxxkzca687p63r3mq7m6x06sm674hcut680"
+   ],
+   "sats_to_escrow": 7500,
+   "change_outputs": [
+    "bc1qvd0urg2k6tffuq202vwfmdljkju8rkjqyauccv"
+   ],
+   "op_return": "Follow up on your 10-10 answer: 2^23 = cut ranges x passphrase forms Shape only, no name or values. Decline if needed, some might be too revealing :3\n1) Number of passphrase forms counted: a) 1-32 b) 33-256 c) 257-4096 d) more\n2) Number of cut ranges counted: a) under 2^15 b) 2^15 to 2^17 c) more than 2^17\n3) Is each word's letter case one of: all lower, Capitalized, ALL UPPER? (y/n)\n4) Typo in password?: (y/n)"
+  },
+  {
+   "txid": "a4db429eadc17e54e73385e0bd06720e8fb91c2d2b0569cef518dde43d0dd8db",
+   "block": 971639,
+   "time_utc": "2026-10-16 00:21:48",
+   "from": "author",
+   "inputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "sats_to_escrow": 500,
+   "change_outputs": [],
+   "op_return": "1) a; 2) c; 3) Declined; 4) n."
+  },
+  {
+   "txid": "ec831a9d72108dc8f844231cf106ce2029ca648f133a2f5fb4fe6c2c753e7b80",
+   "block": 971642,
+   "time_utc": "2026-10-16 01:16:24",
+   "from": "player 14",
+   "inputs": [
+    "bc1qnndps5l7pfgn2krj2q5zfastd97yllv3s2evw5"
+   ],
+   "sats_to_escrow": 7500,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj"
+   ],
+   "op_return": "7.5k+1k, shape only about the two BIP48 account numbers. No values, no indices, no paste, no PP spelling. Reply like: 1) Y; 2) a; 3) b; 4) N.\n1) Were both account numbers obtained from the genesis block data WITHOUT any hashing? Y/N\n2) The two account numbers come from: a) the SAME contiguous piece of genesis data b) two DIFFERENT pieces of genesis data c) one from genesis data, one chosen freely d) other\n3) How were the genesis bytes turned into the account integer? a) hex digits read as a number b) decimal digits read as a number c) a byte offset or position d) a named field's raw value (version/time/bits/nonce) e) other\n4) Is either of the two account numbers >= 4194304 (2^22)? Y/N"
+  },
+  {
+   "txid": "3fee7cef9f6ec7b212368e2be38cf71bcb256441f88a3473a99af07182ba43b1",
+   "block": 971653,
+   "time_utc": "2026-10-16 02:38:46",
+   "from": "author",
+   "inputs": [
+    "bc1q7h0hthfvden7nrvms7rncukkjgwh6z36g3uzsk"
+   ],
+   "sats_to_escrow": 517,
+   "change_outputs": [],
+   "op_return": "1) Y; 2) Declined; 3) d; 4) Y."
+  },
+  {
+   "txid": "58d3b7d8a5ea665ff2d4c2f12ff253f4516a2511e25293a1acbb9a04c3a7a233",
+   "block": 971671,
+   "time_utc": "2026-10-16 05:41:24",
+   "from": "player 4",
+   "inputs": [
+    "bc1pmeu7s7anydh3f583y0jfqs38ma4gqrkqag6kt4j6sumeygmm9d4sxjugac"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qxngqmme6gqvtl6v29mvppfultsrklpsmuzv079"
+   ],
+   "op_return": "Encrypted Q to bc1qyas2 key: QklFMQII7HI6xq4ncU9UgYJyIvY+yiGXsy+W1ScYPR6zd4etsD279avPkyTMEDxnlAhR97Aq5ZUU/tSXXT6amXlApkEuqlPQcvz9wHzwaBnDhn/DRLrjPV7VwV6pthzX1OsMQFtRJsOoZBWUnlCes6SyR0xYpKu5vwpxohB09+uiT2yqtosn3DK9d2iheehO1OxSeqWDzmXdkma/p0qF66qB+LLqT0e9GvxH6jFEjR+w2H78HZiEX6VlMUzURj98TVUZCFp+OQiWU8UEdo8qrFNBg1+b8k/IRL14yGM74nLcyA5pJTU3fc8zTXbEC65dXwouTz9JJTndotrrvd8aB1f5mSX3bkmJjJ32xdoRkQv3y2VxgoTnHE42typaXrzb71q84qtppyT8N+qLNsHyU7+c+NTf2mtqHyX99GnDuhcI2viz0nqcG2MWOL7ei4IeLNbHLemtKTeCECln/0NkePaW/9A/a+nruM3UIHMa5WY7NkM2W6s7+Ueap7A3RPmlszt4TT97V/eKoWuro4Y8vjzqb3miHdB4+IV54ByKAnsy576UvgU2KMueUQE25C0BzYFOx4LqBYFuksF1IbDxb1Rf2KRPjkV0ltd36BzjBP2vddf7VQ20rJpTbV76Wg5cahH5xIBLj3iYuTIT4Shbampcez0IErd1JPVVqA5ToHTwtTHn9qdbQPQc+oR68JGCsC22ICtkqrfbx923dqaf4hQN8QF0IGfi/KzPbGKQ+NCz+TixXF+WM06C5YVB0TnSwMVNIKa3cXB24CsibufF1lrLblF0/1iVU64l6g+nLLBJsZjzFUC0Cyq8mS/Ml2WH2Ko1Up/LpMLRwshHgaVvKLHDAbwIj4odtNp/J3vmMu3QVECWLw+YJRG3bLQ2THLbsi4j726E8qocsdNymrcwGVX/Hbdq5DxwbAyW9ojoJUswL19FtaR+2VKi45JWg9crXXSdKToeGz/xKNqMNKIPtgQO9hEVXlnd2z93qf4bzOjatZb/ga+0vFLBTMNgqMLo8luceZk5Ukl/jsdQDqUd7WZwQdnG6EsrwEAPfbr3lU47HSq3QCDuwtH9oSe8dSmQOMcAvjuGZ/gYmqKX6IOyzNL3KLOJoOhmmScvU6ngTMquikNhXChVPy9rLeNF2TfbfdlHWekpn+Ec8/Bo+H5p0KnrJ0kSd4tdD9Z7bxElVtlxvkUEibdZg85Jack+MbK0eaccHsr+Czfvoe3LHnl8vmZqIoaxiR56FQvnokPMf78Hz7ykU30JgyahpiR4UGIC3jc2+CbiI3KxbdkmNLD/XNHRNJm6x5qp/SC1M0fLEID5ZHa2XsmQV5QglT5O3M3Gef5/hWCMmqyhy9SDDYpYIUC17rkHk5V9qX91wfiNyJf8HFQUldasygJbiusIGT1aLtE04fq4DOh2UgXVeqGGSfNjh0C+kqOVWEhA0nHIihQQccHE6qjkXEPdZfd40zCoNx5esInqqUoDhNa8Y+ubTifEMjEen1nD8CTlFME+FO9DzYhn47sMOwvkLt+0Y2XFq6tRXTl1wXV21V1x697OKs2xogQCivpsHRrusq5ZNRQVRt8YAFtK+Bmb62W9PI3l3ub18dZHOfGN7OtfVVEmksTaRk+Pau+qPxgB9FLC3lQ0itzDHBJ5ogCTwrYAs1afom8AmniqrIrVP0l3BmkUDDww8Fw22kJagiP3nqq2m61ntmKs5xA1ceXfvoh1ee6nl3vPT9KdaglNHRKY7bK6TKTWizQm+WcDMqDlqibNl9pHYxIL7A=="
+  },
+  {
+   "txid": "2dd4e0e492c132c374d76d13b81d7b2ae6389839e6a56c6c81734507d59eabd2",
+   "block": 971685,
+   "time_utc": "2026-10-16 07:51:50",
+   "from": "author",
+   "inputs": [
+    "bc1q67tfqr7mxc5ct8rsy9yxmpzd4jmqf6q3hmc79s"
+   ],
+   "sats_to_escrow": 432,
+   "change_outputs": [],
+   "op_return": "Encrypted Q to bc1qdu8m key: QklFMQP+qvMELeFZQ8vzghhRcPWFQ3j4AWqtXpOdUbSzEmm8UICsj4XwLzm5PeKQC0g8aNLXSvpQLBW70lVSXePDtPTJZ7e8Oo2bARNvIrweAms7fg=="
+  },
+  {
+   "txid": "29d4e3fefd5e9f57b3e50dc3c7121899e1ebf77575418624b67b022f6c7ccb21",
+   "block": 971719,
+   "time_utc": "2026-10-16 14:12:48",
+   "from": "player 13",
+   "inputs": [
+    "bc1qrkj22rarrtnk708gg4hpdfv3h6lazft7fsht4x"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1q0fhlpaj253ajywn832ylr5tt73gn5kd8dwymfh"
+   ],
+   "op_return": "10k prize + 1k reply. Small test vector for the procedure only for cosigner 0852014c Using the same data source and processing steps, but substituting 'cut -b 2-67' and BIP39 passphrase 'Test Example', what are 1) the first mnemonic word and 2) the resulting BIP32 master fingerprint? These are arbitrary test inputs; no actual puzzle cut, passphrase, seed, or account numbers are requested. Feel free to decline either part if needed."
+  },
+  {
+   "txid": "f1027314f59377f908384fcf1d232c7d724a70e240adcc3c4d0f122a2a129873",
+   "block": 971734,
+   "time_utc": "2026-10-16 16:23:20",
+   "from": "player 15",
+   "inputs": [
+    "bc1qf6e4ap3vl7rrssu2744pllm6k05k8hjx5fhm0m"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qpc5xqch6r3y7p8yq5fscerqu6tkakh4ynsndn5"
+   ],
+   "op_return": "10k, public test inputs only, no secrets. Your 10-16 reply c85bcea3 (cut -b 2-67, Test Example, 0852014c) does not match ANY standard pipeline we can build: one 570-char lowercase raw hex line gives d1642212 (no LF) or a9be51f9 (with LF). So one step differs. For that same 2-67 test run, please report:\n1) first 40 chars of the exact text fed to sha256sum\n2) its byte length (wc -c)\n3) first 8 hex of the sha256sum output\n4) exact command line(s) or tool steps, from source to sha256sum, with the cut range shown as 2-67\n5) where the source text came from (URL/command) and how it was saved (file/paste/editor)\nIf any item would reveal a secret, answer the others."
+  },
+  {
+   "txid": "439cc93022c7cefda8f9eb43e4f3ad25120ef78c0bb390012a744a7de69627d1",
+   "block": 971736,
+   "time_utc": "2026-10-16 16:37:27",
+   "from": "author",
+   "inputs": [
+    "bc1qauk64tcu4lqeyxcqlua5hfra7ensmn8s7nvyjw"
+   ],
+   "sats_to_escrow": 514,
+   "change_outputs": [],
+   "op_return": "1) Declined; 2) c85bcea3."
+  },
+  {
+   "txid": "3de07be481e97c9ae57e38fcfd52ad40a0c0629d05603c286f47faebd3c462ec",
+   "block": 971743,
+   "time_utc": "2026-10-16 17:40:02",
+   "from": "author",
+   "inputs": [
+    "bc1qsz5930ds6rxh7eqfmcx8ss62n788sztkvw360t"
+   ],
+   "sats_to_escrow": 447,
+   "change_outputs": [],
+   "op_return": "Declined. For a test vector with predefined inputs, I can only provide the final result. Step-level answers would be the same as uncovering the individual secrets one by one."
+  },
+  {
+   "txid": "f1aeed6d1fb79335f62427da1e64f20b9f71030ca1996c2968086fae0f5b5429",
+   "block": 971753,
+   "time_utc": "2026-10-16 18:34:22",
+   "from": "player 15",
+   "inputs": [
+    "bc1qf6e4ap3vl7rrssu2744pllm6k05k8hjx5fhm0m"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qpc5xqch6r3y7p8yq5fscerqu6tkakh4ynsndn5"
+   ],
+   "op_return": "10k+1k. Test vectors with predefined inputs, final result only, as you offered. For cosigner 0852014c, run your own source and processing steps unchanged, substituting only the cut range below and BIP39 passphrase Test Example. Reply with the BIP32 master fingerprint for each:\n1) cut -b 1-1\n2) cut -b 2-2\n3) cut -b 3-3\n4) cut -b 1-4\n5) cut -b 1-2000\n6) cut -b 263-400\n7) cut -b 1-66\nReply like: 1) xxxxxxxx; 2) ..."
+  },
+  {
+   "txid": "39a7dd0c74a15d11c2cc301167bcee243f458bdc54f2aa3e6a1426df44d868d6",
+   "block": 971770,
+   "time_utc": "2026-10-16 22:01:10",
+   "from": "author",
+   "inputs": [
+    "bc1qrv8nm8s7ldr9m28t6ktkgnw7d43hlshunk3ydw"
+   ],
+   "sats_to_escrow": 490,
+   "change_outputs": [],
+   "op_return": "1) e4caa034; 2) 9fb54bad; 3) e4caa034; 4) e79c9765; 5) 8b9b2fea; 6) 68ab4226; 7) 9290f941."
+  },
+  {
+   "txid": "5b7ff44c779abced7889d70dce5299d3680140bc77f6d54e200c1c55b33ee472",
+   "block": 971770,
+   "time_utc": "2026-10-16 22:01:10",
+   "from": "player 15",
+   "inputs": [
+    "bc1qf6e4ap3vl7rrssu2744pllm6k05k8hjx5fhm0m"
+   ],
+   "sats_to_escrow": 10000,
+   "change_outputs": [
+    "bc1qyas2lnfgzjh3lyl4vfhc68daedc890zn8yetaj",
+    "bc1qpc5xqch6r3y7p8yq5fscerqu6tkakh4ynsndn5"
+   ],
+   "op_return": "10k+1k. Test vectors with predefined inputs, final result only, same as your last answer. For cosigner 0852014c, use your own procedure and settings unchanged, except that the cut output is the literal text given below instead of a cut of the block, with BIP39 passphrase Test Example. Reply with the master fingerprint for each:\n1) 0\n2) 1\n3) 000000000019d6689c08\nReply like: 1) xxxxxxxx; 2) ...; 3) ..."
+  },
+  {
+   "txid": "484fef192e43bd6c72407ad4382037f6ff3c6df985df165b3a78713bc50aa4d8",
+   "block": 971789,
+   "time_utc": "2026-10-17 01:34:27",
+   "from": "author",
+   "inputs": [
+    "bc1qt8z3t8dah970etvvfznet4843neg0qwdt0ql0k"
+   ],
+   "sats_to_escrow": 500,
+   "change_outputs": [],
+   "op_return": "1) e4caa034; 2) 9fb54bad; 3) 3bc42789."
+  },
+  {
+   "txid": "1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
+   "block": 971803,
+   "time_utc": "2026-10-17 03:40:20",
+   "from": "solver (sweep)",
+   "inputs": [
+    "bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj"
+   ],
+   "sats_to_escrow": 0,
+   "change_outputs": [
+    "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad"
+   ],
+   "op_return": null,
+   "sats_from_escrow": 946540
+  },
+  {
+   "txid": "bcfc8cbeb5498d803dc1b1384233eb5e9f2da79c2077b9a0907bc0187e2e4465",
+   "block": 971810,
+   "time_utc": "2026-10-17 04:43:33",
+   "from": "author",
+   "inputs": [
+    "bc1qzfht0hap7fdjy8erxrln0sghgjx32g0h4fgx9e"
+   ],
+   "sats_to_escrow": 350,
+   "change_outputs": [],
+   "op_return": "Shoutout to the player who cracked the puzzle!\n\nThanks to everyone who joined in."
+  }
+ ]
+}

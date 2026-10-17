@@ -2,8 +2,8 @@
   "schema_version": 1,
   "slug": "genesis-block-wallet-puzzle-142ksats",
   "title": "Genesis Block Wallet Puzzle",
-  "tier": "small",
-  "status": "open",
+  "tier": "solved",
+  "status": "solved",
   "dead_end_reason": null,
   "series": null,
   "author": {
@@ -17,11 +17,11 @@
   },
   "chain": "bitcoin",
   "prize": {
-    "amount": 168779,
+    "amount": 946540,
     "asset": "sats",
-    "usd_estimate": 106,
+    "usd_estimate": 596,
     "usd_snapshot": "2026-08-16",
-    "note": "24 P2WSH outputs to one witness script; the jackpot grows because the author relays every paid question into the escrow (125,779 sats on 2026-08-24, 142,779 on 2026-08-29, 168,779 on 2026-09-12)"
+    "note": "117 P2WSH outputs to one witness script at the sweep; the jackpot grew from 20,000 sats (2026-08-22) to 946,540 sats (2026-10-17) because the author relayed every paid question into the escrow"
   },
   "addresses": [
     {
@@ -30,68 +30,42 @@
       "role": "escrow",
       "label": "main (P2WSH, witness program 4dae67a9872f1402109f9670276afc2c0758f895aafddcd089795771b7964833)",
       "explorer": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
-      "expected": "168779 sats in 24 outputs, growing",
-      "verified_on": "2026-09-12",
-      "verified_state": "funded-unspent"
+      "expected": "946540 sats in 117 outputs, swept on 2026-10-17 in block 971803",
+      "verified_on": "2026-10-17",
+      "verified_state": "swept"
     }
   ],
   "puzzle_type": [
     "multisig",
     "raw-private-key"
   ],
-  "target_format": "P2WSH v0; witness script OP_2 <keyA> <keyB> OP_2 OP_CHECKMULTISIG; both keys derived from one genesis-block field (reported: the coinbase text) without hashing; the author's derivation rule names the BIP48 levels m/48'/0'/account'/script_type'",
+  "target_format": "P2WSH v0; witness script OP_2 <keyA> <keyB> OP_2 OP_CHECKMULTISIG; both keys at m/48'/0'/1231006505'/2'/0/0 from one 12-word BIP39 mnemonic (entropy = first 128 bits of SHA-256 of the coinbase text's hex, cut -b 263-400 of the raw block hex) with passphrase Satoshi Nakamoto and a non-standard PBKDF2 count per cosigner, 181505 and 200913",
   "derivation": {
-    "summary": "derive two secp256k1 keys from one field of the genesis block (author's hints: the coinbase text readable in The Times, no hash, keys independent, a BIP48-shaped path with a genesis value as account), build the 2-of-2 witness script in either key order, sha256 it, and compare with the published 32-byte witness program",
+    "summary": "sha256 of the 138 lowercase hex characters of the coinbase text (cut -b 263-400 of the 570-character raw genesis block hex), first 32 hex digits as 128-bit entropy, 12 English BIP39 words, passphrase Satoshi Nakamoto, PBKDF2-HMAC-SHA512 with 181505 rounds (18:15:05 UTC) for one cosigner and 200913 (2009/1/3) for the other, both keys at m/48'/0'/1231006505'/2'/0/0, 2-of-2 P2WSH; tools/verify_solution.py reproduces the escrow",
     "oracle": "tools/oracle.py",
     "oracle_certified": true,
     "certified_against": "the BIP-173 P2WSH test vector, and a real 2-of-2 P2WSH spent in block 963629 (tx 47ded3504e855ce418e46eeca4694b55a623d1e23a8e3c83292abbcf9cee9f7a, input 0) whose revealed keys rebuild the script and hash to the spent address; private key 1 to the generator point; negative control against the escrow"
   },
-  "difficulty_left": "insight",
-  "difficulty_note": "the lock is fully characterized (2-of-2 P2WSH, exact offline oracle) and the corpus is 285 public bytes; passes 1 and 2 (2026-08-29) exhausted the mechanical readings of the August hints (611,008 keys, 5.7e11 ordered pairs, 0 match with witnesses); the author's answers of 2026-09-10 and 2026-09-11, bought by a reader with the questions drafted here, name the root: a 12-word BIP39 mnemonic with entropy taken from the genesis block, a passphrase, and a genesis value as the BIP48 account; pass 3 (2026-09-12, 1.57 million keys, 2.46e12 pairs, witnesses re-found) shows the passphrase is none of 53 obvious readings of the block; it is the one thing the author has not described",
+  "difficulty_left": "none",
+  "difficulty_note": "solved by a reader (Schum-io) after publication, not by me; the missing setting was a non-standard PBKDF2 iteration count on one 12-word mnemonic (181,505 and 200,913, the genesis time and date), so every sweep at the standard 2,048 rounds, mine included, could not reach the keys",
   "tested_total": {
     "candidates": 573973795610,
     "families": 8,
     "certified": true
   },
-  "leads": [
+  "leads": [],
+  "solutions": [
     {
-      "rank": 1,
-      "title": "ask the author about the passphrase's nature on chain (79-byte draft in the README); pass 3 shows it is none of 53 obvious readings of the block",
-      "cost": "needs-a-person",
-      "status": "open"
-    },
-    {
-      "rank": 2,
-      "title": "pass 3 wave 2: text variants and every coinbase-text substring as passphrase",
-      "cost": "minutes on one rented GPU",
-      "status": "open"
-    },
-    {
-      "rank": 3,
-      "title": "watch the escrow for new OP_RETURN hints or a spend before any work",
-      "cost": "minutes",
-      "status": "open"
-    },
-    {
-      "rank": 4,
-      "title": "pass 3: 16-byte genesis windows as 12-word entropy, 53 passphrases, genesis integers as BIP48 account, script types 0/1/2, keys paired (2.46e12 pairs)",
-      "cost": "minutes",
-      "status": "killed"
-    },
-    {
-      "rank": 5,
-      "title": "pass 2: library-specific roots (hashed roots, raw 64-byte extended key, raw key with zero chain code) along the same 214 paths",
-      "cost": "minutes",
-      "status": "killed"
-    },
-    {
-      "rank": 6,
-      "title": "pass 1: literal readings of the 2026-08-28 hints, families A to D",
-      "cost": "minutes",
-      "status": "killed"
+      "lot": "main",
+      "date": "2026-10-17",
+      "answer": "mnemonic scan amateur fit scrap light over fire flip cushion reject hurt ugly, passphrase Satoshi Nakamoto, PBKDF2 rounds 181505 and 200913, both keys at m/48'/0'/1231006505'/2'/0/0, 2-of-2 P2WSH",
+      "key_material_disclosed": true,
+      "payout_txid": "1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
+      "payout_amount": "935266 sats",
+      "payout_to": "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad",
+      "explorer": "https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b"
     }
   ],
-  "solutions": [],
   "artifacts": [],
   "sources": [
     {
@@ -104,6 +78,12 @@
       "title": "Escrow address and full on-chain dialogue",
       "url": "https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj",
       "date": "2026-08-29",
+      "archived": null
+    },
+    {
+      "title": "Sweep transaction, block 971803",
+      "url": "https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
+      "date": "2026-10-17",
       "archived": null
     },
     {
@@ -132,5 +112,5 @@
     }
   ],
   "third_party_material": "none: the genesis block and the author's OP_RETURN messages are public chain data; press articles are linked, not reproduced",
-  "last_updated": "2026-09-12"
+  "last_updated": "2026-10-17"
 }
