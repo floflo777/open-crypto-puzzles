@@ -5,11 +5,11 @@
 <text x="968" y="58" fill="#0b0b0b" font-size="44" font-weight="700" text-anchor="end">$522k</text>
 <text x="968" y="80" fill="#52514e" font-size="13" text-anchor="end">locked in 27 funded puzzles</text>
 <rect x="32" y="88" width="102" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="41" y="103" fill="#52514e" font-size="12" font-weight="600">BTC $81,262</text>
+<text x="41" y="103" fill="#52514e" font-size="12" font-weight="600">BTC $81,235</text>
 <rect x="143.6" y="88" width="94" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="152.6" y="103" fill="#52514e" font-size="12" font-weight="600">ETH $2,390</text>
+<text x="152.6" y="103" fill="#52514e" font-size="12" font-weight="600">ETH $2,393</text>
 <rect x="247.6" y="88" width="94" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
-<text x="256.6" y="103" fill="#52514e" font-size="12" font-weight="600">LTC $58.63</text>
+<text x="256.6" y="103" fill="#52514e" font-size="12" font-weight="600">LTC $58.62</text>
 <rect x="351.6" y="88" width="79" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
 <text x="360.6" y="103" fill="#52514e" font-size="12" font-weight="600">AR $3.81</text>
 <rect x="440.40000000000003" y="88" width="79" height="22" rx="11" fill="#f3f2ee" stroke="#e6e5e0"/>
@@ -21,10 +21,10 @@
 <line x1="693" y1="144" x2="693" y2="592" stroke="#e6e5e0" stroke-width="1"/>
 <text x="693" y="138" fill="#8a8985" font-size="11" text-anchor="middle">$122k</text>
 <line x1="840" y1="144" x2="840" y2="592" stroke="#e6e5e0" stroke-width="1"/>
-<text x="840" y="138" fill="#8a8985" font-size="11" text-anchor="middle">$163k</text>
+<text x="840" y="138" fill="#8a8985" font-size="11" text-anchor="middle">$162k</text>
 <text x="235" y="172" fill="#0b0b0b" font-size="14" text-anchor="end">Ballet cards (Bobby Lee)</text>
 <rect x="251" y="156" width="589.0" height="22" rx="4" fill="#eb6834"/>
-<text x="850.0" y="172" fill="#0b0b0b" font-size="13" font-weight="600">$163k</text>
+<text x="850.0" y="172" fill="#0b0b0b" font-size="13" font-weight="600">$162k</text>
 <text x="898.5" y="172" fill="#52514e" font-size="12">2.00 BTC</text>
 <text x="235" y="206" fill="#0b0b0b" font-size="14" text-anchor="end">GSMG.io</text>
 <rect x="251" y="190" width="370.0" height="22" rx="4" fill="#eb6834"/>
@@ -43,17 +43,17 @@
 <text x="435.8" y="308" fill="#0b0b0b" font-size="13" font-weight="600">$48k</text>
 <text x="475.8" y="308" fill="#52514e" font-size="12">0.5936 BTC</text>
 <text x="235" y="342" fill="#0b0b0b" font-size="14" text-anchor="end">Guntis Vitolins</text>
-<rect x="251" y="326" width="74.6" height="22" rx="4" fill="#2a78d6"/>
-<text x="335.6" y="342" fill="#0b0b0b" font-size="13" font-weight="600">$21k</text>
-<text x="375.6" y="342" fill="#52514e" font-size="12">8.61 ETH</text>
+<rect x="251" y="326" width="74.7" height="22" rx="4" fill="#2a78d6"/>
+<text x="335.7" y="342" fill="#0b0b0b" font-size="13" font-weight="600">$21k</text>
+<text x="375.7" y="342" fill="#52514e" font-size="12">8.61 ETH</text>
 <text x="235" y="376" fill="#0b0b0b" font-size="14" text-anchor="end">BLM collage</text>
 <rect x="251" y="360" width="59.2" height="22" rx="4" fill="#eb6834"/>
 <text x="320.2" y="376" fill="#0b0b0b" font-size="13" font-weight="600">$16k</text>
 <text x="360.2" y="376" fill="#52514e" font-size="12">0.2011 BTC</text>
 <text x="235" y="410" fill="#0b0b0b" font-size="14" text-anchor="end">TeikhosBounty</text>
-<rect x="251" y="394" width="17.3" height="22" rx="4" fill="#2a78d6"/>
-<text x="278.3" y="410" fill="#0b0b0b" font-size="13" font-weight="600">$4.8k</text>
-<text x="326.8" y="410" fill="#52514e" font-size="12">2.00 ETH</text>
+<rect x="251" y="394" width="17.4" height="22" rx="4" fill="#2a78d6"/>
+<text x="278.4" y="410" fill="#0b0b0b" font-size="13" font-weight="600">$4.8k</text>
+<text x="326.9" y="410" fill="#52514e" font-size="12">2.00 ETH</text>
 <text x="235" y="444" fill="#0b0b0b" font-size="14" text-anchor="end">Arweave #3</text>
 <rect x="251" y="428" width="13.8" height="22" rx="4" fill="#1baf7a"/>
 <text x="274.8" y="444" fill="#0b0b0b" font-size="13" font-weight="600">$3.8k</text>
