@@ -4242,15 +4242,15 @@
         "multisig",
         "bip39-seed"
       ],
-      "target_format": "P2WSH 2-of-2 wsh(sortedmulti(2, A, B)); each key from its own 12-word BIP39 seed (entropy = first 128 bits of sha256 of a cut of the raw genesis block hex) plus a two-word name passphrase, path m/48'/0'/account'/2'/<0;1>/*, account = raw value of a header field; the seed step uses non-standard PBKDF2 settings",
+      "target_format": "P2WSH 2-of-2 wsh(sortedmulti(2, A, B)); both keys from one 12-word BIP39 mnemonic (entropy = first 128 bits of sha256 of a cut of the raw genesis block hex) plus a two-word name passphrase, path m/48'/0'/account'/2'/<0;1>/*, account = raw value of a header field; the seed step uses non-standard PBKDF2 round counts",
       "derivation": {
-        "summary": "cut -b N-M of the 570-character raw block hex, tr -d '\\n', sha256sum, first 32 hex digits as Ian Coleman Hex entropy, 12 words, two-word name passphrase, seed with the author's PBKDF2 settings (not standard BIP39, see README), BIP48 account key, 2-of-2 script compared with the witness program",
+        "summary": "cut -b 263-400 of the 570-character raw block hex (the coinbase text), tr -d '\\n', sha256sum, first 32 hex digits as entropy, 12 words, passphrase Satoshi Nakamoto, PBKDF2-HMAC-SHA512 at 181505 and 200913 rounds (one seed per cosigner), m/48'/0'/1231006505'/2'/0/0, 2-of-2 script compared with the witness program",
         "oracle": "tools/oracle.py",
         "oracle_certified": true,
         "certified_against": "the BIP-173 P2WSH test vector, and a real 2-of-2 P2WSH spent in block 963629 (tx 47ded3504e855ce418e46eeca4694b55a623d1e23a8e3c83292abbcf9cee9f7a, input 0) whose revealed keys rebuild the script and hash to the spent address; private key 1 to the generator point; negative control against the escrow"
       },
       "difficulty_left": "none",
-      "difficulty_note": "swept on 2026-10-17; the public hints fix everything except the exact cut, the passphrase and the PBKDF2 settings; the author published test vectors computed with the real settings on 2026-10-16 and 17, two hours before the sweep",
+      "difficulty_note": "swept on 2026-10-17; the answer was the coinbase text hex with passphrase Satoshi Nakamoto, already inside the standard searches, but with PBKDF2 at 181505 and 200913 rounds instead of 2048",
       "tested_total": {
         "candidates": 657202449461,
         "families": 37,
@@ -4261,21 +4261,21 @@
           "rank": 1,
           "title": "reproduce the author test vector e4caa034 (text 0, passphrase Test Example) to identify the PBKDF2 settings",
           "cost": "minutes",
-          "status": "open"
+          "status": "closed"
         },
         {
           "rank": 2,
           "title": "ask the author or the solver for the write-up",
           "cost": "needs-a-person",
-          "status": "open"
+          "status": "closed"
         }
       ],
       "solutions": [
         {
           "lot": "main",
           "date": "2026-10-17",
-          "answer": "unknown (swept without a published solution)",
-          "key_material_disclosed": false,
+          "answer": "mnemonic scan amateur fit scrap light over fire flip cushion reject hurt ugly (sha256 of cut -b 263-400 of the raw hex), passphrase Satoshi Nakamoto, PBKDF2 rounds 181505 and 200913, both keys at m/48'/0'/1231006505'/2'/0/0, 2-of-2 P2WSH; contributed by Schum-io (PR #44)",
+          "key_material_disclosed": true,
           "payout_txid": "1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b",
           "payout_amount": "935266 sats",
           "payout_to": "bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad",

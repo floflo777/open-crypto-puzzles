@@ -6,9 +6,10 @@ low" entropy, nothing backed up. The prize was the first output of that same tra
 P2WSH address, and it grew every time someone paid for a hint: the author answered questions on
 chain and relayed every payment into the escrow, from 25,000 sats to 947,620 sats in eight weeks
 and 123 transactions. On 2026-10-17 at 03:40 UTC a player swept all 117 outputs (935,266 sats net)
-and the author then signed a message with PGP: CaesarCoder, github.com/caesrcd. The final answer
-is not published yet. The last hints show why every public search missed it: the recipe was
-standard down to the 12 words, but the seed step used non-standard PBKDF2 settings.
+and the author then signed a message with PGP: CaesarCoder, github.com/caesrcd. The solution was
+contributed by [Schum-io](https://github.com/Schum-io) (PR #44) and is replayed in
+`tools/verify_solution.py`: the coinbase text's hex, passphrase `Satoshi Nakamoto`, and one
+setting nobody searched, the PBKDF2 round count (181,505 and 200,913 instead of 2,048).
 
 ## At a glance
 
@@ -20,11 +21,11 @@ standard down to the 12 words, but the seed step used non-standard PBKDF2 settin
 | Chain | bitcoin |
 | Escrow | `bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj` ([explorer](https://mempool.space/address/bc1qfkhx02v89u2qyyyljeczw6hu9sr437y44t7ae5yf09thrdukfqesnjg2wj)) |
 | Last on-chain check | 2026-10-17: 120 outputs funded, 120 spent, balance 0 |
-| Status | SOLVED; swept 2026-10-17 by a player, solution not published |
+| Status | SOLVED; swept 2026-10-17, solution in this folder (contributed by Schum-io, PR #44) |
 | Puzzle type | multisig, bip39-seed |
 | Target format | P2WSH 2-of-2 (`OP_2 <keyA> <keyB> OP_2 OP_CHECKMULTISIG`), each key from its own 12-word BIP39 seed plus a passphrase, BIP48 path `m/48'/0'/account'/2'/<0;1>/*` |
-| Certified oracle | yes for the script (`tools/oracle.py --selftest`); the seed step is not reproducible yet, see "What is understood" |
-| What remains | nothing on chain; the exact cut range, the passphrase and the PBKDF2 settings are not public |
+| Certified oracle | yes (`tools/oracle.py --selftest`); `tools/verify_solution.py` rebuilds both keys and reports MATCH |
+| What remains | nothing |
 | Series | none |
 
 ## The puzzle as published
@@ -112,9 +113,11 @@ settings:
 | `cut -b 2-67` | `c85bcea3` |
 | the literal text `000000000019d6689c08` | `3bc42789` (the 2026-10-06 standard answer was `b7f4182b`) |
 
-I checked, without a match: PBKDF2-HMAC-SHA512 with the standard salt at every round count from
-1 to 30,000, and at 2048 rounds the salts `"electrum" + passphrase`, the lowercase passphrase and
-no passphrase. Whoever reproduces `e4caa034` from the text `0` has the missing setting.
+The missing setting is the PBKDF2 round count: 181,505 for cosigner `0852014c` (see
+"Solution"). With it, 8 of the 9 vectors above reproduce exactly, `3bc42789` included (2,048
+rounds gives `b7f4182b`). The one that does not is `c85bcea3` for `cut -b 2-67`: 181,505 rounds
+give `d463151e` (with a final newline `f1f02043`), so that answer looks like an author error. My
+earlier search had stopped at 30,000 rounds.
 
 ### Derivation and oracle
 
@@ -150,7 +153,8 @@ Certified against the BIP-173 P2WSH vector and a real 2-of-2 spent in block 963,
 ## What has been tested
 
 Full ledger in [analysis/tested.md](analysis/tested.md). Every negative below assumed the
-standard BIP39 seed step, so none of them says anything about the puzzle's real settings.
+standard BIP39 seed step (2,048 rounds). The last two rows did contain the right cut and the
+right passphrase, so the round count alone hid the answer from them.
 
 | Hypothesis | Space | Method | Result | Witness | Date |
 |---|---|---|---|---|---|
@@ -161,23 +165,60 @@ standard BIP39 seed step, so none of them says anything about the puzzle's real 
 
 ## Open leads, ranked
 
-1. **Reproduce `e4caa034` from the text `0`** (minutes once the setting is guessed). It identifies
-   the seed step; the published vectors then give a free oracle for it.
-2. **Ask the author or the solver for the write-up**, now that the prize is claimed (needs a
-   person). An issue is open in this repository for that.
+None: the puzzle is solved and the solution is reproduced below.
 
 ## Solution
+
+Contributed by [Schum-io](https://github.com/Schum-io) in PR #44, opened 2026-10-17 06:18 UTC,
+under three hours after the sweep, when no other source had the answer. The author acknowledged
+the solve on chain ("Shoutout to the player who cracked the puzzle!").
 
 | | |
 |---|---|
 | Date | 2026-10-17 03:40:20 UTC, block 971,803 |
 | Payout | 935,266 sats to `bc1qdu8mh9qjtjhy89mvhmcgf66ul6ld92rdr6qzad` ([transaction](https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b)) |
-| Answer | unknown (swept without a published solution) |
-| Key material disclosed | no |
+| Answer | mnemonic from `cut -b 263-400` of the raw hex, passphrase `Satoshi Nakamoto`, PBKDF2 rounds 181,505 and 200,913, both keys at `m/48'/0'/1231006505'/2'/0/0` |
+| Key material disclosed | yes (the escrow is empty) |
 
-What is public: the cut is in the raw block hex, even length 66 or more, not from byte 1; the
-passphrase is a two-word name, first word shorter, no 3-letter word; and the seed step uses
-PBKDF2 settings that differ from BIP39.
+1. Take the raw genesis block as one lowercase hex line of 570 characters
+   ([data/genesis-block.hex](data/genesis-block.hex), the same bytes mempool.space serves at
+   `/api/block/<hash>/raw`).
+2. `cut -b 263-400 | tr -d '\n'`: the 138 hex characters of the coinbase text,
+   `5468652054696d6573...62616e6b73`, which decode to
+   `The Times 03/Jan/2009 Chancellor on brink of second bailout for banks`.
+3. `sha256sum` of those 138 ASCII characters; the first 32 hex digits of the digest are the
+   128-bit entropy `c020f55f60b8193bd5cac836769dbf76`.
+4. The entropy as 12 English BIP39 words:
+
+```
+scan amateur fit scrap light over fire flip cushion reject hurt ugly
+```
+
+5. BIP39 passphrase `Satoshi Nakamoto` (capital initials, one space), the same for both cosigners.
+6. Seed = PBKDF2-HMAC-SHA512(mnemonic, "mnemonic" + passphrase, rounds, 64 bytes) with a
+   non-standard round count per cosigner; the two cosigners share one mnemonic:
+
+| Cosigner | PBKDF2 rounds | Reading | Master fingerprint | Public key at `m/48'/0'/1231006505'/2'/0/0` |
+|---|---|---|---|---|
+| A | 181505 | 18:15:05 UTC, the genesis time | `0852014c` | `027b497b1d82986ebe11bca71108ca43446c00edb069cc839638a0b76529130906` |
+| B | 200913 | 2009/1/3, the genesis date | `040e2791` | `033614b02e8e3aeeed9e14ac67839f85d54b694eafd91ca07f1afeb06510832ec1` |
+
+7. Witness script `OP_2 <A> <B> OP_2 OP_CHECKMULTISIG`; its SHA-256 is the escrow's witness
+   program, so `tools/oracle.py` reports `MATCH order=AB`.
+
+```
+python3 tools/verify_solution.py   # replays steps 1 to 7 and asserts every intermediate value
+```
+
+Checked independently on 2026-10-18: both public keys give a MATCH with a separate oracle, and
+the round count reproduces the author's published test vectors (see "The step everyone missed").
+
+What it teaches: the one parameter nobody searched is one that a BIP39 tool exposes as a custom
+field. Several passes here had the right cut and the right passphrase; the round count was never
+asked about. When an author names the tools, enumerate every setting those tools let a user
+change, not only the ones the BIPs fix. And a test vector certifies a setting only when it is
+computed with the puzzle's own settings: the 2026-10-06 vector was standard, the 2026-10-16
+vectors were not.
 
 ## Files in this folder
 
@@ -189,6 +230,7 @@ PBKDF2 settings that differ from BIP39.
 | `analysis/tested.md` | the negatives ledger with exact scope |
 | `analysis/leads.md` | notes behind the leads, kept as written while the puzzle was open |
 | `tools/oracle.py` | two keys to 2-of-2 P2WSH, both orders, exact match; `--selftest` |
+| `tools/verify_solution.py` | rebuilds both keys from `data/genesis-block.hex` and checks them with the oracle (by Schum-io, PR #44) |
 | `tools/candidates.py` and the `check_*.py` scripts | key generators for passes 1 to 3 and the contributed constructions |
 
 ## Sources
@@ -202,5 +244,5 @@ PBKDF2 settings that differ from BIP39.
 - crypto.news, 2026-08-23: https://crypto.news/bitcoin-puzzle-hides-wallet-key-in-genesis-block-data/
 - Tools named by the author: https://iancoleman.io/bip39/ and https://github.com/OogaBoogaX/entropylab
 
-Credits: @BorisLoveDev (PR #21) for the six 2026-09-05 bounded constructions; the players who
+Credits: @Schum-io (PR #44) for the solution and `tools/verify_solution.py`; @BorisLoveDev (PR #21) for the six 2026-09-05 bounded constructions; the players who
 paid for the questions quoted above.

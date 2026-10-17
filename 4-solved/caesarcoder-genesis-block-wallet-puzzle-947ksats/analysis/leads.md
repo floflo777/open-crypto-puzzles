@@ -1,5 +1,10 @@
 # Leads (full notes)
 
+## Solved on 2026-10-17
+
+The puzzle is solved; the solution is in the README. The one setting no lead below reached was
+the PBKDF2 iteration count. The notes are kept as history.
+
 The "Open leads, ranked" section of the folder's `README.md` shows the ranked list; this file
 carries the full notes behind each entry. Order leads by cost to test, then by expected
 value.
