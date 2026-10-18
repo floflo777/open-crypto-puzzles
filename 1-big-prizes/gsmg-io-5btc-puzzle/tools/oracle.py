@@ -147,6 +147,32 @@ def readings(plain: bytes) -> list[tuple[str, bytes]]:
         out.append(("last32", plain[-32:]))
     if len(plain) >= 64:
         out.append(("sha256(first64)", sha256(plain[:64])))
+    # Hex-encoded key material: strip whitespace and an optional 0x, then
+    # hex-decode when the result is 32 or 64 bytes (reported by my314team /
+    # 314.run in issue #46: a 64-char ASCII hex key is 80 bytes of ciphertext
+    # and was scored NO MATCH because none of the readings above decode hex).
+    stripped = b"".join(plain.split())
+    if stripped[:2] in (b"0x", b"0X"):
+        stripped = stripped[2:]
+    if len(stripped) in (64, 128) and all(c in b"0123456789abcdefABCDEF" for c in stripped):
+        try:
+            dec = bytes.fromhex(stripped.decode("ascii"))
+            if len(dec) == 32:
+                out.append(("hex->32", dec))
+            elif len(dec) == 64:
+                out.append(("hex->first32", dec[:32]))
+                out.append(("hex->last32", dec[-32:]))
+        except ValueError:
+            pass
+    # WIF-shaped tokens: Base58Check that decodes to 0x80 + 32 (+ optional 0x01).
+    token = b"".join(plain.split())
+    if 50 <= len(token) <= 53:
+        try:
+            raw = base58.b58decode_check(token.decode("ascii"))
+            if raw[:1] == b"\x80" and len(raw) in (33, 34):
+                out.append(("wif", raw[1:33]))
+        except Exception:
+            pass
     return out
 
 

@@ -16,11 +16,11 @@ on-chain right now.
 | Asset | Locked in unsolved puzzles | Approx. value |
 |---|---|---|
 | Bitcoin | 5.94 BTC | $374,000 |
-| Ethereum | 13.21 ETH | $25,000 |
-| Arweave | 1,900 AR | $3,400 |
+| Ethereum | 12.66 ETH | $24,000 |
+| Arweave | 1,500 AR | $2,700 |
 | Litecoin | 3.03 LTC | $200 |
 | Stablecoins | 306 USDT + 0 USDC | $300 |
-| **Total** | **across 27 funded puzzles** | **$403,000** |
+| **Total** | **across 25 funded puzzles** | **$401,000** |
 
 Checked 2026-08-16 at BTC $63,000, ETH $1,880, AR $1.81. Prices and balances move; verify each escrow yourself.
 <!-- totals:end -->
@@ -69,7 +69,6 @@ grouped by prize, is in the tables below.
 | [Aoi Nakamoto Quizchain](1-big-prizes/aoi-nakamoto-quizchain-0-854btc/) | 0.854 BTC | The key comes from a Wattpad chapter run through MD5. The rule is certified on a solved sibling block. |
 | [BLM collage seed](1-big-prizes/blm-brave-new-world-0-2btc/) | 0.2 BTC | A whole seed hidden inside one large collage image: runes, micro-text, a clock. |
 | [Arweave Puzzle #11](2-mid-prizes/arweave-puzzle-11-1eth/) | 1 ETH | A single grayscale sketch that encodes a raw 64-hex private key. |
-| [LogicBeach: Powerful Moss](2-mid-prizes/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | A 12-word seed spread across the 12 tracks of an album. The artist's two earlier hunts really paid out. |
 | [Smith, Lyle & Moore Hunt #2](2-mid-prizes/smith-lyle-moore-hunt-2-0-032btc/) | 0.032 BTC | A tree of password-locked web pages; each page you open hands you a fragment of the seed. |
 | [Path to Greatness: Treasure Hunt](2-mid-prizes/path-to-greatness-treasure-hunt-3ltc/) | 3.03 LTC | The author drew his own encryption on one of the clue images: four independent two-answer locks, each with an exact test, so a guess is settled in microseconds. |
 
@@ -94,9 +93,7 @@ grouped by prize, is in the tables below.
 | [Arweave Puzzle #11](2-mid-prizes/arweave-puzzle-11-1eth/) | 1 ETH | 1,880 | ethereum | image-stego, pixel-code, raw-private-key | insight | 2026-08-16 | open |
 | [Bountiful: the Fe compiler bug bounty](2-mid-prizes/fe-lang-bountiful-compiler-bounty-1eth/) | 1 ETH | 1,880 | ethereum | smart-contract, timelock | insight | 2026-08-17 | open |
 | [Arweave Puzzle #3](2-mid-prizes/arweave-puzzle-3-1000ar/) | 1,000.165838006237 AR | 1,810 | arweave | word-selection, text-cipher | insight | 2026-09-04 | open |
-| [LogicBeach: Powerful Moss](2-mid-prizes/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | 1,034 | base | image-stego, bip39-seed, word-selection, smart-contract | insight | 2026-08-16 | open |
 | [Arweave Puzzle #10](2-mid-prizes/arweave-puzzle-10-500ar/) | 500.02225493 AR | 905 | arweave | word-selection, text-cipher | insight | 2026-08-16 | open |
-| [Arweave Puzzle Weave #12](2-mid-prizes/arweave-puzzle-12-400ar/) | 400.00248121 AR | 724 | arweave | word-selection, geometry, text-cipher | insight | 2026-08-16 | open |
 | [Corey Phillips: Kitten Passphrase Puzzle](2-mid-prizes/corey-phillips-kitten-passphrase-1msats/) | 1,001,900 sats | 631 | bitcoin | bip39-seed, brainwallet | external-info | 2026-08-16 | open |
 | [RushWallet Contest #30](2-mid-prizes/rushwallet-contest-30-1msats/) | 1,000,000 sats | 630 | bitcoin | brainwallet, audio | external-info | 2026-08-16 | open |
 | [School of Bitcoin: 1 Million Sats In This Image](2-mid-prizes/school-of-bitcoin-1msats/) | 1,000,000 sats | 630 | bitcoin | bip39-seed, image-stego, password-pages | external-info | 2026-08-16 | open |
@@ -116,6 +113,8 @@ grouped by prize, is in the tables below.
 ## Solved and cashed
 | Puzzle | Cashed | Payout tx | Date | Series lesson |
 |---|---|---|---|---|
+| [LogicBeach: Powerful Moss](4-solved/logicbeach-powerful-moss-0-54eth/) | 0.55 ETH | [0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f](https://basescan.org/tx/0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f) | 2026-10-05 | the carrier (the POAP clock image, not the audio), the order (clock position), and the derivation path are all confirmed; 3 of 12 hours read with no ambiguity and over 3.3 million combinations of the rest have been tested negative; the blocker is a resolution limit on the only known copy of the image (a numeral spans about 2 text rows, so 9 of 12 hours carry about 3 candidate words each), not raw compute, so an unrecovered insight into the exact readout rule or a finer source is what remains |
+| [Arweave Puzzle Weave #12](4-solved/arweave-puzzle-12-400ar/) | 398.75 AR | [gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo](https://viewblock.io/arweave/tx/gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo) | 2026-10-04 | mechanism and oracle fully certified; piece 3 is solved with certainty, piece 1 has a strong unconfirmed reading, piece 4's hatching is refuted as an ordering scheme; the open gap is piece 2's exact 18-character string once the other 3 pieces are fixed |
 | [Wonderabbit: Prometheus](4-solved/wonderabbit-prometheus-1msats/) | 1030810 sats | [2f5f60f69779e32c87829203d000ebfe5fbf6dd82707a560d7f252d3b462365c](https://mempool.space/tx/2f5f60f69779e32c87829203d000ebfe5fbf6dd82707a560d7f252d3b462365c) | 2026-09-28 | the encoding rules are fully published by the author, but the companion puzzle programme that turns those rules into an actual 12-word phrase has never appeared online; nothing is computable until it is obtained |
 | [CaesarCoder: Genesis Block Wallet Puzzle](4-solved/caesarcoder-genesis-block-wallet-puzzle-947ksats/) | 935266 sats | [1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b](https://mempool.space/tx/1c70c4745fad5bf891b9ee2a9f8b0b5cd3f328eb847eb09c9bebb92f5f7e900b) | 2026-10-17 | swept on 2026-10-17; the answer was the coinbase text hex with passphrase Satoshi Nakamoto, already inside the standard searches, but with PBKDF2 at 181505 and 200913 rounds instead of 2048 |
 | [Zden Cryptopuzzle LVL.5](4-solved/zden-haluska-lvl5-555ksats/) | 551745 sats | [e2544433184d0fe4157ca10a8e1ce753bb52a7b0bbcf833740d7448ed25e8e8e](https://mempool.space/tx/e2544433184d0fe4157ca10a8e1ce753bb52a7b0bbcf833740d7448ed25e8e8e) | 2026-09-22 | the rectangle geometry is certified byte-perfect and the hint formula is read at the pixel level; over 545 million candidate keys across 3,200-plus readings have produced zero matches; the blocker is the exact meaning of 3 undefined terms in the author's own hint, not computation |

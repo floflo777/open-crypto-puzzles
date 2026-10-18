@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "slug": "logicbeach-powerful-moss-0-54eth",
+  "title": "LogicBeach: Powerful Moss",
+  "tier": "solved",
+  "status": "solved",
+  "dead_end_reason": null,
+  "series": null,
+  "author": {
+    "name": "LogicBeach",
+    "handles": [
+      "x:@Logic_Beach",
+      "instagram:null_atomo",
+      "ens:logicbeach.eth"
+    ],
+    "url": "https://logicbeach.xyz/powerfulmoss"
+  },
+  "published": {
+    "date": "2025-01-17",
+    "url": "https://logicbeach.xyz/powerfulmoss"
+  },
+  "chain": "base",
+  "prize": {
+    "amount": 0.55,
+    "asset": "ETH",
+    "usd_estimate": 1034,
+    "usd_snapshot": "2026-08-16",
+    "note": "the pot grows over time toward the contract's full balance; it was 0.54 ETH at the private research folder's prior check and 0.55 ETH on 2026-08-16, consistent with the contract's own time-based ramp, not a partial claim"
+  },
+  "addresses": [
+    {
+      "address": "0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
+      "chain": "base",
+      "role": "escrow",
+      "label": "prize contract",
+      "explorer": "https://basescan.org/address/0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
+      "expected": "0.25 ETH minimum, growing toward the full contract balance",
+      "verified_on": "2026-10-18",
+      "verified_state": "swept"
+    }
+  ],
+  "puzzle_type": [
+    "image-stego",
+    "bip39-seed",
+    "word-selection",
+    "smart-contract"
+  ],
+  "target_format": "BIP39 12 words (English), BIP44 m/44'/60'/0'/0/0, no passphrase, address must equal the winner wallet authorized to call withdraw()",
+  "derivation": {
+    "summary": "read 12 words in clock order off the POAP clock-and-wordlist image, derive the BIP44 m/44'/60'/0'/0/0 address (plus a small account/index neighbor sweep), and compare it to the winner wallet the prize contract's withdraw() function accepts",
+    "oracle": "tools/oracle.py",
+    "oracle_certified": true,
+    "certified_against": "the public BIP39 all-zero-entropy test vector and the artist's own prior solved 'Bifurcations' BIP84 vector"
+  },
+  "difficulty_left": "insight",
+  "difficulty_note": "the carrier (the POAP clock image, not the audio), the order (clock position), and the derivation path are all confirmed; 3 of 12 hours read with no ambiguity and over 3.3 million combinations of the rest have been tested negative; the blocker is a resolution limit on the only known copy of the image (a numeral spans about 2 text rows, so 9 of 12 hours carry about 3 candidate words each), not raw compute, so an unrecovered insight into the exact readout rule or a finer source is what remains",
+  "tested_total": {
+    "candidates": 3319137,
+    "families": 3,
+    "certified": true
+  },
+  "leads": [
+    {
+      "rank": 1,
+      "title": "re-run the grid enumeration at a wider row window, one doubtful hour at a time",
+      "cost": "hours",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "resample at the numeral's bottom pixel instead of its centroid",
+      "cost": "minutes",
+      "status": "open"
+    },
+    {
+      "rank": 3,
+      "title": "test the sunburst ray length as an alternative per-hour selector",
+      "cost": "hours",
+      "status": "open"
+    }
+  ],
+  "solutions": [
+    {
+      "lot": "main",
+      "date": "2026-10-05",
+      "answer": "unknown (claimed without a published solution)",
+      "key_material_disclosed": false,
+      "payout_txid": "0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f",
+      "payout_amount": "0.55 ETH",
+      "payout_to": "0x635739254BDE27d28301f25aD57c3cAC3C3468f3",
+      "explorer": "https://basescan.org/tx/0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "clues/powerfulmoss-poap.png",
+      "sha256": "6742c3c85987e6509d8e9c4691c740dddc2b43d5c469eb47e5044da9a6ea985d",
+      "source": "https://assets.poap.xyz/b655b40f-722e-4d6f-9a74-5bea17c539a3.png",
+      "archived": null
+    }
+  ],
+  "sources": [
+    {
+      "title": "LogicBeach, Powerful Moss puzzle page",
+      "url": "https://logicbeach.xyz/powerfulmoss",
+      "date": "2025-01-17",
+      "archived": null
+    },
+    {
+      "title": "LogicBeach, launch-period tweet (8 people have discovered the POAP)",
+      "url": "https://x.com/Logic_Beach/status/1882824094854557885",
+      "date": "2025-01-24",
+      "archived": null
+    },
+    {
+      "title": "POAP drop, PowerfulMoss By LogicBeach.eth",
+      "url": "https://poap.gallery/drops/183468",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "Bifurcations solve write-up (prior puzzle, method precedent only)",
+      "url": "https://elronvhubbard.medium.com/logic-beach-bifurcations-album-puzzle-write-up-1e1094d41038",
+      "date": "2026-08-16",
+      "archived": null
+    },
+    {
+      "title": "2021 ETH puzzle write-up (prior puzzle, method precedent only)",
+      "url": "https://l0gicbeach.medium.com/logicbeach-eth-album-puzzle-2021-57acaf1910db",
+      "date": "2026-08-16",
+      "archived": null
+    }
+  ],
+  "third_party_material": "the POAP artwork in clues/ is the author's own published puzzle material; the album audio, video, and stems are the artist's commercial work and are not included, only our own text findings about them; the 2 prior-puzzle write-ups are cited by URL for method precedent, not reproduced",
+  "last_updated": "2026-08-16"
+}

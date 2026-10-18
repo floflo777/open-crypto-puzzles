@@ -1,4 +1,4 @@
-# Arweave Puzzle Weave #12 (400.00248121 AR, [OPEN])
+# Arweave Puzzle Weave #12 (400.00248121 AR, [SOLVED])
 
 Tiamat (@ArweaveP) published this puzzle on the Arweave permaweb on 2020-04-29 and
 announced it on Twitter on 2020-05-05: a single jigsaw image with 4 pieces (a row of
@@ -21,12 +21,12 @@ matches.
 | Prize | 400.00248121 AR (about $724 at AR = $1.81, 2026-08-16) |
 | Chain | arweave |
 | Escrow | `XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg` ([explorer](https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg)) |
-| Last on-chain check | 2026-08-16: funded and unspent, 400002481210000 winston, 0 outgoing transactions ever |
-| Status | OPEN |
+| Last on-chain check | 2026-10-18: balance 0; swept 2026-10-04 to `WDV6N4IzALBE9UaTbyG-L5QMi1MNgWV-FdqhsM8dOR8`, tx `gx0Ws1TP` |
+| Status | SOLVED; swept 2026-10-04, method not public |
 | Puzzle type | word-selection, geometry, text-cipher |
 | Target format | one 58-character case-sensitive answer, 4 sub-answers concatenated with no separator, SHA-512 x11513, AES-decrypt to an Arweave JWK keyfile |
 | Certified oracle | yes: `tools/oracle.py --selftest` (certified against solved sibling Arweave Puzzle Weave #8) |
-| What remains | piece 2's exact 18-character string, and an oracle-confirmed hit on piece 1 |
+| What remains | nothing on-chain; the solving method is not public |
 | Series | Arweave Puzzles (this folder covers puzzle #12 only) |
 
 ## The puzzle as published
@@ -133,6 +133,10 @@ contributed and are not reproducible from a checkout yet.
    RGB primary color fills the blank, and that it is Blue, is currently favored only
    because it is the one 4-letter completion that keeps the 58-character total exact,
    not because any candidate has matched yet.
+
+## Solution
+
+The escrow was emptied on 2026-10-04: about 399.75 AR moved to `WDV6N4IzALBE9UaTbyG-L5QMi1MNgWV-FdqhsM8dOR8`, main transfer [tx `gx0Ws1TP`](https://viewblock.io/arweave/tx/gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo), balance now 0. Reported in [issue #40](https://github.com/floflo777/open-crypto-puzzles/issues/40) by Luckmuc. No public solution was posted. If the solver reads this, a write-up of pieces 1 and 2 gets full credit here.
 
 ## Files in this folder
 

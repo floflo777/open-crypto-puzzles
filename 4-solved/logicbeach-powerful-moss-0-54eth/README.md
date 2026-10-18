@@ -1,4 +1,4 @@
-# LogicBeach: Powerful Moss (0.55 ETH, [OPEN])
+# LogicBeach: Powerful Moss (0.55 ETH, [SOLVED])
 
 LogicBeach, an anonymous glitch and downtempo artist, released their 6th album, "Powerful
 Moss," on 2025-01-17 with a prize contract on Base holding ETH that grows over time and pays
@@ -21,12 +21,12 @@ winner wallet, all negative, and no higher-resolution source of the image is kno
 | Prize | 0.55 ETH held by the prize contract (about $1,034 at ETH = $1,880, 2026-08-16) |
 | Chain | base |
 | Escrow | `0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd` ([explorer](https://basescan.org/address/0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd)) |
-| Last on-chain check | 2026-08-16: contract holds 0.55 ETH, winner wallet `0x635739254BDE27d28301f25aD57c3cAC3C3468f3` still at dust balance (0.006404376568548341 ETH) and outgoing transaction count 2, unchanged since the prior check |
-| Status | OPEN |
+| Last on-chain check | 2026-10-18: Base prize contract balance 0; claimed 2026-10-05 17:27 UTC by the designated winner wallet, tx `0xae42fac9` |
+| Status | SOLVED; prize claimed 2026-10-05, method not public |
 | Puzzle type | image-stego, bip39-seed, word-selection, smart-contract |
 | Target format | BIP39 12 words (English), BIP44 `m/44'/60'/0'/0/0`, no passphrase, address must equal the winner wallet |
 | Certified oracle | yes: `tools/oracle.py --selftest` (certified against the public BIP39 KAT address and the artist's prior solved "Bifurcations" BIP84 vector) |
-| What remains | resolving the exact word for 9 of the 12 clock hours, each currently narrowed to about 3 candidates by a row-position ambiguity on the published image |
+| What remains | nothing on-chain; the solving method is not public |
 | Series | none |
 
 ## The puzzle as published
@@ -134,6 +134,10 @@ which 12 of them would be the seed, so this is untested rather than negative.
    have measurably varying length, never tested as a selection or ordering signal.
 
 Full notes: [analysis/leads.md](analysis/leads.md).
+
+## Solution
+
+The Base prize contract was emptied on 2026-10-05 17:27:49 UTC: the designated winner wallet `0x635739254BDE27d28301f25aD57c3cAC3C3468f3` called the claim, [tx `0xae42fac9`](https://basescan.org/tx/0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f), and the contract balance is now 0. Reported in [issue #42](https://github.com/floflo777/open-crypto-puzzles/issues/42) by githumblebee; also recorded in the agntn/puzzles catalogue. No public solution or seed phrase was posted, so who claimed it and how the clock-and-grid was read is not known. If the solver reads this, a write-up gets full credit here.
 
 ## Files in this folder
 

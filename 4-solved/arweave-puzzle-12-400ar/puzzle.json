@@ -2,8 +2,8 @@
   "schema_version": 1,
   "slug": "arweave-puzzle-12-400ar",
   "title": "Arweave Puzzle Weave #12",
-  "tier": "mid",
-  "status": "open",
+  "tier": "solved",
+  "status": "solved",
   "dead_end_reason": null,
   "series": "arweave-puzzles",
   "author": {
@@ -33,8 +33,8 @@
       "label": "main",
       "explorer": "https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
       "expected": "400.00248121 AR",
-      "verified_on": "2026-08-16",
-      "verified_state": "funded-unspent"
+      "verified_on": "2026-10-18",
+      "verified_state": "swept"
     }
   ],
   "puzzle_type": [
@@ -70,7 +70,18 @@
       "status": "open"
     }
   ],
-  "solutions": [],
+  "solutions": [
+    {
+      "lot": "main",
+      "date": "2026-10-04",
+      "answer": "unknown (swept without a published solution)",
+      "key_material_disclosed": false,
+      "payout_txid": "gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo",
+      "payout_amount": "398.75 AR",
+      "payout_to": "WDV6N4IzALBE9UaTbyG-L5QMi1MNgWV-FdqhsM8dOR8",
+      "explorer": "https://viewblock.io/arweave/tx/gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo"
+    }
+  ],
   "artifacts": [
     {
       "path": "clues/puzzle-image.jpg",

@@ -446,3 +446,24 @@ test the small-blob pipeline that `tools/oracle.py` in this folder implements
 update that publicly reproducible half of the final gate had not been isolated and swept
 on its own. Section 9 is the first sweep of it, and section 10 records why every result
 obtained through the shipped oracle before that point has to be discarded.
+
+## 11. Oracle fix: hex-encoded and WIF keys now read (issue #46, my314team / 314.run, 2026-10-18)
+
+my314team reported, with a reproducible synthetic witness, that `tools/oracle.py`'s
+`readings()` scored a correct password as NO MATCH when the decrypted plaintext is a
+64-character ASCII hex key: none of sha256(plaintext), first32, last32 or sha256(first64)
+hex-decodes, so the 32 real bytes were never recovered. They also noted that both 80-byte
+locks (the SalPhaseIon small blob and the phase 3.2.2 blob) rule out a single raw 32-byte key
+(which encrypts to 48 bytes under PKCS7) and fit 64 to 79 bytes: two raw keys (exactly 64,
+matching "half and better half"), a 64-char hex key, a hex key with a short suffix, or text.
+
+Reproduced here on 2026-10-18 against the shipped oracle (synthetic keys only): raw and
+two-key plaintexts MATCH, a 64-char hex plaintext returned NO MATCH. `readings()` now strips
+whitespace and an optional `0x`, hex-decodes 64- and 128-char hex to 32 or 64 bytes (then reads
+the whole and its first and last 32), and Base58Check-decodes WIF-shaped tokens. After the fix
+all five shapes (raw, two keys, hex, `0x`+hex, WIF) MATCH and `--selftest` stays green.
+
+Open follow-up, not yet done: re-read the 11,473 valid-padding plaintexts from lead 2 through
+the extended readings, and flag any decrypt that is entirely printable over 64+ bytes (a wrong
+password gives that with probability about (95/256)^64, so such a plaintext is near-certain
+evidence of the right password even if no reading matches an address).

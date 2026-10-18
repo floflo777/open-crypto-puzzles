@@ -10,9 +10,9 @@
   },
   "counts": {
     "big": 7,
-    "mid": 18,
+    "mid": 16,
     "small": 2,
-    "solved": 11,
+    "solved": 13,
     "dead-end": 11
   },
   "puzzles": [
@@ -1378,129 +1378,6 @@
     },
     {
       "schema_version": 1,
-      "slug": "arweave-puzzle-12-400ar",
-      "title": "Arweave Puzzle Weave #12",
-      "tier": "mid",
-      "status": "open",
-      "dead_end_reason": null,
-      "series": "arweave-puzzles",
-      "author": {
-        "name": "Tiamat",
-        "handles": [
-          "twitter:@ArweaveP"
-        ],
-        "url": "https://twitter.com/arweavep"
-      },
-      "published": {
-        "date": "2020-05-05",
-        "url": "https://twitter.com/arweavep/status/1257613928185675776"
-      },
-      "chain": "arweave",
-      "prize": {
-        "amount": 400.00248121,
-        "asset": "AR",
-        "usd_estimate": 724,
-        "usd_snapshot": "2026-08-16",
-        "note": "the small amount above 400 AR is unsolicited dust received after the 2020-04-14 funding, not a partial withdrawal"
-      },
-      "addresses": [
-        {
-          "address": "XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
-          "chain": "arweave",
-          "role": "escrow",
-          "label": "main",
-          "explorer": "https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
-          "expected": "400.00248121 AR",
-          "verified_on": "2026-08-16",
-          "verified_state": "funded-unspent"
-        }
-      ],
-      "puzzle_type": [
-        "word-selection",
-        "geometry",
-        "text-cipher"
-      ],
-      "target_format": "one 58-character answer, case-sensitive, the concatenation of 4 jigsaw sub-answers with no separator, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"",
-      "derivation": {
-        "summary": "read each of the 4 jigsaw pieces (flags, a whale and a date, shapes with digit strings, hatched letters) into its own sub-answer, concatenate with no separator into an exact 58-character case-sensitive string, stretch with SHA-512 x11513, use the result as an EvpKDF/AES-OpenSSL password to decrypt the page's ciphertext into an Arweave RSA wallet keyfile",
-        "oracle": "tools/oracle.py",
-        "oracle_certified": true,
-        "certified_against": "solved sibling Arweave Puzzle Weave #8 (answer RasputinWilhelmAlekhine), reproduced byte-for-byte against the puzzle's own decrypt routine"
-      },
-      "difficulty_left": "insight",
-      "difficulty_note": "mechanism and oracle fully certified; piece 3 is solved with certainty, piece 1 has a strong unconfirmed reading, piece 4's hatching is refuted as an ordering scheme; the open gap is piece 2's exact 18-character string once the other 3 pieces are fixed",
-      "tested_total": {
-        "candidates": 3014356,
-        "families": 16,
-        "certified": true
-      },
-      "leads": [
-        {
-          "rank": 1,
-          "title": "identify piece 2, \"the whale\": a co-investor, a ticker, or a date-derived string once AndreessenHorowitz is ruled out",
-          "cost": "hours",
-          "status": "open"
-        },
-        {
-          "rank": 2,
-          "title": "confirm piece 1's blank flag as Blue by an oracle hit rather than by the 58-character budget alone",
-          "cost": "hours",
-          "status": "open"
-        }
-      ],
-      "solutions": [],
-      "artifacts": [
-        {
-          "path": "clues/puzzle-image.jpg",
-          "sha256": "f299e805bd2f453328457ccd8ce40f199f0cd4d5caa30c67fd21e0fcfcc4d722",
-          "source": "https://arweave.net/gymumAAsxGlzqPL5HzoEB8Xryu61o174j7vHwx21Qoo",
-          "archived": null
-        }
-      ],
-      "sources": [
-        {
-          "title": "\"Puzzle 12 is here\"",
-          "url": "https://twitter.com/arweavep/status/1257613928185675776",
-          "date": "2020-05-05",
-          "archived": null
-        },
-        {
-          "title": "Live puzzle page",
-          "url": "https://arweave.net/gymumAAsxGlzqPL5HzoEB8Xryu61o174j7vHwx21Qoo",
-          "date": "2020-04-29",
-          "archived": null
-        },
-        {
-          "title": "\"58 chars CS\"",
-          "url": "https://twitter.com/arweavep/status/1264211142714499072",
-          "date": "2020-05-23",
-          "archived": null
-        },
-        {
-          "title": "\"1,2,4,8 = solved / 3,5,7,9 = not solved yet\"",
-          "url": "https://twitter.com/arweavep/status/1250036746802298885",
-          "date": "2020-04-14",
-          "archived": null
-        },
-        {
-          "title": "HomelessPhD/AR_Puzzles community repository, PZL12 entry",
-          "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL12",
-          "date": "2026-08-16",
-          "archived": null
-        },
-        {
-          "title": "Escrow wallet, viewblock.io",
-          "url": "https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
-          "date": "2026-08-16",
-          "archived": null
-        }
-      ],
-      "third_party_material": "the jigsaw image is the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material",
-      "last_updated": "2026-09-07",
-      "folder": "2-mid-prizes/arweave-puzzle-12-400ar"
-    },
-    {
-      "schema_version": 1,
       "slug": "arweave-puzzle-3-1000ar",
       "title": "Arweave Puzzle #3",
       "tier": "mid",
@@ -2455,132 +2332,6 @@
       "third_party_material": "no book pages, ebook files, scans, OCR, or chapter text included; only page/figure numbers, short quotes (about 180 words total, well under the 300-word-per-book limit), and my own derived data (answer strings, hashes, solved-lot key material)",
       "last_updated": "2026-09-01",
       "folder": "2-mid-prizes/keir-finlow-bates-blockchain-book-600ksats"
-    },
-    {
-      "schema_version": 1,
-      "slug": "logicbeach-powerful-moss-0-54eth",
-      "title": "LogicBeach: Powerful Moss",
-      "tier": "mid",
-      "status": "open",
-      "dead_end_reason": null,
-      "series": null,
-      "author": {
-        "name": "LogicBeach",
-        "handles": [
-          "x:@Logic_Beach",
-          "instagram:null_atomo",
-          "ens:logicbeach.eth"
-        ],
-        "url": "https://logicbeach.xyz/powerfulmoss"
-      },
-      "published": {
-        "date": "2025-01-17",
-        "url": "https://logicbeach.xyz/powerfulmoss"
-      },
-      "chain": "base",
-      "prize": {
-        "amount": 0.55,
-        "asset": "ETH",
-        "usd_estimate": 1034,
-        "usd_snapshot": "2026-08-16",
-        "note": "the pot grows over time toward the contract's full balance; it was 0.54 ETH at the private research folder's prior check and 0.55 ETH on 2026-08-16, consistent with the contract's own time-based ramp, not a partial claim"
-      },
-      "addresses": [
-        {
-          "address": "0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
-          "chain": "base",
-          "role": "escrow",
-          "label": "prize contract",
-          "explorer": "https://basescan.org/address/0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
-          "expected": "0.25 ETH minimum, growing toward the full contract balance",
-          "verified_on": "2026-08-16",
-          "verified_state": "contract-holds-funds"
-        }
-      ],
-      "puzzle_type": [
-        "image-stego",
-        "bip39-seed",
-        "word-selection",
-        "smart-contract"
-      ],
-      "target_format": "BIP39 12 words (English), BIP44 m/44'/60'/0'/0/0, no passphrase, address must equal the winner wallet authorized to call withdraw()",
-      "derivation": {
-        "summary": "read 12 words in clock order off the POAP clock-and-wordlist image, derive the BIP44 m/44'/60'/0'/0/0 address (plus a small account/index neighbor sweep), and compare it to the winner wallet the prize contract's withdraw() function accepts",
-        "oracle": "tools/oracle.py",
-        "oracle_certified": true,
-        "certified_against": "the public BIP39 all-zero-entropy test vector and the artist's own prior solved 'Bifurcations' BIP84 vector"
-      },
-      "difficulty_left": "insight",
-      "difficulty_note": "the carrier (the POAP clock image, not the audio), the order (clock position), and the derivation path are all confirmed; 3 of 12 hours read with no ambiguity and over 3.3 million combinations of the rest have been tested negative; the blocker is a resolution limit on the only known copy of the image (a numeral spans about 2 text rows, so 9 of 12 hours carry about 3 candidate words each), not raw compute, so an unrecovered insight into the exact readout rule or a finer source is what remains",
-      "tested_total": {
-        "candidates": 3319137,
-        "families": 3,
-        "certified": true
-      },
-      "leads": [
-        {
-          "rank": 1,
-          "title": "re-run the grid enumeration at a wider row window, one doubtful hour at a time",
-          "cost": "hours",
-          "status": "open"
-        },
-        {
-          "rank": 2,
-          "title": "resample at the numeral's bottom pixel instead of its centroid",
-          "cost": "minutes",
-          "status": "open"
-        },
-        {
-          "rank": 3,
-          "title": "test the sunburst ray length as an alternative per-hour selector",
-          "cost": "hours",
-          "status": "open"
-        }
-      ],
-      "solutions": [],
-      "artifacts": [
-        {
-          "path": "clues/powerfulmoss-poap.png",
-          "sha256": "6742c3c85987e6509d8e9c4691c740dddc2b43d5c469eb47e5044da9a6ea985d",
-          "source": "https://assets.poap.xyz/b655b40f-722e-4d6f-9a74-5bea17c539a3.png",
-          "archived": null
-        }
-      ],
-      "sources": [
-        {
-          "title": "LogicBeach, Powerful Moss puzzle page",
-          "url": "https://logicbeach.xyz/powerfulmoss",
-          "date": "2025-01-17",
-          "archived": null
-        },
-        {
-          "title": "LogicBeach, launch-period tweet (8 people have discovered the POAP)",
-          "url": "https://x.com/Logic_Beach/status/1882824094854557885",
-          "date": "2025-01-24",
-          "archived": null
-        },
-        {
-          "title": "POAP drop, PowerfulMoss By LogicBeach.eth",
-          "url": "https://poap.gallery/drops/183468",
-          "date": "2026-08-16",
-          "archived": null
-        },
-        {
-          "title": "Bifurcations solve write-up (prior puzzle, method precedent only)",
-          "url": "https://elronvhubbard.medium.com/logic-beach-bifurcations-album-puzzle-write-up-1e1094d41038",
-          "date": "2026-08-16",
-          "archived": null
-        },
-        {
-          "title": "2021 ETH puzzle write-up (prior puzzle, method precedent only)",
-          "url": "https://l0gicbeach.medium.com/logicbeach-eth-album-puzzle-2021-57acaf1910db",
-          "date": "2026-08-16",
-          "archived": null
-        }
-      ],
-      "third_party_material": "the POAP artwork in clues/ is the author's own published puzzle material; the album audio, video, and stems are the artist's commercial work and are not included, only our own text findings about them; the 2 prior-puzzle write-ups are cited by URL for method precedent, not reproduced",
-      "last_updated": "2026-08-16",
-      "folder": "2-mid-prizes/logicbeach-powerful-moss-0-54eth"
     },
     {
       "schema_version": 1,
@@ -3964,6 +3715,140 @@
     },
     {
       "schema_version": 1,
+      "slug": "arweave-puzzle-12-400ar",
+      "title": "Arweave Puzzle Weave #12",
+      "tier": "solved",
+      "status": "solved",
+      "dead_end_reason": null,
+      "series": "arweave-puzzles",
+      "author": {
+        "name": "Tiamat",
+        "handles": [
+          "twitter:@ArweaveP"
+        ],
+        "url": "https://twitter.com/arweavep"
+      },
+      "published": {
+        "date": "2020-05-05",
+        "url": "https://twitter.com/arweavep/status/1257613928185675776"
+      },
+      "chain": "arweave",
+      "prize": {
+        "amount": 400.00248121,
+        "asset": "AR",
+        "usd_estimate": 724,
+        "usd_snapshot": "2026-08-16",
+        "note": "the small amount above 400 AR is unsolicited dust received after the 2020-04-14 funding, not a partial withdrawal"
+      },
+      "addresses": [
+        {
+          "address": "XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+          "chain": "arweave",
+          "role": "escrow",
+          "label": "main",
+          "explorer": "https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+          "expected": "400.00248121 AR",
+          "verified_on": "2026-10-18",
+          "verified_state": "swept"
+        }
+      ],
+      "puzzle_type": [
+        "word-selection",
+        "geometry",
+        "text-cipher"
+      ],
+      "target_format": "one 58-character answer, case-sensitive, the concatenation of 4 jigsaw sub-answers with no separator, SHA-512 applied 11,513 times, CryptoJS AES-OpenSSL decrypt (non-standard 1024-bit key, 38-round Rijndael), plaintext must contain the literal \"kty\":\"RSA\"",
+      "derivation": {
+        "summary": "read each of the 4 jigsaw pieces (flags, a whale and a date, shapes with digit strings, hatched letters) into its own sub-answer, concatenate with no separator into an exact 58-character case-sensitive string, stretch with SHA-512 x11513, use the result as an EvpKDF/AES-OpenSSL password to decrypt the page's ciphertext into an Arweave RSA wallet keyfile",
+        "oracle": "tools/oracle.py",
+        "oracle_certified": true,
+        "certified_against": "solved sibling Arweave Puzzle Weave #8 (answer RasputinWilhelmAlekhine), reproduced byte-for-byte against the puzzle's own decrypt routine"
+      },
+      "difficulty_left": "insight",
+      "difficulty_note": "mechanism and oracle fully certified; piece 3 is solved with certainty, piece 1 has a strong unconfirmed reading, piece 4's hatching is refuted as an ordering scheme; the open gap is piece 2's exact 18-character string once the other 3 pieces are fixed",
+      "tested_total": {
+        "candidates": 3014356,
+        "families": 16,
+        "certified": true
+      },
+      "leads": [
+        {
+          "rank": 1,
+          "title": "identify piece 2, \"the whale\": a co-investor, a ticker, or a date-derived string once AndreessenHorowitz is ruled out",
+          "cost": "hours",
+          "status": "open"
+        },
+        {
+          "rank": 2,
+          "title": "confirm piece 1's blank flag as Blue by an oracle hit rather than by the 58-character budget alone",
+          "cost": "hours",
+          "status": "open"
+        }
+      ],
+      "solutions": [
+        {
+          "lot": "main",
+          "date": "2026-10-04",
+          "answer": "unknown (swept without a published solution)",
+          "key_material_disclosed": false,
+          "payout_txid": "gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo",
+          "payout_amount": "398.75 AR",
+          "payout_to": "WDV6N4IzALBE9UaTbyG-L5QMi1MNgWV-FdqhsM8dOR8",
+          "explorer": "https://viewblock.io/arweave/tx/gx0Ws1TPZhmgTRk6j6UjMuaHiX4vYvfoqjzzW6Os7wo"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "clues/puzzle-image.jpg",
+          "sha256": "f299e805bd2f453328457ccd8ce40f199f0cd4d5caa30c67fd21e0fcfcc4d722",
+          "source": "https://arweave.net/gymumAAsxGlzqPL5HzoEB8Xryu61o174j7vHwx21Qoo",
+          "archived": null
+        }
+      ],
+      "sources": [
+        {
+          "title": "\"Puzzle 12 is here\"",
+          "url": "https://twitter.com/arweavep/status/1257613928185675776",
+          "date": "2020-05-05",
+          "archived": null
+        },
+        {
+          "title": "Live puzzle page",
+          "url": "https://arweave.net/gymumAAsxGlzqPL5HzoEB8Xryu61o174j7vHwx21Qoo",
+          "date": "2020-04-29",
+          "archived": null
+        },
+        {
+          "title": "\"58 chars CS\"",
+          "url": "https://twitter.com/arweavep/status/1264211142714499072",
+          "date": "2020-05-23",
+          "archived": null
+        },
+        {
+          "title": "\"1,2,4,8 = solved / 3,5,7,9 = not solved yet\"",
+          "url": "https://twitter.com/arweavep/status/1250036746802298885",
+          "date": "2020-04-14",
+          "archived": null
+        },
+        {
+          "title": "HomelessPhD/AR_Puzzles community repository, PZL12 entry",
+          "url": "https://github.com/HomelessPhD/AR_Puzzles/tree/main/PZL12",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "Escrow wallet, viewblock.io",
+          "url": "https://viewblock.io/arweave/address/XRGEfkMbCMHeTY9mZI9Lh6hf8EmA8RstmBFUjDm40fg",
+          "date": "2026-08-16",
+          "archived": null
+        }
+      ],
+      "third_party_material": "the jigsaw image is the author's own puzzle material, published on the Arweave permaweb page; no book, audio, or video material",
+      "last_updated": "2026-09-07",
+      "folder": "4-solved/arweave-puzzle-12-400ar"
+    },
+    {
+      "schema_version": 1,
       "slug": "bc1q21-timelock-challenge-l5-100ksats",
       "title": "bc1q21 Time-Lock Challenge, Level 5",
       "tier": "solved",
@@ -4711,6 +4596,143 @@
       "third_party_material": "the two card images in clues/ are the author's own published puzzle material, posted on X and mirrored on nostr.build; her book and workshop materials are not included and are referenced by title only",
       "last_updated": "2026-09-12",
       "folder": "4-solved/keysa-crack-the-seed-369ksats"
+    },
+    {
+      "schema_version": 1,
+      "slug": "logicbeach-powerful-moss-0-54eth",
+      "title": "LogicBeach: Powerful Moss",
+      "tier": "solved",
+      "status": "solved",
+      "dead_end_reason": null,
+      "series": null,
+      "author": {
+        "name": "LogicBeach",
+        "handles": [
+          "x:@Logic_Beach",
+          "instagram:null_atomo",
+          "ens:logicbeach.eth"
+        ],
+        "url": "https://logicbeach.xyz/powerfulmoss"
+      },
+      "published": {
+        "date": "2025-01-17",
+        "url": "https://logicbeach.xyz/powerfulmoss"
+      },
+      "chain": "base",
+      "prize": {
+        "amount": 0.55,
+        "asset": "ETH",
+        "usd_estimate": 1034,
+        "usd_snapshot": "2026-08-16",
+        "note": "the pot grows over time toward the contract's full balance; it was 0.54 ETH at the private research folder's prior check and 0.55 ETH on 2026-08-16, consistent with the contract's own time-based ramp, not a partial claim"
+      },
+      "addresses": [
+        {
+          "address": "0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
+          "chain": "base",
+          "role": "escrow",
+          "label": "prize contract",
+          "explorer": "https://basescan.org/address/0x831102C7eb86f9EC8f79dF891bDeA187D54344Dd",
+          "expected": "0.25 ETH minimum, growing toward the full contract balance",
+          "verified_on": "2026-10-18",
+          "verified_state": "swept"
+        }
+      ],
+      "puzzle_type": [
+        "image-stego",
+        "bip39-seed",
+        "word-selection",
+        "smart-contract"
+      ],
+      "target_format": "BIP39 12 words (English), BIP44 m/44'/60'/0'/0/0, no passphrase, address must equal the winner wallet authorized to call withdraw()",
+      "derivation": {
+        "summary": "read 12 words in clock order off the POAP clock-and-wordlist image, derive the BIP44 m/44'/60'/0'/0/0 address (plus a small account/index neighbor sweep), and compare it to the winner wallet the prize contract's withdraw() function accepts",
+        "oracle": "tools/oracle.py",
+        "oracle_certified": true,
+        "certified_against": "the public BIP39 all-zero-entropy test vector and the artist's own prior solved 'Bifurcations' BIP84 vector"
+      },
+      "difficulty_left": "insight",
+      "difficulty_note": "the carrier (the POAP clock image, not the audio), the order (clock position), and the derivation path are all confirmed; 3 of 12 hours read with no ambiguity and over 3.3 million combinations of the rest have been tested negative; the blocker is a resolution limit on the only known copy of the image (a numeral spans about 2 text rows, so 9 of 12 hours carry about 3 candidate words each), not raw compute, so an unrecovered insight into the exact readout rule or a finer source is what remains",
+      "tested_total": {
+        "candidates": 3319137,
+        "families": 3,
+        "certified": true
+      },
+      "leads": [
+        {
+          "rank": 1,
+          "title": "re-run the grid enumeration at a wider row window, one doubtful hour at a time",
+          "cost": "hours",
+          "status": "open"
+        },
+        {
+          "rank": 2,
+          "title": "resample at the numeral's bottom pixel instead of its centroid",
+          "cost": "minutes",
+          "status": "open"
+        },
+        {
+          "rank": 3,
+          "title": "test the sunburst ray length as an alternative per-hour selector",
+          "cost": "hours",
+          "status": "open"
+        }
+      ],
+      "solutions": [
+        {
+          "lot": "main",
+          "date": "2026-10-05",
+          "answer": "unknown (claimed without a published solution)",
+          "key_material_disclosed": false,
+          "payout_txid": "0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f",
+          "payout_amount": "0.55 ETH",
+          "payout_to": "0x635739254BDE27d28301f25aD57c3cAC3C3468f3",
+          "explorer": "https://basescan.org/tx/0xae42fac96356a739ac387779d66d2386aad1cf868066ab58c7e23f661539f98f"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "clues/powerfulmoss-poap.png",
+          "sha256": "6742c3c85987e6509d8e9c4691c740dddc2b43d5c469eb47e5044da9a6ea985d",
+          "source": "https://assets.poap.xyz/b655b40f-722e-4d6f-9a74-5bea17c539a3.png",
+          "archived": null
+        }
+      ],
+      "sources": [
+        {
+          "title": "LogicBeach, Powerful Moss puzzle page",
+          "url": "https://logicbeach.xyz/powerfulmoss",
+          "date": "2025-01-17",
+          "archived": null
+        },
+        {
+          "title": "LogicBeach, launch-period tweet (8 people have discovered the POAP)",
+          "url": "https://x.com/Logic_Beach/status/1882824094854557885",
+          "date": "2025-01-24",
+          "archived": null
+        },
+        {
+          "title": "POAP drop, PowerfulMoss By LogicBeach.eth",
+          "url": "https://poap.gallery/drops/183468",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "Bifurcations solve write-up (prior puzzle, method precedent only)",
+          "url": "https://elronvhubbard.medium.com/logic-beach-bifurcations-album-puzzle-write-up-1e1094d41038",
+          "date": "2026-08-16",
+          "archived": null
+        },
+        {
+          "title": "2021 ETH puzzle write-up (prior puzzle, method precedent only)",
+          "url": "https://l0gicbeach.medium.com/logicbeach-eth-album-puzzle-2021-57acaf1910db",
+          "date": "2026-08-16",
+          "archived": null
+        }
+      ],
+      "third_party_material": "the POAP artwork in clues/ is the author's own published puzzle material; the album audio, video, and stems are the artist's commercial work and are not included, only our own text findings about them; the 2 prior-puzzle write-ups are cited by URL for method precedent, not reproduced",
+      "last_updated": "2026-08-16",
+      "folder": "4-solved/logicbeach-powerful-moss-0-54eth"
     },
     {
       "schema_version": 1,
