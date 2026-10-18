@@ -44,6 +44,13 @@ words against the list and spot-checked `link`, `token`, `atom` and `reveal` on
 my own frames. The RO1 model extended with the five coin words as free video
 words is the natural next sweep; @cjmcdaniel said they are running it.
 
+Update (issue #38, 2026-10-18): the spoken-audio half of this channel is most
+likely retired. profesor1234 reports an author reply on the challenge video,
+@GuntisVitolins "Youll need only written words" to a viewer who could not make
+out a spoken word (see `clues/author-posts.md`). Read plainly, the audio is not
+a source, so the 110 auto-caption-only words do not need sweeping. On-screen
+printed and drawn words (cjmcdaniel's frame read) are unaffected.
+
 Original lead text, kept for the reasoning:
 
 The author states in the spoken rules of the challenge video,

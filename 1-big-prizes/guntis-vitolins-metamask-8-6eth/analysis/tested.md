@@ -321,3 +321,29 @@ the RO1 reading-order model, checksum-invalid phrases (only valid candidates wer
 and the other paths for the extra-word sweeps. Speed was about 1,000 derivations per second
 per core; the paths sweep took about 13 minutes on 22 workers. The connecting-words lead
 (about 1.36e10 derivations) needs a GPU PBKDF2 implementation.
+
+## Free-order sweeps on a 29-word content pool (issue #38, profesor1234 / Boris, 2026-10-18)
+
+Four sweeps contributed in [issue #38](https://github.com/floflo777/open-crypto-puzzles/issues/38),
+all no match. Pipeline: CPU enumerate plus BIP39 checksum, CUDA PBKDF2-HMAC-SHA512 x2048, CPU BIP32
+`m/44'/60'/0'/0/0` plus keccak256. Engine certified before each run (canonical `abandon` x11 `about`
+vector on CPU and device, `abandon` x12 checksum-rejected, 171/171 differential SHA-512 cases,
+planted-key end to end, btcrecover cross-check). Every run reports exact work-unit coverage and
+recovered one genuine planted witness per corner. Not re-run here; recorded as contributed with the
+witness protocol and coverage audit as described. Anchors `dutch`/1, `fog`/5, `parrot`/12 throughout;
+pool of 29 is the content words of the 5 planted sentences plus blog tag slugs plus the video title
+and hook, minus anchors and floats.
+
+| Sweep | Checksum-valid executed | Result | Witness |
+| --- | --- | --- | --- |
+| B-POSS: `fiber`+`fork`+`possible` required, free position, 6 more ordered from the pool (space P(9,3)*P(29,6) = 172,375,257,600) | 10,773,378,819 | 0 match, 42.3 h | 3/3 |
+| B-CLOUD-A: `fog`/5, floats `fiber`/`fork`/`cloud` | 10,773,355,757 | 0 match, 49.6 h | 3/3 |
+| B-CLOUD-B: `cloud`/5, floats `fiber`/`fork`/`fog` | 10,773,538,507 | 0 match, 48.5 h | 2/2 |
+| B-FRAMES: `fiber`+`fork` required, post side 3 of 14, video side 4 of 9 (`build` `share` `atom` `link` off frames), 6/6 partition | 1,040,162,282 derivations | 0 match (also at indices 0 to 4) | 4/4 |
+
+B-POSS probes README lead 4 (substrings) under free order, which RO2 does not cover; its 29-word
+pool contains no substring words, so it is disjoint from every prior sweep and is about 4 percent of
+the 2.8e11 free-order substring space. B-CLOUD-A/B close both orientations of the `fog`/`cloud`
+question and are consistent with the existing retirement, not a reopening. B-FRAMES is the free-order
+counterpart to Bayols (issue #18) on a narrower pool. None of these touch the 77 dictionary words
+outside the pool of 29.

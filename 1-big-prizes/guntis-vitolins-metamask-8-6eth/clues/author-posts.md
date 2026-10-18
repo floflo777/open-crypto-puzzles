@@ -132,3 +132,20 @@ Quoted from the hint 5 video description as archived by the Wayback Machine on
 The 6 and 6 split is therefore the author's own, not an inference. The escrow
 address given in the same rules block matches the address in `puzzle.json` and
 in `tools/oracle.py`.
+
+
+## Reported by profesor1234 (issue #38, 2026-10-18), not independently verified here
+
+Author reply that retires the spoken-audio channel of lead 1, on the challenge video
+https://www.youtube.com/watch?v=w4mpiuBP_aY :
+
+- @ZeIronDucK: "I really can't hear what's the last word you saying in video ... and I guess Im needing it"
+- @GuntisVitolins: "Youll need only written words."
+
+Hint-5 verbatim, https://www.youtube.com/watch?v=ZjBJKooVmuE at 17:25:
+
+> "so the last hint we are giving out is a keyboard fork so it's f o r k that's a keyword it's not
+> necessarily uh in order um it's one of the keywords from the seed wallet"
+
+This is the primary support for treating `fork` as a literal list member at a free position. Minor
+timestamp corrections on the current uploads: hint 4 at 15:15 (not 15:26), hint 5 at 17:25 (not 17:28).
