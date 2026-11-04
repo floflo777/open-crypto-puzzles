@@ -20,11 +20,11 @@ by the author's own design, are not guessable from the article alone.
 | Prize | 3,124,630 sats (about $1,969 at BTC = $63,000, 2026-08-16) |
 | Chain | bitcoin |
 | Escrow | `1K4ezpLybootYF23TM4a8Y4NyP7auysnRo` ([explorer](https://mempool.space/address/1K4ezpLybootYF23TM4a8Y4NyP7auysnRo)) |
-| Last on-chain check | 2026-08-16: funded and unspent, 2 funding transactions, 3,124,630 sats total |
+| Last on-chain check | 2026-11-04: funded and unspent, 2 funding transactions, 3,124,630 sats total (3,050,269 sats at block 562454 + 74,361 sats at block 570781) |
 | Status | OPEN |
 | Puzzle type | bip39-seed, text-cipher, brainwallet |
 | Target format | BIP39 12 words, position selected by an author-specific numeric key applied to the article text; passphrase and derivation path not confirmed |
-| Certified oracle | no: see "Derivation and oracle" below |
+| Certified oracle | yes: `tools/oracle.py --selftest` (BIP39 BIP44/49/84 via two independent implementations, raw-key wiki vectors, raw-hash brainwallet variants, Electrum 2.x-4.x standard and old families via keystore agreement) |
 | What remains | the real carrier text and the numeric key; both are author-specific by the article's own design |
 | Series | none |
 
@@ -53,14 +53,24 @@ are treated as certain rather than assumed.
 
 ### Derivation and oracle
 
-No certified oracle is shipped in this folder. The private derivation code exists and covers
-BIP44/49/84, raw BIP32 paths, the master key, and old Electrum v1/v2, but it has no known-good
-test proving it actually accepts a correct candidate: no solved sibling of this puzzle exists,
-and no synthetic seed-and-address pair was ever embedded to certify the acceptance path. A
-candidate is checked the same way a solver would: derive the P2PKH address (compressed and
-uncompressed) for a 12-word candidate under BIP44/49/84 and any raw BIP32 path in scope, and
-compare it, byte for byte, to the escrow address at
+A certified oracle ships in this folder: `tools/oracle.py`. Its self-test asserts the official
+BIP32/39/44/49/84 vectors through two independent implementations (a manual BIP32 walk and the
+bip_utils builders), the two documented Bitcoin-wiki raw-key address pairs, the BIP39 checksum
+validator against the `mnemonic` package, and agreement with the `electrum` package's own
+`BIP32_KeyStore` and `Old_KeyStore` on generated seeds. Candidate families: BIP39 (BIP44/49/84,
+compressed), raw-text hashing (sha256 and sha256d over six serializations, both key
+compressions), Electrum 2.x-4.x standard (PBKDF2 "electrum" salt, BIP32 root, m/0/n and m/1/n,
+gated on the real restore check), and Electrum 1.x old (mn_decode, 100000-round sha256 stretch,
+uncompressed keys). Compare against the escrow address at
 [mempool.space](https://mempool.space/address/1K4ezpLybootYF23TM4a8Y4NyP7auysnRo).
+
+A 2026-11-04 re-verification also settled two factual questions. The "witch collapse practice
+feed shame open despair creek road again ice least" example is a genuine old-Electrum seed: all
+twelve words decode via Electrum's old 1626-word list to hex seed 25a39767960aafbdba67ad41f5657826
+(it is not BIP39 - "witch" is not in the BIP39 wordlist - and it fails the Electrum '01' restore
+gate). And the embedded Steganographia photograph shows the 1606 Frankfurt title page only: the
+page promises "PRÆFIXA EST HVIC OPERI SVA CLAVIS" but contains no cipher table; its only numeral
+is the year 1606.
 
 ### Established facts
 
@@ -77,9 +87,10 @@ compare it, byte for byte, to the escrow address at
 
 ## What has been tested
 
-Full ledger in [analysis/tested.md](analysis/tested.md). Every negative below is marked
-uncertified: no known-good acceptance vector has been built for the derivation code, so under
-this repository's own convention these counts describe search coverage, not proven exhaustion.
+Full ledger in [analysis/tested.md](analysis/tested.md). Rows dated 2026-08-02 remain
+uncertified (the code they ran had no acceptance test). Rows dated 2026-11-04 are certified:
+they ran through `tools/oracle.py`, whose self-test proves the acceptance path on known-good
+vectors before any search.
 
 | Hypothesis | Space | Method | Result | Witness | Date |
 |---|---|---|---|---|---|
@@ -91,16 +102,21 @@ this repository's own convention these counts describe search coverage, not prov
 
 ## Open leads, ranked
 
-1. **Read the cipher table on the embedded Steganographia title-page photo** (hours). The article
-   embeds a high-resolution photo of the title page of Trithemius's own historical book
-   Steganographia, shelfmark Jesus College M.7.7, which contains genuine cipher tables. The
-   author published this image without flagging it as a candidate key; it is the one artifact in
-   the article not yet exploited as a possible numeric key source.
-2. **Rule out an old-Electrum (non-BIP39) wallet** (hours). If the wallet predates BIP39, the
-   large body of BIP39-based derivation work to date is off-target even with the correct words.
-3. **Build a certified acceptance test for the derivation code** (minutes). No known-good
-   seed-and-address pair has ever been run through the derivation library to prove it accepts a
-   correct candidate; every negative above is technically unproven without this.
+1. **Author-specific numeric key or author contact** (open, class person). The 2026-11-04
+   campaign closed the mechanical leads: the Steganographia photograph carries no cipher table
+   (only the 1606 imprint), and every numeric-key source derivable from the article, its images'
+   legible content (the Venezuelan banknote serial B35409659 and date), the article's embedded
+   timestamps, and the escrow's own funding amounts and block heights is certified-negative
+   across BIP39, raw-hash, Electrum-standard and Electrum-old families. What remains is a
+   key that is a real-world number of the author's (the article's own methods point at personal
+   phone numbers and coordinates of personally meaningful landmarks) or a wallet family outside
+   the modeled set. The authors ("Sharon & Philippe", Medium @onesourgrape) published nothing
+   else and left no other trace; their article invited DMs.
+2. **Wallet families not yet modeled** (open, class insight). If the author restored from the
+   phrase with something other than BIP39 or Electrum (a 24-word phrase, a BIP38 intermediate,
+   custom derivation paths, or a brainwallet service with a non-sha256 KDF), the certified
+   negatives do not reach it. Any new candidate string from any future source is one
+   `tools/oracle.py --phrase` call away from a definitive answer.
 
 ## Files in this folder
 
@@ -114,3 +130,7 @@ this repository's own convention these counts describe search coverage, not prov
 
 - Trithemius, "Securing Bitcoin Seed Phrases in Stories," Medium/Coinmonks, 2019-02-11: https://medium.com/coinmonks/securing-bitcoin-seed-phrases-in-stories-d8eb43a02254
 - Community tracker confirming the puzzle is still unsolved: https://privatekeys.pw/puzzles/0.03-btc-coinmonks-puzzle
+- BitcoinTalk thread on the puzzle (opened 2026-10-20): https://bitcointalk.org/index.php?topic=5597422.0
+- Community scan repo with article archive (sliding-window BIP39 and old-Electrum attempts, negative): https://github.com/HomelessPhD/Wealth_in_Poetry
+- Community tabula-recta attempt with keyword REVOLUTION, negative: https://github.com/vortomastro/TrithemiusCipher
+- Source of the Steganographia title-page photograph (Jesus College blog, August 2015): https://jesuslibraries.wordpress.com/2015/08/01/august-2015-book-of-the-month-steganographia-by-johannes-trithemius-1606/

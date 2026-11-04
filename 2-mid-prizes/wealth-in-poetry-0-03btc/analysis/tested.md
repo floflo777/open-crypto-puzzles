@@ -1,10 +1,11 @@
 # Negatives ledger: Wealth in Poetry
 
-Every row below is marked uncertified. The derivation code (BIP44/49/84, raw BIP32 paths, master
-key, old Electrum) has no known-good acceptance test: no solved sibling of this puzzle exists,
-and no synthetic seed-and-address pair was ever run through it to prove it would accept a correct
-answer. Under this repository's own convention, these counts describe search coverage, not proven
-exhaustion.
+Rows dated 2026-08-02 are uncertified: the derivation code they ran (BIP44/49/84, raw BIP32
+paths, master key, old Electrum) had no known-good acceptance test, so those counts describe
+search coverage, not proven exhaustion. Rows dated 2026-11-04 are certified: every derivation
+went through `tools/oracle.py` after its self-test passed (official BIP32/39/44/49/84 vectors
+via two implementations, Bitcoin-wiki raw-key pairs, and agreement with the `electrum` package's
+own keystores).
 
 | Hypothesis | Space | Method | Result | Witness | Date |
 |---|---|---|---|---|---|
@@ -16,6 +17,14 @@ exhaustion.
 | Image steganography on full-resolution originals pulled from the CDN | 11 images, up to 4448x2555 | LSB analysis on lossless formats | pure noise (bit ratio about 0.4995 to 0.5004), 0 WIF or hex64 strings recovered from any bit plane | uncertified | 2026-08-02 |
 | Direct WIF/hex scan of the raw article file | 125 base58-like substrings matched | BIP38/WIF checksum check | 0 pass the checksum, all traced to base64-encoded image data | uncertified | 2026-08-02 |
 | Stylometric steganalysis: token surprisal and contrastive substitution scoring across the full 2,360-word narrative (563 BIP39 words, 23.9 percent density) | full narrative | two transformer language models of different sizes, each scoring insertion likelihood | BIP39 words statistically indistinguishable from ordinary words; no detectable insertion fingerprint | uncertified | 2026-08-02 |
+
+| Certified sweep, position vectors: 21 carrier segmentations (tokenizer re-calibrated to reproduce both worked examples exactly) times ~880 digit/integer sources (in-article numbers, published demo positions and their digits, BIP39 indices of the demo seeds, word lengths of key paragraphs, banknote serial B35409659 and date, landmark coordinate formats, 1606 variants, article epochs) times mappings (direct, direct0, GPS formula 0/1-based forward and reversed with all 12-digit windows, greedy ascending digit-group partitions, prefix sums, BIP39-index) | 75,044 position vectors, 57 distinct checksum-valid phrases among them | address comparison: BIP44/49/84 (compressed, two independent implementations), raw-hash brainwallet (sha256 and sha256d over 6 serializations, both compressions), Electrum-standard m/0/n and m/1/n, Electrum-old for all-old-wordlist candidates | 0 match | certified (oracle selftest: official vectors + wiki pairs + keystore agreement) | 2026-11-04 |
+| Certified sweep, digit-stream windows: all digits of 10 carrier raw texts in reading order, every 12-digit window times GPS 0/1-based, direct, direct0, plus short-stream greedy ascending partitions and windows as BIP39 indices | 5,595 vectors, 82 checksum-valid witnesses | address comparison, all four families | 0 match | certified | 2026-11-04 |
+| Certified sweep, external numbers: escrow funding amounts (3,050,269 + 74,361 sats), block heights (562454, 570781), article JSON epochs (1549734460146, 1549899244668, 1549910490644), escrow sat amount, funding change amounts, as digit sources with windows, GPS formula and greedy partitions over 21 carriers | 4,452 vectors | address comparison, all four families | 0 match | certified | 2026-11-04 |
+| Certified sweep, consecutive windows: every consecutive 12-word window of 21 carriers | 21,465 windows; 0 all-BIP39 windows exist anywhere in the article; 5 all-old-Electrum-wordlist windows; 44 windows pass the Electrum restore gate (HMAC '01') and were derived | address comparison, all four families | 0 match | certified | 2026-11-04 |
+| Passphrase (25th word) sweep on every distinct checksum-valid candidate (57 phrases, including the published demo seeds) times 67 curated passphrases (author and puzzle terms, titles, dates, escrow address, demo phrases, null-cipher message) | 3,819 derivations | address comparison: BIP44/49/84 | 0 match | certified | 2026-11-04 |
+| Fact: the article's WITCH example is a genuine old-Electrum seed, not BIP39 | 12 words | Electrum old_mnemonic mn_decode (electrum 4.5.8 reference) | decodes to hex seed 25a39767960aafbdba67ad41f5657826; 'witch' is absent from the BIP39 wordlist; fails the Electrum '01' restore gate | certified (reference implementation) | 2026-11-04 |
+| Fact: the embedded Steganographia photograph contains no cipher table | 1 photo, 4448x2555 | full-resolution reading of the title page (Jesus College M.7.7, 1606 Frankfurt imprint) | page text transcribed in full; only numeral is the year 1606 (included in the key enumeration above); the Book III table and Clavis are on pages that were never photographed | certified (visual, two independent readings) | 2026-11-04 |
 
 The structural constraint that the published GPS formula, applied to the full narrative, leaves 2
 of 12 word slots with zero valid BIP39 options confirms the published example is a demonstration,

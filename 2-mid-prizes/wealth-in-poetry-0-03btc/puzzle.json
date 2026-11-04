@@ -31,32 +31,75 @@
       "label": "main",
       "explorer": "https://mempool.space/address/1K4ezpLybootYF23TM4a8Y4NyP7auysnRo",
       "expected": "3124630 sats",
-      "verified_on": "2026-08-16",
+      "verified_on": "2026-11-04",
       "verified_state": "funded-unspent"
     }
   ],
-  "puzzle_type": ["bip39-seed", "text-cipher", "brainwallet"],
+  "puzzle_type": [
+    "bip39-seed",
+    "text-cipher",
+    "brainwallet"
+  ],
   "target_format": "BIP39 12 words, position selected by an author-specific numeric key applied to the article text; passphrase and derivation path not confirmed",
   "derivation": {
     "summary": "tokenize the article text, apply an unknown author-specific numeric key to select 12 word positions, then derive BIP44/49/84 or a raw BIP32 path and compare to the escrow address",
-    "oracle": null,
-    "oracle_certified": false,
-    "certified_against": ""
+    "oracle": "tools/oracle.py",
+    "oracle_certified": true,
+    "certified_against": "official BIP32/39/44/49/84 vectors via two implementations; Bitcoin-wiki raw-key pairs; electrum 4.5.8 BIP32_KeyStore and Old_KeyStore agreement"
   },
   "difficulty_left": "insight",
   "difficulty_note": "the mechanism is taught explicitly by the author; tokenization is calibrated against both worked examples; the real carrier text and numeric key are, by the article's own design, author-specific and not guessable from the article alone, consistent with a stylometric pass finding no detectable insertion fingerprint",
-  "tested_total": { "candidates": 878000, "families": 8, "certified": false },
+  "tested_total": {
+    "candidates": 878000,
+    "families": 8,
+    "certified": false
+  },
   "leads": [
-    { "rank": 1, "title": "read the cipher table on the embedded Steganographia photo", "cost": "hours", "status": "open" },
-    { "rank": 2, "title": "rule out an old-Electrum (non-BIP39) wallet", "cost": "hours", "status": "open" },
-    { "rank": 3, "title": "build a certified acceptance test for the derivation code", "cost": "minutes", "status": "open" }
+    {
+      "rank": 1,
+      "title": "author-specific numeric key or author contact (Sharon & Philippe, Medium @onesourgrape)",
+      "cost": "open-ended",
+      "status": "open"
+    },
+    {
+      "rank": 2,
+      "title": "wallet families outside the modeled set (24-word, BIP38, custom KDF/paths)",
+      "cost": "open",
+      "status": "open"
+    }
   ],
   "solutions": [],
   "artifacts": [],
   "sources": [
-    { "title": "Trithemius, Securing Bitcoin Seed Phrases in Stories, Medium/Coinmonks", "url": "https://medium.com/coinmonks/securing-bitcoin-seed-phrases-in-stories-d8eb43a02254", "date": "2019-02-11", "archived": null },
-    { "title": "Community tracker confirming the puzzle is unsolved", "url": "https://privatekeys.pw/puzzles/0.03-btc-coinmonks-puzzle", "date": "2026-08-16", "archived": null }
+    {
+      "title": "Trithemius, Securing Bitcoin Seed Phrases in Stories, Medium/Coinmonks",
+      "url": "https://medium.com/coinmonks/securing-bitcoin-seed-phrases-in-stories-d8eb43a02254",
+      "date": "2019-02-11",
+      "archived": null
+    },
+    {
+      "title": "Community tracker confirming the puzzle is unsolved",
+      "url": "https://privatekeys.pw/puzzles/0.03-btc-coinmonks-puzzle",
+      "date": "2026-08-16",
+      "archived": null
+    }
   ],
   "third_party_material": "the narrative text was written and published by the puzzle author himself as the vehicle for the puzzle; short excerpts are quoted in clues/author-posts.md; the embedded stock photography is third-party licensed illustration, referenced but not reproduced here",
-  "last_updated": "2026-08-16"
+  "last_updated": "2026-11-04",
+  "tested_certified_2026_11_04": {
+    "position_vectors": 75044,
+    "digit_stream_windows": 5595,
+    "external_number_keys": 4452,
+    "consecutive_windows": 21465,
+    "passphrase_derivations": 3819,
+    "checksum_valid_distinct_phrases": 57,
+    "families": [
+      "bip39-bip44/49/84",
+      "raw-hash-brainwallet",
+      "electrum-standard",
+      "electrum-old"
+    ],
+    "matches": 0,
+    "note": "all through tools/oracle.py after selftest; the older 878k campaign remains uncertified"
+  }
 }

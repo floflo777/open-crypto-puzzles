@@ -1,29 +1,35 @@
 # Open leads: Wealth in Poetry
 
-## 1. Read the cipher table on the embedded Steganographia photo (hours)
+## 1. Author-specific numeric key or author contact (open, class person)
 
-The article embeds a high-resolution photograph (4448x2555) of the title page of Trithemius's
-own historical book, Steganographia, shelfmark Jesus College M.7.7. The real Steganographia
-contains genuine cipher tables, including tabula recta constructions, and the page the author
-chose to photograph is legible enough to potentially read a table from directly. The author
-published this image as illustration without flagging it as a candidate key, but it is the one
-artifact in the article not yet tested as a numeric-key source, and it fits the pseudonym's own
-theme closely enough to be worth the read. Confirmed if a table extracted this way, run through
-the calibrated tokenization and any standard derivation, reproduces the escrow address; killed if
-the table yields no valid-checksum 12-word phrase after a reasonable range of readings.
+The 2026-11-04 campaign closed the mechanical leads this file used to rank. What remains is the
+key itself: the article's two taught methods derive positions from a phone number or from
+coordinates of a personally meaningful landmark, and both are author-specific facts that do not
+appear anywhere in the published material. If a source ever surfaces a real number of the
+author's (a handle migration, a doxx, a reply), every candidate it produces is one oracle call
+away from a definitive answer.
 
-## 2. Rule out an old-Electrum (non-BIP39) wallet (hours)
+## 2. Wallet families outside the modeled set (open, class insight)
 
-If the real wallet predates BIP39 and uses an old-Electrum seed instead, the large body of
-BIP39-based derivation work to date, including all 3 major campaigns in analysis/tested.md, is
-off-target even with the correct words and the correct key. Electrum-format derivation scripts
-already exist and would need to be re-run against the same 4 example seeds and against any
-candidate words the numeric-key work produces.
+The certified sweeps cover BIP39 (BIP44/49/84, compressed), raw-text hashing (sha256, sha256d,
+six serializations, both compressions), Electrum 2.x-4.x standard seeds, and Electrum 1.x old
+seeds. A wallet restored by other means - 24-word phrase, BIP38 intermediate, non-standard
+derivation path, or a brainwallet service with a different KDF - would not be reached. The
+article's own 2019 context (hardware wallets, BIP-39 teaching, an escrow P2PKH address) makes
+these less likely than the person-blocker above, but they are not closed.
 
-## 3. Build a certified acceptance test for the derivation code (minutes)
+## Closed leads (with reasons)
 
-No known-good seed-and-address pair has ever been run through the derivation library to prove it
-accepts a correct candidate. Since no solved sibling of this puzzle exists, the fastest fix is a
-synthetic test: build a throwaway 12-word phrase, derive its address under each supported path,
-then assert the library recognizes that address as a match. This would let every negative above
-be re-labeled from uncertified to certified without rerunning any of the underlying search.
+- **Steganographia photograph as numeric-key source** (formerly lead 1). Closed 2026-11-04: the
+  photographed page (Jesus College M.7.7, 1606 Frankfurt title page) contains no cipher table.
+  Its only numeral is the year 1606, which was included in the certified key enumeration. The
+  Book III table and the Clavis the lead hoped for are on pages that were never photographed;
+  the author linked the Jesus College blog post that shows one Book III table, and nothing on
+  that page yields a 12-digit key beyond the years it mentions (1606, 1462, 1516, 1998), all
+  covered by the certified enumeration.
+- **Old-Electrum wallet ruling** (formerly lead 2). Closed for article-derived candidates
+  2026-11-04: the old-Electrum family is now certified (agreement with Electrum's own
+  Old_KeyStore), and the published "witch..." example is confirmed to be a genuine old-Electrum
+  seed (decodes to hex 25a39767960aafbdba67ad41f5657826), so the family was tested where it
+  matters. Only 5 of 21,465 consecutive article windows are all-old-wordlist; all negative.
+- **Certified acceptance test** (formerly lead 3). Done 2026-11-04: `tools/oracle.py`.
