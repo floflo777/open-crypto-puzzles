@@ -23,7 +23,7 @@
     "asset": "sats",
     "usd_estimate": 12668,
     "usd_snapshot": "2026-08-16",
-    "note": "0.20107284 BTC, funded 2020-05-10 in 5 transactions, before the puzzle post"
+    "note": "0.20107284 BTC: 0.2 BTC funded 2020-05-10 in one transaction, before the puzzle post; 4 later deposits from other senders (2023 to 2025) add 107,284 sats"
   },
   "addresses": [
     {
@@ -74,7 +74,7 @@
       "rank": 3,
       "title": "cross the rune transcription against the Russian-prose cipher key",
       "cost": "minutes",
-      "status": "open"
+      "status": "closed"
     },
     {
       "rank": 4,
@@ -113,5 +113,5 @@
     }
   ],
   "third_party_material": "the collage image in clues/ is the author's own published puzzle material, posted once on Reddit; no other author material exists; community forum discussion is cited by URL and date only, never reproduced",
-  "last_updated": "2026-09-07"
+  "last_updated": "2026-11-04"
 }

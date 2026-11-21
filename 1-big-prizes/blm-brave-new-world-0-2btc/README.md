@@ -3,7 +3,8 @@
 Reddit user `u/stsh_n` posted a single collage image on 2020-10-08, titled "Bitcoin puzzle
 (2000$)": a 1600x1200 composite of 2020 news imagery (COVID, the George Floyd protests, the
 Trump-Biden election) instructing the reader to "find the seed phrase in this picture." An
-escrow of 20,107,284 sats had already been funded on 2020-05-10, before the post. The author
+escrow had been funded with exactly 0.2 BTC on 2020-05-10, before the post; 4 later deposits
+from other senders bring it to 20,107,284 sats. The author
 never commented again. I confirmed the derivation format is either a BIP39 12-word mnemonic or
 an old-Electrum (v1) 12-word mnemonic, both read straight off visible words on the collage, and
 built an oracle that checks either format under every plausible path with zero false positives.
@@ -108,7 +109,10 @@ public vector matches the escrow. Reproduced 2026-08-16.
    wording. I found no post from the author confirming any word, position, or format.
 5. The geometric rune script (about 85 glyphs across 3 locations on the image) decodes as
    Russian-language prose under a monoalphabetic substitution, consistent with natural-language
-   text by an index-of-coincidence check; it names no seed word directly.
+   text by an index-of-coincidence check; it names no seed word directly. A decode of all three
+   inscriptions contributed by @Desalzes reads "here are encrypted bitcoins for a rainy day,
+   number X" (right border), "I hope that many bitcoins will be sent here" (top border) and "sum
+   of two numbers" (dial strip); see `analysis/leads.md`, lead 3.
 
 ## What has been tested
 
@@ -123,12 +127,15 @@ Full ledger in [analysis/tested.md](analysis/tested.md). Summary:
 | Anchor-free BIP39 GPU sweeps: every 12-of-13 choice and every ordering of a 13-word pool read off the image, plus all orderings of 2 fixed 12-word sets (singled-out elements; the BitcoinTalk narrative reading) | 7,185,024,000 sequences (449,054,867 checksum-valid) | BIP39 GPU kernel, `m/44'/0'/0'/0/0` | 0 match | yes: kernel self-test on a planted target | 2026-08-02 |
 | Steganography and file-structure channels | full file | binwalk, EXIF, LSB, zsteg | clean, no hidden channel | yes | 2026-06-13 |
 | Cipher inventory (runes, Latin mottos, Bill Cipher fragment) | 14 elements | direct decode | no additional seed words found | yes | 2026-08-02 |
+| Contributed GPU campaign (@Desalzes): pinned-slot shapes with one or two words open over the full list | 1,479,268,494,119 candidates in 718 runs | BIP39, Electrum standard 12 and 13 words, raw text; 9 paths plus wider ranges; comp/uncomp | 0 match | yes: planted seeds re-found in every block | 2026-09-29 to 2026-10-02 |
 
 Cumulative: about 30 million derivations across the anchor-based and anchor-free families
 through 2026-06-13, plus 449 million checksum-valid BIP39 derivations from 7.2 billion
 sequences on 2026-08-02, 0 matches. The 13-word pool sweep fixes no position, but its words
 are still the community pool; a sweep over a word pool re-derived directly from the image
-has not been run (see "Open leads, ranked").
+has not been run (see "Open leads, ranked"). A contributed GPU campaign adds
+1,479,268,494,119 candidates (17,799,496,608 checksum- or version-valid) under pinned-slot shapes,
+0 match; scope and witness in `analysis/tested.md`.
 
 ## Open leads, ranked
 
@@ -141,10 +148,10 @@ has not been run (see "Open leads, ranked").
    systematic relisting of every word visible on the collage. Confirmed if a word absent from
    every prior pool derives the target once combined with the rest; killed if the relisting
    reproduces the same pool already tested.
-3. **Cross the rune transcription against the Russian-prose cipher key** (minutes, free). The
-   positioned 85-glyph transcription and the substitution-cipher hypothesis have never been
-   directly checked against each other. Confirmed as closed if the decoded prose reads
-   coherently start to finish; reopened as a candidate word source if it does not.
+3. **Cross the rune transcription against the Russian-prose cipher key** (closed 2026-11-04,
+   contributed). The test was whether the decoded prose reads coherently start to finish; a
+   contributed decode reads all three inscriptions coherently with one key, so the rune channel
+   is closed as a direct word source. The plaintexts are in `analysis/leads.md`.
 4. **Settle BIP39 versus old-Electrum from a source, not from more derivation** (needs new
    information). This single fact would cut the remaining search space roughly in half; no
    message signature or other author confirmation is known to exist.
@@ -174,4 +181,4 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - BitcoinTalk topic 5404767 (community discussion, not author material), checked 2026-08-16: https://bitcointalk.org/index.php?topic=5404767.0
 - Escrow address, mempool.space: https://mempool.space/address/1KfZGvwZxsvSmemoCmEV75uqcNzYBHjkHZ
 
-Credits: @NoobSilence (issue #12): four positional sweeps on the 13-word and 19-word pools, recorded in `analysis/tested.md` as contributed.
+Credits: @NoobSilence (issue #12): four positional sweeps on the 13-word and 19-word pools, recorded in `analysis/tested.md` as contributed. @Desalzes: a 718-run GPU campaign, the decode of all three rune inscriptions and the Bill Cipher reading, recorded in `analysis/tested.md` and `analysis/leads.md` as contributed.

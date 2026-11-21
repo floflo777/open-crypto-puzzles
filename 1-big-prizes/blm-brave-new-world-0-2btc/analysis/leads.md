@@ -20,7 +20,31 @@ accounts). Confirms: a word not present in any prior candidate pool turns up and
 the others, derives the target. Kills: a systematic relisting reproduces the same pool already
 tested, closing this as a source of new candidates.
 
-## 3. Cross the rune transcription against the Russian-prose cipher key (minutes, free)
+Contributed 2026-11-04: a clue-by-clue reading of the image, with crops and what each reading
+was searched against, is in [Desalzes/bnw-0.2btc-analysis](https://github.com/Desalzes/bnw-0.2btc-analysis#the-clues). It ranks words
+by visible hiding devices (tiny labels, case and colour changes) rather than by the community
+pool, so it answers part of this lead; it does not close it.
+
+## 3. Cross the rune transcription against the Russian-prose cipher key (closed 2026-11-04, contributed)
+
+@Desalzes decoded all three inscriptions with one key, a one-to-one substitution over Russian
+([readings](https://github.com/Desalzes/bnw-0.2btc-analysis#1-the-borders-the-address-and-the-rune-cipher)). A key rebuilt from the right
+border and the dial strip alone predicted every group length of the held-out top rows
+(reported). The decoded text reads coherently start to finish:
+
+| Where | Plaintext | English |
+|---|---|---|
+| Right border | Здесь зашифрованы биткоины на чёрный день номер X | here are encrypted bitcoins for a rainy day, number X |
+| Top border, 3 rows | Я надеюсь, что сюда будут присылать много биткоинов | I hope that many bitcoins will be sent here |
+| Dial strip | СУММА ДВУХ ЧИСЕЛ | sum of two numbers |
+
+"Чёрный день" is literally "black day". The glyph after "номер" (number) is a stave with one
+diagonal, read as the rune Nauthiz, the 10th rune of the Elder Futhark, so "number 10"; it is the
+one glyph not cross-checked. The channel names no seed word, but it states that bitcoins are
+encrypted in the image, gives a number, and gives an arithmetic rule next to the dial.
+
+Original note:
+
 
 The 85-glyph positioned transcription of the geometric rune script (3 locations on the image)
 was completed on 2026-08-02. The hypothesis that this script decodes as Russian-language prose
