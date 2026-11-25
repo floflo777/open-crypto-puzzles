@@ -46,9 +46,9 @@ reunited, give access to a treasure of 21 million satoshis buried at this addres
 collector-edition product page adds: "Ils sont numerotes de 1 a 210 et parmi eux il y a
 trois licornes qui cachent un secret" ("They are numbered 1 to 210 and among them are
 three unicorns that hide a secret"). A journalducoin.com feature co-written with the
-publisher, 2020-02-29, is the most explicit: the publisher "inséra au hasard les clés
-privées au coeur de trois ouvrages de collection qui furent soigneusement mélangés afin
-que même lui ignore quels sont les trois Licornes" ("inserted the private keys at random
+publisher, 2020-02-29, is the most explicit: the publisher "insera au hasard les cles
+privees au coeur de trois ouvrages de collection qui furent soigneusement melanges afin
+que meme lui ignore quels sont les trois Licornes" ("inserted the private keys at random
 into three collector copies, then shuffled them so thoroughly that even he does not know
 which three are the Unicorns"). Full quotes with links in
 [clues/author-posts.md](clues/author-posts.md).
