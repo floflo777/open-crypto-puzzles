@@ -163,3 +163,5 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 - Smith, Lyle & Moore, Treasure Hunt page, smithlylemoore.com, 2022-07-29: https://www.smithlylemoore.com/treasure-hunt
 - "Bitcoin Treasure Hunt - 2021 (still unsolved)", stacker.news item 658645, @DrStacker, 2024-08-23: https://stacker.news/items/658645
 - Escrow address, mempool.space: https://mempool.space/address/bc1q0akdjvrc2csau2n3gyxa3xcq0fss852x997m9y
+
+Credits: @Neopram (issue #48): the direct lock URLs, the exact South chain passwords and 31 lock negatives, recorded in `analysis/mechanism.md` and `analysis/tested.md` as contributed.
