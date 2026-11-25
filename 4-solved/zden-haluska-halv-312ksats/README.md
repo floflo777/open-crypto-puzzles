@@ -1,16 +1,13 @@
-# Zden Level HALV (312,500 sats, [OPEN])
+# Zden Level HALV (312,500 sats, [SOLVED])
 
-Zden (Zdenek Haluska), whose earlier puzzle LVL.5 is documented elsewhere in this repository,
-published Level HALV on 2024-04-20, the day of Bitcoin's fourth halving: a single grayscale
-image of an oscilloscope-style waveform, with a private key encoded somewhere in its 59
-oscillating lobes. I measured the geometry stably across 3 independent passes: lobe count,
-each lobe's shape (circle or diamond), and the amplitude pattern. Every specific reading of
-that geometry I have tried, including a 500-million-derivation checksum sweep, has produced
-zero matches. The image's own measured information content, about 118 bits, falls short of
-the 256 bits a private key needs: the identified gap is that limit, not a lack of search
-effort, and no hint has been published for this specific puzzle, unlike every other long-open
-puzzle in the
-same series.
+Solved on 2026-11-19 by the author of a [public write-up](https://echo.ls/zden-level-halv/),
+working with Will Adcox. The escrow was swept the same day (block 976,637,
+[tx `b7fe480c`](https://mempool.space/tx/b7fe480c68c1e600355393bc8005e01526340e2db3218aabe82a9439ead34439)),
+311,600 sats to `bc1q8s0s2aurnr3737na8kjgyt2wct9ymsa3c4qnp9`. Reported in
+[issue #62](https://github.com/floflo777/open-crypto-puzzles/issues/62) by DevinDking.
+
+My own reading below was wrong. I read 59 lobes with one shape bit each and concluded the image
+held about 118 bits; it holds 256 columns at 4 levels. The research is kept as it stood.
 
 ## At a glance
 
@@ -21,8 +18,8 @@ same series.
 | Prize | 312,500 sats (about $197 at BTC = $63,000, 2026-08-16) |
 | Chain | bitcoin |
 | Escrow | `1crypto24HCr178iMcKd5iUi5D4rsg1nK` ([explorer](https://mempool.space/address/1crypto24HCr178iMcKd5iUi5D4rsg1nK)) |
-| Last on-chain check | 2026-08-16: funded and unspent (312,500 sats, single funding transaction, 2024-04-18) |
-| Status | OPEN |
+| Last on-chain check | 2026-11-25: swept on 2026-11-19 (funded 2024-04-18, single transaction) |
+| Status | SOLVED |
 | Puzzle type | geometry, raw-private-key |
 | Target format | a 256-bit private key as direct hex, P2PKH |
 | Certified oracle | yes: `tools/oracle.py --selftest` (certified against a standard public vector, private key 1; the puzzle's own waveform reading is not certified, see below) |
@@ -103,6 +100,29 @@ consumed, not as a witnessed negative in this project's strict sense.
    series eventually received one; HALV has not. Full details in
    [analysis/leads.md](analysis/leads.md).
 2. **Certify the oracle with a known-good vector** (minutes; done in this folder already).
+
+## Solution
+
+The waveform is 8 sections of 32 columns, one section per halving epoch. Column `j` of section
+`s` sits at `x = 92 + 3 * (32 * s + j)`, and its peak is 0 to 3 steps of `2^(7 - s)` pixels from
+the centerline `y = 475`: that step count is the level `L(s, j)`. The vertical stripe on the left
+gives a rotation of 4 columns per section, and the staircase in the logo gives the weights, the
+block subsidy of each epoch:
+
+```
+d(s, p) = L(s, (p - 4 * s) mod 32)
+byte p  = round(sum over s of 50 / 2^s * d(s, p))
+```
+
+The 32 bytes, in order of `p`:
+
+```
+d27c417d97ccdc0e2ce3291e47b1ee836a5354c4d68f554393dd8d6c4862c999
+```
+
+As a secp256k1 private key with an uncompressed public key, this gives the escrow
+`1crypto24HCr178iMcKd5iUi5D4rsg1nK`. I reproduced it from `clues/cryptoHALV.png` and checked it
+with `tools/oracle.py`.
 
 ## Files in this folder
 
