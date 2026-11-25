@@ -232,13 +232,11 @@ sweeps versus targeted tests, are in `analysis/tested.md`.
 
 ## Open leads, ranked
 
-1. **Ask the Block 76 solver for the convention of a final Aoi block** (needs a
-   person, no compute). The reader who swept Block 76 on 2026-08-17 knows the exact
-   serialization, derivation index and whether a "twist" sat on top of the stated
-   rule for a block written by the same author in the same week with the same
-   tooling. That calibrates Real Big Block directly. Confirmed by a convention that,
-   applied to the chapter, matches; killed by a convention that adds nothing to
-   what is already swept.
+1. **Ask the Block 76 solver for the convention of a final Aoi block** (closed
+   2026-10-31). The Block 76 string is public: `EMERGENCY TOMI climate EMERGENCY`,
+   MD5, index 0, no twist (eyaler, pull request #49; re-derived in
+   `analysis/calibration.md`). It adds nothing to what is already swept on Real
+   Big Block.
 2. **A bounded 2-character-edit sweep on the strongest base texts** (about an
    hour on a rented GPU). Every contiguous copy-paste span of the chapter is a
    negative, and two slices of this lead are too: every NBSP subset and every pair
@@ -272,9 +270,11 @@ Full notes: [analysis/leads.md](analysis/leads.md).
 | `data/blocks-structure.json` | the series structure and the 2 open gates, for the structure figure |
 | `analysis/tested.md` | the complete negatives ledger for both open lots |
 | `analysis/leads.md` | full notes behind the ranked leads |
+| `analysis/calibration.md` | 17 solved blocks re-derived from solution string to escrow (contributed) |
 | `images/01-pipeline-derivation.svg` | the MD5-to-address derivation pipeline diagram |
 | `images/02-structure-blocks.svg` | the Quizchain series structure, colored by claim status |
 | `tools/oracle.py` | candidate checker, certified against the author's own vector; includes the Block 76 prefix filter and the Stage One case-flip helper |
+| `tools/calibration_check.py` | re-derives every block of `analysis/calibration.md` |
 | `tools/fig_pipeline.py` | generates images/01-pipeline-derivation.svg from data/pipeline-stages.json |
 | `tools/fig_blocks.py` | generates images/02-structure-blocks.svg from data/blocks-structure.json |
 

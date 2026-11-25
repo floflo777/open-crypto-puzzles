@@ -2,7 +2,14 @@
 
 Ranked summary is in the README. This file has the reasoning behind the ranking.
 
-## 1. Ask the Block 76 solver for the convention of a final Aoi block
+## 1. Ask the Block 76 solver for the convention of a final Aoi block (closed 2026-10-31)
+
+Closed. eyaler posted the Block 76 string on 2026-10-31 (pull request #49):
+`EMERGENCY TOMI climate EMERGENCY`. Its MD5 starts with `f8e`, `MD5("EMERGENCY")` starts
+with `1d`, and index 0 gives the escrow `13Cv6SXUnzGDT8JHqzzJ8xMPtsSdhJA4wd`; I re-derived
+it, and it is in `analysis/calibration.md`. The convention is the plain
+`[solution] TOMI [TOMI]` shape of blocks 72 to 74, with no twist, so it says nothing new
+about Real Big Block. Original note:
 
 Block 76 was swept on 2026-08-17 (tx
 `2e271ac2f63f488cd14112bceeed56f159ecd98cb3ce753f08e2d94bb62714a3`) into an active

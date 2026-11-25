@@ -31,6 +31,7 @@ index 0.
 | Run-2 73 | 2019-07-19 | `carbon budget TOMI Grycoin solution` | MD5 | author prefix `f13` |
 | Run-2 74 | 2019-07-20 | `PETM TOMI second time now` | MD5 | author prefix `c65` |
 | Run-2 75 | 2019-07-20 | `reverse Turing test` | MD5 | author prefix `509` |
+| Run-2 76 | 2019-07-22 | `EMERGENCY TOMI climate EMERGENCY` | MD5 | author prefixes `1d` (solution) and `f8e` (full string) |
 
 ## Run-1 Block 13
 
@@ -83,9 +84,19 @@ block post):
 | 74 | `cfhi1e` | `1P1BFMU7vnpzsaUtQCAvArVKQyeMgYtmPY` | `f2623d2b4679277ed587c6031ebd3662bc4b72387828b62c8975d14860cf1854` |
 | 75 | `cfs3ld` | `15pmBkzmSyXg2KhYHMmauF3EjYNEvyiABS` | `c52c46d2831e8372393af09f66541647b6d1bda80694d87886ed7bd6cc5298be` |
 
+## Run-2 Block 76
+
+- Reddit post `cgcv9i`, 2019-07-22. MD5 `f8e5edbcfc77003adb199519f0bee51c`; the solution
+  alone, `EMERGENCY`, hashes to `1d9e8d55...`, the second prefix the author published.
+- Escrow `13Cv6SXUnzGDT8JHqzzJ8xMPtsSdhJA4wd`. Funding tx
+  `979670f3d1d4134e7989ed6f4a4370362e15c101711c93675790cf0751c8dbd4` (2019-07-22), sweep tx
+  `2e271ac2f63f488cd14112bceeed56f159ecd98cb3ce753f08e2d94bb62714a3` (2026-08-17).
+- The string was posted by eyaler on 2026-10-31 (pull request #49). It is the last block
+  before Real Big Block and uses the same `[solution] TOMI [TOMI]` shape as 72 to 74.
+
 ## What these establish
 
-- The funded key is at index 0 in every block listed (16 of 16, both runs).
+- The funded key is at index 0 in every block listed (17 of 17, both runs).
 - The hashed string is the bare solution: no wrapper, no trailing newline,
   single spaces between fields (`[solution] TOMI [TOMI]` becomes for example
   `GND TOMI Green New Deal`).
@@ -100,5 +111,5 @@ block post):
 Credits: BTCxanter (formerly e1976g) for the Block 13 string and the thirteen
 July 2019 strings (issues #39 and #43); puzzleponky for the Block 48 and 69
 strings and the 2019 confirmations of 63 and 67; hulkisliky22 for the escrow list
-of Blocks 72 to 75; moonflightrocket-ops for the independent re-derivation and
+of Blocks 72 to 75; eyaler for the Block 76 string; moonflightrocket-ops for the independent re-derivation and
 the escrow and sweep data.

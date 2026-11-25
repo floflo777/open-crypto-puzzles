@@ -56,6 +56,8 @@ CASES = [
      '1P1BFMU7vnpzsaUtQCAvArVKQyeMgYtmPY'),
     ('run-2 Block 75', 'reverse Turing test', 'md5', '509',
      '15pmBkzmSyXg2KhYHMmauF3EjYNEvyiABS'),
+    ('run-2 Block 76', 'EMERGENCY TOMI climate EMERGENCY', 'md5', 'f8e',
+     '13Cv6SXUnzGDT8JHqzzJ8xMPtsSdhJA4wd'),
 ]
 
 

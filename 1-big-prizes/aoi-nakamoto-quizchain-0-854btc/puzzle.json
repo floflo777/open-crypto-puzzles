@@ -81,7 +81,7 @@
       "rank": 1,
       "title": "ask the Block 76 solver for the serialization, index and twist convention of a final Aoi block",
       "cost": "needs-a-person",
-      "status": "open"
+      "status": "closed"
     },
     {
       "rank": 2,
@@ -173,5 +173,5 @@
     }
   ],
   "third_party_material": "no book, chapter text, forum dump, or other bulk third-party material is included; the Wattpad chapter (the author's own fiction) and Hal Finney's bitcointalk post (third-party historical content) are both referenced by URL only, never reproduced; quotes in clues/author-posts.md are short excerpts from the puzzle author's own public Reddit posts",
-  "last_updated": "2026-09-03"
+  "last_updated": "2026-11-25"
 }
