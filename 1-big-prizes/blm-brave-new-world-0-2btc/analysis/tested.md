@@ -79,6 +79,34 @@ lists carry), and the old-Electrum campaign above still forces 6 specific words 
 A sweep over a pool re-derived directly from the image, independent of those lists, has
 not been run (see the leads).
 
+## Contributed GPU campaign (@Desalzes, 2026-09-29 to 2026-10-02)
+
+Reported by @Desalzes, with the GPU code, every config and a run ledger published at
+[Desalzes/bnw-0.2btc-analysis](https://github.com/Desalzes/bnw-0.2btc-analysis); the counts below are recomputed from that ledger by
+`python3 tools/tally.py --windows` in that repository, and its
+[TESTED.md](https://github.com/Desalzes/bnw-0.2btc-analysis/blob/main/TESTED.md) breaks them down by family. Not re-run here.
+
+These runs assume pinned positions read from devices in the image, so a miss here says nothing
+about the unpinned space. The main shape pins `subject` at 1, `tower` at 3, `eye` at 9, `black` at
+10, `pyramid` at 11 and `vote` at 12 (and `moon` as word 13 in the 13-word Electrum reading),
+requires `food`, `this`, `real`, `one` and `order` somewhere in the free slots, and leaves one slot
+open over the full 2,048-word list: 6! x 2,048 = 1,474,560 candidates per config. The two-open
+shapes leave two words unknown: 10,569,646,080 candidates per config, or 84,557,168,640 with
+`black` also free.
+
+Formats: BIP39 12 words with the empty passphrase and with `MOON`, `moon` and `Moon`; Electrum's
+standard seed (version prefix `01`) as 13 words with `moon` the 13th and as 12 words with the
+extension `moon`; raw text with no checksum (what Electrum's BIP39 import derives from any text).
+Paths: `m/44'/0'/0'/0/0`, `m/44'/0'/0'/0/1`, `m/44'/0'/0'/0/10`, `m/0'/0/0`, `m/0/0`, and
+Electrum's `m/0/0`, `m/0/1`, `m/0/2` and `m/1/0`; wider receive, change and account ranges on the
+one-open shapes. Compressed and uncompressed keys.
+
+| Hypothesis | Space | Method | Result | Witness | Date |
+|---|---|---|---|---|---|
+| Every config in the ledger, in 21 families (pinned shapes with one or two open slots, word pools, passphrase sets, Electrum single-word drops) | 1,479,268,494,119 candidates in 718 runs (17,799,496,608 checksum- or version-valid); 716 distinct configs, 1,468,697,373,479 counted once each | GPU engine, formats and paths above, comp/uncomp; 381,000 derivations/s (BIP39, 1 path) on one RTX 5060 Ti | 0 match | yes: 64 planted seeds per block re-found in place (1,013,496 planted, none lost), engine self-test before each run | 2026-09-29 to 2026-10-02 |
+
+The families overlap, so the total overstates distinct coverage.
+
 ## Steganography and cipher channels (all ruled out as separate carriers, not as word sources)
 
 | Hypothesis | Space | Method | Result | Witness | Date |
@@ -86,7 +114,7 @@ not been run (see the leads).
 | Hidden data in file structure (EXIF, appended bytes, LSB plane, alpha channel) | full file | binwalk, EXIF read, LSB histogram, zsteg | 0 EXIF fields, 0 appended bytes, LSB about 0.5 (noise), alpha 100 percent opaque, zsteg empty | yes (clean-file baseline) | 2026-06-13 |
 | Geometric rune script (3 locations, about 85 glyphs) as an independent seed source | 85 glyphs transcribed | monoalphabetic substitution, index-of-coincidence check | decodes as Russian-language prose, not seed words | yes (index of coincidence matches natural-language text) | 2026-08-02 |
 | 3 Latin mottos on the coin | 3 phrases | direct translation | ordinary Latin mottos ("know the causes of things", "let justice be done though the world perish", a proverb about a pot calling a kettle black), no seed words | yes | 2026-06-13 |
-| Bill Cipher fragment above the Trump/Biden panel | 1 fragment | direct decode | reads "DAY", not a BIP39 or old-Electrum word | yes | 2026-08-02 |
+| Bill Cipher fragment above the Trump/Biden panel | 1 fragment | direct decode | read as "DAY" on 2026-08-02; @Desalzes reads all 7 glyphs as "TUESDAY" against the public Bill Cipher chart ([reading](https://github.com/Desalzes/bnw-0.2btc-analysis#9-trump-biden-vs-and-the-cipher-row)), reported; the 2020-11-03 election on the image fell on a Tuesday | yes | 2026-08-02 |
 
 ## Geometry measurements that refute the 4 anchors independently
 
